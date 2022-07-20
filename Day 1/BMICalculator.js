@@ -11,7 +11,7 @@ let  JohnMass = JohnWeight / (JohnHeight * JohnHeight);
 let markHigherBMI = MarkMass > JohnMass;
 console.log(markHigherBMI);
 
-// Members data
+// Members data 2
 let MarkWeight1 = 95, MarkHeight1 = 1.88;
 let JohnWeight1 = 85, JohnHeight1 = 1.76;
 // Calculating mass
