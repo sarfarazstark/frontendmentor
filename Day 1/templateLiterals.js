@@ -6,5 +6,4 @@ let city = "Kolkata";
 let country = "India";
 let myBio = `I'm ${firstName} a ${(currentYear - birthYear)} years old ${job} from ${city}, ${country}.`;
 
-let input = prompt("Enter your name");
 console.log(myBio);
