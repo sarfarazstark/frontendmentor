@@ -1,28 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | QR code component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      padding: 10px;
+      background-color: hsl(212, 45%, 89%);
+
+    }
+
+    .container {
+      font-size: 11px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      left: 50%;
+      top: 50%;
+      padding: 10px;
+      margin-top: 5%; 
+      margin-left: 38%;
+      margin-right: 38%;
+      padding-top: 20px;
+      /*adding box shadow to container */
+      box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.12),
+        inset 0 0px 2px rgba(0, 0, 0, 0.24);
+      /* height: 100vh; */
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 14px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .container .footer a {
+      color: hsl(228, 45%, 44%);
+    }
+    .container img{
+      padding-top: 0px;
+      width: 20vw;
+      height auto;
+      border-radius: 14px;
+    }
+    .container h1 {
+      color: hsl(218, 44%, 22%);
+      font-weight: 700;
+    }
+    p{
+      color: hsl(220, 15%, 55%);
+      font-weight: 400;
+      font-size: 15px;
+    }
+    .text-container{
+      padding: 6px;
+    }
+    .footer{
+      padding: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 400;
+      margin-top: 10%;
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        margin-top: 10%; 
+        margin-left: 2%;
+        margin-right: 2%;
+      }
+      .container img{
+        width: 96%;
+      }
+      .footer{
+      padding: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 400;
+      margin-top: 40%;
+    }
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>Improve your front-end skills by building projects</h1>
+  <span class="container">
+      <img src="images/image-qr-code.png" alt="QR code">
+      <div class="text-container">
+      <h1>Improve your front-end skills by building projects</h1>
+      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+    </div>
+  </span>
 
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="footer">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Sarfaraz Stark</a>.
   </div>
 </body>
+
 </html>
