@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
+<head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | QR code component</title>
@@ -29,7 +28,7 @@
       align-items: center;
     }
 
-    .container {
+    main {
       width: 300px;
       height: 500px;
       background-color: hsl(0, 0%, 100%);
@@ -41,26 +40,26 @@
       box-shadow: 16px 27px 30px -17px rgba(209, 209, 209, 1);
     }
 
-    .container img {
+    main img {
       width: 100%;
       border-radius: 10px;
     }
 
-    .container p {
+    main p {
       font-size: 15px;
       color: hsl(220, 15%, 55%);
       margin: 1.5625rem 0.5rem 0rem 0.5rem;
       padding-bottom: 25px;
     }
 
-    .container h1 {
+    main h1 {
       color: hsl(218, 44%, 22%);
       font-weight: 700;
       font-size: 20px;
       margin: 1.5625rem 0.5rem 0rem 0.5rem;
     }
 
-    .footer {
+    footer {
       width: 18.75rem;
       font-family: 'Outfit', sans-serif;
       padding-top: 25px;
@@ -74,18 +73,19 @@
 
 <body>
 
-  <span class="container">
+  <main>
     <img src="images/image-qr-code.png" alt="QR code">
-    <div class="text-container">
-      <h1>Improve your front-end skills by building projects</h1>
-      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
-    </div>
-  </span>
 
-  <div class="footer">
+      <h1>Improve your front-end skills by building projects</h1>
+
+      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+
+  </main>
+
+  <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br>
     ❤ Coded by <a href="https://www.frontendmentor.io/profile/sarfarazstark">Sarfaraz Stark</a>.
-  </div>
+  </footer>
 </body>
 
 </html>
