@@ -124,6 +124,7 @@ button img{
         justify-content: center;
         width: 85%;
         height: 85vh;
+        max-height: 550px;
         background-color: hsl(0, 0%, 100%);
         margin: 0px;
         border-radius: 0 0 10px 10px;
