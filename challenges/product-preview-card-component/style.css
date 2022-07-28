@@ -94,7 +94,7 @@ main section p{
     font-size : 10px;
     color: hsl(228, 12%, 48%);
 }
-main section a{
+main section button{
     width : 100%;
 }
 button{
