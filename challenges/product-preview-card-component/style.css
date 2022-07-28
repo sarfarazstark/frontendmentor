@@ -126,13 +126,13 @@ button img{
         height: 85vh;
         background-color: hsl(0, 0%, 100%);
         margin: 0px;
-        border-radius: 10px;
+        border-radius: 0 0 10px 10px;
     }
     main section{
         margin: 20px;
-        margin-top: 10px;
         margin-bottom: 10px;
         padding: 0;
+        gap: 15px;
     }
     img{
         width: 100%;
