@@ -20,7 +20,7 @@ main{
     border-radius: 10px;
 }
 img{
-    width: 100%;
+    width: 275px;
     height: 100%;
     border-radius: 10px 0 0 10px;
 }
@@ -116,7 +116,7 @@ button img{
     margin-right: 10px;
     margin-bottom: -2px;
 }
-@media screen and (max-width: 640px){
+@media screen and (max-width: 376px){
     main{
         display: flex;
         flex-direction: column;
