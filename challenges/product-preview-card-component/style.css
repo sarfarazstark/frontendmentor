@@ -127,7 +127,7 @@ button img{
         max-height: 550px;
         background-color: hsl(0, 0%, 100%);
         margin: 0px;
-        border-radius: 0 0 10px 10px;
+        border-radius: 10px 10px 10px 10px;
     }
     main section{
         margin: 20px;
