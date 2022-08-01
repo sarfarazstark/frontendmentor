@@ -1,0 +1,1 @@
+const shouldDrive = hasDriversLicense && hasGoodVision;
