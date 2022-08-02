@@ -317,12 +317,12 @@
 //     console.log("Sarfaraz");
 // }
 
-const hasDriversLicense = true;
-const hasGoodVision = true;
+// const hasDriversLicense = true;
+// const hasGoodVision = true;
 
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
-console.log(!hasGoodVision);
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
+// console.log(!hasGoodVision);
 
 // const shouldDrive = hasDriversLicense && hasGoodVision;
 
@@ -332,12 +332,62 @@ console.log(!hasGoodVision);
 //     console.log("Someone else should drive");
 // }
 
-const isTired = false;
-console.log(hasDriversLicense || hasGoodVision || isTired);
-console.log(hasDriversLicense && hasGoodVision && isTired);
+// const isTired = false;
+// console.log(hasDriversLicense || hasGoodVision || isTired);
+// console.log(hasDriversLicense && hasGoodVision && isTired);
 
-if (hasDriversLicense && hasGoodVision && !isTired) {
-    console.log("Sarah is able to drive");
-} else {
-    console.log("Someone else should drive");
-}
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//     console.log("Sarah is able to drive");
+// } else {
+//     console.log("Someone else should drive");
+// }
+
+// const day = "friday";
+
+// switch (day) {
+//     case "monday": {
+//         console.log("Its your work day so no netflix 😁");
+//         console.log('Check you notion to do ✅');
+//         break;
+//     }
+//     case "tuesday": {
+//         console.log('Prepare for online meetings');
+//         break;
+//     }
+//     case "wednesday":
+//     case "thursday": {
+//         console.log('Project works 📑');
+//         break;
+//     }
+//     case "friday": {
+//         console.log('Works hard and prepare for netflix 😍');
+//         break;
+//     }
+//     case "saturday":
+//     case "sunday": {
+//         console.log('Netflix and chill 🥳');
+//         break;
+//     }
+//     default: {
+//         console.log('Invalid day');
+//         break;
+//     }
+// }
+
+// if (day === "monday") {
+//     console.log("Its your work day so no netflix 🙁");
+//     console.log('Check you notion to do ✅');
+// } else if (day === "tuesday") {
+//     console.log('Prepare for online meetings');
+// } else if (day === "wednesday" || day === "thursday") {
+//     console.log('Project works 📑');
+// }
+// else if (day === "friday") {
+//     console.log('Works hard and prepare for netflix 😍');
+// } else if (day === "saturday" || day === "sunday") {
+//     console.log('Netflix and chill 🥳');
+// }
+// else {
+//     console.log('Invalid day');
+// }
+
