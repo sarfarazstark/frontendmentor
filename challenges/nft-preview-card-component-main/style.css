@@ -25,6 +25,7 @@ main {
     padding: 0;
     border-radius: 15px;
     background-color: hsl(216, 50%, 16%);
+    box-shadow: 0px 0px 100px hsla(0, 0%, 0%, 0.5);
 }
 
 .image img {
