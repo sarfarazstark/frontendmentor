@@ -194,7 +194,7 @@ main div hr {
 .authGrid {
     margin: 0;
     display: grid;
-    grid-template-columns: 0.9fr 4.1fr;
+    grid-template-columns: 0.6fr 4.1fr;
     justify-items: start;
     align-items: center;
     justify-content: start;
