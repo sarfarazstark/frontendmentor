@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(217, 54%, 11%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 15px;
+    background-color: hsl(216, 50%, 16%);
+}
+
+.image img {
+    opacity: 1;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 0px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    z-index: 999999;
+}
+
+
+/* Hover icon on product-img effect */
+
+main div {
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.details {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    /* margin-right: 30px; */
+}
+
+.head {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: Outfit;
+    font-size: 22px;
+    color: hsl(0, 0%, 100%);
+}
+
+.head:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
+}
+
+.para {
+    margin-top: 5px;
+    color: hsl(215, 51%, 70%);
+    font-family: Outfit;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/* Price section */
+.grid {
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 0.3fr 2fr 0.9fr 1.4fr;
+    grid-auto-columns: auto;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    gap: 0;
+}
+
+.box0 {
+    height: 20px;
+    margin: 0;
+    justify-self: left;
+}
+
+.box0 img {
+    height: 20px;
+    width: auto;
+    margin: 0;
+}
+
+.box1,
+.box2,
+.box3 {
+    height: 20px;
+    margin: 0;
+    justify-self: left;
+}
+
+.box1 {
+    justify-self: left;
+}
+
+.box1 p:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
+}
+
+.box1 img {
+    padding-left: 0px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.box2 {
+    justify-self: right;
+}
+
+.box3 {
+    justify-self: right;
+}
+
+.box1,
+.box2,
+.box3,
+p {
+    font-family: Outfit;
+    font-weight: 600;
+    color: hsl(215, 51%, 70%);
+    margin: 0;
+    padding: 0;
+}
+
+.box2 img {
+    margin-right: 0;
+}
+
+/* .layout img {
+    margin: 0;
+    margin-right: 0;
+
+} */
+
+.box2 img {
+    padding-left: 0px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Price section end */
+main div hr {
+    margin-bottom: 8px;
+    border: none;
+    height: 0.5px;
+    background-color: hsl(215, 32%, 27%);
+}
+
+.authGrid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 0.9fr 4.1fr;
+    justify-items: start;
+    align-items: center;
+    justify-content: start;
+    align-content: stretch;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.authGrid img {
+    margin: 0;
+    width: 30px;
+    border-radius: 50px;
+    border: 2px solid white;
+}
+
+.authGrid strong {
+    font-weight: 600;
+    color: white;
+}
+
+.authGrid strong:hover {
+    cursor: pointer;
+    color: hsl(178, 100%, 50%);
+}
+
+.authGrid p {
+    font-family: Outfit;
+    color: hsl(215, 51%, 70%);
+    font-size: 14px;
+    text-align: right;
+}
