@@ -203,8 +203,12 @@ main {
 /* Mobile screen support*/
 @media (max-width: 768px) {
     main {
-        padding-bottom: 15px;
-        padding-top: 15px;
-        border-radius: 0;
+        padding-bottom: 13px;
+            padding-top: 15px;
+            border-radius: 0px;
+            }
+            
+            .food-image img {
+                margin-block: 55px;
     }
 }
