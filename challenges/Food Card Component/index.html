@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Component</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>"
+        type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="top-nav">
+            <div><i class="fa fa-arrow-left"></i></div>
+            <div><i class="fa-regular fa-heart regular" onmouseover="this.className='fa-solid fa-heart solid'"
+                    onmouseout="this.className = 'fa-regular fa-heart regular'"></i></div>
+        </div>
+        <div class="food-image">
+            <img src="images/image.png" alt="food-card">
+        </div>
+        <div>
+            <hr class="hrTag">
+        </div>
+        <div class="product-title-and-quantity">
+            <div class="title">
+                <h1>Lasagna</h1> <span>family-pleasing dish</span>
+            </div>
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'><i class="fa fa-minus"></i></span>
+                <input type="text" value="1" readonly disabled>
+                <span class="up" onClick='increaseCount(event, this)'><i class="fa fa-plus"></i></span>
+            </div>
+        </div>
+        <div class="product-details">
+            <div>
+                <p>Size</p>
+                <p class="deta">Medium</p>
+            </div>
+            <div>
+                <p>Calories</p>
+                <p class="deta">200 kcal</p>
+            </div>
+            <div>
+                <p>Cooking</p>
+                <p class="deta">25-30 Min</p>
+            </div>
+        </div>
+        <div class="description">
+            <p>This classic lasagna is made with an easy meat sauce as the base. Layer the sauce with noodles and
+                cheese. This is great for feeding a big family, and freezes well, too.
+                <span>Read More</span>
+            </p>
+        </div>
+        <div class="buyOption">
+            <div><span>$ 25.00</span></div>
+            <div><button> Buy Now</button></div>
+        </div>
+    </main>
+</body>
+
+</html>

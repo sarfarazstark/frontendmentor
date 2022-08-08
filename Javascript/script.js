@@ -390,13 +390,13 @@
 // else {
 //     console.log('Invalid day');
 // }
-let word = "SARFARAZ";
-function frontDoorPassword(word) {
-    const firstWordCapital = word[0].toUpperCase();
-    var lowerCase;
-    for (let i = 1; i < word.length; i++) {
-        lowerCase = word[i].toLowerCase();
-    }
-    return firstWordCapital + loweCase;
+// let word = "SARFARAZ";
+// function frontDoorPassword(word) {
+//     const firstWordCapital = word[0].toUpperCase();
+//     var lowerCase;
+//     for (let i = 1; i < word.length; i++) {
+//         lowerCase = word[i].toLowerCase();
+//     }
+//     return firstWordCapital + loweCase;
 
-}
+// }
