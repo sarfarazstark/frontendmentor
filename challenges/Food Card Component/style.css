@@ -200,3 +200,11 @@ main {
 .buyOption button:hover {
     background-color: #ff5900;
 }
+/* Mobile screen support*/
+@media (max-width: 768px) {
+    main {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        border-radius: 0;
+    }
+}
