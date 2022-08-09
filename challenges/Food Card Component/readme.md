@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="/images/#027%20-%20'Food%20Order%20Component'%20-%20http.png" alt="project-screenshot" width="100%" height="auto">
+<img src="https://raw.githubusercontent.com/sarfarazstark/100daysofcode/main/challenges/Food%20Card%20Component/images/%23027%20-%20'Food%20Order%20Component'%20-%20http.png" alt="project-screenshot" width="100%" height="auto">
 
  
   
