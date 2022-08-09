@@ -8,11 +8,9 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://raw.githubusercontent.com/sarfarazstark/100daysofcode/main/challenges/Food%20Card%20Component/images/%23024%20-%20'Food%20Order%20Component'%20-%20http.png" alt="project-screenshot" width="100%" height="400/">
+<img src="/images/#027%20-%20'Food%20Order%20Component'%20-%20http.png" alt="project-screenshot" width="100%" height="auto">
 
-<img src="https://raw.githubusercontent.com/sarfarazstark/100daysofcode/main/challenges/Food%20Card%20Component/images/%23026%20-%20'Food%20Order%20Component'%20-%20http_iphone13blue_portrait.png" alt="project-screenshot" width="30%" height="400/">
-
-  
+ 
   
 <h2>💻 Built with</h2>
 

@@ -201,7 +201,7 @@ main {
     font-size: medium;
     font-weight: bold;
     background-color: #ff5900;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .buyOption button:hover {
