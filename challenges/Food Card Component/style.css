@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    background-color: #01114e;
+    background-color: #ff5900;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,10 +12,10 @@ body {
 }
 
 main {
-    background-color: aliceblue;
+    background-color: white;
     width: 300px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,7 @@ main {
 .fa-arrow-left,
 .regular {
     font-size: 20px;
-    color: #01114e;
+    color: #ff5900;
     size: 50px;
     cursor: pointer;
     /* width: 50px;
@@ -56,7 +56,7 @@ main {
 }
 
 .food-image img {
-    margin-block: 60px;
+    margin-block: 50px;
     width: 250px;
     height: auto;
 }
@@ -75,11 +75,29 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+        padding-block: 5px;
+        padding-inline: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    }
+    
+    .counter input {
+        width: 25px;
+        height: 25px;
+        border-radius: 0;
+        border-style: none;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff5900;
+        font-family: Outfit, sans-serif;
+        background-color: white;
 }
 
 .title h1 {
     font-size: 40px;
-    color: #01114e;
+    color: #ff5900;
     font-weight: 600;
     margin: 0;
 }
@@ -98,21 +116,9 @@ main {
     margin-block: 20px;
 }
 
-.counter input {
-    width: 25px;
-    height: 25px;
-    border-radius: 0;
-    border-style: none;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #01114e;
-    font-family: Outfit, sans-serif;
-}
-
 .fa-plus,
 .fa-minus {
-    color: #01114e;
+    color: #ff5900;
     cursor: pointer;
     padding: 5px;
 }
@@ -147,7 +153,7 @@ main {
 }
 
 .product-details .deta {
-    color: #01114e;
+    color: #ff5900;
     font-size: medium;
     font-weight: 500;
     margin: 0;
@@ -155,13 +161,14 @@ main {
 }
 
 .description p {
+    margin-block: 1.5rem;
     font-size: small;
     color: #45454595;
 }
 
 .description p span {
     font-size: small;
-    color: #01114e;
+    color: #ff5900;
     font-weight: bold;
     cursor: pointer;
 }
@@ -181,7 +188,7 @@ main {
 .buyOption span {
     font-size: x-large;
     font-weight: bold;
-    color: #01114e;
+    color: #ff5900;
 }
 
 .buyOption button {
@@ -191,24 +198,34 @@ main {
     padding-bottom: 10px;
     padding-right: 60px;
     color: rgb(255, 255, 255);
-    font-size: small;
+    font-size: medium;
     font-weight: bold;
-    background-color: #01114e;
+    background-color: #ff5900;
     border-radius: 5px;
 }
 
 .buyOption button:hover {
+    cursor: pointer;
     background-color: #ff5900;
 }
+
 /* Mobile screen support*/
-@media (max-width: 768px) {
+@media (max-width: 375px) {
     main {
         padding-bottom: 13px;
-            padding-top: 15px;
-            border-radius: 0px;
-            }
-            
-            .food-image img {
-                margin-block: 55px;
+        padding-top: 15px;
+        border-radius: 10px;
+        }
+        
+        .food-image img {
+            margin-block: 55px;
     }
+}
+.bg-white,
+.padding {
+    background-color: white;
+    padding-block: 8px;
+    padding-inline: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
 }
