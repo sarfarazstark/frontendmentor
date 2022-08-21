@@ -399,4 +399,8 @@
 //     }
 //     return firstWordCapital + loweCase;
 
-// }
+/*TERNARY OPERATOR*/
+
+const age = 13;
+age >= 18 ? console.log("Iam Old Enough to drink wine 🍷") : 
+            console.log("Iam not old enough to drink wine 🍷 so i will drink water 💧");
