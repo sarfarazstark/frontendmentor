@@ -1,4 +1,5 @@
-'use strict';
+/* eslint-disable semi */
+'use strict'
 // let userEx = false;
 // const passTest = true;
 // if(passTest) userEx = true;
@@ -20,24 +21,23 @@
 // const calculateAge = function (calculateAge){
 //     return 2048 - calculateAge;
 // }
-// const age = calculateAge(2002); 
+// const age = calculateAge(2002);
 // console.log(age);
 
-// // Arrow Function
+// Arrow Function
 // const calcAge = birthyear => 2048 - birthyear;
 // const age1 = calcAge(2002);
 // console.log(age1);
 
 // function calling function
-// function cutFruit(fruit){
-//     return fruit * 4;
+// function cutFruit (fruit) {
+//   return fruit * 4;
 // }
-// function fruitProcessor(oranges, apples){
-//     const orangesPiece = cutFruit(oranges);
-//     const applesPiece = cutFruit(apples);
-//     const result =  `Total piece of Orange is ${orangesPiece} and Apples is ${applesPiece}`;
-//     return result;
+// function fruitProcessor (oranges, apples) {
+//   const orangesPiece = cutFruit(oranges);
+//   const applesPiece = cutFruit(apples);
+//   const result = `Total piece of Orange is ${orangesPiece} and Apples is ${applesPiece}`;
+//   return result;
 // }
 
-// console.log(fruitProcessor(4, 5));
-
+// console.log(fruitProcessor(4, 6));
