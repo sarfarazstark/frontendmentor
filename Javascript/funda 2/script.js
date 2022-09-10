@@ -260,6 +260,6 @@ const types = [];
 for (let i = 0; i < starkArray.length; i++) {
   console.log(starkArray[i], typeof starkArray[i]);
   // types[i] = typeof starkArray[i];
-   types.push(typeof starkArray[i]);
+  types.push(typeof starkArray[i]);
 }
 console.log(types);
