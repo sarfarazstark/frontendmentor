@@ -113,10 +113,8 @@
 // const averageAge = (ageJonas + ageSarah) / 2;
 // console.log(ageJonas, ageSarah, averageAge);
 
-
 // ////////////////////////////////////
 // // Coding Challenge #1
-
 
 // Mark and John are trying to compare their BMI(Body Mass Index), which is calculated using the formula: BMI = mass / height ** 2 = mass / (height * height).(mass in kg and height in meter).
 
@@ -131,12 +129,10 @@
 
 // GOOD LUCK😀
 
-
 // // const massMark = 78;
 // // const heightMark = 1.69;
 // // const massJohn = 92;
 // // const heightJohn = 1.95;
-
 
 // const massMark = 95;
 // const heightMark = 1.88;
@@ -172,7 +168,6 @@
 // multiple
 // lines`);
 
-
 // ////////////////////////////////////
 // // Taking Decisions: if / else Statements
 // const age = 15;
@@ -194,32 +189,18 @@
 // }
 // console.log(century);
 
-
 // ////////////////////////////////////
 // // Coding Challenge #2
 
-
 // Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
-
-
 
 // 1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
 
 // 2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
 
-
-
 // HINT: Use an if/else statement 😉
 
-
-
 // GOOD LUCK 😀
-
-
-
-
-
-
 
 // const massMark = 78;
 // const heightMark = 1.69;
@@ -399,8 +380,9 @@
 //     }
 //     return firstWordCapital + loweCase;
 
-/*TERNARY OPERATOR*/
+/* TERNARY OPERATOR */
 
-const age = 13;
-age >= 18 ? console.log("Iam Old Enough to drink wine 🍷") : 
-            console.log("Iam not old enough to drink wine 🍷 so i will drink water 💧");
+const age = 13
+age >= 18
+  ? console.log('Iam Old Enough to drink wine 🍷')
+  : console.log('Iam not old enough to drink wine 🍷 so i will drink water 💧')
