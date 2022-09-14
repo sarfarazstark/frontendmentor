@@ -248,18 +248,91 @@
 // }
 
 // :For loop in array
-const starkArray = [
-  'Sarfaraz',
-  'Stark',
-  2022 - 2002,
-  'Student',
-  ['Farhad', 'Salman', 'Danish']
-]
-const types = [];
+// const starkArray = [
+//   'Sarfaraz',
+//   'Stark',
+//   2022 - 2002,
+//   'Student',
+//   ['Farhad', 'Salman', 'Danish']
+// ]
+// const types = [];
 
-for (let i = 0; i < starkArray.length; i++) {
-  console.log(starkArray[i], typeof starkArray[i]);
-  // types[i] = typeof starkArray[i];
-  types.push(typeof starkArray[i]);
+// for (let i = 0; i < starkArray.length; i++) {
+//   console.log(starkArray[i], typeof starkArray[i]);
+//   // types[i] = typeof starkArray[i];
+//   types.push(typeof starkArray[i]);
+// }
+// console.log(types);
+// const birthYear = [1994, 1996, 1998, 2000, 2002, 2006];
+// const age = [];
+// for (let i = 0; i < birthYear.length; i++) {
+//   age.push(2022 - birthYear[i]);
+// }
+// // : Continue
+// console.log(age);
+// for (let i = 0; i < starkArray.length; i++) {
+//   if (typeof starkArray[i] !== 'string') continue;
+//   console.log(starkArray[i], typeof starkArray[i]);
+// }
+// // : Break
+// console.log('--- Break ---');
+// for (let i = 0; i < starkArray.length; i++) {
+//   if (starkArray[i] === 20) break;
+//   console.log(starkArray[i], typeof starkArray[i]);
+// }
+
+// const stark = [
+//   'Sarfaraz',
+//   'Stark',
+//   2022 - 2002,
+//   'Student',
+//   ['Farhad', 'Salman', 'Danish']
+// ]
+// for (let i = stark.length - 1; i >= 0; i--) {
+//   console.log(i, stark[i]);
+// }
+
+// for (let excercise = 1; excercise <= 3; excercise++) {
+//   console.log(`---- Starting Exercise ${excercise} ----`);
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`Lifting weigth repetition ${rep} 🏋️‍♂️`);
+//   }
+// }
+// // *------
+// // **-----
+// // ***----
+// // ****---
+// // *****--
+// // ******-
+// // *******
+
+// const triangle = function (n) {
+//   const arr = [[]];
+//   for (let i = 1; i < n; i++) {
+//     for (let j = 1; j < n; j++) {
+//       if (j <= i) {
+//         arr[i[j]] = '*';
+//       } else {
+//         arr[i[j]] = ' ';
+//       }
+//     }
+//   }
+//   return arr;
+// }
+// console.log(triangle(6))
+// #While loop
+let i = 0;
+while (i <= 10) {
+  // console.log(`Lifting weigth repetition ${i} 🏋️‍♂️`);
+  i++;
 }
-console.log(types);
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+while (dice !== 6) {
+  console.log(`You rolled ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log('Loop is about to end...');
+  }
+}
