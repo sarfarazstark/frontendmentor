@@ -298,28 +298,7 @@ for (let excercise = 1; excercise <= 3; excercise++) {
     console.log(`Lifting weigth repetition ${rep} 🏋️‍♂️`);
   }
 }
-// *------
-// **-----
-// ***----
-// ****---
-// *****--
-// ******-
-// *******
 
-const triangle = function (n) {
-  const arr = [[]];
-  for (let i = 1; i < n; i++) {
-    for (let j = 1; j < n; j++) {
-      if (j <= i) {
-        arr[i[j]] = '*';
-      } else {
-        arr[i[j]] = ' ';
-      }
-    }
-  }
-  return arr;
-}
-console.log(triangle(6))
 // #While loop
 let i = 0;
 while (i <= 10) {
