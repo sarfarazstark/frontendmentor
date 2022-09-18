@@ -40,24 +40,9 @@ document.querySelector('.check').addEventListener('click', function () {
     }
 
     // when player input higher number than secretNumber
-  } else if (guess > secretNumber) {
-    // check if score is above 1
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📈 Too high!'
-      score--;
-      document.querySelector('.score').textContent = score;
-      // if score is 0
-    } else {
-      document.querySelector('.message').textContent = '💥 You lose the game!'
-      document.querySelector('.score').textContent = 0;
-    }
-
-
-    // when player input lower number than secretNumber
-  } else if (guess < secretNumber) {
-    // check if score is above 1
-    if (score > 1) {
-      document.querySelector('.message').textContent = '📉 Too low!'
+      document.querySelector('.message').textContent = guess > secretNumber ? '📈 Too high!' : '📉 Too low!';
       score--;
       document.querySelector('.score').textContent = score;
       // if score is 0
@@ -66,6 +51,32 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+  // } else if (guess > secretNumber) {
+  //   // check if score is above 1
+  //   if (score > 1) {
+  //     document.querySelector('.message').textContent = '📈 Too high!'
+  //     score--;
+  //     document.querySelector('.score').textContent = score;
+  //     // if score is 0
+  //   } else {
+  //     document.querySelector('.message').textContent = '💥 You lose the game!'
+  //     document.querySelector('.score').textContent = 0;
+  //   }
+
+
+  //   // when player input lower number than secretNumber
+  // } else if (guess < secretNumber) {
+  //   // check if score is above 1
+  //   if (score > 1) {
+  //     document.querySelector('.message').textContent = '📉 Too low!'
+  //     score--;
+  //     document.querySelector('.score').textContent = score;
+  //     // if score is 0
+  //   } else {
+  //     document.querySelector('.message').textContent = '💥 You lose the game!'
+  //     document.querySelector('.score').textContent = 0;
+  //   }
+  // }
 });
 
 // Play again implemention
