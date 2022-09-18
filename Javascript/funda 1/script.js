@@ -1,5 +1,6 @@
-/* eslint-disable eqeqeq */
 /* eslint-disable semi */
+/* eslint-disable eqeqeq */
+
 /// /////////////////////////////////
 // Linking a JavaScript File
 const js = 'amazing';
