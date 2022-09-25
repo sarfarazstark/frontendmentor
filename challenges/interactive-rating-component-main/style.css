@@ -103,9 +103,8 @@ body{
   margin-block: 1em;
 }
 .rating-section input[type='radio'] {
-  z-index: 99999;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 100%;
   border: none;
   background-color: var(--dark-blue);
@@ -121,7 +120,7 @@ body{
   background-color: var(--orange);
 }
 
-.rating-section input[type="radio"]:checked ~ div:first-of-type {
+.rating-section input[type="radio"]:checked ~ span:first-of-type {
   background-color: var(--orange);
   color: white;
 }
@@ -137,8 +136,8 @@ label span{
   color: var(--light-gray);
   position: relative;
   left: 0px;
-  top: -40px;
-  background-color: var(--dark-blue);
+  top: -45px;
+  background-color: transparent;
   border-radius: 100%;
   width: 2.5rem;
   height: 2.5rem;
@@ -151,10 +150,10 @@ label span:hover{
   background-color: var(--light-gray);
 }
 
-.radio-btn:hover{        
+/* .radio-btn:hover{        
   color: white;
   background-color: var(--light-gray);
-}
+} */
 
 .rating-section label{
   border-radius: 100%;
