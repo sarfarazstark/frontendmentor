@@ -93,6 +93,15 @@ body{
 /* Rating card style end */
 
 /* Rating Button Style Start */
+.rating-section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  column-gap: 1.6rem;
+  margin-block: 1em;
+}
 .rating-section input[type='radio'] {
   z-index: 99999;
   width: 2rem;

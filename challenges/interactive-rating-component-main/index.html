@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <title>Interactive rating component</title>
     <link
       rel="icon"
       type="image/png"
@@ -17,42 +17,42 @@
     <!-- Rating state start -->
     <form class="rating">
       <div class="star">
-        <img src="images/icon-star.svg" />
+        <img src="images/icon-star.svg" alt="Star icon"/>
       </div>
       <h1>How did we do?</h1>
       <p>
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <ul class="rating-section">
+      <section class="rating-section">
         <label class="selected">
-          <input type="radio" name="rate" class="radio-btn" value="1" required/>
+          <input type="radio" name="rate" class="radio-btn" value="1"/>
           <div>1</div>
         </label>
         <label class="selected">
-          <input type="radio" name="rate" class="radio-btn" value="2" required/>
+          <input type="radio" name="rate" class="radio-btn" value="2"/>
           <div>2</div>
         </label>
         <label class="selected">
-          <input type="radio" name="rate" class="radio-btn" value="3" required/>
+          <input type="radio" name="rate" class="radio-btn" value="3"/>
           <div>3</div>
         </label>
         <label class="selected">
-          <input type="radio" name="rate" class="radio-btn" value="4" required/>
+          <input type="radio" name="rate" class="radio-btn" value="4"/>
           <div>4</div>
         </label>
         <label class="selected">
-          <input type="radio" name="rate" class="radio-btn" value="5" required/>
+          <input type="radio" name="rate" class="radio-btn" value="5"/>
           <div>5</div>
         </label>
-      </ul>
+      </section>
       <input type="button" id="submit" value="SUBMIT" onclick="thankYou()"/>
     </form>
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
     <main class="thank-box hidden">
-      <img src="images/illustration-thank-you.svg" alt="" srcset="" />
+      <img src="images/illustration-thank-you.svg" alt="Thank you illustrator"/>
       <div class="result">
         <p>You selected <span id="rated-number"></span> out of 5</p>
       </div>
