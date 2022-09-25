@@ -126,7 +126,7 @@ body{
   color: white;
 }
 
-label div{
+label span{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -146,7 +146,7 @@ label div{
   margin: 0;
 }
 
-label div:hover{
+label span:hover{
   color: var(--white);
   background-color: var(--light-gray);
 }
