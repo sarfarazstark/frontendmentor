@@ -59,14 +59,14 @@ body {
   background-repeat: no-repeat;
 }
 
-.profile {
+.detail-section {
   margin-top: 50px;
   width: 100%;
   text-align: center;
   padding: 25px;
   color: var(--dark-desaturated-blue);
 }
-.detail-section h1 {
+.detail-section h2 {
   font-size: larger;
   margin-bottom: 10px;
 }
@@ -94,11 +94,11 @@ footer {
   color: var(--dark-desaturated-blue);
 }
 footer h2 {
-  font-size: larger;
+  font-size: large;
   margin-bottom: 2px;
 }
 footer p {
-  font-size: small;
+  font-size: smaller;
 }
 
 @media only screen and (max-width: 768px) {
