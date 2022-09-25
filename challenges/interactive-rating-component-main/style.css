@@ -195,15 +195,14 @@ label div:hover{
   flex-direction: column;
   flex-wrap: wrap;
   background-color: var(--very-dark-blue);
-  width: 17rem;
+  width: 18rem;
   max-width: 25rem;
   border-radius: 1rem;
   align-items: center;
   align-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   justify-content: center;
   text-align: center;
-  row-gap: 5px;
 }
 .thank-box img{
   width: 8rem;
