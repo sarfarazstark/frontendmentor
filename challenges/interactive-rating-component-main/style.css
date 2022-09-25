@@ -100,7 +100,8 @@ body{
   align-content: space-around;
   justify-content: center;
   column-gap: 1.6rem;
-  margin-block: 1em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
 }
 .rating-section input[type='radio'] {
   width: 2.5rem;
