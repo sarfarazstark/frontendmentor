@@ -15,7 +15,7 @@ body {
   background-image: url(images/bg-pattern-top.svg),
     url(images/bg-pattern-bottom.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: -15% 250%, 120% -190%;
+  background-position: -170px -350px, 850px 370px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ body {
   align-content: center;
   justify-content: center;
   align-items: center;
-  box-shadow: 100px rgba(42, 42, 42, 0.152);
+  box-shadow: 90px rgba(42, 42, 42, 0.313);
 }
 .main-section header {
   display: flex;
