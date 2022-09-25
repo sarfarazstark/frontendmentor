@@ -15,7 +15,7 @@ body {
   background-image: url(images/bg-pattern-top.svg),
     url(images/bg-pattern-bottom.svg);
   background-repeat: no-repeat, no-repeat;
-  background-position: -170px -350px, 850px 370px;
+  background-position: -300px -450px, 690px 320px;
   height: 100vh;
   display: flex;
   flex-direction: column;
