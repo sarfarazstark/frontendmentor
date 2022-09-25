@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+
+* {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(217, 12%, 63%);
+  --medium-gray: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: #19202a;
+  --orange: hsl(25, 97%, 53%);
+  --font-size: 15px;
+  --circle: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: var(--white);
+}
+
+.hidden{
+  display: none !important;
+}
+
+html{
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: hsl(0, 0%, 0%);
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.star{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: var(--dark-blue);
+  /* width: 1.5rem;
+  height: 1.5rem; */
+  padding: 15px;
+  border-radius: var(--circle);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.star img{
+  width: 1.2em;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.rating h1{
+   font-weight: 500;
+}
+.rating  p {
+  margin-top: 0.9rem;
+  font-size: larger;
+  font-weight: 500;
+  color: var(--light-gray);
+}
+
+.rating{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--very-dark-blue);
+  width: 25em;
+  border-radius: 2rem;
+  align-items: flex-start;
+  align-content: space-around;
+  padding: 2.5rem;
+  justify-content: space-between;
+  /* margin-block: 5rem; */
+  font-family: inherit;
+}
+
+.rating  ul {
+  margin-block: 1.7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+/* .selected{
+  background: none;
+  border: 0;
+  border-style: none;
+}
+.selected{
+  font-family: inherit;
+  color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: var(--circle);
+  background-color: var(--dark-blue);
+}
+.selected{
+  cursor: pointer;
+}
+.selected:hover{
+  background-color: var(--orange);
+} */
+/* .rating-section{
+  margin-bottom: 0 !important;
+} */
+.rating-section input[type='radio'] {
+  z-index: 99999;
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--dark-blue);
+  -webkit-appearance: none; /*to disable the default appearance of radio button*/
+  -moz-appearance: none;
+}
+
+.rating-section input[type="radio"]:focus { /*no need, if you don't disable default appearance*/
+  outline: none; /*to remove the square border on focus*/
+}
+
+.rating-section input[type="radio"]:checked { /*no need, if you don't disable default appearance*/
+  background-color: var(--orange);
+}
+
+.rating-section input[type="radio"]:checked ~ div:first-of-type {
+  background-color: var(--orange);
+  color: white;
+}
+
+label div{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  color: var(--light-gray);
+  position: relative;
+  left: 0px;
+  top: -58px;
+  background-color: var(--dark-blue);
+  border-radius: 100%;
+  width: 3.3rem;
+  height: 3.3rem;
+}
+label div:hover{
+  color: var(--white);
+  background-color: var(--light-gray);
+}
+
+.radio-btn:hover{        
+  color: white;
+  background-color: var(--light-gray);
+}
+
+.rating-section label{
+  border-radius: 100%;
+  width: 3.3rem;
+  height: 3.3rem;
+}
+
+.bg-mid-gray{
+  background-color: var(--medium-gray);
+}
+input#submit {
+  cursor: pointer;
+  font-size: larger;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--orange);
+  width: 100%;
+  font-weight: 600;
+  padding-block: 15px;
+  box-shadow: 5px #121212;
+}
+input#submit:hover{
+  color: var(--orange);
+  background-color: var(--white);
+}
+
+
+/* Thanks Box */
+
+.thank-box{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: var(--very-dark-blue);
+  width: 25em;
+  max-width: 25rem;
+  border-radius: 2rem;
+  align-items: center;
+  align-content: center;
+  padding: 2.5rem;
+  justify-content: center;
+  /* margin-block: 5rem; */
+  /* font-family: inherit; */
+  text-align: center;
+}
+.thank-box p{
+  margin-block: 10px;
+  margin-inline: 17px;
+  line-height: 25px;
+  color: var(--light-gray);
+}
+
+.thank-box h1{
+  font-weight: 500;
+}
+.result{
+  background-color: var(--dark-blue);
+  border-radius: 2rem;
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 5px;
+  padding-inline: 15px;
+  margin-block: 3rem;
+}
+.result p, div, #rated-number{
+  margin: 0;
+  font-size: large;
+  font-weight: 200;
+  color: var(--orange);
+}
