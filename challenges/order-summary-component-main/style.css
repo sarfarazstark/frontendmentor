@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
+*{
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --pale-blue-high: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --font-size: 16px;
+  --font: 'Red Hat Display', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  background-color: var(--pale-blue);
+}
+
+body{
+  background: url(images/pattern-background-desktop.svg) no-repeat top;
+  background-size: 100% auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  display: flex;
+  width: 360px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  font-family: var(--font);
+}
+
+main img{
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+}
+
+.main-section{
+  text-align: center;
+  padding-block: 30px;
+  padding-inline: 35px;
+}
+
+.main-section h2{
+  font-weight: 900;
+  color: var(--dark-blue);
+  margin-block: 15px;
+}
+
+.main-section p{
+  color: var(--desaturated-blue);
+  font-weight: 400;
+  line-height: normal;
+}
+
+.plan-info-section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--pale-blue-high);
+  margin-block: 15px;
+  border-radius: 15px;
+  height: 80px;
+  width: 100%;
+  column-gap: 10px;
+  padding: 15px;
+}
+
+.plan-info-section img{
+  width: 40px;
+  height: auto;
+}
+
+.plan-info-section section h2, p{
+  font-weight: 900;
+  font-size: 15px;
+  margin: 0;
+}
+
+.plan-info-section section p{
+  color: var(--desaturated-blue);
+  margin-top: 3px;
+}
+
+.plan-info-section .change-plan{
+  color: var(--bright-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: auto;
+  font-size: small;
+}
+.plan-info-section .change-plan:hover{
+  color: hsl(245, 90%, 67%);
+  text-decoration: none;
+}
+
+button{
+  width: 100%;
+  border: none;
+  color: white;
+  font-weight: 700;
+  background-color: var(--bright-blue);
+  padding-block: 15px;
+  border-radius: 10px;
+  margin-block: 20px;
+  box-shadow: 1px 1px 90px var(--dark-blue);
+}
+button:hover{
+  cursor: pointer;
+  background-color:hsl(245, 90%, 67%);
+}
+
+main a{
+  color: var(--desaturated-blue);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: small;
+}
+
+main a:hover{
+  color: var(--dark-blue);
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  main {
+    width: 300px;
+  }
+}
