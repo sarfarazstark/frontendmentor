@@ -116,7 +116,9 @@ button{
   padding-block: 15px;
   border-radius: 10px;
   margin-block: 20px;
-  box-shadow: 1px 1px 90px var(--dark-blue);
+	box-shadow: 0 25px 61px rgba(57, 41, 224, 0.1)  ; 
+	-webkit-box-shadow: 0 25px 61px rgba(57, 41, 224, 0.1)  ; 
+	-moz-box-shadow: 0 25px 61px rgba(57, 41, 224, 0.1)  ; 
 }
 button:hover{
   cursor: pointer;
