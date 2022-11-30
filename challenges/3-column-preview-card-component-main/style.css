@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+* {
+  --vlight-gray : hsl(0, 0%, 95%);
+  --pg: hsla(0, 0%, 100%, 0.75);
+  --pg-font: 15px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--vlight-gray);
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.one {
+  border-radius: 5px 5px 0 0;
+  background-color: hsl(31, 77%, 52%);
+}
+
+.two {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.three {
+  border-radius:0 0 5px 5px;
+  background-color: hsl(179, 100%, 13%);
+}
+.card p{
+  font-family: Lexend Deca;
+  font-weight: 200;
+  font-size: 14px;
+  color: var(--pg);
+  line-height: 170%;
+}
+
+
+main section {
+   padding: 3rem 3rem 3rem 3rem;
+}
+
+h1 {
+  font-family: Big Shoulders Display;
+  text-transform: uppercase;
+  color: var(--vlight-gray);
+  font-size: 45px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  row-gap: 2rem;
+}
+
+.card button{
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  mix-blend-mode: screen;
+  font-weight: bold;
+  font-family: Lexend Deca;
+}
+
+.card button:hover{
+  color: var(--vlight-gray);
+  border: 2px solid;
+  padding: 13px 28px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+  }
+  main {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .card{
+    width: 18rem;
+    height: 100%;
+    padding-right: 2.7rem;
+  }
+  .one{
+    border-radius: 5px 0 0 5px;
+  }
+  .three{
+    border-radius:0 5px 5px 0;
+  }
+  .card button{
+    margin-top: 30px;
+  }
+}
