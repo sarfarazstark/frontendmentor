@@ -44,7 +44,7 @@ main section {
    padding: 3rem 3rem 3rem 3rem;
 }
 
-h1 {
+h2 {
   font-family: Big Shoulders Display;
   text-transform: uppercase;
   color: var(--vlight-gray);
@@ -61,8 +61,11 @@ h1 {
   row-gap: 2rem;
 }
 
-.card button{
-  border: none;
+.card a{
+  background-color: wheat;
+  color: #000; /* Fallback for older browsers */
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
   border-radius: 25px;
   padding: 15px 30px;
   mix-blend-mode: screen;
@@ -70,7 +73,7 @@ h1 {
   font-family: Lexend Deca;
 }
 
-.card button:hover{
+.card a:hover{
   color: var(--vlight-gray);
   border: 2px solid;
   padding: 13px 28px;
@@ -78,7 +81,7 @@ h1 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   body {
     display: flex;
     flex-direction: row;
@@ -107,7 +110,7 @@ h1 {
   .three{
     border-radius:0 5px 5px 0;
   }
-  .card button{
+  .card a{
     margin-top: 30px;
   }
 }
