@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
 
 * {
   --bg-gradient: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
@@ -33,7 +33,7 @@ main {
   flex-wrap: wrap;
 }
 
-.accordion{
+.accordion {
   width: 260px;
   background-color: rgb(255, 255, 255);
   padding: 1.5rem;
@@ -43,9 +43,9 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  -webkit-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
--moz-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+  -webkit-box-shadow: 4px 16px 32px -3px rgba(66, 66, 66, 0.71);
+  -moz-box-shadow: 4px 16px 32px -3px rgba(66, 66, 66, 0.71);
+  box-shadow: 4px 16px 32px -3px rgba(66, 66, 66, 0.71);
 }
 
 h1 {
@@ -55,7 +55,8 @@ h1 {
   text-align: center;
   margin: 0 0 2rem 0;
 }
-.desk-image, .box-img{
+.desk-image,
+.box-img {
   display: none;
 }
 .mobo-image {
@@ -91,9 +92,20 @@ hr {
   position: relative;
   color: var(--dark-d-blue);
   cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
 }
 
-.content{
+.label:hover {
+  color: var(--soft-red);
+}
+
+.content {
   font-family: Kumbh Sans;
   font-size: 13px;
   position: relative;
@@ -124,14 +136,13 @@ hr {
   font-size: 12px;
 }
 
-
 .container.active .label::before {
   content: url(images/icon-arrow-down.svg);
   transform: rotate(180deg);
 }
 
 @media screen and (min-width: 850px) {
-  main{
+  main {
     display: flex;
     background-color: white;
     border-radius: 15px;
@@ -150,30 +161,30 @@ hr {
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: -190% 70%;
-    -webkit-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
--moz-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+    -webkit-box-shadow: 4px 16px 32px -3px rgba(66, 66, 66, 0.71);
+    -moz-box-shadow: 4px 16px 32px -3px rgba(66, 66, 66, 0.71);
+    box-shadow: 4px 16px 32px -3px rgba(66, 66, 66, 0.71);
   }
-  h1{
+  h1 {
     text-align: left;
   }
-  .image-sec{
+  .image-sec {
     position: relative;
   }
-   .accordion{
+  .accordion {
     padding: 0;
     padding-top: 3rem;
     width: 50%;
     background: none;
     float: right;
     -webkit-box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
--moz-box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
-box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
-   }
-   .mobo-image{
+    -moz-box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
+    box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
+  }
+  .mobo-image {
     display: none;
-   }
-   .desk-image{
+  }
+  .desk-image {
     display: block;
     position: relative;
     width: 390px;
@@ -181,11 +192,11 @@ box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
     left: -25px;
     margin-left: -35px;
     overflow: hidden;
-   }
-   .second{
+  }
+  .second {
     overflow: hidden;
-   }
-   .box-img{
+  }
+  .box-img {
     position: absolute;
     width: 150px;
     display: block;
@@ -193,5 +204,5 @@ box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
     top: 115px;
     left: -70px;
     /* margin-left: -11%; */
-   }
+  }
 }
