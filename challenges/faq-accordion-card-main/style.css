@@ -34,11 +34,12 @@ main {
 }
 
 .accordion{
+  width: 260px;
   background-color: rgb(255, 255, 255);
   padding: 1.5rem;
-  padding-top: 9.5rem;
+  padding-top: 8rem;
   padding-bottom: 2.5rem;
-  border-radius: 25px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -88,7 +89,7 @@ hr {
   margin-block: 5px;
   font-size: 13px;
   position: relative;
-  color: var(--dark-g-blue);
+  color: var(--dark-d-blue);
   cursor: pointer;
 }
 
@@ -129,11 +130,11 @@ hr {
   transform: rotate(180deg);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 850px) {
   main{
     display: flex;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 15px;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: space-around;
@@ -141,12 +142,14 @@ hr {
     align-items: center;
     column-gap: 0;
     padding: 2rem;
+    padding-right: 3.5rem;
     padding-left: 0;
     width: 750px;
+    height: auto;
     background-image: url(images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: -28rem 70%;
+    background-size: 80%;
+    background-position: -190% 70%;
     -webkit-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
 -moz-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
 box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
@@ -159,6 +162,7 @@ box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
   }
    .accordion{
     padding: 0;
+    padding-top: 3rem;
     width: 50%;
     background: none;
     float: right;
@@ -176,7 +180,6 @@ box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
     top: 0;
     left: -25px;
     margin-left: -35px;
-    margin-bottom: 10%;
     overflow: hidden;
    }
    .second{
