@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  --bg-gradient: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  --v-dark-d-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --v-dark-g-blue: hsl(240, 6%, 50%);
+  --dark-g-blue: hsl(240, 6%, 50%);
+}
+
+body {
+  background-image: var(--bg-gradient);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Kumbh Sans;
+  margin: 0;
+  padding: 3rem 1rem 2rem 1rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.accordion{
+  background-color: rgb(255, 255, 255);
+  padding: 1.5rem;
+  padding-top: 9.5rem;
+  padding-bottom: 2.5rem;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+-moz-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+}
+
+h1 {
+  font-size: xx-large;
+  color: var(--v-dark-d-blue);
+  width: 100%;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+.desk-image, .box-img{
+  display: none;
+}
+.mobo-image {
+  position: relative;
+  margin-left: 15%;
+  width: 70%;
+  margin-bottom: -23%;
+  z-index: 4;
+  filter: drop-shadow(0 35px 0 #f0f0fc);
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: hsl(240, 5%, 91%);
+  height: 1px;
+}
+
+.container {
+  position: relative;
+  /* margin: 10px 10px; */
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.label {
+  font-family: Kumbh Sans;
+  font-weight: 500;
+  margin-block: 5px;
+  font-size: 13px;
+  position: relative;
+  color: var(--dark-g-blue);
+  cursor: pointer;
+}
+
+.content{
+  font-family: Kumbh Sans;
+  font-size: 13px;
+  position: relative;
+  background: white;
+  height: 0;
+  text-align: justify;
+  overflow: hidden;
+  margin: 0;
+}
+
+.label::before {
+  content: url(images/icon-arrow-down.svg);
+  color: black;
+  position: absolute;
+  right: 0px;
+}
+.container.active .label {
+  color: var(--v-dark-d-blue);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.container.active .content {
+  height: 100%;
+  color: var(--v-dark-g-blue);
+  margin-block: 10px;
+  margin-right: 2rem;
+  font-size: 12px;
+}
+
+
+.container.active .label::before {
+  content: url(images/icon-arrow-down.svg);
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  main{
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 0;
+    padding: 2rem;
+    padding-left: 0;
+    width: 750px;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: -28rem 70%;
+    -webkit-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+-moz-box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+box-shadow: 4px 16px 32px -3px rgba(66,66,66,0.71);
+  }
+  h1{
+    text-align: left;
+  }
+  .image-sec{
+    position: relative;
+  }
+   .accordion{
+    padding: 0;
+    width: 50%;
+    background: none;
+    float: right;
+    -webkit-box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
+-moz-box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
+box-shadow: 0 0 0 0 rgba(66, 66, 66, 0);
+   }
+   .mobo-image{
+    display: none;
+   }
+   .desk-image{
+    display: block;
+    position: relative;
+    width: 390px;
+    top: 0;
+    left: -25px;
+    margin-left: -35px;
+    margin-bottom: 10%;
+    overflow: hidden;
+   }
+   .second{
+    overflow: hidden;
+   }
+   .box-img{
+    position: absolute;
+    width: 150px;
+    display: block;
+    z-index: 9999;
+    top: 115px;
+    left: -70px;
+    /* margin-left: -11%; */
+   }
+}
