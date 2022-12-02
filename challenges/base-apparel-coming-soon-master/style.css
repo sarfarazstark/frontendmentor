@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,500;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --d-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --d-gray-red: hsl(0, 6%, 24%);
+  --font-family: Josefin Sans;
+  --li: hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+}
+
+body {
+  background-color: white;
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  padding-bottom: 40px;
+  font-family: var(--font-family);
+}
+
+.logo {
+  align-items: flex-start;
+  width: 10rem;
+  padding: 8%;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.hero-desk {
+  display: none;
+}
+
+.main-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-block: 2rem;
+  padding-inline: 2.5rem;
+}
+
+h1,
+p {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: var(--d-red);
+  line-height: 120%;
+  padding: 0 30px 0 30px;
+  margin-bottom: 20px;
+}
+
+.cs {
+  font-weight: 600;
+  letter-spacing: 10px;
+  color: var(--d-gray-red);
+}
+
+p {
+  color: var(--d-red);
+  line-height: 150%;
+  /* padding-inline: 2.5rem; */
+  font-size: small;
+  margin-bottom: 25px;
+}
+
+.form {
+  display: flex;
+  padding: 1px;
+  border-radius: 25px;
+  height: 52px;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eadadb;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.input {
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding-left: 25px;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.input::placeholder {
+  font-size: small;
+  color: #eadadb;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border: none;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  padding: 15px 35px 15px 35px;
+  border-radius: 25px;
+  -webkit-box-shadow: -5px 14px 46px -12px rgba(99, 99, 99, 0.233);
+  -moz-box-shadow: -5px 14px 46px -12px rgba(99, 99, 99, 0.233);
+  box-shadow: -5px 14px 46px -12px rgba(99, 99, 99, 0.233);
+}
+
+.button:hover {
+  -webkit-box-shadow: -11px 7px 46px -3px rgba(84, 84, 84, 1);
+  -moz-box-shadow: -11px 7px 46px -3px rgba(84, 84, 84, 1);
+  box-shadow: -11px 7px 46px -3px rgba(84, 84, 84, 1);
+}
+
+.error-img {
+  display: none;
+  top: 50%;
+  right: 115px;
+  transform: translateY(-50%);
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.msg {
+  width: 100%;
+  text-align: left;
+  font-size: small;
+  margin-top: 5px;
+  padding-left: 28px;
+  color: var(--soft-red);
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    padding: 0;
+    background-image: url(images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 43% 100%;
+    height: 100vh;
+  }
+  main{
+    width: 57%;
+    padding: 2rem 9rem 2rem 10rem;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+    background-size:auto 100%;
+    box-shadow: inset 0 0 0 50vw hsla(0, 100%, 98%, 0.293);
+    }
+  .main-sec{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: center;
+    margin-block: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-img {
+    display: none;
+  }
+  .logo {
+    /* padding: 90px 0 20px 150px; */
+    width: 45%;
+  }
+  h1,.cs{
+    letter-spacing: 12pt;
+    padding: 0 0 0 0;
+    margin: 40px 0 0 0;
+    text-align: left;
+    font-size: 4rem;
+    line-height: 110%;
+  }
+  p{
+    margin-block: 25px 50px;
+    text-align: left;
+    font-size: 1em;
+  }
+  .form{
+    width: 100%;
+    height: 55px;
+    border-radius: 50px;
+    margin-top: 5px;
+  }
+  .input::placeholder{
+    padding-bottom: 9;
+    font-size: 12pt;
+    font-weight: 200;
+    /* padding-left: -25px; */
+  }
+  .button{
+    border-radius: 50px;
+    padding: 17px 45px 17px 45px;
+  }
+}
