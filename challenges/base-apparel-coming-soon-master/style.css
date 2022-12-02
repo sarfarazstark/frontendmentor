@@ -123,6 +123,7 @@ p {
   -webkit-box-shadow: -5px 14px 46px -12px rgba(99, 99, 99, 0.233);
   -moz-box-shadow: -5px 14px 46px -12px rgba(99, 99, 99, 0.233);
   box-shadow: -5px 14px 46px -12px rgba(99, 99, 99, 0.233);
+  color: transparent;
 }
 
 .button:hover {
