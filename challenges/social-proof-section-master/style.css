@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --font-size: 15px;
+  --font-family: "League Spartan", sans-serif;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background: url(images/bg-pattern-top-mobile.svg) no-repeat top;
+}
+
+main {
+  height: 100%;
+  background: url(images/bg-pattern-bottom-mobile.svg) no-repeat bottom cover;
+  display: grid;
+  gap: 1.5rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: stretch;
+  margin-block: 2rem;
+  margin-inline: 1rem;
+}
+.header {
+  margin: 1.6rem 1.4rem 1.6rem 1.4rem;
+}
+.header h1 {
+  font-size: 2.5rem;
+  color: var(--very-dark-magenta);
+}
+
+.header p {
+  margin-bottom: 0.5rem;
+  color: var(--dark-grayish-magenta);
+  font-size: large;
+  line-height: 130%;
+  /* margin-inline: -0.1rem; */
+}
+
+.header h1,
+p {
+  text-align: center;
+}
+
+.ratings {
+  padding: 0.9rem 0 0.9rem 0;
+  background-color: brown;
+  text-align: center;
+  margin: 1.5rem;
+  color: var(--very-dark-magenta);
+  border-radius: 10px;
+  background-color: var(--light-grayish-magenta);
+}
+
+.ratings h4 {
+  margin: 10px 0 0 0;
+}
+
+.testimonial img {
+  border-radius: 50%;
+}
+
+article {
+  color: white;
+  background-color: var(--very-dark-magenta);
+  padding: 1.5rem 2.5rem 1.5rem 2.4rem;
+  margin: 1.5rem;
+  border-radius: 8px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--pale-blue-high);
+  height: auto;
+  width: 100%;
+  column-gap: 20px;
+  margin-block: 1rem;
+}
+
+.profile h4,
+p {
+  color: var(--light-grayish-magenta);
+  margin: 0;
+}
+
+.profile p {
+  margin-top: 3px;
+  color: var(--soft-pink);
+}
+
+article p {
+  font-size: var(--font-size);
+  margin-top: 25px;
+  color: var(--light-grayish-magenta);
+  line-height: 140%;
+  text-align: left;
+}
+
+footer {
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+
+footer a,
+code {
+  text-transform: none;
+  text-decoration: none;
+  color: var(--dark-grayish-magenta);
+}
+
+code {
+  padding: 3px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.778);
+  overflow: scroll;
+}
+
+@media only screen and (min-width: 768px) {
+  /* html{
+    background-color: black;
+  } */
+  body {
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    background: url(images/bg-pattern-top-desktop.svg) 0% 0% no-repeat;
+    background-size: 50%;
+  }
+
+  main {
+    background: url(images/bg-pattern-bottom-desktop.svg) no-repeat bottom right;
+    background-size: 85%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-around;
+    padding: 6rem;
+    margin: 0;
+  }
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* column-gap: 30%; */
+  }
+
+  .header {
+    margin: 2rem 2rem 4rem 2rem;
+    width: 35%;
+  }
+
+  .header h1 {
+    font-size: 4rem;
+  }
+
+  .header p {
+    line-height: 150%;
+    font-size: large;
+    margin-bottom: 2rem;
+  }
+
+  .header h1,
+  p {
+    text-align: left;
+  }
+
+  .ratings {
+    position: relative;
+  }
+
+  .ratings:nth-child(1) {
+    right: 100px;
+  }
+
+  .ratings:nth-child(2) {
+    right: 50px;
+  }
+
+  .testimonial {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  article {
+    width: 30%;
+    position: relative;
+    padding: 2rem 0rem 2rem 2rem;
+    margin: 1.5rem;
+  }
+
+  article:nth-child(1) {
+    top: -50px;
+  }
+  article:nth-child(2) {
+    top: -25px;
+  }
+
+  article p {
+    font-size: large;
+    margin-right: 1.5rem;
+  }
+
+  /* .rating-section{
+    position: relative;
+  }
+
+  .rating-section h4{
+    right: 50px;
+  } */
+
+  .ratings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 1.5rem 2.5rem;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .ratings h4 {
+    font-size: larger;
+    margin: 0 0 0 2rem;
+  }
+  .ratings img {
+    margin-left: 5px;
+  }
+}
