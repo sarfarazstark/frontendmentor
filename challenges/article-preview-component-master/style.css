@@ -12,7 +12,7 @@ body {
   margin: 0%;
   padding: 0;
   height: 100vh;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   background-color: var(--light-grayish-blue);
@@ -30,6 +30,9 @@ main {
   width: 90%;
   position: relative;
   overflow: hidden;
+  -webkit-box-shadow: 0px 5px 31px -27px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 31px -27px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 31px -27px rgba(0,0,0,0.75);
 }
 
 .image {
@@ -62,7 +65,7 @@ main {
   margin-bottom: 1rem;
 }
 
-.author{
+.author {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -72,29 +75,30 @@ main {
   align-content: center;
 }
 
-.author-img{
+.author-img {
   width: 40px;
   border-radius: 50%;
 }
 
-.date, .name{
+.date,
+.name {
   margin: 0;
   margin-right: auto;
   margin-left: 15px;
 }
-.name{
+.name {
   font-size: 13px;
   font-weight: bolder;
   color: var(--very-dark-grayish-blue);
 }
 
-.date{
+.date {
   margin-top: 2px;
   font-size: 12px;
   color: var(--desaturated-dark-blue);
 }
 
-.share-btn{
+.share-btn {
   border: none;
   padding: 0px;
   border-radius: 50%;
@@ -104,24 +108,24 @@ main {
   background-color: var(--light-grayish-blue);
 }
 
-.share-btn i{
+.share-btn i {
   color: var(--desaturated-dark-blue);
   padding: 10px;
 }
 
-.share-btn:hover{
+.share-btn:hover {
   background-color: var(--grayish-blue);
 }
 
-.share-btn i:hover{
+.share-btn i:hover {
   color: var(--light-grayish-blue);
 }
 
-.share-btn:active{
+.share-btn:active {
   background-color: var(--grayish-blue);
 }
 
-.share-pop{
+.share-pop {
   position: absolute;
   background-color: var(--very-dark-grayish-blue);
   width: 100%;
@@ -138,7 +142,7 @@ main {
   height: 42px;
 }
 
-.share-pop p{
+.share-pop p {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 13px;
@@ -146,12 +150,13 @@ main {
   margin: 0;
 }
 
-.share-pop a, .share-pop img{
+.share-pop a,
+.share-pop img {
   width: auto;
   height: 18px;
 }
 
-.square-box{
+.square-box {
   display: none;
 }
 
@@ -167,7 +172,7 @@ main {
     position: relative;
   }
 
-  #share{
+  #share {
     position: absolute;
     height: 25px;
     width: auto;
@@ -186,18 +191,18 @@ main {
     overflow: hidden;
     border-radius: 10px 0 0 10px;
   }
-  .info h4{
+  .info h4 {
     font-size: 1.4rem;
   }
-  .info p{
+  .info p {
     font-size: 14px;
     margin-bottom: 0.2rem;
   }
-  .author{
+  .author {
     margin-bottom: 1rem;
   }
 
-  .square-box{
+  .square-box {
     display: block;
     position: absolute;
     margin-top: -70px;
