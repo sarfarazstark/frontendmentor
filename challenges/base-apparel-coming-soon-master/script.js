@@ -1,9 +1,10 @@
 /* eslint-disable semi */
-const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const regex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 const text = document.querySelector('.msg');
-const btn = document.querySelector('.button')
+const btn = document.querySelector('.button');
 const errorImg = document.querySelector('.error-img');
 
 btn.addEventListener('click', (e) => {
@@ -29,4 +30,4 @@ btn.addEventListener('click', (e) => {
     form.style.borderColor = 'var(--d-red)';
     form.style.borderWidth = '1px';
   }
-})
+});
