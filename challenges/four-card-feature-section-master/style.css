@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0%;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: var(--family);
+  background-color: var(--very-light-gray);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+main {
+  width: 20rem;
+}
+
+.top h1 {
+  font-size: x-large;
+  font-weight: 200;
+  color: var(--grayish-blue);
+  margin: 3rem 0 0 0;
+  text-align: center;
+}
+.top h2 {
+  font-size: x-large;
+  font-weight: 600;
+  margin: 0;
+  color: var(--very-dark-blue);
+  text-align: center;
+}
+
+.top p {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--very-dark-blue);
+  margin-bottom: 5rem;
+}
+
+.cards,
+.row-section {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+
+.cards section,
+.row-section section {
+  background-color: white;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 16px 44px -35px rgba(28, 28, 28, 1);
+  -moz-box-shadow: 0px 16px 44px -35px rgba(28, 28, 28, 1);
+  box-shadow: 0px 16px 44px -35px rgba(28, 28, 28, 1);
+}
+
+.cards h2 {
+  font-size: larger;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: var(--very-dark-blue);
+}
+
+.cards img,
+.row-section img {
+  margin-top: 2.5rem;
+  float: right;
+  width: 55px;
+}
+
+.cards p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--very-dark-blue);
+}
+
+.main-card:nth-child(1) {
+  border-top: 4px solid;
+  border-color: var(--cyan);
+}
+
+.main-card:nth-child(3) {
+  border-top: 4px solid;
+  border-color: var(--blue);
+}
+
+.div-main-card:nth-child(1) {
+  border-top: 4px solid;
+  border-color: var(--red);
+}
+
+.div-main-card:nth-child(2) {
+  border-top: 4px solid;
+  border-color: var(--orange);
+}
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .top{
+    width: 29rem;
+  }
+  .top h1{
+    margin-top: 1.2rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .cards section,
+  .row-section section {
+    width: 290px;
+    padding: 2rem;
+    margin-inline: 0.5rem;
+  }
+}
