@@ -27,7 +27,7 @@ body {
 main {
   background-color: white;
   border-radius: 10px;
-  width: 90%;
+  width: 20rem;
   position: relative;
   overflow: hidden;
   -webkit-box-shadow: 0px 5px 31px -27px rgba(0,0,0,0.75);
@@ -50,7 +50,7 @@ main {
   margin-bottom: 0;
 }
 
-.info h4 {
+.info h1 {
   font-size: 16px;
   margin: 0%;
   margin-bottom: 10px;
@@ -191,7 +191,7 @@ main {
     overflow: hidden;
     border-radius: 10px 0 0 10px;
   }
-  .info h4 {
+  .info h1 {
     font-size: 1.4rem;
   }
   .info p {
