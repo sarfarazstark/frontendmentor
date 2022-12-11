@@ -160,9 +160,11 @@ main {
   display: none;
 }
 
+/* Responsiveness */
+
 @media (min-width: 800px) {
   main {
-    width: 750px;
+    width: 50rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
