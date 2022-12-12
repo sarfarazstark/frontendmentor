@@ -15,7 +15,7 @@ btn.addEventListener('click', function () {
     faShare.color = 'var(--light-grayish-blue)'
     sharePop.style.display = 'flex'
     square.zIndex = '0'
-  } else if (displayValue === 'flex') {
+  } else {
     shareBtn.backgroundColor = 'var(--light-grayish-blue)'
     faShare.color = 'var(--grayish-blue)'
     sharePop.style.display = 'none'
