@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0c0f14ef;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyUI #1| Signup Page</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+  <main>
+    <!-- Left side -->
+    <div class="hero-bg">
+      <div class="hero">
+        <h1>DailyUI <br> <span class="days">001 out of 100</span> </h1>
+        <div class="hero-center">
+          <h2><span>You are</span><br>
+            Most welcome here.</h2>
+          <p>“Small cheer and great welcome<br> makes a merry feast.” <br><br> <small> - William Shakespeare</small></p>
+        </div>
+        <p class="signin">Already have an account</p>
+        <a href="#" class="signin-link" style="color: #fff;">Sign In</a>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="page">
+      <header>
+        <h2>Welcome to DailyUI</h2>
+        <p>Create your account</p>
+      </header>
+      <form action="">
+
+        <label for="name">Your name
+          <input type="text" name="name" id="name" required placeholder=" John Doe"></label>
+
+        <label for="email">Your email
+          <input type="email" name="email" id="email" required placeholder=" name@email.com"></label><br>
+
+        <label for="password" style="position: relative;">Password
+          <input type="password" name="password" id="password" required placeholder=" atleast 8 characters">
+        </label>
+        <i class="fa-regular fa-eye-slash eye" id="togglePassword">
+        </i>
+        <br>
+
+        <label class="form-control">
+          <input type="checkbox" name="checkbox-checked" required />
+          <p>I agree to the <a href="#">Terms & Conditions</a></p>
+        </label>
+
+        <input type="submit" value="Get Started">
+
+        <p class="sign-in">Are you already member? <a href="#">Sign in</a></p>
+      </form>
+
+      <footer>
+        <a href="#" style="background-color: #e94235;"><i class="fa-brands fa-google"></i></a>
+        <a href="#" style="background-color: #1977f3;"><i class="fa-brands fa-facebook"></i></i></a>
+        <a href="#" style="background-color: #202020;"><i class="fa-brands fa-github"></i></i></a>
+      </footer>
+    </div>
+  </main>
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      console.log("clicked")
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye');
+    });
+  </script>
+</body>
+
+</html>
