@@ -100,12 +100,14 @@ section:nth-child(2) button {
   border-radius: 5px;
   background-color: var(--bright-yellow);
   box-shadow: 0 5px 10px hsla(0, 0%, 15%, 0.144);
+  color: var(--light-gray);
+  cursor: pointer;
 }
 
 section:nth-child(2) a {
-  color: var(--light-gray);
   text-decoration: none;
   font-size: 14px;
+  height: 30px;
   font-weight: 700;
 }
 
