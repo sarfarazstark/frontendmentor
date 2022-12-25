@@ -20,9 +20,13 @@ body{
   align-items: center;
 }
 main {
+  overflow: hidden;
+  border-radius: 10px;
   display: grid;
   grid-template-rows: auto auto auto;
   padding: 2rem;
+  box-shadow: 0px 0px 20px hsla(0, 0%, 15%, 0.144);
+
 }
 
 /* First section */
@@ -140,9 +144,8 @@ section:nth-child(3) ul{
   main{
     overflow: hidden;
     padding: 0;
-    border-radius: 8px;
     height: auto;
-    max-width: 650px;
+    max-width: 640px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto) ;
   }
@@ -168,9 +171,12 @@ section:nth-child(3) ul{
     margin-bottom: 0;
   }
   section:nth-child(2) p{
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
   }
   section:nth-child(2) button {
+    margin-bottom: 0;
+  }
+  section:nth-child(3) ul{
     margin-bottom: 0;
   }
 }
