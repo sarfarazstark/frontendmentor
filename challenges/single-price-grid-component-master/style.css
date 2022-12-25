@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --gray-blue: hsl(218, 22%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+
+body{
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 2rem;
+}
+
+/* First section */
+section:nth-child(1) {
+  background-color: white;
+  padding: 1.5rem 1.5rem 0.3rem 1.5rem;
+  line-height: 150%;
+}
+section:nth-child(1) h3 {
+  font-size: 18px;
+  color: var(--cyan);
+}
+
+section:nth-child(1) h4 {
+  font-size: 15px;
+  color: var(--bright-yellow);
+}
+
+section:nth-child(1) p {
+  font-size: 13px;
+  color: var(--gray-blue);
+}
+
+section:nth-child(1) h3,
+section:nth-child(1) h4,
+section:nth-child(1) p {
+  margin-bottom: 1.2rem;
+}
+
+/* Second section */
+section:nth-child(2) {
+  background-color: var(--cyan);
+  padding: 1.5rem 1.5rem 0.3rem 1.5rem;
+  line-height: 150%;
+}
+section:nth-child(2) h3 {
+  font-size: 18px;
+  color: var(--light-gray);
+  margin-bottom: 1.2rem;
+}
+
+.amount {
+  color: var(--light-gray);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.price {
+  color: var(--light-gray);
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 1.2rem;
+}
+
+section:nth-child(2) p {
+  color: var(--light-gray);
+  font-size: 14px;
+  margin-bottom: 1.2rem;
+}
+
+section:nth-child(2) button {
+  width: 100%;
+  padding: 1.3em;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bright-yellow);
+  box-shadow: 0 5px 10px hsla(0, 0%, 15%, 0.144);
+}
+
+section:nth-child(2) a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Third section */
+section:nth-child(3) {
+  background-color: #4abebd;
+  padding: 1.5rem 1.5rem 0.3rem 1.5rem;
+  line-height: 150%;
+}
+
+section:nth-child(3) h3 {
+  color: var(--light-gray);
+  margin-bottom: 1.2rem;
+  font-size: 18px;
+}
+
+section:nth-child(3) li{
+  /* remove list icon */
+  list-style: none;
+  color: var(--light-gray);
+  font-size: 13px;
+  height: 13px;
+  margin-bottom: 0.5rem;
+}
+
+section:nth-child(3) ul{
+  margin-bottom: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  main{
+    overflow: hidden;
+    padding: 0;
+    border-radius: 8px;
+    height: auto;
+    max-width: 650px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto) ;
+  }
+  /* grid of 1 up and two down */
+  section:nth-child(1) {
+    height: auto;
+    grid-column: span 2;
+  }
+  section{
+    height: auto;
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem !important;
+  }
+  section:nth-child(1) h3{
+    font-size: 25px;
+    margin-bottom: 1.3rem;
+  }
+  section:nth-child(1) h4{
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+  section:nth-child(1) p{
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  section:nth-child(2) p{
+    margin-bottom: 2rem;
+  }
+  section:nth-child(2) button {
+    margin-bottom: 0;
+  }
+}
