@@ -32,6 +32,10 @@ btn.addEventListener("click", (e) => {
         if (txtValue.value.length < 8) {
           errorImgCheck.style.display = "block";
           errorvalue.innerHTML = '8 characters minimum';
+        } else {
+          errorvalue.style.display = "none";
+          errorImgCheck.style.display = "none";
+          txtValue.style.borderColor = "var(--gray-blue)";
         }
       } else if (txtValue.type === "email") {
         if (!(txtValue.value.match(regex))) {
@@ -39,6 +43,10 @@ btn.addEventListener("click", (e) => {
           errorImgCheck.style.display = "block";
           emailErrorTxt.style.display = "block";
           emailErrorTxt.innerHTML = "Please provide a valid email";
+        } else {
+          errorvalue.style.display = "none";
+          errorImgCheck.style.display = "none";
+          txtValue.style.borderColor = "var(--gray-blue)";
         }
       } else {
         errorvalue.style.display = "none";
