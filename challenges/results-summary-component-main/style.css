@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+:root {
+  /*Colours*/
+  --light-red: hsl(0, 100%, 67%);
+  --orangy-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  /* Gradient 1 */
+  --light-state-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  /* Gradient 2 */
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  /* Font */
+  --size: 18px;
+  --family: Hanken Grotesk;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  font-family: var(--family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  border-radius: 25px;
+  box-shadow: var(--pale-blue) 20px 20px 55px 0px;
+  height: 530px;
+}
+
+.blue-section{
+  background: linear-gradient(to bottom, var(--light-state-blue), var(--light-royal-blue));
+  width: 400px;
+  height: 100%;
+  color: var(--white);
+  text-align: center;
+  padding: 3.1rem;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blue-section h2{
+ color: var(--light-lavender);
+ margin-bottom: 1.9rem;
+}
+
+.blue-section h1{
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+
+.circle{
+  margin: 0;
+  width: 200px;
+  height: 200px;
+  padding: 1.2rem;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(252, 100%, 67%, 0));
+}
+
+.circle h1{
+  margin-top: 25px;
+}
+
+.circle p{
+  color: var(--light-lavender);
+  font-size: larger;
+}
+
+.blue-section h3{
+  margin-top: 2.2rem;
+  margin-bottom: 1.1rem;
+  font-size: 2rem;
+}
+
+.blue-section h3+p{
+   font-size: 18px;
+   color: var(--light-lavender);
+   margin: 0 1.1rem;
+}
+
+.white-section{
+  background: #00000000;
+  width: 400px;
+  height: 100%;
+  color: var(--dark-gray-blue);
+  text-align: left;
+  padding: 3.1rem;
+}
+
+.white-section h2{
+  margin-bottom: 1.8rem;
+}
+
+.res{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 55px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+}
+.res img{
+  margin-right: 10px;
+}
+
+.res b{
+  color: var(--dark-gray-blue);
+  margin-left: auto;
+}
+
+.light{
+  color: hsla(224, 30%, 27%, 0.652);
+}
+
+.res-1{
+  color: var(--light-red);
+  background-color: hsla(0, 100%, 67%, 0.045);
+}
+
+.res-2{
+  color: var(--orangy-yellow);
+  background-color: hsla(39, 100%, 56%, 0.045);
+}
+
+.res-3{
+  color: var(--green-teal);
+  background-color: hsla(166, 100%, 37%, 0.045);
+}
+
+.res-4{
+  color: var(--cobalt-blue);
+  background-color: hsla(234, 85%, 45%, 0.045);
+}
+
+button{
+  height: 60px;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 2rem;
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+button:hover{
+  cursor: pointer;
+}
