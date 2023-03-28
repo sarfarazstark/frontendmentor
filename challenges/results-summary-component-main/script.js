@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable semi */
 
-function calculate() {
+function calculate () {
   const val1 = document.querySelector('.val-1').value;
   const val2 = document.querySelector('.val-2').value;
   const val3 = document.querySelector('.val-3').value;

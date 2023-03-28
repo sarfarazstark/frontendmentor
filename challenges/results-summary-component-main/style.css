@@ -88,6 +88,7 @@ main {
 .circle p{
   color: var(--light-lavender);
   font-size: larger;
+  font-weight: 700;
 }
 
 .scale{
@@ -184,4 +185,55 @@ input[type="submit"]{
 input[type="submit"]:hover{
   cursor: pointer;
   background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    height: 100%;
+  }
+  main{
+    flex-direction: column;
+    height: auto;
+  }
+  .blue-section{
+    width: auto;
+    border-radius: 0 0 30px 30px;
+    padding: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  .blue-section h2{
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .circle{
+    height: 150px;
+    width: 150px;
+  }
+  .circle p {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  #result{
+    margin-top: 0.5rem;
+    font-size: 3.5rem;
+  }
+
+  .scale{
+    font-size: 1.6rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .blue-section h3+p{
+    font-size: 1rem;
+  }
+
+  .white-section{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 2rem;
+  }
 }
