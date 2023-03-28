@@ -169,9 +169,10 @@ button{
   font-size: 17px;
   font-weight: 700;
   margin-top: 2rem;
-  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  background-color: var(--dark-gray-blue);
 }
 
 button:hover{
   cursor: pointer;
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
