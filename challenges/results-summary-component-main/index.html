@@ -19,41 +19,48 @@
     <section class="blue-section">
       <h2>Your Result</h2>
       <div class="circle">
-        <h1>76</h1>
+        <h1 id="result">76</h1>
         <p>of 100</p>
       </div>
-      <h3>Great</h3>
-      <p>You scored higher than 65% of the people who have taken these tests.</p>
+      <h3 class="scale">Great</h3>
+      <p>You scored <span class="higher-than">higher than 70%</span> of the people who have taken these tests.</p>
     </section>
     <section class="white-section">
 
       <h2>Summary</h2>
       <div class="res res-1">
-        <img src="assets/images/icon-reaction.svg" alt="">
+        <img src="assets/images/icon-reaction.svg" alt="reaction">
         <p>Reaction</p>
-        <b>80 <span class="light">/ 100</span></b>
+        <input type="text" value="80" class="val-1"></input>
+        <span class="light">/ 100</span>
       </div>
       <div class="res res-2">
-        <img src="assets/images/icon-memory.svg" alt="">
+        <img src="assets/images/icon-memory.svg" alt="memory">
         <p>Memory</p>
-        <b>92 <span class="light">/ 100</span></b>
+        <input type="text" value="92" class="val-2"></input>
+        <span class="light">/ 100</span>
       </div>
 
       <div class="res res-3">
-        <img src="assets/images/icon-verbal.svg" alt="">
+        <img src="assets/images/icon-verbal.svg" alt="verbal">
         <p>Verbal</p>
-        <b>61 <span class="light">/ 100</span></b>
-      </div>
-      <div class="res res-4">
-        <img src="assets/images/icon-visual.svg" alt="">
-        <p>Visual</p>
-        <b>72 <span class="light">/ 100</span></b>
+        <input type="text" value="61" class="val-3"></input>
+        <span class="light">/ 100</span>
       </div>
 
-      <button>Continue</button>
+      <div class="res res-4">
+        <img src="assets/images/icon-visual.svg" alt="visual">
+        <p>Visual</p>
+        <input type="text" value="72" class="val-4"></input>
+        <span class="light">/ 100</span>
+      </div>
+
+      <input type="submit" value="Continue" onclick="calculate()"></input>
 
     </section>
 </main>
+
+<script src="script.js"></script>
 </body>
 
 </html>

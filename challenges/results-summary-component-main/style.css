@@ -90,10 +90,11 @@ main {
   font-size: larger;
 }
 
-.blue-section h3{
+.scale{
   margin-top: 2.2rem;
   margin-bottom: 1.1rem;
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .blue-section h3+p{
@@ -131,12 +132,20 @@ main {
   margin-right: 10px;
 }
 
-.res b{
+.res input{
+  all: unset;
   color: var(--dark-gray-blue);
   margin-left: auto;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: #00000000;
+  font-size: 18px;
 }
 
+
 .light{
+  margin-left: 4px;
   color: hsla(224, 30%, 27%, 0.652);
 }
 
@@ -160,7 +169,7 @@ main {
   background-color: hsla(234, 85%, 45%, 0.045);
 }
 
-button{
+input[type="submit"]{
   height: 60px;
   width: 100%;
   border-radius: 50px;
@@ -172,7 +181,7 @@ button{
   background-color: var(--dark-gray-blue);
 }
 
-button:hover{
+input[type="submit"]:hover{
   cursor: pointer;
   background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
