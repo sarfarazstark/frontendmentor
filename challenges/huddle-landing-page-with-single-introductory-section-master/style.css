@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap?family=Open+Sans&display=swap');
+
+:root{
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+  --heading: Poppins;
+  --paragraph: Open Sans;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--violet) url(images/bg-desktop.svg) no-repeat;
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+main{
+  width: 1440px;
+  height: auto;
+}
+nav{
+  height: 150px;
+  margin-bottom: 2.5rem;
+}
+nav img{
+  margin-top: 6rem;
+  width: 13rem;
+}
+
+.hero-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-section img{
+  padding: 0;
+  width: 100%;
+}
+
+.side-section{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 25px;
+  margin-bottom: 100px;
+  padding: 2rem 10rem 5rem 2rem;
+}
+
+h1{
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: white;
+  padding: 2rem 2rem 0 2rem;
+}
+
+p{
+  font-family: var(--paragraph);
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 1px;
+  padding: 0 0rem 0 2rem;
+}
+
+button{
+  width: 180px;
+  height: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px 3px #3d3d3d;
+  color: var(--violet);
+  font-family: var(--heading);
+  font-size: 1.1rem;
+  margin: 2rem;
+  margin-top: 0;
+}
+button:hover{
+  cursor: pointer;
+  color: white;
+  background-color: var(--soft-magenta);
+}
+
+footer{
+ float: right;
+}
+footer i{
+   font-size: 18px;
+   color: white;
+   padding: 7px;
+   border: 1px solid white;
+   border-radius: 50%;
+   margin-left: 5px;
+}
+
+footer i:hover{
+  cursor: pointer;
+  border-color: var(--soft-magenta);
+  color: var(--soft-magenta);
+}
+
+/* For mobile view */
+
+@media screen and (max-width: 768px){
+  body{
+    background: var(--violet) url(images/bg-mobile.svg) no-repeat;
+    background-size: contain;
+    padding: 2rem;
+  }
+  main{
+    width: 100%;
+    height: auto;
+  }
+  nav{
+    height: 0;
+    margin-bottom: 2.5rem;
+  }
+  nav img{
+    margin-top: 0;
+    width: 9rem;
+  }
+  
+  .hero-section{
+    flex-direction: column;
+  }
+  
+  .hero-section img{
+    padding-top: 30px;
+    width: 95%;
+    height: 255px;
+  }
+  
+  .side-section{
+    padding: 0;
+    align-items: center;
+    margin: 0 0 50px 0;
+  }
+  
+  h1{
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 90px 0 0 0;
+  }
+  
+  p{
+    text-align: center;
+    padding: 0;
+  }
+  
+  button{
+    width: 150px;
+    height: 30px;
+    font-size: 10px;
+    margin: 0;
+  }
+  button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: var(--soft-magenta);
+  }
+  
+  footer{
+    float: none;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  footer I{
+    font-size: 14px;
+    padding: 6px;
+  }
+}
