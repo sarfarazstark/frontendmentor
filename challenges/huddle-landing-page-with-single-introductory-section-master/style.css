@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root{
   --violet: hsl(257, 40%, 49%);
@@ -19,60 +20,60 @@ body{
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction:column;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
+  padding: 0 4.5rem 0 4.5rem;
 }
 main{
-  width: 1440px;
+  display: flex;
+  width: 100%;
   height: auto;
-}
-nav{
-  height: 150px;
-  margin-bottom: 2.5rem;
-}
-nav img{
-  margin-top: 6rem;
-  width: 13rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-section{
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
 }
 
-.hero-section img{
-  padding: 0;
-  width: 100%;
+.logo{
+  width: 13rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.main{
+  width: 700px
 }
 
 .side-section{
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
   row-gap: 25px;
-  margin-bottom: 100px;
-  padding: 2rem 10rem 5rem 2rem;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 h1{
   font-family: var(--heading);
   font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: white;
-  padding: 2rem 2rem 0 2rem;
+  padding: 5.5rem 2rem 0 3rem;
 }
 
 p{
   font-family: var(--paragraph);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: white;
-  letter-spacing: 1px;
-  padding: 0 0rem 0 2rem;
+  letter-spacing: 0px;
+  padding: 0 1.9rem 0 3rem;
 }
 
 button{
@@ -81,12 +82,11 @@ button{
   background-color: white;
   border: none;
   border-radius: 50px;
-  box-shadow: 0 5px 15px 3px #3d3d3d;
+  box-shadow: 0 5px 10px 2px #3d3d3da5;
   color: var(--violet);
   font-family: var(--heading);
   font-size: 1.1rem;
-  margin: 2rem;
-  margin-top: 0;
+  margin-left: 3rem;
 }
 button:hover{
   cursor: pointer;
@@ -95,12 +95,16 @@ button:hover{
 }
 
 footer{
- float: right;
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
+
 footer i{
-   font-size: 18px;
+   font-size: 25px;
    color: white;
-   padding: 7px;
+   padding: 10px;
    border: 1px solid white;
    border-radius: 50%;
    margin-left: 5px;
