@@ -9,7 +9,7 @@ function calculateAge () {
   const label = document.querySelectorAll('.label');
 
   // Getting the values from the input fields
-  const birthDate = document.querySelectorAll('#date');
+  const birthDate = document.querySelectorAll('.date');
   const birthDateUsingBackticks = `${birthDate[2].value}-${birthDate[1].value}-${birthDate[0].value}`;
 
   // Creating a new date object

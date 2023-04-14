@@ -15,25 +15,26 @@
 
 <body>
   <main>
+      <h1 style="display:none">Age Calculator</h1>
     <div class="input">
       <div>
         <label for="days" class="label">Day</label><br>
-        <input type="text" id="date" placeholder="DD" maxlength="2"><br>
+        <input type="text" class="date" placeholder="DD" maxlength="2"><br>
         <span class="error hide">.</span>
       </div>
       <div>
         <label for="months" class="label">Month</label><br>
-        <input type="text" id="date" placeholder="MM" maxlength="2"> <br>
+        <input type="text" class="date" placeholder="MM" maxlength="2"> <br>
         <span class="error hide">.</span>
       </div>
       <div>
         <label for="years" class="label">Year</label><br>
-        <input type="text" id="date" placeholder="YYYY" maxlength="4"><br>
+        <input type="text" class="date" placeholder="YYYY" maxlength="4"><br>
         <span class="error hide">.</span>
       </div>
     </div>
     <div class="submit-btn">
-      <hr><button onclick="calculateAge()"> <img src="assets/images/icon-arrow.svg" alt=""> </button>
+      <hr><button onclick="calculateAge()" aria-label="Submit Button"><img src="assets/images/icon-arrow.svg" alt=""> </button>
     </div>
     <div class="output">
     <p><span class="result">- -</span> years</p>
