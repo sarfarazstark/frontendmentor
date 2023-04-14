@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300;1,800&display=swap');
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-gray: hsl(0, 0%, 86%);
+  --smoke-gray: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+  --font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  background-color: var(--white);
+  width: 700px;
+  height: 550px;
+  border-radius: 20px 20px 30% 20px;
+  padding: 3rem;
+}
+
+.input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.input div label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--smoke-gray);
+}
+
+input[type="text"] {
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 130px;
+  outline: none;
+  font-size: 1.6rem;
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--off-black);
+  margin-bottom: 5px;
+}
+
+input[type="text"]::placeholder {
+  color: var(--smoke-gray);
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+}
+
+.submit-btn hr {
+  width: 100%;
+  border: none;
+  background-color: var(--light-gray);
+  height: 1px;
+}
+
+.submit-btn button {
+  background-color: var(--purple);
+  border: none;
+  border-radius: 50%;
+  padding: 22px 20px 15px 20px;
+  font-family: var(--font);
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 150ms ease-in-out;
+  border-color: var(--purple);
+  box-shadow: 0 0 40px 40px var(--purple) inset, 0 0 0 0 var(--purple);
+}
+
+.submit-btn button img {
+  width: 38px;
+}
+
+.submit-btn button:hover {
+  box-shadow: 0 0 10px 0 var(--purple) inset, 0 0 10px 4px var(--purple);
+}
+
+
+.error{
+  color: var(--light-red);
+  font-family: var(--font);
+  font-style: italic;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.hide{
+  visibility: hidden;
+}
+
+.output p {
+  font-family: var(--font);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 5.5rem;
+  color: var(--off-black);
+  margin-top: -35px;
+}
+
+.result {
+  letter-spacing: 0;
+  color: var(--purple);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  main {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+  .input {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    gap: 10px;
+  }
+  input[type="text"] {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .submit-btn {
+    margin-top: 60px;
+    flex-direction: column;
+  }
+  .submit-btn button {
+    position: relative;
+    bottom: 25px;
+    padding: 18px 18px 12px 18px;
+  }
+
+  .submit-btn button img {
+    width: 25px;
+  }
+
+  .output p {
+    font-size: 3.1rem;
+    margin-top: -12px;
+  }
+
+  .result {
+    letter-spacing: 0rem;
+    margin-left: 0px;
+  }
+}

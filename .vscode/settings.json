@@ -1,4 +1,10 @@
 {
   "livePreview.defaultPreviewPath": "d:\\101\\challenges\\article-preview-component-master\\index.html",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "cSpell.words": [
+    "bday",
+    "bmonth",
+    "byear",
+    "callout"
+  ]
 }
