@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+    font-family: Inter;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    font-size: 15px;
+}
+
+header a:hover,
+footer a:hover {
+    color: var(--soft-red);
+}
+
+aside ul a:hover {
+    color: var(--soft-orange);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--off-white);
+    height: auto;
+    margin-bottom: 70px;
+}
+
+main {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 30px;
+}
+
+header {
+    grid-column: span 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    height: 130px;
+}
+
+header nav{
+    display: block;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    list-style-type: none;
+}
+
+header button {
+    display: none;
+    border: none;
+    background: none;
+}
+
+
+section {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 30px;
+}
+
+section img {
+    width: 100%;
+    grid-column: span 2;
+}
+
+section .mobile {
+    display: none;
+}
+
+section h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    margin-right: 20px;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+section summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+section summary p {
+    font-size: 15px;
+    line-height: 160%;
+    padding-right: 40px;
+    color: var(--dark-grayish-blue);
+    /* margin-left: 20px; */
+}
+
+section summary a {
+    background-color: var(--soft-red);
+    color: var(--off-white);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 15px 30px;
+}
+
+section summary a:hover {
+    background-color: var(--very-dark-blue);
+}
+
+aside ul {
+    /* width: 90%; */
+    justify-self: flex-end;
+    background-color: var(--very-dark-blue);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside ul h2 {
+    font-size: 2.5rem;
+    color: var(--soft-orange);
+    margin-bottom: 0px;
+}
+
+aside ul li a {
+    font-size: 1.3rem;
+    color: var(--off-white);
+}
+
+aside ul li p {
+    font-size: 15px;
+    margin-block: 10px;
+    color: var(--grayish-blue);
+    line-height: 160%;
+}
+
+aside ul hr {
+    height: 1px;
+    border: none;
+    background-color: var(--dark-grayish-blue);
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+footer {
+    margin-top: 60px;
+    grid-column: span 3;
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    list-style-type: none;
+}
+
+footer ul li {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 20px;
+    row-gap: 10px;
+    padding-right: 20px;
+}
+
+footer ul li img {
+    grid-row: span 3;
+    height: 130px;
+}
+
+footer ul li span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--grayish-blue);
+}
+
+footer ul li a {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+footer ul li p {
+    font-size: 15px;
+    line-height: 160%;
+}
+
+
+@media only screen and (max-width : 700px) {
+    body {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    main,
+    section,
+    footer ul {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    
+    header nav {
+        display: none;
+        background-color: hsla(236, 13%, 42%, 0.589);
+        justify-content: flex-end;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    header nav ul {
+        background-color: var(--off-white);
+        display: inherit;
+        flex-direction: column;
+        justify-content: center;
+        width: 60vw;
+        height: 100%;
+        padding: 30px;
+    }
+
+    header nav a {
+        font-size: 1.6rem;
+        font-weight: 0;
+    }
+
+    header button {
+        z-index: 1;
+        display: block;
+        cursor: pointer;
+    }
+
+    header button img {
+        width: 2.5rem;
+    }
+
+    section .desk {
+        display: none;
+    }
+
+    section .mobile {
+        display: block;
+    }
+
+    section h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+        line-height: 90%;
+    }
+
+    section summary p {
+        padding-right: 0px;
+        font-size: 1.4rem;
+    }
+
+    section summary a {
+        font-size: 1.2rem;
+        padding: 20px 40px;
+        letter-spacing: 10px;
+        margin-top: 40px;
+    }
+
+    aside ul {
+        padding: 30px;
+        gap: 30px;
+        margin-top: 70px;
+    }
+
+    aside ul h2 {
+        font-size: 3rem;
+    }
+
+    aside ul h3 a {
+        font-size: 2.5rem;
+    }
+
+    aside ul li p {
+        font-size: 1.4rem;
+    }
+
+    footer {
+        margin-top: 150px;
+    }
+
+    footer ul {
+        gap: 50px;
+    }
+
+    footer ul li {
+        column-gap: 30px;
+    }
+
+    footer ul li img {
+        height: 160px;
+    }
+
+    footer ul li span {
+        font-size: 2.5rem;
+    }
+
+    footer ul li h3 a {
+        font-weight: 800;
+        font-size: 1.6rem;
+    }
+
+    footer ul li p {
+        font-size: 1.2rem;
+    }
+}

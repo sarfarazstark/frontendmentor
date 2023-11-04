@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css">
+  <title>
+    Frontend Mentor | Newsletter sign-up form with success message
+  </title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body>
+  <!-- Sign-up form start -->
+  <main>
+    <div>
+      <h1>Stay updated!</h1>
+      
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      
+      <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+
+      <div class="form">
+        <section class="error-and-label">
+        <label for="email">Email address</label> <span id="error"></span>
+      </section>
+        <input type="email" novalidate name="email" id="email" placeholder="email@company.com" autocomplete="email"> <br>
+        <button onclick="validate()">Subscribe to monthly newsletter</button>
+      </div>
+    </div>
+    <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
+  </main>
+  <!-- Sign-up form end -->
+  
+  <!-- Success message start -->
+  <section id="success-pop">
+    <img src="assets/images/icon-success.svg" alt="">
+    <h1>Thanks for subscribing!</h1>
+    <p>
+      A confirmation email has been sent to <span id="usermail">ash@loremcompany.com</span>. Please open
+      it and click the button inside to confirm your subscription.
+    </p>
+    <button onclick="closePopUp()">Dismiss message</button>
+  </section>
+  
+  <!-- Success message end -->
+  
+  <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+    href="https://www.frontendmentor.io/profile/sarfarazstark">Sarfaraz Stark ⚡</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

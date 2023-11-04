@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+:root{
+  --red:hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue:  hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+body{
+  background-color: var(--very-light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+main{
+  background-color: white;
+  max-width: 650px;
+  padding: 30px 25px 0 25px;
+  border-radius: 15px;
+  margin-top: 35px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+header h2{
+  display: flex;
+  align-items: center;
+  color: var(--very-dark-blue);
+}
+
+.count{
+  background-color: var(--blue);
+  color: white;
+  margin-top: 3px;
+  margin-left: 9px;
+  padding: 1px 8px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+header button{
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+header button:hover{
+  color: var(--blue);
+}
+
+.notification{
+  display: flex;
+  padding: 15px;
+  margin-bottom: 8px;
+  border-radius: 7px;
+}
+.notification img{
+  width: 40px;
+  height: 100%;
+  margin-right: 20px;
+}
+.notification div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.user-name{
+  color: var(--very-dark-blue);
+  font-size: 0.9rem;
+}
+.user-name:hover{
+  color: var(--blue);
+}
+.message{
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.where, a{
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.unread-bg{
+  background-color: var(--light-grayish-blue-1);
+}
+.unread::after{
+  content: " •";  
+  color: red;
+  font-size: 20px;
+  cursor: default;
+}
+.time{
+  font-size: 0.8rem;
+}
+
+.message-box{
+  padding: 15px;
+  border: 1px solid var(--light-grayish-blue-2);
+  border-radius: 7px;
+  font-size: 0.96rem;
+  width: 88%;
+  margin-left: auto;
+}
+.message-box:hover{
+  cursor: pointer;
+  background-color: var(--light-grayish-blue-1);
+}
+.post-img{
+  cursor: pointer;
+  margin-left: auto;
+}
+
+@media (max-width: 380px) {
+  main{ 
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+
+    <header>
+      <h2>Notifications
+        <span class="count">3</span>
+      </h2>
+      <button onclick="read()">Mark all as read</button>
+    </header>
+
+
+    <div class="notification unread-bg">
+      <img src="assets/images/avatar-mark-webber.webp" alt="profile-image">
+      <div>
+          <h4><a href="#"  class="user-name">Mark Webber </a>
+            <span class="message">reacted to your recent post</span>
+            <a href="#" class="where unread">My first tournament today!</a>
+          </h4>
+          <span class="time">1m ago</span>
+      </div>
+    </div>
+
+    <div class="notification unread-bg">
+      <img src="assets/images/avatar-angela-gray.webp" alt="profile-image">
+      <div>
+        <h4><a href="#"  class="user-name">Angela Gray </a>
+          <span class="message">followed you</span>
+          <a href="#" class="where unread">none</a>
+        </h4>
+        <span class="time">5m ago</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="notification unread-bg">
+      <img src="assets/images/avatar-jacob-thompson.webp" alt="profile-image">
+      <div>
+        <h4><a href="#"  class="user-name">Jacob Thompson </a>
+          <span class="message">has joined your group</span>
+          <a href="#" class="where unread">Chess Club</a>
+        </h4>
+        <span class="time">1 day ago</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="notification">
+      <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="profile-image">
+      <div>
+        <h4><a href="#"  class="user-name">Rizky Hasanuddin </a>
+          <span class="message">sent you a private message</span>
+          <a href="#" class="where">none</a>
+        </h4>
+        <span class="time">5 days ago</span>
+      </div>
+    </div>
+    <div class="message-box">
+      <p>Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+        I'm already having lots of fun and improving my game.</p>
+    </div>
+
+    <div class="notification">
+      <img src="assets/images/avatar-kimberly-smith.webp" alt="profile-image">
+      <div>
+        <h4><a href="#"  class="user-name">Kimberly Smith</a>
+          <span class="message">commented on your picture</span>
+          <a href="#" class="where">none</a>
+        </h4>
+        <span class="time">1 week ago</span>
+      </div>
+      <img src="assets/images/image-chess.webp" alt="chess image of post" class="post-img">
+    </div>
+
+
+    <div class="notification">
+      <img src="assets/images/avatar-nathan-peterson.webp" alt="profile-image">
+      <div>
+        <h4><a href="#"  class="user-name">Nathan Peterson </a>
+          <span class="message">reacted to your recent post</span>
+          <a href="#" class="where">5 end-game strategies to increase your win rate</a>
+        </h4>
+        <span class="time">2 weeks ago</span>
+      </div>
+    </div>
+
+    <div class="notification">
+      <img src="assets/images/avatar-anna-kim.webp" alt="profile-image">
+      <div>
+        <h4><a href="#"  class="user-name">Anna Kim </a>
+          <span class="message">left the group </span>
+          <a href="#" class="where">Chess Club</a>
+        </h4>
+        <span class="time">2 weeks ago</span>
+      </div>
+    </div>
+
+
+  </main>
+  <script>
+    const pointedMsg = document.querySelectorAll(".where");
+    for (let i = 0; i < pointedMsg.length; i++) {
+      if (pointedMsg[i].innerHTML == 'none') {
+        pointedMsg[i].innerHTML = "";
+      }
+    }
+    const totalNotificationCount = document.querySelector(".count");
+    totalNotificationCount.innerHTML = redDot.length;
+    function read(){
+      const bgColor = document.querySelectorAll(".notification");
+      const redDot = document.querySelectorAll(".where");
+      for(let i = 0; i < redDot.length; i++){
+        bgColor[i].classList.remove("unread-bg");
+        redDot[i].classList.remove("unread");
+      }
+      totalNotificationCount.innerHTML = 0;
+    }
+  </script>
+</body>
+
+</html>
