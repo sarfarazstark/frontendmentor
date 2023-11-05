@@ -102,9 +102,11 @@ aside{
   padding: 0 0.9rem;
   font-size: var(--font-size);
   font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.5s ease-out;
 }
 
 .form input::placeholder{
+  font-size: 15px;
   color: var(--light-grayish-violet);
 }
 
@@ -119,18 +121,17 @@ aside{
   box-shadow: none;
 }
 
-
 .form div:nth-child(3){
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 .form #mm, #yy{
-  width: 35%;
+  width: 45%;
 }
 
-.form #cvc{
-  width: 100%;
+.form .fields:nth-last-child(1) {
+  width: 50%;
 }
 
 .form>div span{

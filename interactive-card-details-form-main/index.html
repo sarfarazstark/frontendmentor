@@ -28,23 +28,21 @@
   </aside>
   <main>
     <div class="form">
-      <div>
+      <div class="fields">
         <label for="name">Cardholder Name</label>
-        <br>
-        <input type="text" id="name" placeholder="e.g. Jane Appleseed" maxlength="35">
-        <span class="error">Input cant be empty</span>
+        <input type="text" id="name" placeholder="e.g. Jane Appleseed" maxlength="35" autocomplete="cc-name">
       </div>
-      <div>
+      <div class="fields">
         <label for="number">Card Number</label><br>
         <input type="text" id="number" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" autocomplete='off'>
       </div>
       <div>
-        <div>
+        <div class="fields">
           <label for="date">Exp. Date (MM/YY)</label><br>
           <input type="number" id="mm" min="0" max="12" placeholder="MM" autocomplete='off'>
-          <input type="text" id="yy" maxlength="2" placeholder="YY" autocomplete='off'>
+          <input type="number" id="yy" min="23" max="99" placeholder="YY" autocomplete='off'><br>
         </div>
-        <div>
+        <div class="fields">
           <label for="cvc">CVC</label><br>
           <input type="text" id="cvc" maxlength="3" placeholder="e.g. 123" autocomplete='off'>
         </div>
@@ -58,7 +56,8 @@
     </div>
   </main>
   <script>
-    document.querySelector('#mm').addEventListener('input', function () {
+    const dateField = function (input){
+      document.querySelector(`#${input}`).addEventListener('input', function () {
       let max = parseInt(this.max);
       let min = parseInt(this.min);
       let value = parseInt(this.value);
@@ -70,6 +69,9 @@
         this.value = min;
       }
     });
+    }
+    dateField('mm');
+    dateField('yy');
     
   </script>
   <!-- 
