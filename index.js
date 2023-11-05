@@ -50,7 +50,7 @@ directory.forEach((item) => {
     name += `${upperCase[0].toUpperCase() + upperCase.slice(1)} `;
   })
   newData.push(name)
-  list.innerHTML = `${name} <a href=/frontendmentor/${item}'>GO</a>`
+  list.innerHTML = `${name} <a href='/frontendmentor/${item}'>GO</a>`
 })
 
 input.addEventListener('input', () => {
