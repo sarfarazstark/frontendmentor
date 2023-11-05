@@ -39,10 +39,8 @@ const directory = [
 const main = document.body.appendChild(document.createElement('main'));
 const searchBar = main.appendChild(document.createElement('div'));
 const input = searchBar.appendChild(document.createElement('input'));
-const btn = searchBar.appendChild(document.createElement('button'));
 input.type = 'text';
-input.placeholder = 'e.g Project';
-btn.innerHTML = 'Search';
+input.placeholder = 'Search e.g Project';
 let newData = [];
 const li = main.appendChild(document.createElement('ul'));
 directory.forEach((item) => {
@@ -52,7 +50,7 @@ directory.forEach((item) => {
     name += `${upperCase[0].toUpperCase() + upperCase.slice(1)} `;
   })
   newData.push(name)
-  list.innerHTML = `${name} <a href=frontendmentor/${item}'>GO</a>`
+  list.innerHTML = `${name} <a href=/frontendmentor/${item}'>GO</a>`
 })
 
 input.addEventListener('input', () => {
@@ -83,7 +81,7 @@ filteredDirectory.forEach((item) => {
   } else {
     name = item;
   }
-  list.innerHTML = `${name} <a href='frontendmentor/${item.trim().toLowerCase().replace(/\s+/g, "-")}'>GO</a>`
+  list.innerHTML = `${name} <a href='/frontendmentor/${item.trim().toLowerCase().replace(/\s+/g, "-")}'>GO</a>`
 })
 
   // Set the input value back to the stored value

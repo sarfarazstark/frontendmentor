@@ -43,15 +43,6 @@ main input:focus{
   color: #fff;
 }
 
-main button {
-  padding: 15px;
-  border: none;
-  background-color: rgb(243, 154, 0);
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 ul {
   display: flex;
   flex-direction: column;
