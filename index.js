@@ -30,7 +30,6 @@ const directory = [
   'product-preview-card-component',
   'profile-card-component-main',
   'qr-code-component',
-  'Responsive form',
   'results-summary-component-main',
   'single-price-grid-component-master',
   'social-proof-section-master',
