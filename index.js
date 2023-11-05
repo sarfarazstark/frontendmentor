@@ -52,7 +52,7 @@ directory.forEach((item) => {
     name += `${upperCase[0].toUpperCase() + upperCase.slice(1)} `;
   })
   newData.push(name)
-  list.innerHTML = `${name} <a href='/${item}'>GO</a>`
+  list.innerHTML = `${name} <a href=frontendmentor/${item}'>GO</a>`
 })
 
 input.addEventListener('input', () => {
@@ -83,7 +83,7 @@ filteredDirectory.forEach((item) => {
   } else {
     name = item;
   }
-  list.innerHTML = `${name} <a href='/${item.trim().toLowerCase().replace(/\s+/g, "-")}'>GO</a>`
+  list.innerHTML = `${name} <a href='frontendmentor/${item.trim().toLowerCase().replace(/\s+/g, "-")}'>GO</a>`
 })
 
   // Set the input value back to the stored value
