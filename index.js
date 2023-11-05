@@ -10,8 +10,6 @@
 // });
 
 const directory = [
-  '.git',
-  '.vscode',
   '3-column-preview-card-component-main',
   'age-calculator-app-main',
   'article-preview-component-master',
@@ -45,14 +43,49 @@ const btn = searchBar.appendChild(document.createElement('button'));
 input.type = 'text';
 input.placeholder = 'e.g Project';
 btn.innerHTML = 'Search';
+let newData = [];
 const li = main.appendChild(document.createElement('ul'));
 directory.forEach((item) => {
   let name = '';
-  if (!item[0].includes('.')) {
-    const list = li.appendChild(document.createElement('li'));
-    item.split('-').forEach((upperCase) => {
-      name += `${upperCase[0].toUpperCase() + upperCase.slice(1)} `;
-    })
-    list.innerHTML = `${name} <a href='/${item}'>GO</a>`
+  const list = li.appendChild(document.createElement('li'));
+  item.split('-').forEach((upperCase) => {
+    name += `${upperCase[0].toUpperCase() + upperCase.slice(1)} `;
+  })
+  newData.push(name)
+  list.innerHTML = `${name} <a href='/${item}'>GO</a>`
+})
+
+input.addEventListener('input', () => {
+  const searchValue = input.value.toLowerCase();
+
+  // If the search input is empty, show the full list
+  let filteredDirectory;
+  if (!searchValue) {
+    filteredDirectory = newData;
+  } else {
+    filteredDirectory = newData.filter(item => item.toLowerCase().includes(searchValue));
   }
+
+  // Clear the current list
+  while (li.firstChild) {
+    li.removeChild(li.firstChild);
+  }
+
+  // Generate the new list
+// Generate the new list
+filteredDirectory.forEach((item) => {
+  const list = li.appendChild(document.createElement('li'));
+  // Highlight the matched text
+  const regex = new RegExp(searchValue, 'gi');
+  let name;
+  if (searchValue) {
+    name = item.replace(regex, (matched) => `<span class="highlight"> ${matched} </span>`);
+  } else {
+    name = item;
+  }
+  list.innerHTML = `${name} <a href='/${item.trim().toLowerCase().replace(/\s+/g, "-")}'>GO</a>`
+})
+
+  // Set the input value back to the stored value
+  input.value = searchValue;
 })

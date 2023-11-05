@@ -15,7 +15,7 @@ body {
 }
 
 main {
-  width: auto;
+  width: 500px;
   max-width: 1200px;
   padding: 2rem;
 }
@@ -34,6 +34,14 @@ main input {
   padding: 15px;
   border: none;
 }
+main input:focus{
+  outline: none;
+}
+
+.highlight {
+  background-color: rgb(243, 154, 0);
+  color: #fff;
+}
 
 main button {
   padding: 15px;
@@ -48,7 +56,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 500px;
+  height: 500px;
   overflow: auto;
 }
 
@@ -58,11 +66,11 @@ ul>li {
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
 }
 
 ul>li>a {
   color: rgb(243, 154, 0);
   height: 100%;
   text-decoration: none;
+  margin-left: auto;
 }
