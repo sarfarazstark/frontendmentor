@@ -193,9 +193,9 @@ directory
             <a href='https://www.frontendmentor.io/challenges/${frontendmentor(
 							name,
 							item.fmpage
-						)}'>Challenge Page</a>
+						)}'>Try out</a>
             <a href='/frontendmentor/${name}'>Live</a>
-            <a href='https://github.com/sarfarazstark/frontendmentor/tree/main/${name}'>Code</a>
+            <a href='https://github.com/sarfarazstark/frontendmentor/tree/main/${name}'>Repo</a>
           </div>
         </li>`
 		);
