@@ -87,14 +87,44 @@ ul li a {
 ul > li > h3 {
   padding-right: 1.6rem;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: #bdbdbd;
 }
 
 .links {
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 ul li a {
   color: rgba(237, 44, 73, 0.838);
   text-decoration: none;
+}
+
+/* Mobile screen */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  main ul {
+    grid-template-columns: repeat(1, auto);
+  }
+
+  ul > li > h3 {
+    font-size: 2rem;
+  }
+
+  main ul li a {
+    font-size: 1.4rem;
+  }
+
+  main ul li {
+    width: 100%;
+  }
+
+  .tech {
+    font-size: 1.4rem;
+  }
 }
