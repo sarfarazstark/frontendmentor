@@ -179,7 +179,7 @@ directory.forEach((item) => {
 	li.insertAdjacentHTML(
 		"afterbegin",
 		`<li>
-          <img src="/${name}/design/desktop-preview.jpg" alt="${newName}">
+          <img src="/frontendmentor/${name}/design/desktop-preview.jpg" alt="${newName}">
           <div class="tech">
              ${tech
 								.split("-")
