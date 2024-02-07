@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -9,59 +9,92 @@
 body {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  background-color: #1c2135;
   align-items: center;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 main {
-  width: 500px;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 2rem;
 }
 
-main div {
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1rem;
+main h1 {
+  font-size: 3rem;
+  color: #f3f3f3;
+  margin-block: 2rem;
 }
 
-main input {
-  width: 100%;
-  padding: 15px;
-  border: none;
-}
-main input:focus{
-  outline: none;
+main > h1 > a {
+  text-decoration: none;
+  color: #f39e00;
 }
 
-.highlight {
-  background-color: rgb(243, 154, 0);
-  color: #fff;
+main ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  /* align-items: start; */
 }
 
-ul {
+ul > li {
+  list-style: none;
+  width: 300px;
+  height: auto;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: 500px;
-  overflow: auto;
+  gap: 1rem;
+  background-color: #222a3f;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-ul>li {
-  list-style: none;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+ul > li > img {
+  width: 100%;
+}
+
+.tech,
+ul > li > h3,
+ul li a {
+  padding-inline: 1rem;
+}
+
+.tech {
   display: flex;
+  gap: 0.5rem;
+  padding-block: 0.5rem;
+  /* background-color: #2d2b44; */
+  color: #bdbdbd;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
-ul>li>a {
-  color: rgb(243, 154, 0);
-  height: 100%;
+.tech span:nth-child(1) {
+  color: rgb(106, 190, 205);
+}
+
+.tech span:nth-child(2) {
+  color: rgb(75, 101, 194);
+}
+
+.tech span:nth-child(3) {
+  color: rgb(207, 99, 144);
+}
+
+ul > li > h3 {
+  padding-right: 1.6rem;
+  font-size: 1.5rem;
+  color: #bdbdbd;
+}
+
+.links {
+  margin-top: auto;
+}
+
+ul li a {
+  color: rgba(237, 44, 73, 0.838);
   text-decoration: none;
-  margin-left: auto;
 }
