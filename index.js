@@ -148,12 +148,12 @@ const directory = [
 		fmpage: "8JqbgoU62",
 		submitDate: new Date("Nov 26, 2022"),
 	},
-	// {
-	// 	name: "sunnyside-agency-landing-page-main",
-	// 	tech: "html-css",
-	// 	fmpage: "7yVs3B6ef",
-	// 	submitDate: "",
-	// },
+	{
+		name: "sunnyside-agency-landing-page-main",
+		tech: "html-css",
+		fmpage: "7yVs3B6ef",
+		submitDate: new Date("FEb 10, 2024"),
+	},
 ];
 const upperCaseEveryWord = (word) =>
 	word
