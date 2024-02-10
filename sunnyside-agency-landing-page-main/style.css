@@ -56,6 +56,10 @@ header {
 
 }
 
+header button {
+  display: none;
+}
+
 nav {
   display: flex;
   /* flex-direction: column; */
@@ -347,6 +351,7 @@ footer div img {
   }
 
   header > button {
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
