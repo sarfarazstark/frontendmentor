@@ -14,10 +14,9 @@
 <body>
   <main>
     <header>
-      <nav>
-        <div class="logo">
-          <img src="./images/logo.svg" alt="Sunnyside logo" />
-        </div>
+      <img src="./images/logo.svg" alt="Sunnyside logo" />
+      <button id="menu"><img src="./images/icon-hamburger.svg" alt="menu"></button>
+      <nav class="nav-bar">
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
@@ -34,7 +33,10 @@
 
   <section class="articles">
     <article>
-      <img src="./images/desktop/image-transform.jpg" alt="Transform" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="./images/mobile/image-transform.jpg">
+        <img src="./images/desktop/image-transform.jpg" alt="Transform" />
+      </picture>
       <div>
         <h2>Transform your brand</h2>
         <p>
@@ -46,7 +48,10 @@
       </div>
     </article>
     <article>
-      <img src="./images/desktop/image-stand-out.jpg" alt="Stand out" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="./images/mobile/image-stand-out.jpg">
+        <img src="./images/desktop/image-stand-out.jpg" alt="Stand out" />
+      </picture>
       <div>
         <h2>Stand out to the right audience</h2>
         <p>
@@ -110,22 +115,22 @@
   <section class="gallery">
     <picture>
       <source media="(min-width: 900px)" srcset="./images/desktop/image-gallery-milkbottles.jpg" />
-      <source media="(min-width: 375px)" srcset="./images/mobile/image-gallery-milkbottles.jpg" />
+      <source media="(max-width: 768px)" srcset="./images/mobile/image-gallery-milkbottles.jpg" />
       <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="milk bottles" />
     </picture>
     <picture>
       <source media="(min-width: 900px)" srcset="./images/desktop/image-gallery-orange.jpg" />
-      <source media="(min-width: 375px)" srcset="./images/mobile/image-gallery-orange.jpg" />
+      <source media="(max-width: 768px)" srcset="./images/mobile/image-gallery-orange.jpg" />
       <img src="./images/desktop/image-gallery-orange.jpg" alt="orange" />
     </picture>
     <picture>
       <source media="(min-width: 900px)" srcset="./images/desktop/image-gallery-cone.jpg" />
-      <source media="(min-width: 375px)" srcset="./images/mobile/image-gallery-cone.jpg" />
+      <source media="(max-width: 768px)" srcset="./images/mobile/image-gallery-cone.jpg" />
       <img src="./images/desktop/image-gallery-cone.jpg" alt="cone" />
     </picture>
     <picture>
       <source media="(min-width: 900px)" srcset="./images/desktop/image-gallery-sugarcubes.jpg" />
-      <source media="(min-width: 375px)" srcset="./images/mobile/image-gallery-sugar-cubes.jpg" />
+      <source media="(max-width: 768px)" srcset="./images/mobile/image-gallery-sugar-cubes.jpg" />
       <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="sugarcubes" />
     </picture>
   </section>
@@ -144,6 +149,20 @@
       <a href="#"><img src="./images/icon-pinterest.svg" alt="pinterest icon" /></a>
     </div>
   </footer>
+  <script>
+    const button = document.querySelector('#menu');
+    const nav = document.querySelector('.nav-bar');
+    let menuOpen = false;
+    button.addEventListener('click', () => {
+      if (!menuOpen) {
+        nav.style.display = 'flex';
+        menuOpen = true;
+      } else {
+        nav.style.display = 'none';
+        menuOpen = false;
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -47,12 +47,19 @@ main {
   margin-bottom: 1rem;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  font-family: var(--font-barlow);
+
+}
+
 nav {
   display: flex;
   /* flex-direction: column; */
   justify-content: space-between;
-  align-items: center;
-  padding: 3rem;
   font-family: var(--font-barlow);
 }
 
@@ -85,8 +92,8 @@ nav ul li:last-child a:hover {
   color: white;
 }
 
-.logo img {
-  width: 150px;
+header > img {
+  width: 200px;
 }
 
 article {
@@ -179,14 +186,12 @@ article:nth-child(1) div a::after {
   background: url('images/desktop/image-graphic-design.jpg') no-repeat center center/cover;
 }
 
-.graphic-design h2,
-.photography h2 {
+.service div h2 {
   font-size: 2.5rem;
   font-family: var(--font-fraunces);
 }
 
-.graphic-design p,
-.photography p {
+.service div p {
   font-family: var(--font-barlow);
   font-size: 1.2rem;
 }
@@ -247,7 +252,7 @@ article:nth-child(1) div a::after {
 
 .testimonial p.title {
   font-family: var(--font-barlow);
-  color: var(--dark-grayish-blue);
+  color: var(--grayish-blue);
   font-size: 0.9rem;
   margin-block: 0.5rem 3rem;
 }
@@ -278,7 +283,7 @@ footer {
 
 footer > img {
   width: 206px;
-  height: 40px;
+  height: 36px;
 }
 
 footer ul {
@@ -309,4 +314,210 @@ footer div img {
   height: 40px;
   padding: 0.5rem;
   transition: all 0.3s ease;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  main {
+    background: url('images/mobile/image-header.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    height: 80vh;
+  }
+
+  .hero {
+    padding: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  header {
+    padding: 2rem 1rem;
+    position: relative;
+  }
+
+  header > img {
+    width: 120px;
+  }
+
+  header > button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 70px;
+    padding: 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 3rem;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 30px solid white;
+  }
+
+  nav ul li a {
+    color: var(--dark-grayish-blue);
+  }
+
+  nav ul li:last-child a {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--yellow);
+  }
+
+  nav ul li:last-child a:hover {
+    background-color: var(--soft-red);
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article img {
+    height: 100%;
+  }
+
+  article div {
+    padding: 5rem 1.1rem;
+    text-align: center;
+  }
+
+  article div h2 {
+    font-size: 2rem;
+  }
+
+  article div p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 30px;
+    margin-block: 2rem;
+  }
+
+  article div a {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .graphic-design {
+    background: url('images/mobile/image-graphic-design.jpg') no-repeat center center/cover;
+    height: 100%;
+  }
+
+  .photography {
+    background: url('images/mobile/image-photography.jpg') no-repeat center center/cover;
+  }
+
+  .service div {
+    padding: 4.5rem 0.3rem;
+    height: 95vh;
+  }
+
+  .service div h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1.8rem;
+  }
+
+  .service div p {
+    font-size: 1.05rem;
+    line-height: 150%;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding: 4.5rem 1rem;
+  }
+
+  .testimonials > h2 {
+    font-size: 0.9rem;
+    margin-block: 0;
+  }
+
+  .testimonial {
+    width: 100%;
+  }
+
+  .testimonial img {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+  }
+
+  .testimonial p.name {
+    font-size: 1.2rem;
+  }
+
+  .testimonial p.pg {
+    font-size: 1.2rem;
+    line-height: 170%;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+
+  .gallery picture img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  footer {
+    height: 55vh;
+    gap: 2rem;
+    color: var(--dark-moderate-cyan);
+  }
+
+  footer > img {
+    width: 150px;
+  }
+
+  footer ul {
+    gap: 2rem;
+  }
+
+  footer div img {
+    width: 35px;
+    height: 35px;
+  }
 }
