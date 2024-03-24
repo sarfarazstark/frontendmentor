@@ -204,6 +204,6 @@ const li = main.appendChild(document.createElement('ul'));
 
 directory
 	.sort((a, b) => new Date(a.submitDate) - new Date(b.submitDate))
-	.forEach((item) => {
-		li.insertAdjacentHTML('afterbegin', createListItemHTML(item));
-	});
+	.forEach((item) =>
+		li.insertAdjacentHTML('afterbegin', createListItemHTML(item))
+	);
