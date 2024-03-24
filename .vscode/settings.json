@@ -1,16 +1,17 @@
 {
-  "livePreview.defaultPreviewPath": "d:\\101\\challenges\\article-preview-component-master\\index.html",
-  "editor.tabSize": 2,
-  "cSpell.words": [
-    "bday",
-    "bmonth",
-    "byear",
-    "callout",
-    "desaturated",
-    "fmpage",
-    "fraunces",
-    "frontendmentor",
-    "milkbottles",
-    "sunnyside"
-  ]
+	"livePreview.defaultPreviewPath": "d:\\101\\challenges\\article-preview-component-master\\index.html",
+	"editor.tabSize": 2,
+	"cSpell.words": [
+		"bday",
+		"bmonth",
+		"byear",
+		"callout",
+		"desaturated",
+		"fmpage",
+		"fraunces",
+		"frontendmentor",
+		"milkbottles",
+		"sunnyside"
+	],
+	"liveServer.settings.port": 5501
 }
