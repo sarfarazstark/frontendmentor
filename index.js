@@ -154,12 +154,12 @@ const directory = [
 		fmpage: '7yVs3B6ef',
 		submitDate: 'Feb 10, 2024',
 	},
-	// {
-	// 	name: 'expenses-chart-component-main',
-	// 	tech: 'html-css-js',
-	// 	fmpage: 'e7yJBUdjwt',
-	// 	submitDate: 'Dec 11, 2022',
-	// }
+	{
+		name: 'expenses-chart-component-main',
+		tech: 'html-css-js',
+		fmpage: 'e7yJBUdjwt',
+		submitDate: 'Mar 24, 2024',
+	},
 ];
 const upperCaseEveryWord = (word) =>
 	word
