@@ -181,7 +181,7 @@ const frontendmentor = (name, url) => {
 	newName = newName.replace(/(\d)-/, '$1');
 	return newName + '-' + url;
 };
-
+document.querySelector('.total').textContent = directory.length;
 const createListItemHTML = (item) => {
 	const { name, tech } = item;
 	const newName = upperCaseEveryWord(name);
