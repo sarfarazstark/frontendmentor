@@ -34,6 +34,7 @@ body {
   background-color: var(--rose-100);
   max-width: 1440px;
   width: 100%;
+  position: relative;
 }
 
 main {
@@ -269,7 +270,7 @@ button.delete-item:hover {
   width: 12px;
 }
 
-hr {
+.hr {
   border: none;
   background-color: var(--rose-300);
   height: 1px;
@@ -327,24 +328,25 @@ hr {
 }
 
 .popup {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.571);
   display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 100;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .popup > div {
   background-color: var(--rose-50);
   width: 40%;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 15px;
   gap: 0.5rem;
+  margin-top: 10rem;
 }
 
 .popup > div > img {
@@ -360,7 +362,7 @@ hr {
 }
 
 .popup > div > p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--rose-500);
   margin-bottom: 1rem;
 }
@@ -382,6 +384,10 @@ hr {
   gap: 0.7rem;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.bill-items hr {
+  padding-inline: 0.5rem;
 }
 
 .bill-item img {
@@ -422,17 +428,17 @@ hr {
 }
 
 .confirm-amount {
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .confirm-amount p {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .confirm-amount strong {
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 900;
   color: var(--rose-900);
   transition: all 0.3s ease;

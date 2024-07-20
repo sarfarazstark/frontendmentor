@@ -238,7 +238,7 @@ const load = function () {
 		console.log(thumbnail, name, count, amount, countedTotal);
 		// const countedTotal = data.querySelector('.counted-total').textContent;
 		html = `
-          <img src="assets/images/image-waffle-thumbnail.jpg" alt="thumbnail">
+          <img src="${thumbnail}" alt="thumbnail">
           <div class="item">
             <div>
               <p>${name}</p>
@@ -255,7 +255,8 @@ const load = function () {
 		currLi.innerHTML = html;
 		currLi.classList.add('animation');
 		billContainer.appendChild(currLi);
-		billContainer.appendChild(document.createElement('hr'));
+		const hr = billContainer.appendChild(document.createElement('hr'));
+		hr.classList.add('hr');
 	};
 	const renderBill = function () {
 		// console.log(target);
@@ -281,27 +282,32 @@ const load = function () {
 
 	//////////////////////////////////////////////
 	// Popup for order successful
-	// const resetBtn = document.querySelector('.reset-btn');
-	// const cartResetting = function () {
-	// 	cartItems.forEach((item) => {
-	// 		item.remove();
-	// 	});
-	// 	cartItems = [];
-	// 	cartItemCounter.textContent = 0;
-	// 	checkoutTotal.textContent = '$0';
-	// 	total = 0;
-	// 	cartContainer.classList.add('none');
-	// 	emptyState.classList.remove('none');
-	// 	checkout.classList.add('none');
-	// 	desserts.forEach((node) => {
-	// 		node.querySelector('.add-to-cart').style.display = 'flex';
-	// 		node.querySelector('.inc-dcr').style.display = 'none';
-	// 		node.querySelector('img').classList.remove('item-image-border');
-	// 		node.querySelector('.inc-dcr').querySelector('span').textContent = 1;
-	// 	});
-	// };
+	const resetBtn = document.querySelector('.reset-btn');
+	const cartResetting = function () {
+		cartItems.forEach((item) => {
+			item.remove();
+		});
+		cartItems = [];
+		cartItemCounter.textContent = 0;
+		checkoutTotal.textContent = '$0';
+		total = 0;
+		cartContainer.classList.add('none');
+		emptyState.classList.remove('none');
+		checkout.classList.add('none');
+		desserts.forEach((node) => {
+			node.querySelector('.add-to-cart').style.display = 'flex';
+			node.querySelector('.inc-dcr').style.display = 'none';
+			node.querySelector('img').classList.remove('item-image-border');
+			node.querySelector('.inc-dcr').querySelector('span').textContent = 1;
+		});
 
-	// resetBtn.addEventListener('click', () => cartResetting);
+		billContainer.innerHTML = '';
+	};
+
+	resetBtn.addEventListener('click', () => {
+		popup.style.display = 'none';
+		cartResetting();
+	});
 };
 
 document.addEventListener('DOMContentLoaded', load);
