@@ -160,6 +160,12 @@ const directory = [
 		fmpage: 'e7yJBUdjwt',
 		submitDate: 'Mar 24, 2024',
 	},
+  // {
+	// 	name: 'product-list-with-cart-main',
+	// 	tech: 'html-css-js',
+	// 	fmpage: '5MmqLVAp_d',
+	// 	submitDate: '',
+	// },
 ];
 const upperCaseEveryWord = (word) =>
 	word

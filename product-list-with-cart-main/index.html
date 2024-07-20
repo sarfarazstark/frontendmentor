@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Frontend Mentor | Product list with cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Desserts</h1>
+    <ul class="items">
+      <!-- <li>
+        <picture>
+          <source media="(min-width: 1025px)" srcset="assets/images/image-waffle-desktop.jpg">
+          <source media="(max-width: 764px)" srcset="assets/images/image-waffle-tablet.jpg">
+          <source media="(max-width: 500px)" srcset="assets/images/image-waffle-mobile.jpg">
+          <img src="assets/images/image-waffle-desktop.jpg" alt="Waffle image">
+        </picture>
+        <div class="item-adder">
+          <button class="add-to-cart"><img src="assets/images/icon-add-to-cart.svg" alt="">Add to
+            Cart</button>
+          <div class="inc-dcr" style="display: none;">
+            <button><i class="fas fa-minus"></i></button>
+            <span>0</span>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <br>
+        <div class="info">
+          <small>Waffle</small>
+          <p>Waffle with Berries</p>
+          <strong>$6.50</strong>
+        </div>
+      </li> -->
+    </ul>
+  </main>
+  <aside>
+    <h2>Your Cart (<span class="cart-item-count">0</span>)</h2>
+    <section class="cart">
+      <ul class="cart-items none">
+        <!-- <li>
+          <div class="item">
+            <div>
+              <p>Waffle with Berries</p>
+              <strong>
+                <span>x2</span>
+                <span>@ $1.5</span>
+                <span>$3</span>
+              </strong>
+            </div>
+            <button class="delete-item"><i class="fas fa-xmark"></i></button>
+          </div>
+          <hr>
+        </li> -->
+      </ul>
+      <div class="checkout none">
+        <div class="amount">
+          <p>Order total</p>
+          <strong>$0</strong>
+        </div>
+        <article>
+          <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon"> This is a
+          <strong>carbon-neutral</strong> delivery
+        </article>
+        <button>Confirm Order</button>
+      </div>
+      <div class="empty-state">
+        <img src="assets/images/illustration-empty-cart.svg" alt="cart is empty illustration">
+        <p>Your added items will appear here</p>
+      </div>
+    </section>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
