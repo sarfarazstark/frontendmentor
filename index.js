@@ -1,13 +1,13 @@
-// const fs = require('fs');
+//const fs = require('fs');
 
-// fs.readdir('./', { withFileTypes: true }, (error, files) => {
-//     if (error) throw error;
-//     const directoriesInDIrectory = files
-//         .filter((item) => item.isDirectory())
-//         .map((item) => item.name);
+//fs.readdir('./', { withFileTypes: true }, (error, files) => {
+//    if (error) throw error;
+//    const directoriesInDIrectory = files
+//        .filter((item) => item.isDirectory())
+//        .map((item) => item.name);
 
-//     console.log(directoriesInDIrectory);
-// });
+//    console.log(directoriesInDIrectory);
+//});
 
 const directory = [
 	{
