@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Open sans";
+  src: url("./fylo-dark-theme-landing-page-master/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(./fylo-dark-theme-landing-page-master/Raleway-VariableFont_wght.ttf);
+}
+
+/* Fylo dark theme css */
+.underline-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Adjust the gap between text and image as needed */
+}
+
+.underline-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  /* Adjust this value to increase space between underline and elements */
+  width: 100%;
+  height: 1px;
+  /* Adjust the underline thickness */
+  background-color: currentColor;
+}
+
+/* Fylo dark theme css end */
