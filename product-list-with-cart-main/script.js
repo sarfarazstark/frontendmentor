@@ -22,7 +22,7 @@ const load = function () {
 		const html = `
     <picture>
       <source media="(min-width: 1025px)" srcset="${item.image.desktop}">
-      <source media="(max-width: 764px)" srcset="${item.image.tablet}">
+      <source media="(min-width: 501px) and (max-width: 1024px)" srcset="${item.image.tablet}">
       <source media="(max-width: 500px)" srcset="${item.image.mobile}">
       <img src="${item.image.desktop}" alt="${item.name} image">
     </picture>
@@ -108,7 +108,7 @@ const load = function () {
 		theList.querySelector('.inc-dcr').style.display = 'flex';
 		theList.querySelector('img').classList.add('item-image-border');
 		cartItems.push(currLi);
-		cartItemCounter.innerHTML = cartItems.length;
+		cartItemCounter.textContent = parseInt(cartItemCounter.textContent) + 1;
 	};
 
 	const incrementOrDecrement = function (e, action) {
@@ -139,6 +139,7 @@ const load = function () {
 
 			total += itemAmount;
 			checkoutTotal.textContent = `$${total}`; // update the total price of the cart
+			cartItemCounter.textContent = parseInt(cartItemCounter.textContent) + 1;
 		} else if (action === 'minus') {
 			if (parseInt(buttonSpan.textContent) === 1) return 0;
 			const buttonSpanValue = parseInt(buttonSpan.textContent) - 1;

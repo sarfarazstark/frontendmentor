@@ -9,6 +9,7 @@
   --rose-400: hsl(7, 20%, 60%);
   --rose-500: hsl(12, 20%, 44%);
   --rose-900: hsl(14, 65%, 9%);
+  --main-width: 1440px;
 }
 
 * {
@@ -19,36 +20,48 @@
   list-style: none;
 }
 
-html {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
 }
 
+
 body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--rose-100);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+main {
   display: inherit;
   flex-direction: row;
   align-items: flex-start;
   padding: 6rem;
   gap: 3rem;
-  background-color: var(--rose-100);
-  max-width: 1440px;
+  max-width: var(--main-width);
   width: 100%;
-  position: relative;
 }
 
-main {
+main section {
   flex: 3.5;
   width: 100%;
 }
 
-main h1 {
+main section h1 {
   margin-bottom: 1.5rem;
   font-size: 3rem;
   color: var(--rose-900);
 }
 
-main ul {
+main section ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
@@ -61,6 +74,8 @@ main ul {
 }
 
 .items li > picture > img {
+  /* shadow bottom stretch*/
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1.3rem;
@@ -94,9 +109,6 @@ main ul {
 
 .items li .add-to-cart {
   background: var(--rose-50);
-  position: absolute;
-  top: 64%;
-  right: 19%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -107,7 +119,6 @@ main ul {
 .items li .add-to-cart img {
   width: fit-content;
   margin-right: 2px;
-
 }
 
 .item-adder .inc-dcr,
@@ -120,13 +131,14 @@ main ul {
 }
 
 .item-adder {
-  position: absolute;
-  top: 64%;
+  /* position: absolute; */
+  /* top: 64%; */
   /* right: 19%; */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -20%;
 }
 
 div.inc-dcr {
@@ -231,7 +243,7 @@ button.delete-item {
   color: var(--rose-300);
   border: 2px solid var(--rose-300);
   border-radius: 10px;
-  padding: 1px 5px;
+  padding: 0px 3px;
   height: auto;
   cursor: pointer;
   /* line-height: 0; */
@@ -327,26 +339,30 @@ button.delete-item:hover {
 
 }
 
-.popup {
-  position: absolute;
+article.popup {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.571);
   display: flex;
-  z-index: 100;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  z-index: 100;
+  overflow: auto;
 }
 
 .popup > div {
   background-color: var(--rose-50);
-  width: 40%;
+  width: calc(var(--main-width) * 0.4);
+  max-width: 500px;
   padding: 2rem;
   border-radius: 15px;
   gap: 0.5rem;
-  margin-top: 10rem;
+  margin: 1rem;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .popup > div > img {
@@ -374,6 +390,8 @@ button.delete-item:hover {
   background-color: var(--rose-100);
   padding: 1rem;
   border-radius: 10px;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .bill-item {
@@ -387,7 +405,7 @@ button.delete-item:hover {
 }
 
 .bill-items hr {
-  padding-inline: 0.5rem;
+  width: 95%;
 }
 
 .bill-item img {
@@ -476,77 +494,140 @@ button.reset-btn {
 }
 
 /* Screen less than 1024 pixels */
-@media only screen and (max-width: 1024px) {
-  body {
+@media (max-width: 1024px) {
+  main {
     padding: 1.5rem;
   }
 
-  main ul {
+  section ul.items {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
-  .items li button {
-    top: 58%;
-    right: 20%;
-    width: 60%;
+  .items .item-adder {
+    margin-top: -25%;
+  }
+
+  .items .inc-dcr {
+    padding: 0.6rem;
+    width: 55%;
+  }
+
+  .items .item-adder > button {
+    width: 55%;
     font-size: 0.6rem;
   }
 
-  .items li button > img {
-    width: 15%;
+  .items .item-adder > button > img {
+    width: 20%;
   }
 
-  aside img {
+  /* items list info all */
+  .items li .info > small {
+    font-size: 80%;
+  }
+
+  /* p tag */
+  .items li .info > p {
+    font-size: 14px;
+  }
+
+  main aside img {
     width: 50%;
   }
 
-  aside p {
+  main aside p {
     font-size: 14px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
   }
+
+  .checkout button.confirm-btn {
+    font-size: 13px;
+    padding: 12px 20px;
+  }
+
+  .checkout article {
+    font-size: 11px;
+  }
+
+  .checkout article img {
+    width: 10%;
+  }
+
+  /* Popup redesign all css for this screen size */
+  article.popup > div {
+    width: 45%;
+    padding: 1.5rem;
+    gap: 0.5rem;
+  }
+
 }
 
 
 
 /* Tablet screen */
-@media only screen and (max-width: 768px) {
-  body {
+@media (min-width: 501px) and (max-width: 1023px) {
+  main {
     padding: 1.5rem;
   }
 
-  main {
+  main section {
     flex: 3;
   }
 
-  aside {
+  main aside {
     flex: 2;
   }
 
-  main ul {
+  main section ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
-  .info small {
-    font-size: 80%;
+  .item-adder {
+    margin-top: -25%;
   }
 
-  .info p {
-    font-size: 1rem;
+  /* items list info all */
+  .items li .info > small {
+    font-size: 70%;
   }
 
-  .info strong {
-    font-size: 0.9rem;
-  }
-
-  .items li button {
-    top: 55%;
-    right: 20%;
-    width: 60%;
+  .items .item-adder .inc-dcr {
+    padding: 0.5rem;
+    width: 55%;
     font-size: 0.7rem;
   }
 
-  .items li button > img {
-    width: 15%;
+  .items .item-adder .inc-dcr button {
+    height: auto;
+  }
+
+  /* p tag */
+  .items li .info > p {
+    font-size: 13px;
+  }
+
+  .items li .info > strong {
+    font-size: 14px;
+  }
+
+  .items li .item-adder > button {
+    width: 60%;
+    font-size: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  .items li button.add-to-cart > img {
+    width: 18%;
+  }
+
+  /* .items .item-adder .inc-dcr button {
+    padding: 0;
+  } */
+
+  .items .item-adder button.inc-dcr span {
+    font-size: 11px;
   }
 
   aside img {
@@ -555,35 +636,207 @@ button.reset-btn {
 
   aside p {
     font-size: 12px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+  }
+
+  .cart-items .item p {
+    font-size: 12px;
+  }
+
+  .cart-items .item strong {
+    font-size: 12px;
+  }
+
+  .cart-items .delete-item {
+    padding: 0px 3px;
+  }
+
+
+  .checkout button.confirm-btn {
+    font-size: 13px;
+    padding: 12px 20px;
+  }
+
+  .checkout article {
+    font-size: 11px;
+  }
+
+  .checkout article img {
+    width: 10%;
+  }
+
+  /* Popup redesign all css for this screen size */
+  article.popup > div {
+    width: 45%;
+    padding: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  article.popup > div > img {
+    width: 10%;
+    margin-bottom: 1rem;
+  }
+
+  article.popup > div > h1 {
+    font-size: 1.5rem;
+  }
+
+  article.popup > div > p {
+    font-size: 0.7rem;
+    color: var(--rose-500);
+    margin-top: -0.5rem;
+  }
+
+  article.popup .bill-items {
+    padding: 0.5rem;
+  }
+
+  article.popup .bill-item {
+    height: 50px;
+  }
+
+  article.popup .bill-item .item p {
+    font-size: 12px;
+    margin-bottom: 0.2rem;
+  }
+
+  article.popup .bill-item .item strong {
+    font-size: 12px;
+  }
+
+  article.popup .bill-item .item > span {
+    font-size: 16px;
+  }
+
+  article.popup .confirm-amount p {
+    font-size: 12px;
+  }
+
+  article.popup .confirm-amount strong {
+    font-size: 22px;
   }
 }
 
 /* Mobile screen */
-@media only screen and (max-width: 500px) {
-  body {
+@media (max-width: 500px) {
+  main {
     flex-direction: column;
-    padding: 2rem;
+    padding: 0;
     height: auto;
   }
 
-  main ul {
+  main section ul.items {
     grid-template-columns: 1fr;
   }
 
-  .items li button {
-    top: 64%;
-    right: 25%;
+  main section,
+  main section h1 {
+    padding: 2rem;
+  }
+
+  main section h1 {
+    margin-bottom: 4rem;
+  }
+
+  .items .item-adder {
+    margin-top: -13%;
+  }
+
+  .items .item-adder button {
+    width: 55%;
+    font-size: 1.2rem;
+  }
+
+  .items .item-adder > button > img {
+    width: 15%;
+  }
+
+  .items .inc-dcr {
+    padding: 0.6rem 5px;
+    width: 55%;
+    font-size: 18px;
+  }
+
+
+  /* p tag */
+  .items li .info > p {
+    font-size: 1.6rem;
+  }
+
+  /* items info small tag = category name */
+  .items li .info > small {
+    font-size: 1rem;
+  }
+
+  .items li .info > strong {
+    font-size: 1.2rem;
+  }
+
+  main aside {
+    height: 60%;
+    padding: 2rem;
+  }
+
+  aside h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  main aside .cart {
+    padding: 0;
+  }
+
+  aside .empty-state img {
     width: 50%;
-    padding-block: 13px;
-    font-size: calc(70% + 1vw);
+    margin-bottom: 2rem;
   }
 
-  .info small {
-    font-size: 90%;
+  aside .empty-state p {
+    font-size: 1.2rem;
   }
 
-  .info p {
-    font-size: 1.1rem;
+  .cart-items .item p {
+    font-size: 1.2rem;
+  }
+
+  .cart-items .item strong {
+    font-size: 1rem;
+  }
+
+  .cart-items .delete-item {
+    padding: 1px 5px;
+    border-radius: 500px;
+  }
+
+  .cart-items .delete-item i {
+    font-size: 1.2rem;
+  }
+
+  .checkout .amount p,
+  .checkout article {
+    font-size: 17px;
+  }
+
+  .checkout article img {
+    width: 10%;
+  }
+
+  .checkout > button.confirm-btn {
+    font-size: 1.3rem;
+    padding: 15px 20px;
+  }
+
+  article.popup {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  article.popup > div {
+    width: 100%;
+    max-height: 90%;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
   }
 }

@@ -2,27 +2,28 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title>Frontend Mentor | Product list with cart</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main>
-    <h1>Desserts</h1>
-    <ul class="items">
-      <!-- <li>
+    <section>
+      <h1>Desserts</h1>
+      <ul class="items">
+        <!-- <li>
         <picture>
           <source media="(min-width: 1025px)" srcset="assets/images/image-waffle-desktop.jpg">
-          <source media="(max-width: 764px)" srcset="assets/images/image-waffle-tablet.jpg">
+          <source media="(min-width: 501px) and (max-width: 1024px)" srcset="assets/images/image-waffle-tablet.jpg">
           <source media="(max-width: 500px)" srcset="assets/images/image-waffle-mobile.jpg">
           <img src="assets/images/image-waffle-desktop.jpg" alt="Waffle image">
         </picture>
@@ -35,20 +36,19 @@
             <button><i class="fas fa-plus"></i></button>
           </div>
         </div>
-        <br>
         <div class="info">
           <small>Waffle</small>
           <p>Waffle with Berries</p>
           <strong>$6.50</strong>
         </div>
       </li> -->
-    </ul>
-  </main>
-  <aside>
-    <h2>Your Cart (<span class="cart-item-count">0</span>)</h2>
-    <section class="cart">
-      <ul class="cart-items none">
-        <!-- <li>
+      </ul>
+    </section>
+    <aside>
+      <h2>Your Cart (<span class="cart-item-count">0</span>)</h2>
+      <section class="cart">
+        <ul class="cart-items none">
+          <!-- <li>
           <div class="item">
             <div>
               <p>Waffle with Berries</p>
@@ -62,27 +62,29 @@
           </div>
           <hr>
         </li> -->
-      </ul>
-      <div class="checkout none">
-        <div class="amount">
-          <p>Order total</p>
-          <strong>$0</strong>
+        </ul>
+        <div class="checkout none">
+          <div class="amount">
+            <p>Order total</p>
+            <strong>$0</strong>
+          </div>
+          <article>
+            <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
+            This is a <strong>carbon-neutral</strong> delivery
+          </article>
+          <button class="confirm-btn">Confirm Order</button>
         </div>
-        <article>
-          <img src="assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon"> This is a
-          <strong>carbon-neutral</strong> delivery
-        </article>
-        <button class="confirm-btn">Confirm Order</button>
-      </div>
-      <div class="empty-state">
-        <img src="assets/images/illustration-empty-cart.svg" alt="cart is empty illustration">
-        <p>Your added items will appear here</p>
-      </div>
-    </section>
-  </aside>
-  <article class="popup" style="display: none;">
+        <div class="empty-state">
+          <img src="assets/images/illustration-empty-cart.svg" alt="cart is empty illustration" />
+          <p>Your added items will appear here</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <article class="popup" style="display: none">
     <div>
-      <img src="assets/images/icon-order-confirmed.svg" alt="order Confirm">
+      <img src="assets/images/icon-order-confirmed.svg" alt="order Confirm" />
       <h1>Order Confirmed</h1>
       <p>We hope you enjoy your food</p>
 
@@ -100,6 +102,11 @@
             <span>$3</span>
           </div>
         </li> -->
+        <!-- 
+        <div class="confirm-amount">
+          <p>Order total</p>
+          <strong>$0</strong>
+        </div> -->
         <!-- <hr> -->
       </ul>
       <button class="reset-btn">Start New Order</button>
