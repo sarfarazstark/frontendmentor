@@ -579,7 +579,7 @@ button.reset-btn {
     flex: 2;
   }
 
-  main section ul {
+  main section ul.items {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
