@@ -22,7 +22,7 @@ module.exports = {
 			},
 			backgroundImage: {
 				'fylo-mobile-bg': "url('./images/bg-curvy-mobile.svg')",
-				'fylo-desktop-bg': "url('/images/bg-curvy-desktop.svg')",
+				'fylo-desktop-bg': "url('./images/bg-curvy-desktop.svg')",
 			},
 		},
 	},
