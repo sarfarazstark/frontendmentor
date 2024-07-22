@@ -72,16 +72,20 @@ ul li a {
   text-transform: uppercase;
 }
 
-.tech span:nth-child(1) {
+.tech span.html {
   color: rgb(106, 190, 205);
 }
 
-.tech span:nth-child(2) {
+.tech span.css {
   color: rgb(75, 101, 194);
 }
 
-.tech span:nth-child(3) {
+.tech span.js {
   color: rgb(207, 99, 144);
+}
+
+.tech span.tailwindcss {
+  color: #0ea5e9;
 }
 
 ul > li > h3 {

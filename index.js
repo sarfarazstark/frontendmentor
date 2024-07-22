@@ -21,7 +21,7 @@ const createListItemHTML = (item) => {
       <div class="tech">
           ${tech
 						.split('-')
-						.map((name) => `<span>${name}</span>`)
+						.map((name) => `<span class="${name}">${name}</span>`)
 						.join(' ')}
       </div>
       <h3>${newName}</h3> 
