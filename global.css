@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fylo dark theme css */
 @font-face {
   font-family: "Open sans";
   src: url("./fylo-dark-theme-landing-page-master/OpenSans-VariableFont_wdth\,wght.ttf");
@@ -12,7 +13,6 @@
   src: url(./fylo-dark-theme-landing-page-master/Raleway-VariableFont_wght.ttf);
 }
 
-/* Fylo dark theme css */
 .underline-wrapper {
   position: relative;
   display: inline-flex;
@@ -34,3 +34,16 @@
 }
 
 /* Fylo dark theme css end */
+
+/* Github user search app css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Custom autofill styles */
+/* Custom autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  @apply shadow-innerColor;
+  -webkit-text-fill-color: inherit !important;
+}

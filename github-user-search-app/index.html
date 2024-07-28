@@ -8,24 +8,91 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
   <title>Frontend Mentor | GitHub user search app</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="script.js"></script>
 </head>
 
-<body>
+<body class="bg-git-user-whitish-blue p-10">
+  <main class="font-space flex flex-col gap-5 text-git-user-dark-navy-blue">
 
-  devfinder
+    <!-- HEADER -->
+    <header class="flex justify-between items-center">
+      <h1 class="font-bold text-3xl">devfinder</h1>
+      <button class="flex items-center font-semibold uppercase tracking-widest">Dark <img src="assets/icon-moon.svg"
+          alt="theme-mode-btn" class="ml-4"></button>
+    </header>
 
-  Light
-  Dark
+    <!-- SEARCH SECTION -->
+    <div class="search-bar flex gap-1 items-center p-2 rounded-xl bg-git-user-navy-blue-2">
 
-  Search GitHub username...
-  Search
+      <!-- Label -->
+      <label for="username"><img src="assets/icon-search.svg" alt=""></label>
 
-  Joined
+      <!-- Search input -->
+      <input
+        class="flex-1 bg-inherit py-3 px-0 outline-none  autofill:shadow-innerColor placeholder:tracking-tight placeholder:text-git-user-gray"
+        type="text" name="username" id="username" value="" placeholder="Search GitHub username..." required>
 
-  Repos
-  Followers
-  Following
+      <!-- Search button -->
+      <input type="submit" value="Search" onclick="search(this)"
+        class="bg-git-user-blue py-3 px-4 font-bold rounded-md text-git-user-whitish-blue">
+    </div>
 
+    <section class="user-info-section bg-git-user-navy-blue-2">
+
+      <div class="info">
+        <div class="avatar"><img src="assets/avatar-placeholder.png" alt="avatar"></div>
+        <div class="user-info">
+          <h2 class="name">The Octocat</h2>
+          <p class="username">@octocat</p>
+          <p class="joined">Joined 25 Jan 2011</p>
+        </div>
+      </div>
+
+      <article class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quas amet error quisquam
+        tempore dicta! Fugit nisi architecto quam illo, amet ad neque quaerat maiores veniam tempore similique
+        laudantium optio.</article>
+
+      <ul class="stat bg-git-user-grayish-blue">
+        <li>
+          <p>Repos</p>
+          <span class="repos">8</span>
+        </li>
+        <li>
+          <p>Followers</p>
+          <span class="followers">16</span>
+        </li>
+        <li>
+          <p>Following</p>
+          <span class="followings">45</span>
+        </li>
+      </ul>
+
+
+      <ul class="links">
+        <li>
+          <img src="assets/icon-location-dark.svg" alt="location">
+          <p class="location"></p>
+        </li>
+        <li>
+          <img src="assets/icon-website-dark.svg" alt="website">
+          <a href="#" class="website">https://github.blog</a>
+        </li>
+        <li>
+          <img src="assets/icon-twitter-dark.svg" alt="twitter">
+          <a href="#" class="twitter">Not Available</a>
+        </li>
+        <li>
+          <img src="assets/icon-company-dark.svg" alt="company">
+          <p class="company">@github</p>
+        </li>
+      </ul>
+
+    </section>
+  </main>
 </body>
 
 </html>
