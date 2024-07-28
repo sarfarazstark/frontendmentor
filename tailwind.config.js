@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	darkMode: 'class',
 	content: [
 		'**/*.{html,css,js}',
 		// Add more project folders as needed
@@ -42,7 +43,8 @@ module.exports = {
 				'fylo-desktop-bg': "url('./images/bg-curvy-desktop.svg')",
 			},
 			boxShadow: {
-				innerColor: '0 0 0px 1000px #000000 inset',
+				innerColor: '0 0 0px 30px hsl(222, 44%, 70%) inset',
+				darkInnerColor: '0 0 0px 1000px hsl(222, 41%, 20%) inset',
 			},
 		},
 	},

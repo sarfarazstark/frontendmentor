@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme dark">
 
 <head>
   <meta charset="UTF-8">
@@ -12,87 +12,104 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script defer src="script.js"></script>
 </head>
 
-<body class="bg-git-user-whitish-blue p-10">
-  <main class="font-space flex flex-col gap-5 text-git-user-dark-navy-blue">
+<body
+  class="bg-git-user-whitish-blue dark:bg-git-user-dark-navy-blue p-10 flex justify-center items-center lg:h-screen">
+  <main
+    class="font-space flex flex-col gap-5 text-git-user-dark-navy-blue dark:text-git-user-whitish-blue md:max-w-lg lg:max-w-2xl md:mt-12 lg:mt-6">
 
     <!-- HEADER -->
-    <header class="flex justify-between items-center">
+    <header class="flex justify-between items-center mb-4">
       <h1 class="font-bold text-3xl">devfinder</h1>
-      <button class="flex items-center font-semibold uppercase tracking-widest">Dark <img src="assets/icon-moon.svg"
-          alt="theme-mode-btn" class="ml-4"></button>
+
+      <button id="theme-toggle" class="flex items-center font-semibold uppercase tracking-widest"><span>light</span><img
+          src="assets/icon-sun.svg" alt="theme-mode-btn" class="ml-4"></button>
     </header>
 
     <!-- SEARCH SECTION -->
-    <div class="search-bar flex gap-1 items-center p-2 rounded-xl bg-git-user-navy-blue-2">
+    <div
+      class="search-bar flex gap-2 items-center p-2 pl-4 md:pl-8 rounded-xl bg-git-user-navy-blue-2 dark:bg-git-user-navy-blue">
 
       <!-- Label -->
-      <label for="username"><img src="assets/icon-search.svg" alt=""></label>
+      <label for="username"><img src="assets/icon-search.svg" alt="search label" class="w-5 md:w-6"></label>
 
       <!-- Search input -->
-      <input
-        class="flex-1 bg-inherit py-3 px-0 outline-none  autofill:shadow-innerColor placeholder:tracking-tight placeholder:text-git-user-gray"
-        type="text" name="username" id="username" value="" placeholder="Search GitHub username..." required>
+      <input class="search-input flex-1 bg-inherit py-2 px-0 md:pl-4 outline-none autofill:shadow-innerColor autofill:text-inherit dark:autofill:shadow-darkInnerColor dark:autofill:text-git-user-whitish-blue placeholder:tracking-tight placeholder:text-git-user-grayish-blue 
+        md:placeholder:text-lg dark:placeholder:text-git-user-whitish-blue" type="text" name="username" id="username"
+        value="" placeholder="Search GitHub username..." required>
 
       <!-- Search button -->
-      <input type="submit" value="Search" onclick="search(this)"
-        class="bg-git-user-blue py-3 px-4 font-bold rounded-md text-git-user-whitish-blue">
+      <input type="submit" id="search-btn" value="Search"
+        class="bg-git-user-blue py-2 px-4 font-bold rounded-md text-git-user-whitish-blue">
     </div>
 
-    <section class="user-info-section bg-git-user-navy-blue-2">
+    <!-- Main user info section -->
+    <section class="user-info-section p-5 md:p-10 rounded-xl bg-git-user-navy-blue-2 dark:bg-git-user-navy-blue
+    lg:grid grid-cols-4
+    ">
 
-      <div class="info">
-        <div class="avatar"><img src="assets/avatar-placeholder.png" alt="avatar"></div>
-        <div class="user-info">
-          <h2 class="name">The Octocat</h2>
-          <p class="username">@octocat</p>
-          <p class="joined">Joined 25 Jan 2011</p>
+      <div
+        class="info col-span-4 flex items-center lg:items-start gap-5 lg:grid lg:gap-0 grid-cols-4 md:gap-10 mb-6 lg:m-0">
+
+        <div class="w-1/4 lg:w-full lg:px-4">
+          <img src="assets/avatar-placeholder.png" alt="avatar" class="avatar w-full rounded-full">
+        </div>
+
+        <div class="user-info col-span-3 lg:grid grid-cols-2 lg:w-full">
+          <h2 class="name text-xl md:text-2xl lg:text-3xl font-bold">The Octocat</h2>
+          <p class="username text-git-user-blue mb-1">@octocat</p>
+          <p class="joined -col-start-2 row-start-1 lg:content-start lg:text-right">Joined 25 Jan 2011</p>
         </div>
       </div>
 
-      <article class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quas amet error quisquam
-        tempore dicta! Fugit nisi architecto quam illo, amet ad neque quaerat maiores veniam tempore similique
-        laudantium optio.</article>
+      <article class="bio mb-6 text-sm -col-start-4 col-span-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quas amet error quisquam
+        tempore dicta! Fugit nisi architecto quam illo, amet
+      </article>
 
-      <ul class="stat bg-git-user-grayish-blue">
+      <ul class="stat bg-git-user-grayish-blue dark:bg-git-user-dark-navy-blue flex justify-around md:justify-start md:gap-20 md:px-8 text-center md:text-left p-3 rounded-md mb-6 text-git-user-whitish-blue
+        -col-start-4 col-span-3
+        ">
         <li>
-          <p>Repos</p>
-          <span class="repos">8</span>
+          <p class="text-sm">Repos</p>
+          <span class="repos text-xl font-bold">8</span>
         </li>
         <li>
-          <p>Followers</p>
-          <span class="followers">16</span>
+          <p class="text-sm">Followers</p>
+          <span class="followers text-xl font-bold">16</span>
         </li>
         <li>
-          <p>Following</p>
-          <span class="followings">45</span>
+          <p class="text-sm">Following</p>
+          <span class="followings text-xl font-bold">45</span>
         </li>
       </ul>
 
 
-      <ul class="links">
-        <li>
-          <img src="assets/icon-location-dark.svg" alt="location">
-          <p class="location"></p>
+      <ul class="links flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-12 text-git-user-navy-blue dark:text-git-user-whitish-blue
+        -col-start-4 col-span-3
+        ">
+        <li class="flex gap-4 items-center">
+          <img src="assets/icon-location-light.svg" data-img="assets/icon-location-dark.svg" alt="location" class="w-4">
+          <p class="location">San francisco</p>
         </li>
-        <li>
-          <img src="assets/icon-website-dark.svg" alt="website">
+        <li class="flex gap-4 items-center md:row-start-2">
+          <img src="assets/icon-website-light.svg" data-img="assets/icon-website-dark.svg" alt="website" class="w-5">
           <a href="#" class="website">https://github.blog</a>
         </li>
-        <li>
-          <img src="assets/icon-twitter-dark.svg" alt="twitter">
-          <a href="#" class="twitter">Not Available</a>
+        <li class="flex gap-4 items-center">
+          <img src="assets/icon-twitter-light.svg" data-img="assets/icon-twitter-dark.svg" alt="twitter" class="w-5">
+          <a href="#" class="twitter text-git-user-grayish-blue">Not Available</a>
         </li>
-        <li>
-          <img src="assets/icon-company-dark.svg" alt="company">
+        <li class="flex gap-4 items-center">
+          <img src="assets/icon-company-light.svg" data-img="assets/icon-company-dark.svg" alt="company" class="w-5">
           <p class="company">@github</p>
         </li>
       </ul>
 
     </section>
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>
