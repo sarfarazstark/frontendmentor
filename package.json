@@ -31,6 +31,7 @@
     "sunnysideagency": "npx tailwindcss -i ./global.css -o ./sunnyside-agency-landing-page-main/style.css --watch",
     "expenseschart": "npx tailwindcss -i ./global.css -o ./expenses-chart-component-main/style.css --watch",
     "productlist": "npx tailwindcss -i ./global.css -o ./product-list-with-cart-main/style.css --watch",
-    "fylodark": "npx tailwindcss -i ./global.css -o ./fylo-dark-theme-landing-page-master/style.css --watch"
+    "fylodark": "npx tailwindcss -i ./global.css -o ./fylo-dark-theme-landing-page-master/style.css --watch",
+    "githubuser": "npx tailwindcss -i ./global.css -o ./github-user-search-app/style.css --watch"
   }
 }
