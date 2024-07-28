@@ -1,4 +1,6 @@
 'use strict';
+const searchUserName = window.location.search.split('?')[1];
+console.log(searchUserName);
 const searchBtn = document.querySelector('#search-btn');
 const searchInput = document.querySelector('.search-input');
 const userInfoContainer = document.querySelector('.user-info-section');
@@ -20,7 +22,6 @@ const elements = [
 
 const blurringNotAvailableContent = function (array) {
 	array.forEach((element) => {
-		console.log(element);
 		if (element.textContent === 'Not available') {
 			element.classList.add('text-git-user-grayish-blue');
 		} else {
@@ -68,16 +69,14 @@ const renderUserInfo = function (json) {
 		blurringNotAvailableContent(elements);
 	}, 1000);
 
-	console.log(json);
+	// console.log(json);
 };
 // getting the user and error handling
-const search = async function (event) {
-	if (searchInput.value === '') return alert('Input Field Empty');
+const search = async function (input) {
+	if (input === '') return alert('Input Field Empty');
 
 	try {
-		const response = await fetch(
-			`https://api.github.com/users/${searchInput.value}`
-		);
+		const response = await fetch(`https://api.github.com/users/${input}`);
 		if (!response.ok) throw new Error('User not found!');
 
 		const responseJSON = await response.json();
@@ -87,10 +86,16 @@ const search = async function (event) {
 	}
 };
 
-searchBtn.addEventListener('click', search);
+if (searchUserName) {
+	search(searchUserName);
+}
+
+searchBtn.addEventListener('click', () => {
+	search(searchInput.value);
+});
 searchInput.addEventListener('keydown', (e) => {
 	if (e.type === 'keydown' && e.key === 'Enter') {
-		search(e);
+		search(searchInput.value);
 	}
 });
 
