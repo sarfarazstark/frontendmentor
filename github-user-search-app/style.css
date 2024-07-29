@@ -2008,7 +2008,7 @@ input:-webkit-autofill:active {
   --tw-shadow: 0 0 0px 30px hsl(222, 44%, 70%) inset;
   --tw-shadow-colored: inset 0 0 0px 30px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  -webkit-text-fill-color: inherit !important;
+  -webkit-text-fill-color: white !important;
 }
 
 .placeholder\:tracking-tight::-moz-placeholder {
@@ -2035,6 +2035,26 @@ input:-webkit-autofill:active {
 
 .autofill\:text-inherit:autofill {
   color: inherit;
+}
+
+.autofill\:text-git-user-whitish-blue:-webkit-autofill {
+  --tw-text-opacity: 1;
+  color: hsl(227 100% 98% / var(--tw-text-opacity));
+}
+
+.autofill\:text-git-user-whitish-blue:autofill {
+  --tw-text-opacity: 1;
+  color: hsl(227 100% 98% / var(--tw-text-opacity));
+}
+
+.autofill\:text-git-user-dark-navy-blue:-webkit-autofill {
+  --tw-text-opacity: 1;
+  color: hsl(220 40% 13% / var(--tw-text-opacity));
+}
+
+.autofill\:text-git-user-dark-navy-blue:autofill {
+  --tw-text-opacity: 1;
+  color: hsl(220 40% 13% / var(--tw-text-opacity));
 }
 
 .autofill\:shadow-innerColor:-webkit-autofill {
