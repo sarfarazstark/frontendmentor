@@ -88,6 +88,10 @@ ul li a {
   color: #0ea5e9;
 }
 
+.tech span.api {
+  color: #f39e00;
+}
+
 ul > li > h3 {
   padding-right: 1.6rem;
   font-size: 1.5rem;
