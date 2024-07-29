@@ -63,6 +63,7 @@ ul li a {
 
 .tech {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding-block: 0.5rem;
   /* background-color: #2d2b44; */
