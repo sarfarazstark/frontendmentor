@@ -63,6 +63,7 @@ ul li a {
 
 .tech {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding-block: 0.5rem;
   /* background-color: #2d2b44; */
@@ -86,6 +87,10 @@ ul li a {
 
 .tech span.tailwindcss {
   color: #0ea5e9;
+}
+
+.tech span.api {
+  color: #f39e00;
 }
 
 ul > li > h3 {
