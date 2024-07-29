@@ -44,5 +44,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   @apply shadow-innerColor;
-  -webkit-text-fill-color: inherit !important;
+  -webkit-text-fill-color: white !important;
 }
