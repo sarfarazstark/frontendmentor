@@ -10,6 +10,11 @@
 
   <title>Frontend Mentor | Tip calculator app</title>
   <link rel="stylesheet" href="style.css">
+  <!-- <style>
+    input[type="radio"]:checked {
+      display: block;
+    }
+  </style> -->
 
 </head>
 
@@ -21,8 +26,8 @@
     class="p-9 lg:p-12 lg:max-w-5xl md:max-w-md bg-tip-calculator-white rounded-t-3xl lg:rounded-3xl shadow-lg lg:grid lg:grid-cols-2 lg:gap-10">
     <section class="text-tip-calculator-dark-grayish-cyan mb-10 lg:m-0 lg:flex lg:flex-col lg:justify-around">
       <div class="mb-10">
-        <h3 class="text-xl font-bold mb-2 flex gap-2">Bill<img src="./images/circle-exclamation-solid.svg" alt="error"
-            width="20" class="hidden">
+        <h3 class="text-xl font-bold mb-2 flex gap-2">Bill
+          <img src="./images/circle-exclamation-solid.svg" alt="error" width="20" class="hidden animate-bounce">
         </h3>
         <div class="px-5 py-2 rounded-md flex justify-between items-center bg-tip-calculator-very-light-grayish-cyan">
           <img src="./images/icon-dollar.svg" alt="dollar icon">
@@ -33,40 +38,40 @@
       </div>
 
       <div class="mb-10">
-        <h3 class="text-xl font-bold mb-2 flex gap-2">Select Tip % <img src="./images/circle-exclamation-solid.svg"
-            alt="error" width="20" class="hidden">
+        <h3 class="text-xl font-bold mb-2 flex gap-2">Select Tip %
+          <img src="./images/circle-exclamation-solid.svg" alt="error" width="20" class="hidden animate-bounce">
         </h3>
         <div class="tip-label grid grid-cols-2 lg:grid-cols-3 gap-5 text-tip-calculator-very-light-grayish-cyan">
-          <label>
-            <input type="radio" name="tip" class="hidden peer" data-value="0.05">
+          <label class="cursor-pointer">
+            <input type="radio" name="tip" class="hidden peer" data-value="05">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center  bg-tip-calculator-very-dark-cyan">
               5%</p>
           </label>
 
-          <label>
-            <input type="radio" name="tip" class="hidden peer" data-value="0.10">
+          <label class="cursor-pointer">
+            <input type="radio" name="tip" class="hidden peer" data-value="10">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               10%</p>
           </label>
 
-          <label>
-            <input type="radio" name="tip" class="hidden peer" data-value="0.15">
+          <label class="cursor-pointer">
+            <input type="radio" name="tip" class="hidden peer" data-value="15">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               15%</p>
           </label>
 
-          <label>
-            <input type="radio" name="tip" class="hidden peer" data-value="0.20">
+          <label class="cursor-pointer">
+            <input type="radio" name="tip" class="hidden peer" data-value="20">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               25%</p>
           </label>
 
-          <label>
-            <input type="radio" name="tip" class="hidden peer" data-value="0.5">
+          <label class="cursor-pointer">
+            <input type="radio" name="tip" class="hidden peer" data-value="50">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               50%</p>
@@ -82,8 +87,9 @@
       </div>
 
       <div>
-        <h3 class="text-xl font-bold mb-2 flex gap-2">Number of People<img src="./images/circle-exclamation-solid.svg"
-            alt="error" width="20" class="hidden"></h3>
+        <h3 class="text-xl font-bold mb-2 flex gap-2">Number of People
+          <img src="./images/circle-exclamation-solid.svg" alt="error" width="20" class="hidden animate-bounce">
+        </h3>
         <div class="px-5 py-2 rounded-md flex justify-between items-center bg-tip-calculator-very-light-grayish-cyan">
           <img src="./images/icon-person.svg" alt="person icon">
           <input type="number" name="people"
@@ -115,8 +121,8 @@
         </div>
       </div>
 
-      <button
-        class="bg-tip-calculator-strong-cyan text-tip-calculator-very-dark-cyan w-full py-3 text-xl rounded-lg uppercase font-bold tracking-wider mt-auto">Reset</button>
+      <button type="submit"
+        class="bg-tip-calculator-strong-cyan text-tip-calculator-very-dark-cyan w-full py-3 text-xl rounded-lg uppercase font-bold tracking-wider mt-auto">Submit</button>
     </aside>
   </main>
   <script src="script.js"></script>
