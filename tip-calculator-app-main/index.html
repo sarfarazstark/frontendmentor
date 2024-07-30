@@ -1,44 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
-  Bill
+<body
+  class="bg-tip-calculator-light-grayish-cyan font-space flex flex-col items-center lg:min-h-[1000px] lg:justify-center">
+  <img src="./images/logo.svg" alt="logo" class="my-14 lg:mt-0">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+  <main
+    class="p-9 lg:p-12 max-w-5xl bg-tip-calculator-white rounded-t-3xl lg:rounded-3xl shadow-lg lg:grid lg:grid-cols-2 lg:gap-10">
+    <section class="text-tip-calculator-dark-grayish-cyan mb-10 lg:m-0 lg:flex lg:flex-col lg:justify-around">
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-2">Bill</h3>
+        <div class="px-5 py-2 rounded-md flex justify-between items-center bg-tip-calculator-very-light-grayish-cyan">
+          <img src="./images/icon-dollar.svg" alt="dollar icon">
+          <input type="number" name="bill"
+            class="outline-none w-full text-4xl text-right bg-transparent text-tip-calculator-very-dark-cyan font-bold"
+            placeholder="0" autocomplete="off">
+        </div>
+      </div>
 
-  Number of People
+      <div class="mb-10">
+        <h3 class="text-xl font-bold mb-2">Select Tip %</h3>
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-5 text-tip-calculator-very-light-grayish-cyan">
+          <label data-value="0.05">
+            <input type="radio" name="tip" class="hidden peer">
+            <p
+              class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center  bg-tip-calculator-very-dark-cyan">
+              5%</p>
+          </label>
 
-  Tip Amount
-  / person
+          <label data-value="0.10">
+            <input type="radio" name="tip" class="hidden peer">
+            <p
+              class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
+              10%</p>
+          </label>
 
-  Total
-  / person
+          <label data-value="0.15">
+            <input type="radio" name="tip" class="hidden peer">
+            <p
+              class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
+              15%</p>
+          </label>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <label data-value="0.20">
+            <input type="radio" name="tip" class="hidden peer">
+            <p
+              class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
+              25%</p>
+          </label>
+
+          <label data-value="0.5">
+            <input type="radio" name="tip" class="hidden peer">
+            <p
+              class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
+              50%</p>
+          </label>
+
+          <label onclick="customInputCheck(this)" class="text-tip-calculator-very-dark-cyan">
+            <input type="radio" name="tip" class="hidden peer">
+            <input type="number"
+              class="border-2 outline-none w-full py-2 px-5 rounded-md font-bold text-3xl lg:text-2xl text-right lg:text-center placeholder:text-tip-calculator-dark-grayish-cyan peer-checked:border-tip-calculator-strong-cyan"
+              placeholder="Custom" value="" autocomplete="off">
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold mb-2">Number of People</h3>
+        <div class="px-5 py-2 rounded-md flex justify-between items-center bg-tip-calculator-very-light-grayish-cyan">
+          <img src="./images/icon-person.svg" alt="person icon">
+          <input type="number" name="people"
+            class="outline-none w-full text-4xl text-right bg-transparent text-tip-calculator-very-dark-cyan font-bold p-0"
+            placeholder="0" autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <aside
+      class="bg-tip-calculator-very-dark-cyan text-tip-calculator-white px-6 lg:px-10 lg:py-8 lg:pt-14 pt-10 pb-6 rounded-2xl flex flex-col">
+      <div class="mb-6 flex justify-between">
+        <p class="font-bold text-lg flex flex-col">Tip Amount
+          <small class="text-sm text-tip-calculator-dark-grayish-cyan"> / person</small>
+        </p>
+        <div class="flex items-center">
+          <img src="./images/icon-dollar-aside.svg" alt="dollar icon" class="w-3 lg:w-5 mr-1">
+          <strong class="text-6xl text-tip-calculator-strong-cyan">0.00</strong>
+        </div>
+      </div>
+
+      <div class="mb-6 flex justify-between">
+        <p class="font-bold text-lg flex flex-col"> Total
+          <small class="text-sm text-tip-calculator-dark-grayish-cyan">/ person</small>
+        </p>
+        <div class="flex items-center">
+          <img src="./images/icon-dollar-aside.svg" alt="dollar icon" class="w-3 lg:w-5 mr-1">
+          <strong class="text-6xl text-tip-calculator-strong-cyan">0.00</strong>
+        </div>
+      </div>
+
+      <button
+        class="bg-tip-calculator-strong-cyan text-tip-calculator-very-dark-cyan w-full py-3 text-xl rounded-lg uppercase font-bold tracking-wider mt-auto">Reset</button>
+    </aside>
+  </main>
+  <script>
+    function customInputCheck(e) {
+      let input = e.querySelector('input[type="radio"]');
+      input.checked = true;
+    }
+  </script>
 </body>
+
 </html>
