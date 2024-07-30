@@ -18,51 +18,55 @@
   <img src="./images/logo.svg" alt="logo" class="my-14 lg:mt-0">
 
   <main
-    class="p-9 lg:p-12 max-w-5xl bg-tip-calculator-white rounded-t-3xl lg:rounded-3xl shadow-lg lg:grid lg:grid-cols-2 lg:gap-10">
+    class="p-9 lg:p-12 lg:max-w-5xl md:max-w-md bg-tip-calculator-white rounded-t-3xl lg:rounded-3xl shadow-lg lg:grid lg:grid-cols-2 lg:gap-10">
     <section class="text-tip-calculator-dark-grayish-cyan mb-10 lg:m-0 lg:flex lg:flex-col lg:justify-around">
       <div class="mb-10">
-        <h3 class="text-xl font-bold mb-2">Bill</h3>
+        <h3 class="text-xl font-bold mb-2 flex gap-2">Bill<img src="./images/circle-exclamation-solid.svg" alt="error"
+            width="20" class="hidden">
+        </h3>
         <div class="px-5 py-2 rounded-md flex justify-between items-center bg-tip-calculator-very-light-grayish-cyan">
           <img src="./images/icon-dollar.svg" alt="dollar icon">
           <input type="number" name="bill"
             class="outline-none w-full text-4xl text-right bg-transparent text-tip-calculator-very-dark-cyan font-bold"
-            placeholder="0" autocomplete="off">
+            placeholder="0" value="" autocomplete="off">
         </div>
       </div>
 
       <div class="mb-10">
-        <h3 class="text-xl font-bold mb-2">Select Tip %</h3>
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-5 text-tip-calculator-very-light-grayish-cyan">
-          <label data-value="0.05">
-            <input type="radio" name="tip" class="hidden peer">
+        <h3 class="text-xl font-bold mb-2 flex gap-2">Select Tip % <img src="./images/circle-exclamation-solid.svg"
+            alt="error" width="20" class="hidden">
+        </h3>
+        <div class="tip-label grid grid-cols-2 lg:grid-cols-3 gap-5 text-tip-calculator-very-light-grayish-cyan">
+          <label>
+            <input type="radio" name="tip" class="hidden peer" data-value="0.05">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center  bg-tip-calculator-very-dark-cyan">
               5%</p>
           </label>
 
-          <label data-value="0.10">
-            <input type="radio" name="tip" class="hidden peer">
+          <label>
+            <input type="radio" name="tip" class="hidden peer" data-value="0.10">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               10%</p>
           </label>
 
-          <label data-value="0.15">
-            <input type="radio" name="tip" class="hidden peer">
+          <label>
+            <input type="radio" name="tip" class="hidden peer" data-value="0.15">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               15%</p>
           </label>
 
-          <label data-value="0.20">
-            <input type="radio" name="tip" class="hidden peer">
+          <label>
+            <input type="radio" name="tip" class="hidden peer" data-value="0.20">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               25%</p>
           </label>
 
-          <label data-value="0.5">
-            <input type="radio" name="tip" class="hidden peer">
+          <label>
+            <input type="radio" name="tip" class="hidden peer" data-value="0.5">
             <p
               class="w-full py-2 peer-checked:bg-tip-calculator-strong-cyan rounded-md font-bold text-3xl text-center bg-tip-calculator-very-dark-cyan">
               50%</p>
@@ -71,14 +75,15 @@
           <label onclick="customInputCheck(this)" class="text-tip-calculator-very-dark-cyan">
             <input type="radio" name="tip" class="hidden peer">
             <input type="number"
-              class="border-2 outline-none w-full py-2 px-5 rounded-md font-bold text-3xl lg:text-2xl text-right lg:text-center placeholder:text-tip-calculator-dark-grayish-cyan peer-checked:border-tip-calculator-strong-cyan"
+              class="border-2 outline-none w-full py-2 px-4 rounded-md font-bold text-3xl text-right placeholder:text-tip-calculator-dark-grayish-cyan peer-checked:border-tip-calculator-strong-cyan"
               placeholder="Custom" value="" autocomplete="off">
           </label>
         </div>
       </div>
 
       <div>
-        <h3 class="text-xl font-bold mb-2">Number of People</h3>
+        <h3 class="text-xl font-bold mb-2 flex gap-2">Number of People<img src="./images/circle-exclamation-solid.svg"
+            alt="error" width="20" class="hidden"></h3>
         <div class="px-5 py-2 rounded-md flex justify-between items-center bg-tip-calculator-very-light-grayish-cyan">
           <img src="./images/icon-person.svg" alt="person icon">
           <input type="number" name="people"
@@ -96,7 +101,7 @@
         </p>
         <div class="flex items-center">
           <img src="./images/icon-dollar-aside.svg" alt="dollar icon" class="w-3 lg:w-5 mr-1">
-          <strong class="text-6xl text-tip-calculator-strong-cyan">0.00</strong>
+          <strong class="text-3xl lg:text-6xl text-tip-calculator-strong-cyan" id="tip-output">0.00</strong>
         </div>
       </div>
 
@@ -106,7 +111,7 @@
         </p>
         <div class="flex items-center">
           <img src="./images/icon-dollar-aside.svg" alt="dollar icon" class="w-3 lg:w-5 mr-1">
-          <strong class="text-6xl text-tip-calculator-strong-cyan">0.00</strong>
+          <strong class="text-3xl lg:text-6xl text-tip-calculator-strong-cyan" id="per-person-output">0.00</strong>
         </div>
       </div>
 
@@ -114,12 +119,7 @@
         class="bg-tip-calculator-strong-cyan text-tip-calculator-very-dark-cyan w-full py-3 text-xl rounded-lg uppercase font-bold tracking-wider mt-auto">Reset</button>
     </aside>
   </main>
-  <script>
-    function customInputCheck(e) {
-      let input = e.querySelector('input[type="radio"]');
-      input.checked = true;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
