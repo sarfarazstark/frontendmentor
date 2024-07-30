@@ -36,7 +36,7 @@
 /* Fylo dark theme css end */
 
 /* Github user search app css */
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 /* Custom autofill styles */
 input:-webkit-autofill,
@@ -45,4 +45,17 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   @apply shadow-innerColor;
   -webkit-text-fill-color: white !important;
+}
+
+/* Tip calculator app */
+/* Remove spinners in Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

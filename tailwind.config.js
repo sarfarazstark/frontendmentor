@@ -31,6 +31,15 @@ module.exports = {
 				red: 'hsl(0, 91%, 62%)',
 				moon: '#697C9A',
 				// Github user search app colors end....
+				// tip calculator app colors
+				'tip-calculator-strong-cyan': 'hsl(172, 67%, 45%)',
+				'tip-calculator-very-dark-cyan': 'hsl(183, 100%, 15%)',
+				'tip-calculator-dark-grayish-cyan': 'hsl(186, 14%, 43%)',
+				'tip-calculator-grayish-cyan': 'hsl(184, 14%, 56%)',
+				'tip-calculator-light-grayish-cyan': 'hsl(185, 41%, 84%)',
+				'tip-calculator-very-light-grayish-cyan': 'hsl(189, 41%, 97%)',
+				'tip-calculator-white': 'hsl(0, 0%, 100%)',
+				// tip calculator app colors end....
 			},
 			fontFamily: {
 				body: ['Open sans', 'sans-serif'],
