@@ -16,7 +16,8 @@ module.exports = {
 				'fylo-cyan-call-to-action': 'hsl(176, 68%, 64%)',
 				'fylo-blue-call-to-action': 'hsl(198, 60%, 50%)',
 				'fylo-light-red-error': 'hsl(0, 100%, 63%)',
-				// Github user search app colors
+
+				// Github user search app colors \\
 				'git-user-whitish-blue': 'hsl(227, 100%, 98%)',
 				'git-user-blue': 'hsl(212, 100%, 50%)',
 				'git-user-blue-2': 'hsl(212, 100%, 69%)',
@@ -30,8 +31,8 @@ module.exports = {
 				'git-user-dark-navy-blue-2': 'hsl(220, 18%, 16%)',
 				red: 'hsl(0, 91%, 62%)',
 				moon: '#697C9A',
-				// Github user search app colors end....
-				// tip calculator app colors
+				// Github user search app colors end \\
+				// tip calculator app colors \\
 				'tip-calculator-strong-cyan': 'hsl(172, 67%, 45%)',
 				'tip-calculator-very-dark-cyan': 'hsl(183, 100%, 15%)',
 				'tip-calculator-dark-grayish-cyan': 'hsl(186, 14%, 43%)',
@@ -39,12 +40,33 @@ module.exports = {
 				'tip-calculator-light-grayish-cyan': 'hsl(185, 41%, 84%)',
 				'tip-calculator-very-light-grayish-cyan': 'hsl(189, 41%, 97%)',
 				'tip-calculator-white': 'hsl(0, 0%, 100%)',
-				// tip calculator app colors end....
+				// tip calculator app colors end \\
+
+				//----Rock paper scissors game colors----\\
+				'rps-rock-gradient-start': 'hsl(349, 71%, 52%)',
+				'rps-rock-gradient-end': 'hsl(349, 70%, 56%)',
+				'rps-scissors-gradient-start': 'hsl(39, 89%, 49%)',
+				'rps-scissors-gradient-end': 'hsl(40, 84%, 53%)',
+				'rps-paper-gradient-start': 'hsl(230, 89%, 62%)',
+				'rps-paper-gradient-end': 'hsl(230, 89%, 65%)',
+				'rps-lizard-gradient-start': 'hsl(261, 73%, 60%)',
+				'rps-lizard-gradient-end': 'hsl(261, 72%, 63%)',
+				'rps-cyan-gradient-start': 'hsl(189, 59%, 53%)',
+				'rps-cyan-gradient-end': 'hsl(189, 58%, 57%)',
+				// Neutral colors
+				'rps-dark-text': 'hsl(229, 25%, 31%)',
+				'rps-score-text': 'hsl(229, 64%, 46%)',
+				'rps-header-outline': 'hsl(217, 16%, 45%)',
+				// Background colors
+				'rps-radial-gradient-start': 'hsl(214, 47%, 23%)',
+				'rps-radial-gradient-end': 'hsl(237, 49%, 15%)',
+				//----Rock paper scissors game colors end----\\
 			},
 			fontFamily: {
 				body: ['Open sans', 'sans-serif'],
 				heading: ['Raleway', 'sans-serif'],
 				space: ['"Space Mono"', 'monospace'],
+				barlow: ['Barlow Semi Condensed', 'sans-serif'],
 			},
 
 			backgroundImage: {
