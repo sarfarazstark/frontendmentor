@@ -13,35 +13,36 @@
 </head>
 
 <body
-  class="bg-radial-gradient bg-no-repeat bg-cover w-full h-auto min-h-full md:min-h-screen flex flex-col gap-32 lg:gap-0 lg:grid lg:items-start grid-cols-4 justify-items-center items-center p-5 py-8 font-barlow relative">
-  <main class="col-span-2 col-start-2 w-full h-auto md:max-w-3xl flex flex-col items-center gap-32 lg:gap-10">
-    <header class="border-[3px] border-rps-header-outline rounded-xl w-full flex justify-between p-8">
-      <img src="./images/logo.svg" alt="logo" class="">
+  class="bg-radial-gradient bg-no-repeat bg-cover md:w-screen w-full h-auto min-h-full md:min-h-screen flex flex-col gap-24 lg:gap-0 lg:grid lg:items-start grid-cols-4 justify-items-center items-center py-8 font-barlow relative">
+  <main class="col-span-2 col-start-2 w-full h-auto md:max-w-3xl flex flex-col items-center gap-24 lg:gap-10">
+    <header
+      class="border-[3px] border-rps-header-outline rounded-xl flex justify-between items-center p-8 m-5 md:m-0 md:w-full">
+      <img src="./images/logo.svg" class="w-2/5" alt="logo">
       <div class="bg-white px-10 py-4 text-center rounded-md">
         <small class="text-xs md:text-base font-semibold tracking-widest uppercase text-rps-score-text">Score</small>
         <h2 class="font-bold text-4xl md:text-6xl leading-[0.9] text-rps-dark-text" id="score">00</h2>
       </div>
     </header>
 
-    <ul id="choose" class="grid grid-cols-2 gap-10 items-end justify-items-center lg:p-10 p-0 relative">
+    <ul id="choose" class="grid grid-cols-2 gap-6 items-end justify-items-center lg:p-10 p-2 relative">
       <li data-beat="2" data-index="0" class="rounded-full p-5 pb-6 justify-self-end shadow-rps-inner-shadow cursor-pointer bg-rps-paper-gradient-end 
         active:shadow-none active:pb-5 group">
         <button
-          class="bg-white py-8 px-10 rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
+          class="bg-white w-32 h-32 flex justify-center items-center rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
           <img src="./images/icon-paper.svg" alt="paper">
         </button>
       </li>
       <li data-beat="0" data-index="1"
         class="rounded-full p-5 pb-6 justify-self-start shadow-rps-inner-shadow bg-rps-scissors-gradient-start cursor-pointer active:shadow-none active:pb-5 group">
         <button
-          class="bg-white py-8 px-10 rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
+          class="bg-white w-32 h-32 flex justify-center items-center rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
           <img src="./images/icon-scissors.svg" alt="scissors">
         </button>
       </li>
       <li data-beat="1" data-index="2"
         class="col-span-2 rounded-full p-5 pb-6 shadow-rps-inner-shadow bg-rps-rock-gradient-start cursor-pointer active:shadow-none active:pb-5 active:mt-1 group">
         <button
-          class="bg-white py-9 px-10 rounded-full group-active:border-none group-active:py-10 border-rps-header-outline border-opacity-35 border-t-[6px]">
+          class="bg-white w-32 h-32 flex justify-center items-center rounded-full group-active:border-none group-active:py-10 border-rps-header-outline border-opacity-35 border-t-[6px]">
           <img src="./images/icon-rock.svg" alt="rock">
         </button>
       </li>
