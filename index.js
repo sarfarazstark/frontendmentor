@@ -1,6 +1,7 @@
 const upperCaseEveryWord = (word) =>
 	word
 		.split('-')
+		.filter((word) => word !== 'main' && word !== 'master')
 		.map((word) => `${word[0].toUpperCase() + word.slice(1)}`)
 		.join(' ');
 
