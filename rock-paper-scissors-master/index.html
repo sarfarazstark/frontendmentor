@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="flex flex-col items-center">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body
+  class="bg-radial-gradient bg-no-repeat bg-cover w-screen h-full max-w-[1440px] min-h-[800px] grid grid-cols-4 justify-items-center items-center py-8 font-barlow relative">
+  <main class="col-span-2 col-start-2 w-full max-w-3xl flex flex-col gap-10">
+    <header class="border-[3px] border-rps-header-outline rounded-xl flex justify-between p-8">
+      <img src="./images/logo.svg" alt="logo">
+      <div class="bg-white px-10 py-4 text-center rounded-md">
+        <small class="text-base font-semibold tracking-widest uppercase text-rps-score-text">Score</small>
+        <h2 class="font-bold text-6xl leading-[0.9] text-rps-dark-text" id="score">00</h2>
+      </div>
+    </header>
+
+    <ul id="choose" class="grid grid-cols-2 gap-10 items-end justify-items-center p-10 relative">
+      <li data-beat="2" data-index="0" class="rounded-full p-5 pb-6 ml-auto shadow-rps-inner-shadow cursor-pointer bg-rps-paper-gradient-end 
+        active:shadow-none active:pb-5 group">
+        <button
+          class="bg-white py-8 px-10 rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
+          <img src="./images/icon-paper.svg" alt="paper">
+        </button>
+      </li>
+      <li data-beat="0" data-index="1"
+        class="rounded-full p-5 pb-6 mr-auto shadow-rps-inner-shadow bg-rps-scissors-gradient-start cursor-pointer active:shadow-none active:pb-5 group">
+        <button
+          class="bg-white py-8 px-10 rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
+          <img src="./images/icon-scissors.svg" alt="scissors">
+        </button>
+      </li>
+      <li data-beat="1" data-index="2"
+        class="col-span-2 rounded-full p-5 pb-6 shadow-rps-inner-shadow bg-rps-rock-gradient-start cursor-pointer active:shadow-none active:pb-5 active:mt-1 group">
+        <button
+          class="bg-white py-9 px-10 rounded-full group-active:border-none group-active:py-10 border-rps-header-outline border-opacity-35 border-t-[6px]">
+          <img src="./images/icon-rock.svg" alt="rock">
+        </button>
+      </li>
+      <li class="absolute top-1/4 w-[35%] h-1/2 -z-40">
+        <div class="w-full h-full relative border-t-[12px] border-rps-radial-gradient-end border-opacity-35 
+         before:absolute before:block before:w-3 before:h-full before:bg-rps-radial-gradient-end before:bg-opacity-35  before:top-0 before:left-1/4 before:-rotate-[35deg]
+         after:absolute after:block after:w-3 after:h-full after:bg-rps-radial-gradient-end after:bg-opacity-35 after:top-0 after:right-1/4 after:rotate-[35deg]
+        ">
+        </div>
+      </li>
+    </ul>
+
+    <section id="drawing" class="hidden items-center gap-5 justify-around p-10 relative">
+      <ul id="player" class="flex flex-col items-center gap-10">
+        <h2 class="text-white uppercase font-semibold text-xl">You Picked</h2>
+      </ul>
+
+      <div class="text-center hidden">
+        <h2 class="font-bold uppercase tracking-wider text-white text-5xl">YOU WIN</h2>
+        <button id="reset"
+          class="tracking-widest uppercase bg-white text-sm font-semibold text-rps-dark-text py-2 px-14 rounded-md mt-5">Play
+          Again</button>
+      </div>
+
+
+      <ul id="computer" class="flex flex-col h-full items-center gap-10">
+        <h2 class="text-white uppercase font-semibold text-xl">The House Picked</h2>
+        <li class="w-[131px] h-[131px] bg-black bg-opacity-35 p-5 pb-6 rounded-full">
+        </li>
+      </ul>
+    </section>
+
+    <!-- 
+          Score
+
+      You Win
+      You Lose
+
+      Play Again -->
+  </main>
+  <div id="modal"
+    class="fixed w-full h-full bg-black top-0 left-0 backdrop-blur-sm z-50 bg-opacity-30 hidden items-center justify-center">
+    <section class="bg-white p-10 grid grid-cols-2 gap-10 items-center rounded-lg">
+      <h2 class="text-2xl font-bold text-rps-dark-text uppercase tracking-wider">Rules</h2>
+      <button class="ml-auto" onclick="displayToggle('modal')"><img src="./images/icon-close.svg"
+          alt="closing button"></button>
+      <img src="./images/image-rules.svg" alt="Rules" class="col-span-2">
+    </section>
+  </div>
+  <button onclick="displayToggle('modal')"
+    class="fixed 2xl:absolute bottom-10 right-10 border-2 border-white uppercase tracking-widest py-2 px-10 rounded-lg text-white">Rules</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
