@@ -85,11 +85,12 @@ module.exports = {
 			keyframes: {
 				spread: {
 					'0%': {
-						boxShadow: '0 0 0 0 rgba(0, 0, 0, 0.05)',
+						boxShadow:
+							'0 0 0 0 rgba(0, 0, 0, 0.05),inset 0 -6px 0px rgba(0,0,0,0.35);',
 					},
 					'100%': {
 						boxShadow:
-							'0 0 0px 40px rgba(255, 255, 255, 0.05), 0 0 0px 80px rgba(255, 255, 255, 0.03), 0 0 0px 120px rgba(255, 255, 255, 0.01)',
+							'0 0 0px 40px rgba(255, 255, 255, 0.05), 0 0 0px 80px rgba(255, 255, 255, 0.03), 0 0 0px 120px rgba(255, 255, 255, 0.01), inset 0 -6px 0px rgba(0,0,0,0.35);',
 					},
 				},
 			},
