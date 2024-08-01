@@ -13,7 +13,7 @@ const random = () => Math.floor(Math.random() * 3);
 const displayToggle = function (element) {
 	const elementNode = document.getElementById(element);
 	elementNode.classList.toggle('hidden');
-	elementNode.classList.toggle('flex');
+	elementNode.classList.toggle('grid');
 };
 
 const computerSelection = function (index) {
@@ -36,7 +36,12 @@ const resetGame = function (element, action) {
 		.querySelector(':last-child')
 		.classList.add('shadow-rps-winner-shadow', 'animate-spread-shadow');
 
-	score.textContent = action ? +score.textContent + 1 : +score.textContent - 1;
+	// never go down below 0
+	score.textContent = action
+		? +score.textContent + 1
+		: score.textContent > 0
+		? +score.textContent - 1
+		: 0;
 	score.textContent = score.textContent.padStart(2, '0');
 	localStorage.setItem('score', score.textContent);
 
@@ -46,10 +51,9 @@ const resetGame = function (element, action) {
 		reset.classList.add('text-rps-rock-gradient-start');
 	} else {
 		reset.parentElement.querySelector('h2').textContent = 'You win';
-		reset.classList.add('text-rps-dark-text');
 		reset.classList.remove('text-rps-rock-gradient-start');
+		reset.classList.add('text-rps-dark-text');
 	}
-	reset.parentElement.classList.remove('hidden');
 };
 
 const checkWinner = function (player, computer) {
@@ -90,7 +94,6 @@ const resetFn = () => {
 	player.querySelector('li').remove();
 	computer.querySelector(':last-child').remove();
 	computer.querySelector('li').classList.remove('hidden');
-	reset.parentElement.classList.add('hidden');
 };
 
 reset.addEventListener('click', resetFn);
