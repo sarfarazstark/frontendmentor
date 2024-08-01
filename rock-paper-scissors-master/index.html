@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="flex flex-col items-center">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -13,18 +13,18 @@
 </head>
 
 <body
-  class="bg-radial-gradient bg-no-repeat bg-cover w-screen h-full max-w-[1440px] min-h-[800px] grid grid-cols-4 justify-items-center items-center py-8 font-barlow relative">
-  <main class="col-span-2 col-start-2 w-full max-w-3xl flex flex-col gap-10">
-    <header class="border-[3px] border-rps-header-outline rounded-xl flex justify-between p-8">
-      <img src="./images/logo.svg" alt="logo">
+  class="bg-radial-gradient bg-no-repeat bg-cover w-screen h-auto min-h-full md:min-h-screen flex flex-col gap-32 lg:gap-0 lg:grid lg:items-start grid-cols-4 justify-items-center items-center p-5 py-8 font-barlow relative">
+  <main class="col-span-2 col-start-2 w-full h-auto md:max-w-3xl flex flex-col items-center gap-32 lg:gap-10">
+    <header class="border-[3px] border-rps-header-outline rounded-xl w-full flex justify-between p-8">
+      <img src="./images/logo.svg" alt="logo" class="">
       <div class="bg-white px-10 py-4 text-center rounded-md">
-        <small class="text-base font-semibold tracking-widest uppercase text-rps-score-text">Score</small>
-        <h2 class="font-bold text-6xl leading-[0.9] text-rps-dark-text" id="score">00</h2>
+        <small class="text-xs md:text-base font-semibold tracking-widest uppercase text-rps-score-text">Score</small>
+        <h2 class="font-bold text-4xl md:text-6xl leading-[0.9] text-rps-dark-text" id="score">00</h2>
       </div>
     </header>
 
-    <ul id="choose" class="grid grid-cols-2 gap-10 items-end justify-items-center p-10 relative">
-      <li data-beat="2" data-index="0" class="rounded-full p-5 pb-6 ml-auto shadow-rps-inner-shadow cursor-pointer bg-rps-paper-gradient-end 
+    <ul id="choose" class="grid grid-cols-2 gap-10 items-end justify-items-center lg:p-10 p-0 relative">
+      <li data-beat="2" data-index="0" class="rounded-full p-5 pb-6 justify-self-end shadow-rps-inner-shadow cursor-pointer bg-rps-paper-gradient-end 
         active:shadow-none active:pb-5 group">
         <button
           class="bg-white py-8 px-10 rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
@@ -32,7 +32,7 @@
         </button>
       </li>
       <li data-beat="0" data-index="1"
-        class="rounded-full p-5 pb-6 mr-auto shadow-rps-inner-shadow bg-rps-scissors-gradient-start cursor-pointer active:shadow-none active:pb-5 group">
+        class="rounded-full p-5 pb-6 justify-self-start shadow-rps-inner-shadow bg-rps-scissors-gradient-start cursor-pointer active:shadow-none active:pb-5 group">
         <button
           class="bg-white py-8 px-10 rounded-full group-active:border-none group-active:py-9 border-rps-header-outline border-opacity-35 border-t-[6px]">
           <img src="./images/icon-scissors.svg" alt="scissors">
@@ -54,15 +54,16 @@
       </li>
     </ul>
 
-    <section id="drawing" class="hidden items-center gap-5 justify-around p-10 relative">
+    <section id="drawing"
+      class="hidden grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-3 lg:grid-rows-1 md:min-w-[600px] items-center lg:gap-5 justify-around p-0 relative">
       <ul id="player" class="flex flex-col items-center gap-10">
         <h2 class="text-white uppercase font-semibold text-xl">You Picked</h2>
       </ul>
 
-      <div class="text-center hidden">
-        <h2 class="font-bold uppercase tracking-wider text-white text-5xl">YOU WIN</h2>
+      <div class="text-center row-start-2 lg:row-auto lg:col-auto col-span-2 block">
+        <h2 class="font-bold uppercase tracking-wider text-white text-5xl">-------</h2>
         <button id="reset"
-          class="tracking-widest uppercase bg-white text-sm font-semibold text-rps-dark-text py-2 px-14 rounded-md mt-5">Play
+          class="tracking-widest uppercase bg-white text-[80%] font-semibold text-rps-dark-text py-3 px-14 rounded-md mt-5">Play
           Again</button>
       </div>
 
@@ -91,8 +92,10 @@
       <img src="./images/image-rules.svg" alt="Rules" class="col-span-2">
     </section>
   </div>
+
   <button onclick="displayToggle('modal')"
-    class="fixed 2xl:absolute bottom-10 right-10 border-2 border-white uppercase tracking-widest py-2 px-10 rounded-lg text-white">Rules</button>
+    class="lg:fixed 2xl:absolute bottom-10 right-10 border-2 border-white uppercase tracking-widest py-2 px-10 rounded-lg text-white">Rules
+  </button>
   <script src="script.js"></script>
 </body>
 

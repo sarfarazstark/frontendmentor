@@ -98,5 +98,20 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addUtilities }) {
+			const newUtilities = {
+				'.min-h-900px': {
+					minHeight: '900px',
+				},
+				'@media (min-height: 900px)': {
+					'.min-h-100vh': {
+						minHeight: '100vh',
+					},
+				},
+			};
+
+			addUtilities(newUtilities, ['responsive']);
+		},
+	],
 };
