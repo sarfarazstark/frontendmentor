@@ -72,10 +72,29 @@ module.exports = {
 			backgroundImage: {
 				'fylo-mobile-bg': "url('./images/bg-curvy-mobile.svg')",
 				'fylo-desktop-bg': "url('./images/bg-curvy-desktop.svg')",
+				'radial-gradient':
+					'radial-gradient(circle at 50% 75%, hsl(214, 47%, 23%), hsl(237, 49%, 15%))',
 			},
 			boxShadow: {
 				innerColor: '0 0 0px 30px hsl(222, 44%, 70%) inset',
 				darkInnerColor: '0 0 0px 1000px hsl(222, 41%, 20%) inset',
+				'rps-inner-shadow': 'inset 0 -6px 0px rgba(0,0,0,0.35)',
+				'rps-winner-shadow':
+					'0 0 0px 40px rgba(255, 255, 255, 0.05), 0 0 0px 80px rgba(255, 255, 255, 0.03), 0 0 0px 120px rgba(255, 255, 255, 0.01), inset 0 -6px 0px rgba(0,0,0,0.35);',
+			},
+			keyframes: {
+				spread: {
+					'0%': {
+						boxShadow: '0 0 0 0 rgba(0, 0, 0, 0.05)',
+					},
+					'100%': {
+						boxShadow:
+							'0 0 0px 40px rgba(255, 255, 255, 0.05), 0 0 0px 80px rgba(255, 255, 255, 0.03), 0 0 0px 120px rgba(255, 255, 255, 0.01)',
+					},
+				},
+			},
+			animation: {
+				'spread-shadow': 'spread 1s ease-in-out forwards',
 			},
 		},
 	},
