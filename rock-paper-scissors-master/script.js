@@ -94,6 +94,7 @@ const resetFn = () => {
 	player.querySelector('li').remove();
 	computer.querySelector(':last-child').remove();
 	computer.querySelector('li').classList.remove('hidden');
+	reset.parentElement.querySelector('h2').textContent = '-------';
 };
 
 reset.addEventListener('click', resetFn);
