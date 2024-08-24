@@ -95,6 +95,8 @@ const resetFn = () => {
 	computer.querySelector(':last-child').remove();
 	computer.querySelector('li').classList.remove('hidden');
 	reset.parentElement.querySelector('h2').textContent = '-------';
+	reset.classList.remove('text-rps-rock-gradient-start');
+	reset.classList.add('text-rps-dark-text')
 };
 
 reset.addEventListener('click', resetFn);
