@@ -157,26 +157,32 @@
 	},
 	{
 		"name": "fylo-dark-theme-landing-page-master",
-		"tech": "html-css-tailwindcss",
+		"tech": "html-tailwindcss",
 		"fmpage": "5ca5f2d21e82137ec91a50fd",
 		"submitDate": "Jul 21, 2024"
 	},
 	{
 		"name": "github-user-search-app",
-		"tech": "html-css-js-tailwindcss-api",
+		"tech": "html-js-tailwindcss-api",
 		"fmpage": "Q09YOgaH6",
 		"submitDate": "Jul 29, 2024"
 	},
 	{
 		"name": "tip-calculator-app-main",
-		"tech": "html-css-js-tailwindcss",
+		"tech": "html-js-tailwindcss",
 		"fmpage": "ugJNGbJUX",
 		"submitDate": "Jul 31, 2024"
 	},
 	{
 		"name": "rock-paper-scissors-master",
-		"tech": "html-css-js-tailwindcss",
+		"tech": "html-js-tailwindcss",
 		"fmpage": "ugJNGbJUX",
 		"submitDate": "Jul 31, 2024"
+	},
+	{
+		"name": "calculator-app-main",
+		"tech": "html-js-tailwindcss",
+		"fmpage": "9lteq5N29",
+		"submitDate": "Apr 10, 2023"
 	}
 ]

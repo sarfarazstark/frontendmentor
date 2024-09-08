@@ -1,39 +1,10 @@
 {
-  "name": "@frontendmentor/challenges",
-  "version": "1.0.0",
-  "dependencies": {
-    "tailwindcss": "^2.2.19"
-  },
-  "scripts": {
-    "qrcode": "npx tailwindcss -i ./global.css -o ./qr-code-component/style.css --watch",
-    "productpreview": "npx tailwindcss -i ./global.css -o ./product-preview-card-component/style.css --watch",
-    "nftpreview": "npx tailwindcss -i ./global.css -o ./nft-preview-card-component-main/style.css --watch",
-    "interactiverating": "npx tailwindcss -i ./global.css -o ./interactive-rating-component-main/style.css --watch",
-    "ordersummary": "npx tailwindcss -i ./global.css -o ./order-summary-component-main/style.css --watch",
-    "profilecard": "npx tailwindcss -i ./global.css -o ./profile-card-component-main/style.css --watch",
-    "statspreview": "npx tailwindcss -i ./global.css -o ./stats-preview-card-component-main/style.css --watch",
-    "3column": "npx tailwindcss -i ./global.css -o ./3-column-preview-card-component-main/style.css --watch",
-    "faqaccordion": "npx tailwindcss -i ./global.css -o ./faq-accordion-card-main/style.css --watch",
-    "baseapparel": "npx tailwindcss -i ./global.css -o ./base-apparel-coming-soon-master/style.css --watch",
-    "socialproof": "npx tailwindcss -i ./global.css -o ./social-proof-section-master/style.css --watch",
-    "articlepreview": "npx tailwindcss -i ./global.css -o ./article-preview-component-master/style.css --watch",
-    "fourcard": "npx tailwindcss -i ./global.css -o ./four-card-feature-section-master/style.css --watch",
-    "introcomponent": "npx tailwindcss -i ./global.css -o ./intro-component-with-signup-form-master/style.css --watch",
-    "singleprice": "npx tailwindcss -i ./global.css -o ./single-price-grid-component-master/style.css --watch",
-    "pingcoming": "npx tailwindcss -i ./global.css -o ./ping-coming-soon-page-master/style.css --watch",
-    "resultssummary": "npx tailwindcss -i ./global.css -o ./results-summary-component-main/style.css --watch",
-    "huddlelanding": "npx tailwindcss -i ./global.css -o ./huddle-landing-page-with-single-introductory-section-master/style.css --watch",
-    "agecalculator": "npx tailwindcss -i ./global.css -o ./age-calculator-app-main/style.css --watch",
-    "newslettersignup": "npx tailwindcss -i ./global.css -o ./newsletter-signup-form-with-success-message/style.css --watch",
-    "notificationspage": "npx tailwindcss -i ./global.css -o ./notifications-page/style.css --watch",
-    "interactivecard": "npx tailwindcss -i ./global.css -o ./interactive-card-details-form-main/style.css --watch",
-    "newshomepage": "npx tailwindcss -i ./global.css -o ./news-homepage/style.css --watch",
-    "sunnysideagency": "npx tailwindcss -i ./global.css -o ./sunnyside-agency-landing-page-main/style.css --watch",
-    "expenseschart": "npx tailwindcss -i ./global.css -o ./expenses-chart-component-main/style.css --watch",
-    "productlist": "npx tailwindcss -i ./global.css -o ./product-list-with-cart-main/style.css --watch",
-    "fylodark": "npx tailwindcss -i ./global.css -o ./fylo-dark-theme-landing-page-master/style.css --watch",
-    "githubuser": "npx tailwindcss -i ./global.css -o ./github-user-search-app/style.css --watch",
-    "tipcalculator": "npx tailwindcss -i ./global.css -o ./tip-calculator-app-main/style.css --watch",
-    "rockpaper": "npx tailwindcss -i ./global.css -o ./rock-paper-scissors-master/style.css --watch"
-  }
+	"name": "@frontendmentor/challenges",
+	"version": "1.0.0",
+	"dependencies": {
+		"tailwindcss": "^2.2.19"
+	},
+	"scripts": {
+		"calculatorapp": "cd ./calculator-app-main & npx tailwindcss -i ./global.css -o ./style.css --watch"
+	}
 }
