@@ -49,7 +49,7 @@ fs.readFile(dataFilePath, 'utf8', (err, data) => {
 			const scriptKey = createScriptKey(item.name);
 			packageJson.scripts[
 				scriptKey
-			] = `npx tailwindcss -i ./global.css -o ./${item.name}/style.css --watch`;
+			] = `cd ./${item.name} & npx tailwindcss -i ./global.css -o ./style.css --watch`;
 		});
 
 		// Write the updated package.json back to the file
