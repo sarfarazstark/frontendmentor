@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Calculator app</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    /* input[type="text"] {
+      direction: rtl;
+    } */
+  </style>
+</head>
+
+<body class="font-ls p-4 h-screen flex items-start justify-center bg-main transition-all duration-500">
+  <main class="w-full flex flex-col gap-7 max-w-[450px]">
+
+    <!-- Calculator Header -->
+    <header class="flex items-end justify-between text-white p-2">
+      <h1 class="text-3xl font-bold">calc</h1>
+      <div class="flex items-center gap-5 font-semibold">
+        <p class="text-xs mt-auto mb-1">THEME</p>
+        <div>
+          <div class="flex justify-between p-1 text-xs">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <div
+            class="theme-switch grid grid-cols-3 items-center justify-between bg-toggle w-14 h-5 rounded-full cursor-pointer">
+            <button class="w-full h-full p-1" data-theme="theme-1">
+              <div class="w-full h-full bg-key-toggle rounded-full"> </div>
+            </button>
+            <button class="w-full h-full p-1" data-theme="theme-2">
+              <div class="w-full h-full bg-key-toggle rounded-full opacity-0"></div>
+            </button>
+            <button class="w-full h-full p-1" data-theme="theme-3">
+              <div class="w-full h-full bg-key-toggle rounded-full opacity-0"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Calculator Screen -->
+    <section class="screen border-red-700 w-full bg-screen text-white p-6 pb-5 rounded-xl">
+      <input type="text" class="text-5xl w-full bg-transparent text-right font-bold focus:outline-none select-text"
+        readonly>
+    </section>
+
+
+    <!-- Calculator Keys -->
+
+    <section
+      class="keys cursor-pointer select-none grid grid-cols-4 p-4 bg-toggle gap-4 rounded-xl text-dark text-center text-3xl leading-none font-bold transition-all ">
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        7</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        8</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        9</button>
+      <button
+        class="cursor-pointer select-none bg-function-key text-white p-3 pb-2 rounded-md uppercase text-xl shadow-function-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        del</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        4</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        5</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        6</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        +</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        1</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        2</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        3</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        -</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        .</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        0</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md  shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        /</button>
+      <button
+        class="cursor-pointer select-none bg-key p-3 pb-2 rounded-md  shadow-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        ×</button>
+      <button
+        class="cursor-pointer select-none col-span-2 bg-key-toggle text-white p-3 pb-2 rounded-md uppercase shadow-key-toggle-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        reset</button>
+      <button
+        class="cursor-pointer select-none col-span-2 bg-function-key text-white p-3 pb-2 rounded-md shadow-function-key-shadow flex items-center justify-center active:shadow-none active:translate-y-1">
+        =</button>
+    </section>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
