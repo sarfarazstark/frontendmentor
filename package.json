@@ -5,6 +5,37 @@
 		"tailwindcss": "^2.2.19"
 	},
 	"scripts": {
-		"calculatorapp": "cd ./calculator-app-main & npx tailwindcss -i ./global.css -o ./style.css --watch"
+		"calculatorapp": "cd ./calculator-app-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"qrcode": "cd ./qr-code-component & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"productpreview": "cd ./product-preview-card-component & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"nftpreview": "cd ./nft-preview-card-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"interactiverating": "cd ./interactive-rating-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"ordersummary": "cd ./order-summary-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"profilecard": "cd ./profile-card-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"statspreview": "cd ./stats-preview-card-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"3column": "cd ./3-column-preview-card-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"faqaccordion": "cd ./faq-accordion-card-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"baseapparel": "cd ./base-apparel-coming-soon-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"socialproof": "cd ./social-proof-section-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"articlepreview": "cd ./article-preview-component-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"fourcard": "cd ./four-card-feature-section-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"introcomponent": "cd ./intro-component-with-signup-form-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"singleprice": "cd ./single-price-grid-component-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"pingcoming": "cd ./ping-coming-soon-page-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"resultssummary": "cd ./results-summary-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"huddlelanding": "cd ./huddle-landing-page-with-single-introductory-section-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"agecalculator": "cd ./age-calculator-app-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"newslettersignup": "cd ./newsletter-signup-form-with-success-message & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"notificationspage": "cd ./notifications-page & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"interactivecard": "cd ./interactive-card-details-form-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"newshomepage": "cd ./news-homepage & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"sunnysideagency": "cd ./sunnyside-agency-landing-page-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"expenseschart": "cd ./expenses-chart-component-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"productlist": "cd ./product-list-with-cart-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"fylodark": "cd ./fylo-dark-theme-landing-page-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"githubuser": "cd ./github-user-search-app & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"tipcalculator": "cd ./tip-calculator-app-main & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"rockpaper": "cd ./rock-paper-scissors-master & npx tailwindcss -i ./global.css -o ./style.css --watch",
+		"bentogrid": "cd ./bento-grid-main & npx tailwindcss -i ./global.css -o ./style.css --watch"
 	}
 }
