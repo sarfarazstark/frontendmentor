@@ -25,7 +25,7 @@ const createListItemHTML = (item) => {
 						.map((name) => `<span class="${name}">${name}</span>`)
 						.join(' ')}
       </div>
-      <h3>${newName}</h3> 
+      <h3>${newName}</h3>
       <div class="links">
           <a href='https://www.frontendmentor.io/challenges/${frontendmentor(
 						name,
@@ -42,12 +42,11 @@ const li = main.appendChild(document.createElement('ul'));
 fetch('./data.json')
 	.then((response) => response.json())
 	.then((data) => {
-		data
-			.sort((a, b) => new Date(a.submitDate) - new Date(b.submitDate))
-			.forEach((item) => {
-				if ('status' in item) return;
-				console.log(item);
-				li.insertAdjacentHTML('afterbegin', createListItemHTML(item));
-			});
+		data.sort((a, b) => new Date(a.submitDate) - new Date(b.submitDate));
+		for (const item of data) {
+			if ('status' in item) continue;
+			console.log(item);
+			li.insertAdjacentHTML('afterbegin', createListItemHTML(item));
+		}
 		document.querySelector('.total').textContent = data.length;
 	});
