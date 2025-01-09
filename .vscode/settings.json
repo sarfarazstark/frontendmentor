@@ -1,7 +1,7 @@
 {
-	"livePreview.defaultPreviewPath": "d:\\101\\challenges\\article-preview-component-master\\index.html",
-	"editor.tabSize": 2,
-	"cSpell.words": [
+  "livePreview.defaultPreviewPath": "d:\\101\\challenges\\article-preview-component-master\\index.html",
+  "editor.tabSize": 2,
+  "cSpell.words": [
     "bday",
     "bmonth",
     "buttonspan",
@@ -15,5 +15,4 @@
     "Raleway",
     "sunnyside"
   ],
-	"liveServer.settings.port": 5501
 }

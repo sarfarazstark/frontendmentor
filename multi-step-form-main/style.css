@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+  /* Primary colors */
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  /* Neutral colors */
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --body-font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu";
+}
+
+body {
+  background-color: var(--magnolia);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 6rem 0;
+}
+
+main {
+  max-width: 1200px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--white);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+aside {
+  background-color: var(--purplish-blue);
+  background-image: url("./assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+
+  color: var(--white);
+  min-width: 300px;
+  padding: 2.2rem 2rem;
+  display: flex;
+  border-radius: 0.8rem;
+}
+
+aside ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
+}
+
+aside ul li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 0.5rem;
+  row-gap: 0.3rem;
+  text-transform: uppercase;
+}
+
+aside ul li small {
+  font-size: 0.8rem;
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+aside ul li span {
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  font-size: 0.9rem;
+}
+
+aside ul li div {
+  grid-row: span 2;
+  align-self: center;
+  /* background-color: red; */
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--light-blue);
+  border-radius: 999rem;
+  font-weight: 500;
+}
+
+aside ul li div.active {
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
+}
+
+form {
+  padding: 2.5rem 6rem;
+}
+
+form section header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--marine-blue);
+  margin-bottom: 0.5rem;
+}
+
+form section header p {
+  font-size: 1.1rem;
+  color: var(--cool-gray);
+  margin-bottom: 2.2rem;
+}
+
+form section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2.1rem; */
+}
+
+form section.step-2 ul {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: 1rem;
+}
+
+form section ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+form section ul li label {
+  font-size: 1rem;
+  color: var(--marine-blue);
+  font-weight: 450;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+form section.step-2 ul li label {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+form section.step-2 ul li label:hover {
+  border-color: var(--purplish-blue);
+  cursor: pointer;
+}
+
+form section.step-2 ul li label img {
+  margin-bottom: 2.4rem;
+}
+
+form section.step-2 ul li label span {
+  color: var(--cool-gray);
+}
+form section.step-2 ul li label span.bonus {
+  display: none;
+  margin-top: 0.5rem;
+  color: var(--marine-blue);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+form section.step-2 ul li input:checked + label {
+  border-color: var(--purplish-blue);
+  background-color: var(--magnolia);
+}
+
+form section ul li input {
+  padding: 1rem 1.4rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+
+  &:focus {
+    outline: none;
+    border-color: var(--purplish-blue);
+  }
+}
+
+/* form section ul li input:invalid {
+  border-color: var(--strawberry-red);
+} */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+form section {
+  display: none;
+}
+
+form section.show {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+form section nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+form section nav button {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background-color: var(--marine-blue);
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+form section nav button#next {
+  margin-left: auto;
+}
+
+form section nav button#prev {
+  margin-right: auto;
+}

@@ -100,7 +100,7 @@ module.exports = {
 		},
 	},
 	plugins: [
-		function ({ addUtilities }) {
+		({ addUtilities }) => {
 			const newUtilities = {
 				'.min-h-900px': {
 					minHeight: '900px',
