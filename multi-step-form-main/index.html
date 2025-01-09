@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <aside>
+      <!-- Sidebar start -->
+      <ul>
+        <li>
+          <div class="active">1</div>
+          <small>Step 1</small>
+          <span>Your info</span>
+        </li>
+        <li>
+          <div>2</div>
+          <small>Step 2</small>
+          <span>Select plan</span>
+        </li>
+        <li>
+          <div>3</div>
+          <small>Step 3</small>
+          <span>Add-ons</span>
+        </li>
+        <li>
+          <div>4</div>
+          <small>Step 4</small>
+          <span>Summary</span>
+        </li>
+      </ul>
+
+      <!-- Sidebar end -->
+    </aside>
+
+    <form>
+      <section data-nav-class="step-1">
+        <!-- Step 1 start -->
+        <div>
+          <header>
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </header>
+
+          <ul>
+            <li>
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="e.g. Stephen King" required>
+            </li>
+
+            <li>
+              <label for="email">Email Address</label>
+              <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" required>
+            </li>
+
+            <li>
+              <label for="phone">Phone Number</label>
+              <input type="tel" name="phone" id="phone" placeholder="e.g. +1 234 567 890" required>
+            </li>
+          </ul>
+
+
+        </div>
+
+        <nav>
+          <button id="next">Next Step</button>
+        </nav>
+
+        <!-- Step 1 end -->
+      </section>
+      <section class="step-2 show" data-nav-class="step-2">
+        <!-- Step 2 start -->
+        <div>
+          <header>
+            <h1>
+              Select your plan
+            </h1>
+            <p>
+              You have the option of monthly or yearly billing.
+            </p>
+          </header>
+
+          <ul>
+            <li>
+              <input type="radio" name="plan" id="arcade" style="display: none;">
+              <label for="arcade">
+                <img src="./assets/images/icon-arcade.svg" alt="">
+                <h4>
+                  Arcade
+                </h4>
+                <span>$9/mo</span>
+                <span class="bonus">2 months free</span>
+              </label>
+            </li>
+
+            <li>
+              <input type="radio" name="plan" id="advanced" style="display: none;">
+              <label for="advanced">
+                <img src="./assets/images/icon-advanced.svg" alt="">
+                <h4>Advanced</h4>
+                <span>$12/mo</span>
+                <span class="bonus">2 months free</span>
+              </label>
+            </li>
+
+            <li>
+              <input type="radio" name="plan" id="pro" style="display: none;">
+              <label for="pro">
+                <img src="./assets/images/icon-pro.svg" alt="">
+                <h4>Pro</h4>
+                <span>$15/mo</span>
+                <span class="bonus">2 months free</span>
+              </label>
+            </li>
+          </ul>
+
+          <div>
+            <label for="monthly">Monthly</label>
+            <input type="radio" name="option" id="monthly" checked>
+            <input type="radio" name="option" id="yearly">
+            <label for="yearly">Yearly</label>
+          </div>
+        </div>
+
+
+        <nav>
+          <button id="prev">Go Back</button>
+          <button id="next">Next Step</button>
+        </nav>
+
+        <!-- Step 2 end -->
+      </section>
+      <section>
+        <!-- Step 3 start -->
+        <div>
+          Pick add-ons
+          Add-ons help enhance your gaming experience.
+
+          Online service
+          Access to multiplayer games
+          +$1/mo
+
+          Larger storage
+          Extra 1TB of cloud save
+          +$2/mo
+
+          Customizable Profile
+          Custom theme on your profile
+          +$2/mo
+        </div>
+
+        <nav>
+          <button id="prev">Go Back</button>
+          <button id="next">Next Step</button>
+        </nav>
+
+        <!-- Step 3 end -->
+      </section>
+      <section>
+        <!-- Step 4 start -->
+
+        <div>
+          Finishing up
+          Double-check everything looks OK before confirming.
+          Total (per month/year)
+        </div>
+
+
+        <!-- Dynamically add subscription and add-on selections here -->
+
+
+        <nav>
+          <button id="prev">Go Back</button>
+          <button id="next">Confirm</button>
+        </nav>
+
+        <!-- Step 4 end -->
+      </section>
+      <section>
+        <!-- Step 5 start -->
+
+        Thank you!
+
+        Thanks for confirming your subscription! We hope you have fun
+        using our platform. If you ever need support, please feel free
+        to email us at
+      </section>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
