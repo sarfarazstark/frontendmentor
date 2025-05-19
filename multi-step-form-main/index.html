@@ -17,7 +17,7 @@
   <main>
     <aside>
       <!-- Sidebar start -->
-      <ul>
+      <ul class="steps">
         <li>
           <div class="active">1</div>
           <small>Step 1</small>
@@ -44,7 +44,7 @@
     </aside>
 
     <form>
-      <section data-nav-class="step-1">
+      <section class="step-1 show" data-nav-class="1">
         <!-- Step 1 start -->
         <div>
           <header>
@@ -55,17 +55,20 @@
           <ul>
             <li>
               <label for="name">Name</label>
+              <small>This Field is required</small>
               <input type="text" name="name" id="name" placeholder="e.g. Stephen King" required>
             </li>
 
             <li>
               <label for="email">Email Address</label>
+              <small>This Field is required</small>
               <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" required>
             </li>
 
             <li>
               <label for="phone">Phone Number</label>
-              <input type="tel" name="phone" id="phone" placeholder="e.g. +1 234 567 890" required>
+              <small>This Field is required</small>
+              <input type="tel" name="phone" id="phone" placeholder="e.g. +919876543210" required>
             </li>
           </ul>
 
@@ -78,7 +81,8 @@
 
         <!-- Step 1 end -->
       </section>
-      <section class="step-2 show" data-nav-class="step-2">
+
+      <section class="step-2" data-nav-class="2">
         <!-- Step 2 start -->
         <div>
           <header>
@@ -91,44 +95,46 @@
           </header>
 
           <ul>
-            <li>
-              <input type="radio" name="plan" id="arcade" style="display: none;">
+            <li data-monthly="9" data-yearly="90">
+              <input type="radio" name="plan" id="arcade" style="display: none;" value="arcade">
               <label for="arcade">
                 <img src="./assets/images/icon-arcade.svg" alt="">
                 <h4>
                   Arcade
                 </h4>
-                <span>$9/mo</span>
+                <span class="plan-price">$9/mo</span>
                 <span class="bonus">2 months free</span>
               </label>
             </li>
 
-            <li>
-              <input type="radio" name="plan" id="advanced" style="display: none;">
+            <li data-monthly="12" data-yearly="120">
+              <input type="radio" name="plan" id="advanced" style="display: none;" value="advanced">
               <label for="advanced">
                 <img src="./assets/images/icon-advanced.svg" alt="">
                 <h4>Advanced</h4>
-                <span>$12/mo</span>
+                <span class="plan-price">$12/mo</span>
                 <span class="bonus">2 months free</span>
               </label>
             </li>
 
-            <li>
-              <input type="radio" name="plan" id="pro" style="display: none;">
+            <li data-monthly="15" data-yearly="150">
+              <input type="radio" name="plan" id="pro" style="display: none;" value="pro">
               <label for="pro">
                 <img src="./assets/images/icon-pro.svg" alt="">
                 <h4>Pro</h4>
-                <span>$15/mo</span>
+                <span class="plan-price">$15/mo</span>
                 <span class="bonus">2 months free</span>
               </label>
             </li>
           </ul>
 
-          <div>
-            <label for="monthly">Monthly</label>
-            <input type="radio" name="option" id="monthly" checked>
-            <input type="radio" name="option" id="yearly">
-            <label for="yearly">Yearly</label>
+          <div class="toggle">
+            <p class="monthly">Monthly</p>
+            <label class="plan-toggler">
+              <input type="checkbox" name="plan-toggler" class="togglePlan" value="yearly">
+              <span class="slider"></span>
+            </label>
+            <p class="yearly">Yearly</p>
           </div>
         </div>
 
@@ -140,44 +146,88 @@
 
         <!-- Step 2 end -->
       </section>
-      <section>
+      <section class="step-3" data-nav-class="3">
         <!-- Step 3 start -->
-        <div>
-          Pick add-ons
-          Add-ons help enhance your gaming experience.
+        <header>
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+        </header>
+        <div class="add-ons">
+          <label for="onlineService" data-monthly="1" data-yearly="10">
+            <!-- give every checkbox the same name -->
+            <input type="checkbox" name="addons" id="onlineService" value="Online Service">
+            <div>
+              <p>Online service</p>
+              <small>Access to multiplayer games</small>
+            </div>
+            <span class="price">+$1/mo</span>
+          </label>
 
-          Online service
-          Access to multiplayer games
-          +$1/mo
+          <label for="largerStorage" data-monthly="2" data-yearly="20">
+            <input type="checkbox" name="addons" id="largerStorage" value="Larger Storage">
+            <div>
+              <p>Larger storage</p>
+              <small>Extra 1TB of cloud save</small>
+            </div>
+            <span class="price">+$2/mo</span>
+          </label>
 
-          Larger storage
-          Extra 1TB of cloud save
-          +$2/mo
-
-          Customizable Profile
-          Custom theme on your profile
-          +$2/mo
+          <label for="customizableProfile" data-monthly="2" data-yearly="20">
+            <input type="checkbox" name="addons" id="customizableProfile" value="Customizable Profile">
+            <div>
+              <p>Customizable Profile</p>
+              <small>Custom theme on your profile</small>
+            </div>
+            <span class="price">+$2/mo</span>
+          </label>
         </div>
 
         <nav>
           <button id="prev">Go Back</button>
           <button id="next">Next Step</button>
         </nav>
-
         <!-- Step 3 end -->
       </section>
-      <section>
+
+      <section class="step-4" data-nav-class="4">
         <!-- Step 4 start -->
 
-        <div>
-          Finishing up
-          Double-check everything looks OK before confirming.
-          Total (per month/year)
+        <header>
+          <h1>Finishing up</h1>
+          <p>Double-check everything looks OK before confirming.</p>
+        </header>
+
+
+        <div class="summary">
+
+          <div class="plan">
+            <div>
+              <h3>Arcade(Monthly)</h3>
+              <small id="change-plan">Change</small>
+            </div>
+            <span class="plan-price">$9/mo</span>
+          </div>
+
+          <hr>
+
+          <div class="add-ons-list">
+            <div>
+              <p>Online service</p>
+              <span class="price">+$1/mo</span>
+            </div>
+
+            <div>
+              <p>Larger storage</p>
+              <span class="price">+$2/mo</span>
+            </div>
+          </div>
+
         </div>
 
-
-        <!-- Dynamically add subscription and add-on selections here -->
-
+        <div class="total">
+          <p>Total (per month)</p>
+          <span class="total-price">$12/mo</span>
+        </div>
 
         <nav>
           <button id="prev">Go Back</button>
@@ -186,14 +236,23 @@
 
         <!-- Step 4 end -->
       </section>
-      <section>
+      <section class="thank-you">
         <!-- Step 5 start -->
 
-        Thank you!
+        <div>
+          <img src="./assets/images/icon-thank-you.svg" alt="Thank You Icon">
+          <h1>Thank you!</h1>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at
+            <a href="mailto:
+          sarfarazstark@gmail.com">
+              sarfarazstark@gmail.com
+            </a>
+          </p>
+        </div>
 
-        Thanks for confirming your subscription! We hope you have fun
-        using our platform. If you ever need support, please feel free
-        to email us at
       </section>
     </form>
   </main>

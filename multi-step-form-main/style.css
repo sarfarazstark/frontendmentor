@@ -1,3 +1,8 @@
+/*
+====================================
+  Font Import & Root Variables
+====================================
+*/
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 :root {
   /* Primary colors */
@@ -18,6 +23,11 @@
   --body-font-size: 16px;
 }
 
+/*
+====================================
+  Global Reset & Base Styles
+====================================
+*/
 * {
   margin: 0;
   padding: 0;
@@ -34,9 +44,14 @@ body {
   padding: 6rem 0;
 }
 
+/*
+====================================
+  Layout: Main & Aside
+====================================
+*/
 main {
-  max-width: 1200px;
-  height: 100vh;
+  max-width: 1000px;
+  height: 700px;
   display: grid;
   grid-template-columns: auto 1fr;
   background-color: var(--white);
@@ -46,12 +61,11 @@ main {
 }
 
 aside {
-  background-color: var(--purplish-blue);
+  background-color: var(--marine-blue);
   background-image: url("./assets/images/bg-sidebar-desktop.svg");
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
-
   color: var(--white);
   min-width: 300px;
   padding: 2.2rem 2rem;
@@ -59,6 +73,11 @@ aside {
   border-radius: 0.8rem;
 }
 
+/*
+====================================
+  Sidebar Navigation
+====================================
+*/
 aside ul {
   list-style: none;
   display: flex;
@@ -103,6 +122,11 @@ aside ul li div.active {
   color: var(--marine-blue);
 }
 
+/*
+====================================
+  Form Layout & Sections
+====================================
+*/
 form {
   padding: 2.5rem 6rem;
 }
@@ -124,7 +148,6 @@ form section ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  /* gap: 2.1rem; */
 }
 
 form section.step-2 ul {
@@ -134,24 +157,54 @@ form section.step-2 ul {
 }
 
 form section ul li {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  margin-bottom: 0.5rem;
 }
 
 form section ul li label {
+  width: 100%;
   font-size: 1rem;
   color: var(--marine-blue);
   font-weight: 450;
   margin-bottom: 0.5rem;
-  padding: 1rem;
+  /* padding: 1.5rem 1rem 0 0rem; */
 }
+
+form section ul li small {
+  margin-top: auto;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  color: var(--strawberry-red);
+  display: none;
+}
+
+/* Step 1 */
+
+.show-error {
+  display: block;
+  border-color: var(--strawberry-red) !important;
+}
+
+/*
+====================================
+  Step 2 Specific Styles
+====================================
+*/
+form section.step-2 ul {
+  height: 200px;
+  margin-bottom: 0rem;
+}
+
 form section.step-2 ul li label {
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 2px solid transparent;
+  border: 2px solid var(--light-gray);
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 0.5rem;
 }
 
 form section.step-2 ul li label:hover {
@@ -179,7 +232,72 @@ form section.step-2 ul li input:checked + label {
   background-color: var(--magnolia);
 }
 
+.monthly {
+  font-weight: bold;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--magnolia);
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  gap: 0.5rem;
+}
+.plan-toggler {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.plan-toggler input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--marine-blue);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--white);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.plan-toggler input:checked + .slider {
+  background-color: var(--purplish-blue);
+}
+
+.plan-toggler input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/*
+====================================
+  Form Inputs
+====================================
+*/
 form section ul li input {
+  grid-column: span 2;
   padding: 1rem 1.4rem;
   border: 1px solid var(--light-gray);
   border-radius: 0.5rem;
@@ -202,6 +320,11 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+/*
+====================================
+  Section Visibility
+====================================
+*/
 form section {
   display: none;
 }
@@ -213,6 +336,11 @@ form section.show {
   height: 100%;
 }
 
+/*
+====================================
+  Navigation Buttons
+====================================
+*/
 form section nav {
   display: flex;
   justify-content: space-between;
@@ -234,4 +362,248 @@ form section nav button#next {
 
 form section nav button#prev {
   margin-right: auto;
+  background: none;
+  color: var(--marine-blue);
+  font-weight: 600;
+}
+
+/*
+====================================
+   Step 3 Specific Styles
+====================================
+*/
+
+.add-ons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step-3 header p {
+  margin-right: 3rem;
+}
+
+.add-ons label {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+}
+
+.add-ons label input {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+
+  accent-color: var(--purplish-blue);
+  border-radius: 5px;
+}
+
+.add-ons label input[type="checkbox"] {
+  /* Remove native styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Create your own box */
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.4em; /* ← change this to adjust roundness */
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Checked state: add a check-mark or fill */
+.add-ons label input[type="checkbox"]:checked {
+  background-color: var(--purplish-blue);
+  border-color: var(--purplish-blue);
+}
+
+.add-ons label input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.add-ons label div p {
+  font-size: 1rem;
+  color: var(--marine-blue);
+  font-weight: 500;
+}
+
+.add-ons label div small {
+  font-size: 0.9rem;
+  color: var(--cool-gray);
+}
+
+.add-ons label span {
+  font-size: 0.9rem;
+  color: var(--purplish-blue);
+  font-weight: 500;
+}
+
+.add-ons label:has(input:checked) {
+  border-color: var(--purplish-blue);
+  /* background-color: var(--light-blue); */
+}
+
+.step-3 nav {
+  margin-top: auto;
+}
+
+/*
+====================================
+  Step 4 Specific Styles
+====================================
+*/
+
+/* form section.step-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+} */
+
+.step-4 nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan div {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.plan div h3 {
+  font-size: 1.2rem;
+  color: var(--marine-blue);
+  font-weight: 600;
+}
+
+.plan div small {
+  font-size: 0.9rem;
+  color: var(--cool-gray);
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.plan div small:hover {
+  color: var(--purplish-blue);
+}
+
+.plan .plan-price {
+  font-size: 1rem;
+  color: var(--marine-blue);
+  font-weight: 700;
+}
+
+.step-4 .add-ons-list div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-ons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.step-4 hr {
+  border: none;
+  border-top: 1px solid var(--light-gray);
+  /* margin: 1rem 0; */
+}
+
+.step-4 .summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--magnolia);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.add-ons-list p {
+  font-size: 0.9rem;
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+.add-ons-list span.price {
+  font-size: 0.9rem;
+  color: var(--marine-blue);
+  font-weight: 600;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.total p {
+  font-size: 0.9rem;
+  color: var(--marine-blue);
+  font-weight: 600;
+}
+
+.total span.total-price {
+  font-size: 1.2rem;
+  color: var(--purplish-blue);
+  font-weight: 700;
+}
+
+/*
+====================================
+  Thank You Page Styles
+====================================
+*/
+
+.thank-you div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.thank-you div img {
+  width: 100px;
+  height: 100px;
+}
+
+.thank-you div h1 {
+  font-size: 2.2rem;
+  color: var(--marine-blue);
+  font-weight: 700;
+}
+
+.thank-you div p {
+  font-size: 1.1rem;
+  color: var(--cool-gray);
+  margin-bottom: 2.2rem;
 }
