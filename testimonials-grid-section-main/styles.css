@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Primary */
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+
+  --p-size: 13px;
+}
+
+* {
+  font-family: 'Barlow Semi Condensed';
+}
+
+body {
+  background-color: var(--grey-100);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  height: 100vh;
+}
+
+h3,
+p,
+blockquote {
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  display: grid;
+  grid-template:
+    'card-1 card-1 card-2 card-5'
+    'card-3 card-4 card-4 card-5';
+  gap: 2rem;
+}
+
+.card {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.219);
+  border-radius: 8px;
+  padding: 2.08rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0.2rem;
+  align-items: center;
+}
+
+.card h3 {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 130%;
+  letter-spacing: 0.05rem;
+}
+
+.profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 1000px;
+  grid-row: span 2;
+}
+
+.profile span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.profile small {
+  font-size: 0.8rem;
+  color: var(--grey-100);
+}
+
+.card blockquote {
+  font-size: 0.9rem;
+  /* padding: 2px; */
+  border-radius: 5px;
+  line-height: 135%;
+  font-weight: 500;
+  /* word-spacing: 0.1ch; */
+  /* letter-spacing: 0.025rem; */
+  color: var(--grey-200);
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+.card-1 {
+  background-image: url('./images/bg-pattern-quotation.svg');
+  background-position: top right 50px;
+  background-repeat: no-repeat;
+  background-color: var(--purple-500);
+  & h3 {
+    color: var(--purple-50);
+  }
+  & blockquote,
+  small {
+    color: var(--purple-300);
+  }
+}
+
+.card-2 {
+  background-color: var(--grey-500);
+}
+
+.card-3 {
+  color: var(--black);
+}
+
+.card-4 {
+  background-color: var(--dark-blue);
+}
+
+.card-5 {
+  color: var(--black);
+}
+
+.card-2,
+.card-3,
+.card:last-child {
+  max-width: 205px;
+}
+
+.card-3,
+.card:last-child {
+  & .profile small {
+    color: var(--grey-500);
+  }
+  & blockquote {
+    color: var(--grey-400);
+  }
+}
