@@ -115,9 +115,11 @@ blockquote p::after {
   background-position: top right 50px;
   background-repeat: no-repeat;
   background-color: var(--purple-500);
+
   & h3 {
     color: var(--purple-50);
   }
+
   & blockquote,
   small {
     color: var(--purple-300);
@@ -151,7 +153,34 @@ blockquote p::after {
   & .profile small {
     color: var(--grey-500);
   }
+
   & blockquote {
     color: var(--grey-400);
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    height: auto;
+    padding: 3rem;
+  }
+
+  main {
+    grid-template:
+      'card-1'
+      'card-2'
+      'card-3'
+      'card-4'
+      'card-5';
+  }
+
+  .card-1 {
+    background-position: top right;
+  }
+
+  main .card-2,
+  main .card-3,
+  main .card:last-child {
+    max-width: 100%;
   }
 }
