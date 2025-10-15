@@ -28,6 +28,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5rem;
@@ -49,6 +50,10 @@ main {
   gap: 2rem;
 }
 
+h1 {
+  display: none;
+  text-align: center;
+}
 .card {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.219);
   border-radius: 8px;
@@ -111,6 +116,7 @@ blockquote p::after {
 }
 
 .card-1 {
+  grid-area: card-1;
   background-image: url('./images/bg-pattern-quotation.svg');
   background-position: top right 50px;
   background-repeat: no-repeat;
@@ -127,18 +133,22 @@ blockquote p::after {
 }
 
 .card-2 {
+  grid-area: card-2;
   background-color: var(--grey-500);
 }
 
 .card-3 {
+  grid-area: card-3;
   color: var(--black);
 }
 
 .card-4 {
+  grid-area: card-4;
   background-color: var(--dark-blue);
 }
 
 .card-5 {
+  grid-area: card-5;
   color: var(--black);
 }
 
