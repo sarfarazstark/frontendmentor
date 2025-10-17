@@ -53,7 +53,6 @@ main > div > div {
   border: 2px solid oklch(21% 0.006 285.885);
 }
 
-
 main > div > div > p {
   font-size: 0.8rem;
   font-weight: 600;
@@ -83,7 +82,7 @@ ul > li {
   flex-direction: column;
   gap: 1rem;
   border: 2px solid oklch(21% 0.006 285.885);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
@@ -160,14 +159,71 @@ ul li a {
   text-decoration: none;
 }
 
+/* Tab Screen */
+@media (min-width: 768px) and (max-width: 1023px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  main ul {
+    grid-template-columns: repeat(2, auto);
+    gap: 1rem;
+  }
+
+  ul > li {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .total {
+    font-size: 5rem;
+  }
+
+  ul > li > h3 {
+    font-size: 1.3rem;
+  }
+
+  .tech {
+    font-size: 1rem;
+  }
+}
+
 /* Mobile screen */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   main {
     padding: 1rem;
   }
 
   main ul {
     grid-template-columns: repeat(1, auto);
+    justify-items: center;
+  }
+
+  main > div {
+    gap: 2rem;
+    max-width: 300px;
+  }
+
+  h1 {
+    line-height: 95%;
+    font-size: 1.2rem;
+    color: #f3f3f3;
+  }
+
+  main > div > div {
+    padding: 0.4rem;
+  }
+
+  main > div > div > p {
+    font-size: 0.5rem;
+  }
+
+  .total {
+    font-size: 4rem;
   }
 
   ul > li > h3 {
@@ -176,10 +232,6 @@ ul li a {
 
   main ul li a {
     font-size: 1.4rem;
-  }
-
-  main ul li {
-    width: 100%;
   }
 
   .tech {
