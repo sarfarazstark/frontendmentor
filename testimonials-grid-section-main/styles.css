@@ -23,7 +23,7 @@
 }
 
 body {
-  background-color: var(--grey-100);
+  background-color: white;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -55,7 +55,7 @@ h1 {
   text-align: center;
 }
 .card {
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.219);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.274);
   border-radius: 8px;
   padding: 2.08rem;
   color: white;
@@ -160,6 +160,7 @@ blockquote p::after {
 
 .card-3,
 .card:last-child {
+  background-color: var(--white);
   & .profile small {
     color: var(--grey-500);
   }
