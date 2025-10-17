@@ -35,20 +35,20 @@ const createListItemHTML = (item) => {
   return `
    <li>
     <div class="image-container">
-    <a href="${pathname}${name}">
-      <div class="image-placeholder">
-        <span class="placeholder-content">Loading...</span>
-      </div>
+      <a href="${pathname}${name}">
+        <div class="image-placeholder">
+          <span class="placeholder-content">Loading...</span>
+        </div>
         <img
           src="${pathname}${name}/design/desktop-preview.jpg"
           alt="${newName}"
           loading="lazy"
           width="375"
-          height="150"
+          height="180"
           onload="this.classList.add('loaded'); this.previousElementSibling.style.opacity='0';"
           onerror="this.classList.add('error'); this.previousElementSibling.innerHTML='<span class=\\'placeholder-content\\'>Failed to load</span>';"
         />
-      </a>
+       </a>
     </div>
     <div class="tech">
       ${tech
