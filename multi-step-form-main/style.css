@@ -41,7 +41,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 6rem 0;
+  padding: 0rem 0;
 }
 
 /*
@@ -50,6 +50,7 @@ body {
 ====================================
 */
 main {
+  min-width: 1000px;
   max-width: 1000px;
   height: 700px;
   display: grid;
