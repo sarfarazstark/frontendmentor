@@ -205,12 +205,16 @@ ul li a {
 
   main > div {
     gap: 2rem;
-    max-width: 300px;
+    width: 100%;
+  }
+
+  ul > li{
+    width: 100%;
   }
 
   h1 {
     line-height: 95%;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #f3f3f3;
   }
 
@@ -223,7 +227,7 @@ ul li a {
   }
 
   .total {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 
   ul > li > h3 {
