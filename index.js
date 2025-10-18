@@ -52,18 +52,18 @@ const createListItemHTML = (item) => {
     </div>
     <div class="tech">
       ${tech
-        .split('-')
-        .map((name) => `<span class="${name}">${name}</span>`)
-        .join(' ')}
+      .split('-')
+      .map((name) => `<span class="${name}">${name}</span>`)
+      .join(' ')}
     </div>
     <h3>${newName}</h3>
     <div class="links">
       <a
         class="link"
         href="https://www.frontendmentor.io/challenges/${frontendmentor(
-          name,
-          item.fmpage
-        )}"
+        name,
+        item.fmpage
+      )}"
         ><span>Challenge</span></a>
       <a class="link" href="${pathname}${name}"
         ><span>Live</span></a>
@@ -90,3 +90,12 @@ fetch('./data.json')
     }
     document.querySelector('.total').textContent = data.length;
   });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((reg) => console.log("Service Worker registered ✅", reg.scope))
+      .catch((err) => console.error("Service Worker registration failed ❌", err));
+  });
+}
