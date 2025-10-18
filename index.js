@@ -65,12 +65,12 @@ const createListItemHTML = (item) => {
         item.fmpage
       )}"
         ><span>Challenge</span></a>
-      <a class="link" href="${pathname}${name}"
-        ><span>Live</span></a>
-      <a
+        <a
         class="link"
         href="https://github.com/sarfarazstark/frontendmentor/tree/main/${name}"
         ><span>Repo</span></a>
+        <a class="link" href="${pathname}${name}"
+          ><span>Live</span></a>
     </div>
   </li>
 `;
