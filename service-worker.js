@@ -1,6 +1,5 @@
 const CACHE_NAME = "fm-sarfaraz-cache-v1";
 const ASSETS_TO_CACHE = [
-  "./",
   "./index.html",
   "./style.css",
   "./index.js",

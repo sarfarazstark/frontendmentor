@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Invoice App</title>
+		<link
+			rel="shortcut icon"
+			href="./assets/favicon-32x32.png"
+			type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="./styles/style.css" />
+		<style>
+			* {
+				font-family: 'League Spartan', sans-serif;
+			}
+		</style>
+	</head>
+	<body class="h-screen flex bg-light-bg">
+		<aside
+			class="bg-dark-2 w-24 h-full fixed rounded-tr-3xl rounded-br-3xl overflow-hidden flex flex-col pb-6">
+			<!-- Logo -->
+			<span
+				class="w-full h-24 bg-primary inline-flex relative rounded-br-3xl overflow-hidden">
+				<img
+					class="m-auto w-9 h-9 z-10"
+					src="./assets/logo.svg"
+					alt="Invoice App Logo" />
+				<span
+					class="absolute w-full h-1/2 bottom-0 bg-secondary rounded-tl-3xl"></span>
+			</span>
+
+			<!-- Actions -->
+			<span class="mt-auto flex flex-col items-center gap-5">
+				<!-- Theme Toggler Button -->
+				<button
+					onclick="toggleTheme(this)"
+					data-theme="light"
+					class="cursor-pointer hover:bg-dark-1 p-2 rounded-[10px] transition-colors duration-300">
+					<img src="./assets/icon-moon.svg" alt="Theme Toggler" />
+				</button>
+				<div class="h-[1px] bg-light-3 w-full"></div>
+				<!-- Profile -->
+				<button class="rounded-full overflow-hidden w-10 h-10 cursor-pointer">
+					<img
+						src="./assets/image-avatar.jpg"
+						alt="User avatar"
+						class="hover:grayscale-50" />
+				</button>
+			</span>
+		</aside>
+		<main
+			class="w-full h-full ml-24 p-6 pt-18 flex flex-col items-center gap-20">
+			<header class="w-3xl mx-auto flex justify-between items-center gap-14">
+				<div class="flex flex-col justify-center gap-1">
+					<h1 class="text-4xl font-bold text-light-primary leading-8">
+						Invoices
+					</h1>
+					<small class="text-light-2" id="invoice-count"
+						>There are total 0 invoices</small
+					>
+				</div>
+				<div class="ml-auto">
+					<button class="text-light-primary flex items-center gap-2">
+						Filter by status
+						<img
+							src="./assets/icon-arrow-down.svg"
+							alt="arrow down icon"
+							class="w-3 h-auto" />
+					</button>
+				</div>
+				<div>
+					<button
+						class="flex items-center rounded-full bg-primary px-2 py-2 text-white pr-5 gap-3">
+						<span class="bg-white p-2 rounded-full"
+							><img
+								src="./assets/icon-plus.svg"
+								alt="Plus Icon"
+								class="w-2.5 h-auto"
+						/></span>
+						<span class="leading-1 pt-1">New Invoice</span>
+					</button>
+				</div>
+			</header>
+			<section>
+				<div
+					id="empty-state"
+					class="flex flex-col w-60 mx-auto items-center gap-4">
+					<img src="./assets/illustration-empty.svg" alt="illustration empty" />
+					<h2 class="text-light-primary text-xl mt-8">There is Nothing here</h2>
+					<p class="text-center text-sm leading-4 text-light-primary">
+						Create an invoice by clicking the <br />
+						<strong>New Invoice</strong> button and get started
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<script src="script.js"></script>
+	</body>
+</html>
