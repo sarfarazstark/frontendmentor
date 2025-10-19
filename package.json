@@ -1,9 +1,6 @@
 {
   "name": "@frontendmentor/challenges",
   "version": "1.0.0",
-  "dependencies": {
-    "tailwindcss": "^2.2.19"
-  },
   "scripts": {
     "qr-code": "npx @tailwindcss/cli -i ./global.css -o './qr-code-component/style.css' --watch",
     "product-preview": "npx @tailwindcss/cli -i ./global.css -o './product-preview-card-component/style.css' --watch",
@@ -38,6 +35,7 @@
     "calculator-app": "npx @tailwindcss/cli -i ./global.css -o './calculator-app-main/style.css' --watch",
     "bento-grid": "npx @tailwindcss/cli -i ./global.css -o './bento-grid-main/style.css' --watch",
     "multi-step": "npx @tailwindcss/cli -i ./global.css -o './multi-step-form-main/style.css' --watch",
-    "testimonials-grid": "npx @tailwindcss/cli -i ./global.css -o './testimonials-grid-section-main/style.css' --watch"
+    "testimonials-grid": "npx @tailwindcss/cli -i ./global.css -o './testimonials-grid-section-main/style.css' --watch",
+    "invoice-app": "npx @tailwindcss/cli -i ./global.css -o './invoice-app-main/style.css' --watch"
   }
 }
