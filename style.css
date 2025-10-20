@@ -89,7 +89,7 @@ ul > li > img {
 }
 
 .tech,
-ul > li > h3 {
+ul > li > h2 {
 	padding-inline: 1rem;
 }
 
@@ -124,7 +124,7 @@ ul > li > h3 {
 	color: #f39e00;
 }
 
-ul > li > h3 {
+ul > li > h2 {
 	padding-right: 1.6rem;
 	font-size: 1.5rem;
 	margin-bottom: 1rem;
@@ -181,7 +181,7 @@ ul li a {
 		font-size: 5rem;
 	}
 
-	ul > li > h3 {
+	ul > li > h2 {
 		font-size: 1.3rem;
 	}
 
@@ -228,7 +228,7 @@ ul li a {
 		font-size: 4.5rem;
 	}
 
-	ul > li > h3 {
+	ul > li > h2 {
 		font-size: 2rem;
 	}
 
