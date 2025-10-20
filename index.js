@@ -56,7 +56,7 @@ const createListItemHTML = (item) => {
       .map((name) => `<span class="${name}">${name}</span>`)
       .join(' ')}
     </div>
-    <h3>${newName}</h3>
+    <h2>${newName}</h2>
     <div class="links">
       <a
         class="link"
