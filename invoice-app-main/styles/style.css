@@ -10,7 +10,6 @@
     --color-red-700: oklch(50.5% 0.213 27.518);
     --color-yellow-100: oklch(97.3% 0.071 103.193);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
-    --color-indigo-700: oklch(45.7% 0.24 277.023);
     --color-purple-100: oklch(94.6% 0.033 307.174);
     --color-purple-500: oklch(62.7% 0.265 303.9);
     --color-gray-100: oklch(96.7% 0.003 264.542);
@@ -71,9 +70,9 @@
     --default-mono-font-family: var(--font-mono);
     --color-primary: #7c5dfa;
     --color-logo: #7c5dfa;
-    --color-secondary: #9277ff;
     --color-dark-1: #1e2139;
     --color-dark-2: #252945;
+    --color-dark-3: #0c0e16;
     --color-dark-4: #141625;
     --color-light-primary: #141625;
     --color-light-1: #dfe3fa;
@@ -584,6 +583,9 @@
   .w-48 {
     width: calc(var(--spacing) * 48);
   }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
+  }
   .w-\[14px\] {
     width: 14px;
   }
@@ -616,9 +618,6 @@
   }
   .table-auto {
     table-layout: auto;
-  }
-  .table-fixed {
-    table-layout: fixed;
   }
   .rotate-180 {
     rotate: 180deg;
@@ -661,9 +660,6 @@
   }
   .grid-cols-\[auto_1fr\] {
     grid-template-columns: auto 1fr;
-  }
-  .grid-cols-\[auto_auto_1fr_auto_auto_auto\] {
-    grid-template-columns: auto auto 1fr auto auto auto;
   }
   .grid-cols-subgrid {
     grid-template-columns: subgrid;
@@ -867,8 +863,14 @@
       background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
     }
   }
+  .bg-dark-1 {
+    background-color: var(--color-dark-1);
+  }
   .bg-dark-2 {
     background-color: var(--color-dark-2);
+  }
+  .bg-dark-3 {
+    background-color: var(--color-dark-3);
   }
   .bg-dark-4 {
     background-color: var(--color-dark-4);
@@ -1051,6 +1053,9 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
   }
@@ -1195,6 +1200,10 @@
   .leading-3 {
     --tw-leading: calc(var(--spacing) * 3);
     line-height: calc(var(--spacing) * 3);
+  }
+  .leading-4 {
+    --tw-leading: calc(var(--spacing) * 4);
+    line-height: calc(var(--spacing) * 4);
   }
   .leading-8 {
     --tw-leading: calc(var(--spacing) * 8);
@@ -1537,10 +1546,24 @@
       }
     }
   }
-  .hover\:bg-dark-1 {
+  .hover\:bg-dark-3 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-dark-1);
+        background-color: var(--color-dark-3);
+      }
+    }
+  }
+  .hover\:bg-dark-4 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-dark-4);
+      }
+    }
+  }
+  .hover\:bg-draft-secondary {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-draft-secondary);
       }
     }
   }

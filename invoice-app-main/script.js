@@ -59,7 +59,7 @@ function Button({
 		primary: 'bg-primary text-white px-5 py-3 pb-2.5',
 		secondary: 'bg-draft-secondary text-draft-primary px-5 py-3 pb-2.5',
 		danger: 'bg-accent-red text-white px-5 py-3 pb-2.5',
-		ghost: 'bg-dark-4 text-light-1 hover:bg-dark-1 px-5 py-3 rounded-[10px]',
+		ghost: 'text-light-1 hover:bg-dark-3 px-5 py-3 rounded-[10px]',
 		new: 'bg-primary text-white px-2 py-2 pr-5 gap-3',
 		link: 'text-dark-1 font-semibold flex items-center gap-5 mr-auto p-0 bg-transparent hover:bg-transparent',
 	};
@@ -118,7 +118,7 @@ function InvoiceList({
 	openInvoice,
 	setOpenInvoiceForm,
 }) {
-	const [isFilterOpen, SetIsFilterOpen] = useState(0);
+	const [isFilterOpen, setIsFilterOpen] = useState(false); // Better as boolean
 
 	return html`
 		<section class="grid grid-cols-6 grid-rows-[auto_1fr] gap-y-16 items-start">
@@ -128,15 +128,15 @@ function InvoiceList({
 					<h1 class="text-light-primary text-4xl font-bold leading-8">
 						Invoices
 					</h1>
-					<small class="text-light-2"
-						>There are total ${allCount} invoices</small
-					>
+					<small class="text-light-2">
+						There are total ${allCount} invoices
+					</small>
 				</div>
 
 				<div class="relative ml-auto">
 					<label
 						class="group text-light-primary flex items-center gap-2 cursor-pointer select-none"
-						onClick=${() => SetIsFilterOpen((prev) => !prev)}>
+						onClick=${() => setIsFilterOpen((prev) => !prev)}>
 						Filter by status
 						<img
 							src="./assets/icon-arrow-down.svg"
@@ -165,8 +165,8 @@ function InvoiceList({
 														class="appearance-none w-4 h-4 border border-primary rounded-xs bg-light-1 checked:bg-[url('../assets/icon-check.svg')] checked:bg-center checked:bg-no-repeat checked:bg-primary checked:bg-[length:9px_9px]" />
 													<label
 														for=${name}
-														class="capitalize font-semibold pt-0.5 text-md select-none"
-														>${name}
+														class="capitalize font-semibold pt-0.5 text-md select-none">
+														${name}
 													</label>
 												</li>
 											`,
@@ -188,32 +188,50 @@ function InvoiceList({
 			</header>
 
 			<section class="w-full col-span-4 col-start-2">
-				<ul class="w-full gap-4 grid grid-cols-[auto_auto_1fr_auto_auto_auto]">
-					${invoices.map(
-						(invoice) => html`
-							<li
-								class="grid grid-cols-subgrid border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row items-center shadow-md rounded-lg p-5 gap-x-10 select-none"
-								onClick=${() => openInvoice(invoice.id)}>
-								<div class="font-semibold text-light-primary">
-									<span class="text-light-3">#</span>${invoice.id}
+				${
+					allCount > 0
+						? html`<ul class="w-full">
+								${invoices.map(
+									(invoice) => html`
+										<li
+											class="grid grid-cols-subgrid border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row items-center shadow-md rounded-lg p-5 gap-x-10 select-none"
+											onClick=${() => openInvoice(invoice.id)}>
+											<div class="font-semibold text-light-primary">
+												<span class="text-light-3">#</span>${invoice.id}
+											</div>
+											<div class="text-light-3">
+												<small>${dateTransformed(invoice.paymentDue)}</small>
+											</div>
+											<div class="text-light-3">
+												<small>${invoice.clientName}</small>
+											</div>
+											<div class="font-bold text-right text-light-primary">
+												$ ${invoice.total}
+											</div>
+											<div>${statusEl[invoice.status]()}</div>
+											<div>
+												<img src="./assets/icon-arrow-right.svg" alt="View" />
+											</div>
+										</li>
+									`,
+								)}
+						  </ul>`
+						: html`
+								<div
+									class="w-60 flex flex-col items-center gap-4 mx-auto py-16">
+									<img
+										src="./assets/illustration-empty.svg"
+										alt="No invoices" />
+									<h2 class="text-light-primary mt-8 text-xl font-bold">
+										There is nothing here
+									</h2>
+									<p class="text-light-primary text-sm leading-4 text-center">
+										Create an invoice by clicking the<br />
+										<strong>New Invoice</strong> button and get started
+									</p>
 								</div>
-								<div class="text-light-3">
-									<small>${dateTransformed(invoice.paymentDue)}</small>
-								</div>
-								<div class="text-light-3">
-									<small>${invoice.clientName}</small>
-								</div>
-								<div class="font-bold text-right text-light-primary">
-									$ ${invoice.total}
-								</div>
-								<div>${statusEl[invoice.status]()}</div>
-								<div>
-									<img src="./assets/icon-arrow-right.svg" alt="View" />
-								</div>
-							</li>
-						`,
-					)}
-				</ul>
+						  `
+				}
 			</section>
 		</section>
 	`;
@@ -951,17 +969,6 @@ function App() {
 	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 	const [invoiceStatus, setInvoiceStatus] = useState(null);
 	const [openInvoiceForm, setOpenInvoiceForm] = useState(false);
-
-	useEffect(() => {
-		if (invoices.length === 0) {
-			(async () => {
-				const res = await fetch('./data.json');
-				const data = await res.json();
-				setInvoices(data);
-				localStorage.setItem('invoices', JSON.stringify(data));
-			})();
-		}
-	}, []);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme);
