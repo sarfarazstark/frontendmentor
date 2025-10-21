@@ -20,6 +20,24 @@ The projects in this repository are built with a variety of technologies, includ
 *   **Tailwind CSS**
 *   **Responsive Design**
 
+## Features
+
+This repository is not just a collection of projects; it's a fully-featured portfolio with a focus on performance, accessibility, and user experience. Here are some of the key features:
+
+### SEO & Optimization
+
+*   **Meta Tags:** Rich meta tags for titles, descriptions, and keywords to improve search engine visibility.
+*   **Open Graph & Twitter Cards:** Optimized for social media sharing with Open Graph and Twitter card metadata.
+*   **Sitemap & robots.txt:** A comprehensive `sitemap.xml` and a `robots.txt` to guide search engine crawlers.
+*   **Canonical URLs:** Canonical URLs to prevent duplicate content issues.
+*   **Lazy Loading Images:** Images are lazy-loaded to improve initial page load times.
+
+### PWA (Progressive Web App)
+
+*   **Installable:** The site is a fully installable Progressive Web App (PWA), allowing users to add it to their home screen.
+*   **Offline Support:** A service worker caches assets, making the site available offline.
+*   **Web Manifest:** A detailed `site.webmanifest` file provides metadata for the PWA.
+
 ## Projects
 
 Below is a list of the projects included in this repository, each with its own dedicated folder:
