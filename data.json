@@ -205,8 +205,8 @@
 	},
 	{
 		"name": "invoice-app-main",
-		"tech": "html-js-tailwindcss",
+		"tech": "html-preact-tailwindcss",
 		"fmpage": "i7KaLTQjl",
-		"submitDate": "Oct 21, 2025"
+		"submitDate": "Oct 22, 2025"
 	}
 ]

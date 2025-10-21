@@ -124,6 +124,10 @@ ul > li > h2 {
 	color: #f39e00;
 }
 
+.tech span.preact {
+	color: #673ab8;
+}
+
 ul > li > h2 {
 	padding-right: 1.6rem;
 	font-size: 1.5rem;
