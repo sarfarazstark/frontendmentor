@@ -1,9 +1,6 @@
 import { html, render } from 'https://esm.sh/htm/preact';
 import { useEffect, useState } from 'https://esm.sh/preact/hooks';
 
-/* -----------------------------------------------------------
-   Helpers
------------------------------------------------------------ */
 const dateTransformed = (date) =>
 	new Date(date).toLocaleDateString('en-UK', {
 		year: 'numeric',
@@ -47,9 +44,37 @@ const statusEl = {
 	`,
 };
 
-/* -----------------------------------------------------------
-   Component: Sidebar
------------------------------------------------------------ */
+function Button({
+	children,
+	onClick,
+	variant = 'primary',
+	className = '',
+	type = 'button',
+	...props
+}) {
+	const baseClasses =
+		'font-semibold rounded-full cursor-pointer transition-colors transition-opacity duration-300 flex items-center justify-center';
+
+	const variantClasses = {
+		primary: 'bg-primary text-white px-5 py-3 pb-2.5',
+		secondary: 'bg-draft-secondary text-draft-primary px-5 py-3 pb-2.5',
+		danger: 'bg-accent-red text-white px-5 py-3 pb-2.5',
+		ghost: 'text-dark-1 hover:bg-dark-1 p-2 rounded-[10px]',
+		new: 'bg-primary text-white px-2 py-2 pr-5 gap-3',
+		link: 'text-dark-1 font-semibold flex items-center gap-5 mr-auto p-0 bg-transparent hover:bg-transparent',
+	};
+
+	const appliedClasses = `${baseClasses} ${
+		variantClasses[variant] || variantClasses.primary
+	} ${className}`.trim();
+
+	return html`
+		<button type=${type} class=${appliedClasses} onClick=${onClick} ...${props}>
+			${children}
+		</button>
+	`;
+}
+
 function Sidebar({ theme, toggleTheme }) {
 	const themeIcon = {
 		light: './assets/icon-moon.svg',
@@ -70,11 +95,9 @@ function Sidebar({ theme, toggleTheme }) {
 			</span>
 
 			<span class="flex flex-col items-center gap-5 mt-auto">
-				<button
-					class="cursor-pointer hover:bg-dark-1 p-2 rounded-[10px] transition-colors duration-300"
-					onClick=${toggleTheme}>
+				<${Button} variant="ghost" onClick=${toggleTheme}>
 					<img src=${themeIcon[theme]} alt="Theme toggler" />
-				</button>
+				</${Button}>
 				<div class="h-[1px] bg-light-3 w-full"></div>
 				<button class="w-10 h-10 overflow-hidden rounded-full cursor-pointer">
 					<img
@@ -87,9 +110,6 @@ function Sidebar({ theme, toggleTheme }) {
 	`;
 }
 
-/* -----------------------------------------------------------
-   Component: InvoiceList
------------------------------------------------------------ */
 function InvoiceList({
 	invoices,
 	allCount,
@@ -97,10 +117,12 @@ function InvoiceList({
 	onFilterChange,
 	openInvoice,
 }) {
+	const [isFilterOpen, SetIsFilterOpen] = useState(0);
+
 	return html`
 		<section class="grid grid-cols-6 grid-rows-[auto_1fr] gap-y-16 items-start">
 			<header
-				class="gap-14 flex items-center justify-between w-full col-span-4 col-start-2w-full col-start-2 mx-auto">
+				class="gap-14 flex items-center justify-between w-full col-span-4 col-start-2 mx-auto">
 				<div class="flex flex-col justify-center gap-1">
 					<h1 class="text-light-primary text-4xl font-bold leading-8">
 						Invoices
@@ -112,48 +134,56 @@ function InvoiceList({
 
 				<div class="relative ml-auto">
 					<label
-						class="group text-light-primary flex items-center gap-2 cursor-pointer select-none">
+						class="group text-light-primary flex items-center gap-2 cursor-pointer select-none"
+						onClick=${() => SetIsFilterOpen((prev) => !prev)}>
 						Filter by status
-						<input type="checkbox" class="peer hidden" />
 						<img
 							src="./assets/icon-arrow-down.svg"
 							alt="arrow down"
-							class="peer-checked:rotate-180 w-3 h-auto transition-all duration-300" />
-						<span
-							class="peer-checked:inline-block bg-light-row w-44 -right-8 top-12 absolute hidden p-4 rounded-md shadow-md">
-							<ul
-								class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 items-center">
-								${['draft', 'pending', 'paid'].map(
-									(name) => html`
-										<li
-											class="grid-cols-subgrid col-span-full grid items-center">
-											<input
-												type="checkbox"
-												name=${name}
-												checked=${filters.includes(name)}
-												onChange=${(e) =>
-													onFilterChange(name, e.target.checked)}
-												class="appearance-none w-4 h-4 border border-primary rounded-xs bg-light-1 checked:bg-[url('../assets/icon-check.svg')] checked:bg-center checked:bg-no-repeat checked:bg-primary checked:bg-[length:9px_9px]" />
-											<label
-												for=${name}
-												class="capitalize font-semibold pt-0.5 text-md select-none"
-												>${name}</label
-											>
-										</li>
-									`,
-								)}
-							</ul>
-						</span>
+							class=${`w-3 h-auto transition-all duration-300 ${
+								isFilterOpen ? 'rotate-180' : ''
+							}`} />
 					</label>
+					${
+						isFilterOpen
+							? html`<span
+									class="inline-block text-light-primary bg-light-row w-44 -right-8 top-12 absolute p-4 rounded-md shadow-md">
+									<ul
+										class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 items-center">
+										${['draft', 'pending', 'paid'].map(
+											(name) => html`
+												<li
+													class="grid-cols-subgrid col-span-full grid items-center">
+													<input
+														type="checkbox"
+														name=${name}
+														id=${name}
+														checked=${filters.includes(name)}
+														onChange=${(e) =>
+															onFilterChange(name, e.target.checked)}
+														class="appearance-none w-4 h-4 border border-primary rounded-xs bg-light-1 checked:bg-[url('../assets/icon-check.svg')] checked:bg-center checked:bg-no-repeat checked:bg-primary checked:bg-[length:9px_9px]" />
+													<label
+														for=${name}
+														class="capitalize font-semibold pt-0.5 text-md select-none"
+														>${name}
+													</label>
+												</li>
+											`,
+										)}
+									</ul>
+							  </span>`
+							: ''
+					}
 				</div>
 
-				<button
-					class="bg-primary flex items-center gap-3 px-2 py-2 pr-5 text-white rounded-full">
+				<${Button}
+					variant="new"
+					onClick=${() => alert('New invoice feature not yet implemented')}>
 					<span class="p-2 bg-white rounded-full">
 						<img src="./assets/icon-plus.svg" alt="Plus" class="w-2.5 h-auto" />
 					</span>
 					<span class="leading-1 pt-1">New Invoice</span>
-				</button>
+				</${Button}>
 			</header>
 
 			<section class="w-full col-span-4 col-start-2">
@@ -188,11 +218,15 @@ function InvoiceList({
 	`;
 }
 
-/* -----------------------------------------------------------
-   Component: InvoiceDetail
------------------------------------------------------------ */
-function InvoiceDetail({ invoice, onBack }) {
+function InvoiceDetail({
+	invoice,
+	onBack,
+	deleteInvoice,
+	invoiceStatus,
+	markAsPaid,
+}) {
 	if (!invoice) return html`<div class="p-6">Invoice not found</div>`;
+	const [openDeleteConfirmBtn, SetOpenDeleteConfirmBtn] = useState(false);
 
 	const {
 		id,
@@ -207,46 +241,49 @@ function InvoiceDetail({ invoice, onBack }) {
 		items,
 		total,
 	} = invoice;
+	console.log(statusEl[invoiceStatus]());
 
 	return html`
 		<section class="grid grid-cols-6 grid-rows-[auto_1fr] gap-y-16 items-start">
 			<div class="w-full col-span-4 col-start-2">
 				<header
 					class="flex flex-col items-center justify-between w-full gap-4 mx-auto mb-6">
-					<button
-						class="flex items-center justify-center gap-5 mr-auto cursor-pointer"
-						onClick=${onBack}>
+					<${Button} variant="link" onClick=${onBack}>
 						<img src="./assets/icon-arrow-left.svg" alt="Back" />
-						<p class="pt-0.5 leading-tight font-semibold text-dark-1">
-							Go Back
-						</p>
-					</button>
+						<span class="pt-0.5 leading-tight">Go Back</span>
+					</${Button}>
 
 					<div class="bg-light-row flex w-full px-6 py-5 rounded-lg shadow-md">
 						<div class="flex items-center gap-4">
 							<p class="text-dark-1">Status</p>
-							${statusEl[status]()}
+							${statusEl[invoiceStatus]()}
 						</div>
 
 						<div class="flex gap-5 ml-auto">
-							<button
-								class="px-5 font-semibold text-draft-primary py-3 pb-2.5 bg-draft-secondary rounded-full cursor-pointer"
-								onClick=${() =>
-									alert('Edit invoice feature not yet implemented')}>
+							<${Button}
+								variant="secondary"
+								onClick=${() => alert('Edit invoice feature not yet implemented')}
+                className="hover:opacity-70"
+                >
 								Edit
-							</button>
-							<button
-								class="px-5 font-semibold text-white py-3 pb-2.5 bg-accent-red rounded-full cursor-pointer"
-								onClick=${() =>
-									alert('Delete invoice feature not yet implemented')}>
+							</${Button}>
+							<${Button}
+								variant="danger"
+								onClick=${() => SetOpenDeleteConfirmBtn((prev) => !prev)}
+                className="hover:opacity-70"
+                >
 								Delete
-							</button>
-							<button
-								class="px-5 font-semibold text-white py-3 pb-2.5 bg-primary rounded-full cursor-pointer"
-								onClick=${() =>
-									alert('Mark as Paid feature not yet implemented')}>
+							</${Button}>
+							<${Button}
+								variant="primary"
+								onClick=${() => markAsPaid(id)}
+                className="hover:opacity-70 ${
+									status === 'paid' ? 'opacity-70 cursor-not-allowed' : ''
+								}"
+                disabled=${status === 'paid'}
+                >
 								Mark as Paid
-							</button>
+							</${Button}>
 						</div>
 					</div>
 				</header>
@@ -349,19 +386,51 @@ function InvoiceDetail({ invoice, onBack }) {
 				</section>
 			</div>
 		</section>
+
+		<!-- Delete Confirmation Popup -->
+		${
+			openDeleteConfirmBtn
+				? html`
+					<div class="fixed top-0 left-0 right-0 bottom-0 ml-24">
+            <div class="grid grid-cols-6 grid-rows-6 items-center w-full h-full">
+              <div
+                class="col-start-3 col-span-2 row-start-3 row-span-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-10 flex flex-col gap-4">
+                <h3 class="text-light-primary text-2xl font-semibold">
+                  Confirm Deletion
+                </h3>
+                <p class="text-light-primary ">
+                  Are you sure you want to delete invoice #${id}? This action cannot
+                  be undone.
+                </p>
+                <div class='flex gap-4 ml-auto'>
+                    <${Button}
+                      variant="secondary"
+                      onClick=${() => SetOpenDeleteConfirmBtn((prev) => !prev)}>
+                      Cancel
+                    </${Button}>
+                    <${Button}
+                      variant="danger"
+                      onClick=${() => deleteInvoice(id)}>
+                      Delete
+                    </${Button}>
+                </div>
+              </div>
+            </div>
+          </div>
+			  `
+				: ''
+		}}
 	`;
 }
 
-/* -----------------------------------------------------------
-   Component: App (Root)
------------------------------------------------------------ */
 function App() {
 	const [invoices, setInvoices] = useState(() =>
 		JSON.parse(localStorage.getItem('invoices') || '[]'),
 	);
 	const [filters, setFilters] = useState([]);
-	const [selectedId, setSelectedId] = useState(null);
+	const [selectedInvoice, setSelectedInvoice] = useState(null);
 	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+	const [invoiceStatus, setInvoiceStatus] = useState(null);
 
 	useEffect(() => {
 		if (invoices.length === 0) {
@@ -390,16 +459,44 @@ function App() {
 			? invoices.filter((i) => filters.includes(i.status))
 			: invoices;
 
-	const openInvoice = (id) => setSelectedId(id);
-	const closeInvoice = () => setSelectedId(null);
+	const openInvoice = (id) => {
+		const invoice = invoices.find((i) => i.id === id);
+		setSelectedInvoice(invoice);
+		setInvoiceStatus(invoice.status);
+	};
+	const closeInvoice = () => setSelectedInvoice(null);
+
+	const deleteInvoice = (id) => {
+		setInvoices((prev) => prev.filter((i) => i.id !== id));
+		localStorage.setItem(
+			'invoices',
+			JSON.stringify(invoices.filter((i) => i.id !== id)),
+		);
+		setSelectedInvoice(null);
+	};
+
+	const markAsPaid = (id) => {
+		const updated = invoices.map((invoice) =>
+			invoice.id === id ? { ...invoice, status: 'paid' } : invoice,
+		);
+
+		console.log(updated);
+
+		localStorage.setItem('invoices', JSON.stringify(updated));
+		setInvoices(updated);
+		setInvoiceStatus('paid');
+	};
 
 	return html`
 		<div class="flex h-full min-h-screen">
 			<${Sidebar} theme=${theme} toggleTheme=${toggleTheme} />
 			<main class="w-full ml-24 p-6 transition-all duration-500 pt-18">
-				${selectedId
+				${selectedInvoice
 					? html`<${InvoiceDetail}
-							invoice=${invoices.find((i) => i.id === selectedId)}
+							markAsPaid=${markAsPaid}
+							invoiceStatus=${invoiceStatus}
+							deleteInvoice=${deleteInvoice}
+							invoice=${selectedInvoice}
 							onBack=${closeInvoice} />`
 					: html`<${InvoiceList}
 							invoices=${filtered}
@@ -412,7 +509,4 @@ function App() {
 	`;
 }
 
-/* -----------------------------------------------------------
-   Mount
------------------------------------------------------------ */
 render(html`<${App} />`, document.getElementById('app'));
