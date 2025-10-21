@@ -59,7 +59,8 @@ function Button({
 		primary: 'bg-primary text-white px-5 py-3 pb-2.5',
 		secondary: 'bg-draft-secondary text-draft-primary px-5 py-3 pb-2.5',
 		danger: 'bg-accent-red text-white px-5 py-3 pb-2.5',
-		ghost: 'text-light-1 hover:bg-dark-3 px-5 py-3 rounded-[10px]',
+		ghost: 'bg-dark-4 text-light-1 hover:bg-dark-1 px-5 py-3 rounded-[10px]',
+		ghostSecondary: 'text-light-1 hover:bg-dark-3 px-5 py-3 rounded-[10px]',
 		new: 'bg-primary text-white px-2 py-2 pr-5 gap-3',
 		link: 'text-dark-1 font-semibold flex items-center gap-5 mr-auto p-0 bg-transparent hover:bg-transparent',
 	};
@@ -95,7 +96,7 @@ function Sidebar({ theme, toggleTheme }) {
 			</span>
 
 			<span class="flex flex-col items-center gap-5 mt-auto">
-				<${Button} variant="ghost" onClick=${toggleTheme}>
+				<${Button} variant="ghostSecondary" onClick=${toggleTheme}>
 					<img src=${themeIcon[theme]} alt="Theme toggler" />
 				</${Button}>
 				<div class="h-[1px] bg-light-3 w-full"></div>
@@ -190,32 +191,35 @@ function InvoiceList({
 			<section class="w-full col-span-4 col-start-2">
 				${
 					allCount > 0
-						? html`<ul class="w-full">
-								${invoices.map(
-									(invoice) => html`
-										<li
-											class="grid grid-cols-subgrid border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row items-center shadow-md rounded-lg p-5 gap-x-10 select-none"
-											onClick=${() => openInvoice(invoice.id)}>
-											<div class="font-semibold text-light-primary">
-												<span class="text-light-3">#</span>${invoice.id}
-											</div>
-											<div class="text-light-3">
-												<small>${dateTransformed(invoice.paymentDue)}</small>
-											</div>
-											<div class="text-light-3">
-												<small>${invoice.clientName}</small>
-											</div>
-											<div class="font-bold text-right text-light-primary">
-												$ ${invoice.total}
-											</div>
-											<div>${statusEl[invoice.status]()}</div>
-											<div>
-												<img src="./assets/icon-arrow-right.svg" alt="View" />
-											</div>
-										</li>
-									`,
-								)}
-						  </ul>`
+						? html`<section class="w-full col-span-4 col-start-2">
+								<ul
+									class="w-full gap-4 grid grid-cols-[auto_auto_1fr_auto_auto_auto]">
+									${invoices.map(
+										(invoice) => html`
+											<li
+												class="grid grid-cols-subgrid border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row items-center shadow-md rounded-lg p-5 gap-x-10 select-none"
+												onClick=${() => openInvoice(invoice.id)}>
+												<div class="font-semibold text-light-primary">
+													<span class="text-light-3">#</span>${invoice.id}
+												</div>
+												<div class="text-light-3">
+													<small>${dateTransformed(invoice.paymentDue)}</small>
+												</div>
+												<div class="text-light-3">
+													<small>${invoice.clientName}</small>
+												</div>
+												<div class="font-bold text-right text-light-primary">
+													$ ${invoice.total}
+												</div>
+												<div>${statusEl[invoice.status]()}</div>
+												<div>
+													<img src="./assets/icon-arrow-right.svg" alt="View" />
+												</div>
+											</li>
+										`,
+									)}
+								</ul>
+						  </section>`
 						: html`
 								<div
 									class="w-60 flex flex-col items-center gap-4 mx-auto py-16">

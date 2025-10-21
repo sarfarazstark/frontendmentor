@@ -661,6 +661,9 @@
   .grid-cols-\[auto_1fr\] {
     grid-template-columns: auto 1fr;
   }
+  .grid-cols-\[auto_auto_1fr_auto_auto_auto\] {
+    grid-template-columns: auto auto 1fr auto auto auto;
+  }
   .grid-cols-subgrid {
     grid-template-columns: subgrid;
   }
@@ -863,14 +866,8 @@
       background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
     }
   }
-  .bg-dark-1 {
-    background-color: var(--color-dark-1);
-  }
   .bg-dark-2 {
     background-color: var(--color-dark-2);
-  }
-  .bg-dark-3 {
-    background-color: var(--color-dark-3);
   }
   .bg-dark-4 {
     background-color: var(--color-dark-4);
@@ -1546,24 +1543,17 @@
       }
     }
   }
+  .hover\:bg-dark-1 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-dark-1);
+      }
+    }
+  }
   .hover\:bg-dark-3 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-dark-3);
-      }
-    }
-  }
-  .hover\:bg-dark-4 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-dark-4);
-      }
-    }
-  }
-  .hover\:bg-draft-secondary {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-draft-secondary);
       }
     }
   }
@@ -2396,6 +2386,24 @@
   html {
     scrollbar-gutter: stable;
   }
+}
+* {
+  scrollbar-width: none;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 @property --tw-rotate-x {
   syntax: "*";
