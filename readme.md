@@ -8,7 +8,7 @@ Explore the live projects here: [https://sarfaraz.is-a.dev/frontendmentor/](http
 
 ## About This Repository
 
-This portfolio serves as a central hub for all my Frontend Mentor projects. The `index.html` file at the root dynamically loads project data from `data.json`, creating a clean and organized showcase of my work. Each project is contained within its own directory and can be accessed through the main portfolio page.
+This portfolio serves as a a central hub for all my Frontend Mentor projects. The `index.html` file at the root dynamically loads project data from `data.json`, creating a clean and organized showcase of my work. The main portfolio page is built with vanilla HTML, CSS, and JavaScript. Each project is contained within its own directory and can be accessed through the main portfolio page.
 
 ## Technologies Used
 
