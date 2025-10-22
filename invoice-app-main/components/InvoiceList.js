@@ -106,8 +106,8 @@ function InvoiceList({
 													<small>${invoice.clientName}</small>
 												</div>
 												<div
-													class="font-bold text-light-primary col-start-1 sm:col-start-4 text-left w-full">
-													$ ${invoice.total}
+													class="font-bold text-light-primary col-start-1 sm:col-start-4 text-left sm:text-right w-full">
+													$ ${parseInt(invoice.total).toFixed(2)}
 												</div>
 												<div>${statusEl[invoice.status]()}</div>
 												<div class="hidden sm:block">
