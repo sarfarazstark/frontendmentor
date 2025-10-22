@@ -1,7 +1,7 @@
 import { html } from 'https://esm.sh/htm/preact';
 import { useState } from 'https://esm.sh/preact/hooks';
 import Button from './Button.js';
-import { dateTransformed, statusEl } from '../utils.js';
+import { dateTransformed, statusEl, truncateString } from '../utils.js';
 
 function InvoiceDetail({
 	invoice,
@@ -28,8 +28,8 @@ function InvoiceDetail({
 	} = invoice;
 
 	return html`
-		<section class="grid grid-cols-6 md:grid-cols-10 grid-rows-[auto_1fr] gap-y-16 items-start">
-			<div class="w-full col-span-4 md:col-span-8 col-start-2 md:col-start-2">
+		<section class="grid grid-cols-1 grid-rows-[auto_1fr] gap-y-16 items-start px-6">
+			<div class="w-full">
 				<header
 					class="flex flex-col items-center justify-between w-full gap-4 mx-auto mb-6">
 					<${Button} variant="link" onClick=${onBack}>
@@ -37,31 +37,31 @@ function InvoiceDetail({
 						<span class="pt-0.5 leading-tight">Go Back</span>
 					</${Button}>
 
-					<div class="bg-light-row flex w-full px-6 py-5 rounded-lg shadow-md">
-						<div class="flex items-center gap-4">
+					<div class="bg-light-row w-full px-6 py-5 rounded-lg shadow-md">
+						<div class="flex items-center justify-between w-full gap-4">
 							<p class="text-dark-1">Status</p>
 							${statusEl[invoiceStatus]()}
 						</div>
 
-						<div class="flex gap-5 ml-auto">
+						<div class="fixed bottom-0 left-0 right-0 bg-light-row flex justify-between p-4 gap-2">
 							<${Button}
 								variant="secondary"
 								onClick=${() => setOpenInvoiceForm(true)}
-                className="hover:opacity-70"
+                className="hover:opacity-70 mr-auto text-sm"
                 >
 								Edit
 							</${Button}>
 							<${Button}
 								variant="danger"
 								onClick=${() => SetOpenDeleteConfirmBtn((prev) => !prev)}
-                className="hover:opacity-70"
+                className="hover:opacity-70 text-sm"
                 >
 								Delete
 							</${Button}>
 							<${Button}
 								variant="primary"
 								onClick=${() => markAsPaid(id)}
-                className="hover:opacity-70 ${
+                className="hover:opacity-70 text-sm ${
 									invoiceStatus === 'paid'
 										? 'opacity-70 cursor-not-allowed'
 										: ''
@@ -75,15 +75,15 @@ function InvoiceDetail({
 				</header>
 
 				<section
-					class="bg-light-row flex flex-col w-full gap-4 p-8 shadow-md rounded-lg">
-					<div class="grid w-full grid-cols-2 mb-6">
+					class="bg-light-row flex flex-col w-full gap-4 p-4 shadow-md rounded-lg">
+					<div class="grid w-full grid-cols-1 gap-y-4 mb-6">
 						<div>
-							<h2 class="text-light-primary text-xl font-semibold">
-								<span class="text-light-2">#</span>${id}
+							<h2 class="text-light-primary text-xl font-semibold leading-tight">
+								<span class="text-light-2 leading-tight">#</span>${id}
 							</h2>
-							<p class="text-light-2 pt-1">${description}</p>
+							<p class="text-light-3 text-sm">${description}</p>
 						</div>
-						<div class="text-light-2 text-right">
+						<div class="text-light-3 text-left text-sm">
 							<p>${senderAddress.street}</p>
 							<p>${senderAddress.city}</p>
 							<p>${senderAddress.postCode}</p>
@@ -91,17 +91,17 @@ function InvoiceDetail({
 						</div>
 					</div>
 
-					<div class="grid w-full grid-cols-3 gap-4 mb-6">
+					<div class="grid w-full grid-cols-2 gap-4 mb-6">
 						<div class="flex flex-col gap-4 text-left">
 							<div>
 								<small class="text-light-2">Invoice Date</small>
-								<p class="text-light-primary text-lg font-semibold">
+								<p class="text-light-primary text-md font-semibold">
 									${dateTransformed(createdAt)}
 								</p>
 							</div>
 							<div>
 								<small class="text-light-2">Payment Due</small>
-								<p class="text-light-primary text-lg font-semibold">
+								<p class="text-light-primary text-md font-semibold">
 									${dateTransformed(paymentDue)}
 								</p>
 							</div>
@@ -109,10 +109,10 @@ function InvoiceDetail({
 
 						<div>
 							<small class="text-light-2">Bill to</small>
-							<p class="text-light-primary text-lg font-semibold">
+							<p class="text-light-primary text-md font-semibold mt-3">
 								${clientName}
 							</p>
-							<div class="text-light-2 text-left">
+							<div class="text-light-2 text-left text-sm mt-2">
 								<p>${clientAddress.street}</p>
 								<p>${clientAddress.city}</p>
 								<p>${clientAddress.postCode}</p>
@@ -122,15 +122,15 @@ function InvoiceDetail({
 
 						<div>
 							<small class="text-light-2">Sent to</small>
-							<p class="text-light-primary text-lg font-semibold">
+							<p class="text-light-primary text-md font-semibold mt-2">
 								${clientEmail}
 							</p>
 						</div>
 					</div>
 
 					<div class="bg-draft-secondary w-full overflow-hidden rounded-lg">
-						<div class="p-8">
-							<table class="w-full table-auto">
+						<div class="p-4 space-y-2">
+							<table class="w-full table-auto hidden">
 								<thead>
 									<tr>
 										<th class="text-light-2 px-4 py-2 text-sm text-left">
@@ -160,12 +160,31 @@ function InvoiceDetail({
 									)}
 								</tbody>
 							</table>
+                ${items.map(
+									(it) => html`
+										<div class="grid grid-cols-[1fr_auto] gap-x-1 items-center">
+											<div class="">
+												<p
+													class="text-light-primary font-semibold leading-tight">
+													${it.name}
+												</p>
+												<span class="text-light-3 font-semibold text-sm">
+													${it.quantity} x $ ${parseInt(it.price).toFixed(2)}
+												</span>
+											</div>
+											<div
+												class="text-right text-md text-light-primary font-semibold">
+												$ ${parseInt(it.total).toFixed(2)}
+											</div>
+										</div>
+									`,
+								)}
 						</div>
 						<div
-							class="bg-dark-4 pb-7 grid items-center w-full grid-cols-2 p-8 text-white">
-							<small class="text-sm leading-tight">Amount Due</small>
-							<p class="text-2xl font-bold leading-tight text-right">
-								$ ${total}
+							class="bg-dark-4 pb-6 grid items-center w-full grid-cols-2 p-6 text-white">
+							<small class="text-xs leading-tight inline-block">Amount Due</small>
+							<p class="text-lg font-bold leading-tight text-right pt-1">
+								 ${`$ ${parseInt(total).toFixed(1)}`}
 							</p>
 						</div>
 					</div>
@@ -177,10 +196,10 @@ function InvoiceDetail({
 		${
 			openDeleteConfirmBtn
 				? html`
-				<div class="fixed top-0 left-0 right-0 bottom-0 ml-24 md:ml-0 md:mt-16">
-            <div class="grid grid-cols-6 md:grid-cols-10 grid-rows-6 md:grid-rows-[1fr_auto_1fr] items-center w-full h-full">
+				<div class="fixed top-0 left-0 right-0 bottom-0 mt-20 flex items-center p-4">
+            <div class="grid grid-cols-1 items-center w-full h-auto">
               <div
-                class="col-start-3 md:col-span-6 md:col-start-3 col-span-2 row-start-3 md:row-start-2 row-span-2 md:row-span-1 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-10 flex flex-col gap-4">
+                class=" h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
                 <h3 class="text-light-primary text-2xl font-semibold">
                   Confirm Deletion
                 </h3>

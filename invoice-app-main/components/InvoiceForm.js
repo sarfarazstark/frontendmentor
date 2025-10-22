@@ -261,19 +261,19 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 
 	return html`
     <div
-      class="grid grid-cols-7 grid-rows-[auto_1fr] gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 ml-24 md:ml-0 md:mt-16 z-10 bg-black/50">
+      class="grid grid-cols-1 gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 mt-20 md:ml-0 md:mt-20 z-10 bg-black/50">
       <section
-        class="col-span-3 md:col-span-6 row-span-full bg-light-bg overflow-y-scroll h-full rounded-tr-4xl rounded-br-4xl transition-colors duration-100"
+        class="bg-light-bg overflow-y-scroll h-full transition-colors duration-100"
         ref=${containerRef}
         onScroll=${handleScroll}>
-        <h2 class="text-2xl font-semibold text-light-primary mb-8 px-14 pt-14">
+        <h2 class="text-2xl font-semibold text-light-primary mb-8 px-6 pt-8">
           ${invoice ? 'Edit Invoice' : 'New Invoice'}
         </h2>
-        <form class="text-light-primary flex flex-col gap-3 p-14 pt-0 pb-6">
+        <form class="text-light-primary flex flex-col gap-3 p-6 pt-0 pb-6">
           <!-- Sender Inputs -->
           <div>
             <small class="text-primary text-sm font-semibold">Bill From</small>
-            <div class="flex flex-col space-y-1 my-3">
+            <div class="flex flex-col space-y-1 my-6">
               <div class="flex justify-between items-center">
                 <label htmlFor="street-address" class="text-xs text-light-2">Street Address</label>
                 <span class="text-accent-red text-xs ${
@@ -296,8 +296,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 										: 'border-light-primary/10'
 								}" />
             </div>
-            <div class="grid grid-cols-3 gap-6">
-              <div class="flex flex-col space-y-1 my-3">
+            <div class="grid grid-cols-2 gap-x-3 gap-y-6">
+              <div class="flex flex-col space-y-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="city" class="text-xs text-light-2">City</label>
                   <span class="text-accent-red text-xs ${
@@ -320,7 +320,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 											: 'border-light-primary/10'
 									}" />
               </div>
-              <div class="flex flex-col space-y-1 my-3">
+              <div class="flex flex-col space-y-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="postcode" class="text-xs text-light-2">Post Code</label>
                   <span class="text-accent-red text-xs ${
@@ -346,7 +346,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 											: 'border-light-primary/10'
 									}" />
               </div>
-              <div class="flex flex-col space-y-1 my-3">
+              <div class="flex flex-col space-y-1 col-span-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="country" class="text-xs text-light-2">Country</label>
                   <span class="text-accent-red text-xs ${
@@ -374,7 +374,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
           <!-- Receiver inputs -->
           <div>
             <small class="text-primary text-sm font-semibold">Bill To</small>
-            <div class="flex flex-col space-y-1 my-3">
+            <div class="flex flex-col space-y-2 my-6">
               <div class="flex justify-between items-center">
                 <label htmlFor="name" class="text-xs text-light-2">Client Name</label>
                 <span class="text-accent-red text-xs ${
@@ -397,7 +397,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 										: 'border-light-primary/10'
 								}" />
             </div>
-            <div class="flex flex-col space-y-1 my-3">
+            <div class="flex flex-col space-y-2 my-6">
               <div class="flex justify-between items-center">
                 <label htmlFor="email" class="text-xs text-light-2">Client Email</label>
                 <span class="text-accent-red text-xs ${
@@ -421,7 +421,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 								}"
                 placeholder="e.g. email@example.com" />
             </div>
-            <div class="flex flex-col space-y-1 my-3">
+            <div class="flex flex-col space-y-2 my-6">
               <div class="flex justify-between items-center">
                 <label htmlFor="client-street-address" class="text-xs text-light-2">Street Address</label>
                 <span class="text-accent-red text-xs ${
@@ -444,8 +444,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 										: 'border-light-primary/10'
 								}" />
             </div>
-            <div class="grid grid-cols-3 gap-6">
-              <div class="flex flex-col space-y-1 my-3">
+            <div class="grid grid-cols-2 gap-x-3 gap-y-6">
+              <div class="flex flex-col space-y-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="client-city" class="text-xs text-light-2">City</label>
                   <span class="text-accent-red text-xs ${
@@ -468,7 +468,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 											: 'border-light-primary/10'
 									}" />
               </div>
-              <div class="flex flex-col space-y-1 my-3">
+              <div class="flex flex-col space-y-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="client-postcode" class="text-xs text-light-2">Post Code</label>
                   <span class="text-accent-red text-xs ${
@@ -494,7 +494,7 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 											: 'border-light-primary/10'
 									}" />
               </div>
-              <div class="flex flex-col space-y-1 my-3">
+              <div class="flex flex-col space-y-2 col-span-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="client-country" class="text-xs text-light-2">Country</label>
                   <span class="text-accent-red text-xs ${
@@ -521,8 +521,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
           </div>
           <!-- Invoice Details -->
           <div>
-            <div class="grid grid-cols-2 gap-6">
-              <div class="flex flex-col space-y-1 my-3">
+            <div class="grid grid-cols-1 gap-x-3 gap-y-6">
+              <div class="flex flex-col space-y-2">
                 <div class="flex justify-between items-center">
                   <label htmlFor="date" class="text-xs text-light-2">Invoice Date</label>
                   <span class="text-accent-red text-xs ${
@@ -542,40 +542,41 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 										}));
 									}}
                   onBlur=${() => handleBlur('invoiceDate')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-										showError('invoiceDate')
-											? 'border-accent-red'
-											: 'border-light-primary/10'
-									}"
+                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border [color-scheme:light] dark:[color-scheme:dark]
+                      dark:[&::-webkit-calendar-picker-indicator]:filter-invert dark:[&::-webkit-calendar-picker-indicator]:opacity-30 ${
+												showError('invoiceDate')
+													? 'border-accent-red'
+													: 'border-light-primary/10'
+											}"
                   placeholder=" " />
               </div>
-              <div class="flex flex-col space-y-1 my-3">
+              <div class="flex flex-col space-y-2">
                 <label htmlFor="payment-due" class="text-xs text-light-2">Payment Due</label>
-              <select
-                name="payment-due"
-                id="payment-due"
-                autocomplete="off"
-                value=${invoiceDetails.paymentTerms}
-                onInput=${(e) =>
-									setInvoiceDetails((prev) => ({
-										...prev,
-										paymentTerms: e.target.value,
-									}))}
-                class="bg-light-row text-light-primary font-medium
-                      px-3 py-2 pr-8 rounded-md border border-light-primary/10
-                      appearance-none bg-no-repeat
-                      bg-[url('./../assets/icon-arrow-down.svg')] bg-[right_0.75rem_center]
-                      hover:border-primary focus:ring focus:ring-primary/30
-                      focus:outline-none transition"
-              >
-                <option value="1">Next 1 Day</option>
-                <option value="7">Next 7 Days</option>
-                <option value="14">Next 14 Days</option>
-                <option value="30">Next 30 Days</option>
-              </select>
+                <select
+                  name="payment-due"
+                  id="payment-due"
+                  autocomplete="off"
+                  value=${invoiceDetails.paymentTerms}
+                  onInput=${(e) =>
+										setInvoiceDetails((prev) => ({
+											...prev,
+											paymentTerms: e.target.value,
+										}))}
+                  class="bg-light-row text-light-primary font-medium
+                        px-3 py-2 pr-8 rounded-md border border-light-primary/10
+                        appearance-none bg-no-repeat
+                        bg-[url('./../assets/icon-arrow-down.svg')] bg-[right_0.75rem_center]
+                        hover:border-primary focus:ring focus:ring-primary/30
+                        focus:outline-none transition"
+                  >
+                    <option value="1">Next 1 Day</option>
+                    <option value="7">Next 7 Days</option>
+                    <option value="14">Next 14 Days</option>
+                    <option value="30">Next 30 Days</option>
+                </select>
               </div>
             </div>
-            <div class="flex flex-col space-y-1 my-3">
+            <div class="flex flex-col space-y-2 my-6">
               <div class="flex justify-between items-center">
                 <label htmlFor="description" class="text-xs text-light-2">Project Description</label>
                 <span class="text-accent-red text-xs ${
@@ -612,23 +613,21 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 									? html`<p class="text-accent-red text-xs">${errors.items}</p>`
 									: ''
 							}
-			</div>
-            <table class="table-auto w-full mt-3">
-              <thead>
-                <tr>
-                  <th class="text-left text-xs text-light-2 p-1 pr-3 pb-3">Item Name</th>
-                  <th class="text-center text-xs text-light-2 p-1 pr-3 pb-3 whitespace-nowrap">Qty.</th>
-                  <th class="text-center text-xs text-light-2 p-1 pr-3 pb-3 whitespace-nowrap">Price</th>
-                  <th class="text-center text-xs text-light-2 p-1 pr-3 pb-3 whitespace-nowrap">Total</th>
-                  <th class="text-right text-xs text-light-2 p-1 px-2 pr-3 pb-3 whitespace-nowrap"></th>
-                </tr>
-              </thead>
+			    </div>
+            <div class="w-full hidden mt-3 grid-cols-[1fr_auto_auto_auto_auto]">
+              <div class="w-full grid grid-cols-subgrid col-span-full gap-x-2 gap-y-3">
+                  <div class="text-left text-xs text-light-2 col-span-full">Item Name</div>
+                  <div class="text-center text-xs text-light-2 whitespace-nowrap">Qty.</div>
+                  <div class="text-center text-xs text-light-2 whitespace-nowrap">Price</div>
+                  <div class="text-center text-xs text-light-2 whitespace-nowrap">Total</div>
+                  <div class="text-right text-xs text-light-2 whitespace-nowrap"></div>
+              </div>
 
-              <tbody class='space-y-2'>
                 ${items.map(
 									(item) =>
-										html`<tr>
-											<td class="w-full pr-3 pb-3">
+										html`<div
+											class="w-fit grid grid-cols-subgrid col-span-full gap-x-2 gap-y-3">
+											<div class="w-full col-span-full">
 												<input
 													type="text"
 													name="description-${item.id}"
@@ -638,9 +637,9 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 														updateItem(item.id, 'name', e.target.value)}
 													placeholder="e.g. OnePlus 12"
 													class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-full" />
-											</td>
+											</div>
 
-											<td class="text-center pr-3 pb-3">
+											<div class="text-center">
 												<input
 													type="text"
 													value=${item.quantity}
@@ -648,10 +647,10 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 													onInput=${(e) =>
 														updateItem(item.id, 'quantity', e.target.value)}
 													name="qty-${item.id}"
-													class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-16" />
-											</td>
+													class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10" />
+											</div>
 
-											<td class="text-center pr-3 pb-3">
+											<div class="text-center">
 												<input
 													type="text"
 													value=${item.price}
@@ -659,42 +658,131 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 													onInput=${(e) =>
 														updateItem(item.id, 'price', e.target.value)}
 													name="price-${item.id}"
-													class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-16 placeholder:text-light-2/70 placeholder:font-semibold"
+													class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 placeholder:text-light-2/70 placeholder:font-semibold"
 													placeholder="00" />
-											</td>
+											</div>
 
-											<td
-												class="text-center text-sm text-light-2 p-2 w-24 pr-3 pb-3 font-semibold">
+											<div
+												class="text-center text-sm text-light-2 p-2 font-semibold">
 												${Number.isFinite(item.total)
 													? item.total.toFixed(2)
 													: '0.00'}
-											</td>
-											<td class="w-7 h-auto pb-3">
+											</div>
+											<div class="w-7 h-auto pb-3">
 												<a onclick=${() => deleteItem(item.id)}>
 													<img
 														src="./assets/icon-delete.svg"
 														alt="Delete btn" />
 												</a>
-											</td>
-										</tr>`,
+											</div>
+										</div>`,
 								)}
-              </tbody>
-            </table>
+              </div>
+
+                ${items.map(
+									(item) =>
+										html`<div
+											class="w-fit grid grid-cols-1 grid-rows-2 col-span-full gap-x-2 gap-y-3">
+											<div class="w-full col-span-full">
+												<label
+													class="text-left text-xs text-light-2"
+													htmlFor="description-${item.id}"
+													>Item Name</label
+												>
+												<input
+													type="text"
+													name="description-${item.id}"
+													id="description-${item.id}"
+													autocomplete="off"
+													value=${item.name}
+													onInput=${(e) =>
+														updateItem(item.id, 'name', e.target.value)}
+													placeholder="e.g. OnePlus 12"
+													class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-full" />
+											</div>
+											<div
+												class="w-full grid grid-cols-[repeat(3,minmax(0,1fr))_auto] gap-x-2 items-end">
+												<div class="text-center w-auto flex flex-col gap-2">
+													<label
+														class="text-left text-xs text-light-2"
+														htmlFor="qty-${item.id}"
+														>Quantity</label
+													>
+													<input
+														type="text"
+														value=${item.quantity}
+														autocomplete="off"
+														onInput=${(e) =>
+															updateItem(item.id, 'quantity', e.target.value)}
+														name="qty-${item.id}"
+														id="qty-${item.id}"
+														class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10" />
+												</div>
+
+												<div class="flex flex-col gap-2">
+													<label
+														class="text-xs text-light-2"
+														htmlFor="price-${item.id}"
+														>Price</label
+													>
+													<input
+														type="text"
+														value=${item.price}
+														autocomplete="off"
+														onInput=${(e) =>
+															updateItem(item.id, 'price', e.target.value)}
+														name="price-${item.id}"
+														id="price-${item.id}"
+														class="bg-light-row p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 placeholder:text-light-2/70 placeholder:font-semibold"
+														placeholder="00" />
+												</div>
+
+												<div
+													class="text-sm text-light-2 font-semibold flex flex-col gap-2">
+													<label
+														class="px-2 text-xs text-light-2"
+														htmlFor="total-${item.id}"
+														>Total</label
+													>
+
+													<input
+														type="text"
+														class="px-3 py-3 focus:ring-transparent outline-none text-sm"
+														readonly
+														id="total-${item.id}"
+														value=${Number.isFinite(item.total)
+															? item.total.toFixed(2)
+															: '0.00'} />
+												</div>
+												<div class="w-7 h-auto pb-3.5">
+													<a onclick=${() => deleteItem(item.id)}>
+														<img
+															src="./assets/icon-delete.svg"
+															alt="Delete btn" />
+													</a>
+												</div>
+											</div>
+										</div>`,
+								)}
 
             <button onclick=${(e) => {
 							e.preventDefault();
 							addItem();
-						}} class="bg-light-row w-full text-center py-2 rounded-full font-semibold text-light-2 cursor-pointer">+ Add New Item</button>
+						}} class="bg-light-row w-full text-center py-2 rounded-full font-semibold text-light-2 cursor-pointer mt-4">+ Add New Item</button>
           </div>
         </form>
-        <div class="flex justify-end gap-3 bg-light-bg sticky bottom-0 w-full py-6 px-14 ${
+        <div class="flex justify-end items-center gap-2 bg-light-row sticky bottom-0 w-full p-4 text-xs xs:text-sm ${
 					shadow ? 'shadow-[2px_-10px_20px_rgba(0,0,0,0.2)]' : ''
 				}">
-          <${Button} className="mr-auto" variant="secondary" onclick=${closeForm}>Discard</${Button}>
-          <${Button} variant="ghost" onclick=${() => saveInvoice('draft')}>
+          <${Button} className="bg-draft-secondary/50 text-light-2 hover:bg-dark-4 px-6 py-2.5 xs:px-5 xs:py-3 mr-auto" variant="none" onclick=${closeForm}>Discard</${Button}>
+          <${Button} variant="none" className="bg-draft-secondary text-draft-primary px-3 py-2.5 xs:px-5 xs:py-3 rounded-[10px]" onclick=${() =>
+		saveInvoice('draft')}>
             Save as Draft
           </${Button}>
-          <${Button} onclick=${() => saveInvoice()}>Save and Send</${Button}>
+          <${Button} variant="none" onclick=${() =>
+		saveInvoice()} className="bg-primary px-3 py-2.5 xs:px-5 xs:py-3 text-white">
+              Save & Send
+          </${Button}>
         </div>
       </section>
     </div>

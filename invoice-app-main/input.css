@@ -24,10 +24,17 @@
 	--color-pending-secondary: #ff8f000f;
 	--color-draft-primary: #373b53;
 	--color-draft-secondary: #373b530f;
+
+	--breakpoint-xs: 375px;
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1280px;
+	--breakpoint-2xl: 1536px;
 }
 
 [data-theme='dark'] {
-	--color-primary: #9277ff;
+	--color-primary: hsl(252, 100%, 73%);
 	--color-light-bg: #0c0e16;
 	--color-light-1: #dfe3fa;
 	--color-dark-1: #dfe3fa;

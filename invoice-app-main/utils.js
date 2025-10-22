@@ -15,8 +15,9 @@ const statusEl = {
 				class="inline-block w-2 h-2 bg-paid-primary rounded-full mb-0.5"></span>
 			<span
 				class="inline-block leading-3 text-paid-primary font-semibold capitalize"
-				>paid</span>
-			</div>
+				>paid</span
+			>
+		</div>
 	`,
 	pending: () => html`
 		<div
@@ -25,8 +26,9 @@ const statusEl = {
 				class="inline-block w-2 h-2 bg-pending-primary rounded-full mb-0.5"></span>
 			<span
 				class="inline-block leading-3 text-pending-primary font-semibold capitalize"
-				>pending</span>
-			</div>
+				>pending</span
+			>
+		</div>
 	`,
 	draft: () => html`
 		<div
@@ -35,9 +37,23 @@ const statusEl = {
 				class="inline-block w-2 h-2 bg-draft-primary rounded-full mb-0.5"></span>
 			<span
 				class="inline-block leading-3 text-draft-primary font-semibold capitalize"
-				>draft</span>
-			</div>
+				>draft</span
+			>
+		</div>
 	`,
 };
 
-export { dateTransformed, statusEl };
+function truncateString(str, maxLength, ending = '...') {
+	if (str.length <= maxLength) {
+		return str;
+	}
+	// Adjust maxLength to account for the ending
+	const truncatedLength = maxLength - ending.length;
+	if (truncatedLength < 0) {
+		// Handle cases where maxLength is too small for the ending
+		return ending.substring(0, maxLength); // Return only the ending, truncated
+	}
+	return str.substring(0, truncatedLength) + ending;
+}
+
+export { dateTransformed, statusEl, truncateString };

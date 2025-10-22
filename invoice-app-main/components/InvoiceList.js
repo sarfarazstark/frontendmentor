@@ -14,15 +14,15 @@ function InvoiceList({
 	const [isFilterOpen, setIsFilterOpen] = useState(false); // Better as boolean
 
 	return html`
-		<section class="grid grid-cols-6 md:grid-cols-10 grid-rows-[auto_1fr] gap-y-16 items-start">
+		<section class="grid grid-cols-1 md:grid-cols-10 grid-rows-[auto_1fr] gap-y-6 px-6 items-start">
 			<header
-				class="gap-14 flex items-center justify-between w-full col-span-4 md:col-span-8 col-start-2 md:col-start-2 mx-auto">
-				<div class="flex flex-col justify-center gap-1">
-					<h1 class="text-light-primary text-4xl font-bold leading-8">
+				class="gap-4 flex items-center justify-between w-full mx-auto">
+				<div class="flex flex-col justify-center">
+					<h1 class="text-light-primary text-xl font-bold leading-8">
 						Invoices
 					</h1>
-					<small class="text-light-2">
-						There are total ${allCount} invoices
+					<small class="text-light-2 text-xs">
+						${allCount} invoice${allCount > 1 ? 's' : ''}
 					</small>
 				</div>
 
@@ -30,7 +30,7 @@ function InvoiceList({
 					<label
 						class="group text-light-primary flex items-center gap-2 cursor-pointer select-none"
 						onClick=${() => setIsFilterOpen((prev) => !prev)}>
-						Filter by status
+						Filter
 						<img
 							src="./assets/icon-arrow-down.svg"
 							alt="arrow down"
@@ -73,38 +73,38 @@ function InvoiceList({
 				<${Button}
 					variant="new"
 					onClick=${() => setOpenInvoiceForm(true)}>
-					<span class="p-2 bg-white rounded-full">
-						<img src="./assets/icon-plus.svg" alt="Plus" class="w-2.5 h-auto" />
+					<span class="p-1 w-5 h-auto bg-white rounded-full">
+						<img src="./assets/icon-plus.svg" alt="Plus" class="w-full h-auto" />
 					</span>
-					<span class="leading-1 pt-1">New Invoice</span>
+					<span class="leading-1 pt-1 text-sm">New</span>
 				</${Button}>
 			</header>
 
 				${
 					allCount > 0
-						? html`<section
-								class="w-full md:col-span-8 col-start-2 md:col-start-2">
-								<ul
-									class="w-full gap-4 grid grid-cols-[auto_auto_1fr_auto_auto_auto]">
+						? html`<section class="w-full">
+								<ul class="w-full gap-1 grid grid-cols-[auto_1fr]">
 									${invoices.map(
 										(invoice) => html`
 											<li
-												class="grid grid-cols-subgrid border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row items-center shadow-md rounded-lg p-5 gap-x-10 md:gap-x-4 select-none"
+												class="grid grid-cols-subgrid items-end justify-items-end border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row justify-between shadow-md rounded-lg p-5 gap-2 select-none"
 												onClick=${() => openInvoice(invoice.id)}>
 												<div class="font-semibold text-light-primary">
 													<span class="text-light-3">#</span>${invoice.id}
 												</div>
-												<div class="text-light-3">
+												<div class="text-light-3 col-start-1">
 													<small>${dateTransformed(invoice.paymentDue)}</small>
 												</div>
-												<div class="text-light-3">
+												<div
+													class="text-light-3 row-start-1 col-start-2 text-right">
 													<small>${invoice.clientName}</small>
 												</div>
-												<div class="font-bold text-right text-light-primary">
+												<div
+													class="font-bold text-light-primary col-start-1 text-left w-full">
 													$ ${invoice.total}
 												</div>
 												<div>${statusEl[invoice.status]()}</div>
-												<div>
+												<div class="hidden">
 													<img src="./assets/icon-arrow-right.svg" alt="View" />
 												</div>
 											</li>
@@ -113,8 +113,7 @@ function InvoiceList({
 								</ul>
 						  </section>`
 						: html`
-								<section
-									class="w-full md:col-span-8 col-start-2 md:col-start-2">
+								<section class="w-full">
 									<div
 										class="w-60 flex flex-col items-center gap-4 mx-auto py-16">
 										<img
