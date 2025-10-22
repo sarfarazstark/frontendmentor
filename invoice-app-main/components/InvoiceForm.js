@@ -91,9 +91,9 @@ function InvoiceForm({
 			{
 				id: crypto.randomUUID(),
 				name: '',
-				quantity: 0,
-				price: 0,
-				total: 0,
+				quantity: '',
+				price: '',
+				total: '',
 			},
 		]);
 	};
