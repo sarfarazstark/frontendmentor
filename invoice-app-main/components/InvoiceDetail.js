@@ -10,9 +10,9 @@ function InvoiceDetail({
 	invoiceStatus,
 	markAsPaid,
 	setOpenInvoiceForm,
+	SetOpenDeleteConfirmBtn,
 }) {
 	if (!invoice) return html`<div class="p-6">Invoice not found</div>`;
-	const [openDeleteConfirmBtn, SetOpenDeleteConfirmBtn] = useState(false);
 
 	const {
 		id,
@@ -187,40 +187,6 @@ function InvoiceDetail({
 					</div>
 				</section>
 		</section>
-
-		<!-- Delete Confirmation Popup -->
-		${
-			openDeleteConfirmBtn
-				? html`
-				<div class="fixed top-0 left-0 right-0 bottom-0 mt-20 flex items-center p-4">
-            <div class="grid grid-cols-1 sm:grid-cols-8 sm:grid-rows-[1fr_auto_1fr] sm:h-full items-center w-full h-auto">
-              <div
-                class="sm:col-start-3 sm:col-span-4 sm:row-start-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
-                <h3 class="text-light-primary text-2xl font-semibold">
-                  Confirm Deletion
-                </h3>
-                <p class="text-light-primary ">
-                  Are you sure you want to delete invoice #${id}? This action cannot
-                  be undone.
-                </p>
-                <div class='flex gap-4 ml-auto'>
-                    <${Button}
-                      variant="secondary"
-                      onClick=${() => SetOpenDeleteConfirmBtn((prev) => !prev)}>
-                      Cancel
-                    </${Button}>
-                    <${Button}
-                      variant="danger"
-                      onClick=${() => deleteInvoice(id)}>
-                      Delete
-                    </${Button}>
-                </div>
-              </div>
-            </div>
-          </div>
-			`
-				: ''
-		}
 	`;
 }
 

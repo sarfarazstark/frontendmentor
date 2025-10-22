@@ -2,7 +2,12 @@ import { html } from 'https://esm.sh/htm/preact';
 import { useEffect, useState, useRef } from 'https://esm.sh/preact/hooks';
 import Button from './Button.js';
 
-function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
+function InvoiceForm({
+	invoice,
+	setOpenInvoiceForm,
+	addNewInvoice,
+	SetOpenDeleteConfirmBtn,
+}) {
 	const {
 		id = '',
 		senderAddress = {},
@@ -262,9 +267,9 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 
 	return html`
     <div
-      class="grid grid-cols-1 sm:grid-cols-10 gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 mt-20 md:ml-0 md:mt-20 z-10 bg-black/50">
+      class="grid grid-cols-1 sm:grid-cols-10 gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 mt-20 lg:mt-0 lg:ml-20 z-10 bg-black/50">
       <section
-        class="bg-light-bg overflow-y-scroll h-full transition-colors duration-100 sm:col-span-8"
+        class="bg-light-bg overflow-y-scroll h-full transition-colors duration-100 sm:col-span-8 lg:col-span-5"
         ref=${containerRef}
         onScroll=${handleScroll}>
         <h2 class="text-2xl font-semibold text-light-primary mb-8 px-6 sm:px-10 pt-8">
@@ -798,16 +803,34 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 						}} class="bg-light-row w-full text-center py-2 rounded-full font-semibold text-light-2 cursor-pointer mt-4">+ Add New Item</button>
           </div>
         </form>
-        <div class="flex justify-end items-center gap-2 bg-light-row sticky bottom-0 w-full p-4 text-xs xs:text-sm ${
+        <div class="flex justify-end items-center gap-2 bg-light-bg sticky bottom-0 w-full p-4 sm:px-10 text-xs xs:text-sm sm:text- ${
 					shadow ? 'shadow-[2px_-10px_20px_rgba(0,0,0,0.2)]' : ''
 				}">
           <${Button} className="bg-draft-secondary/50 text-light-2 hover:bg-dark-4 px-6 py-2.5 xs:px-5 xs:py-3 mr-auto" variant="none" onclick=${closeForm}>Discard</${Button}>
-          <${Button} variant="none" className="bg-draft-secondary text-draft-primary px-3 py-2.5 xs:px-5 xs:py-3 rounded-[10px]" onclick=${() =>
-		saveInvoice('draft')}>
-            Save as Draft
+          ${
+						invoice
+							? html`
+              <${Button} variant="danger" onClick=${() =>
+									SetOpenDeleteConfirmBtn(
+										(prev) => !prev,
+									)} className="hover:opacity-70 text-sm">
+                  Delete
+              </${Button}>`
+							: html`
+              <${Button} variant="none"
+                        className="bg-draft-secondary text-draft-primary px-3 py-2.5 xs:px-5 xs:py-3 rounded-[10px]"
+                      onclick=${() => saveInvoice('draft')}>
+                      Save as Draft
+              </${Button}>`
+					}
+          <${Button} variant="none"
+          onclick=${() =>
+						saveInvoice()} className="bg-primary px-3 py-2.5 xs:px-5 xs:py-3 hidden sm:block text-white">
+              Save and Send
           </${Button}>
-          <${Button} variant="none" onclick=${() =>
-		saveInvoice()} className="bg-primary px-3 py-2.5 xs:px-5 xs:py-3 text-white">
+          <${Button} variant="none"
+          onclick=${() =>
+						saveInvoice()} className="bg-primary px-3 py-2.5 xs:px-5 xs:py-3 sm:hidden text-white">
               Save & Send
           </${Button}>
         </div>

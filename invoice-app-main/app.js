@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar.js';
 import InvoiceList from './components/InvoiceList.js';
 import InvoiceForm from './components/InvoiceForm.js';
 import InvoiceDetail from './components/InvoiceDetail.js';
+import Button from './components/Button.js';
 
 function App() {
 	const [invoices, setInvoices] = useState(() =>
@@ -13,7 +14,8 @@ function App() {
 	const [selectedInvoice, setSelectedInvoice] = useState(null);
 	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 	const [invoiceStatus, setInvoiceStatus] = useState(null);
-	const [openInvoiceForm, setOpenInvoiceForm] = useState(false);
+	const [openInvoiceForm, setOpenInvoiceForm] = useState(true);
+	const [openDeleteConfirmBtn, SetOpenDeleteConfirmBtn] = useState(false);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme);
@@ -78,15 +80,16 @@ function App() {
 				? html`<${InvoiceForm}
 						invoice=${selectedInvoice}
 						setOpenInvoiceForm=${setOpenInvoiceForm}
-						addNewInvoice=${addNewInvoice} />`
+						addNewInvoice=${addNewInvoice}
+						SetOpenDeleteConfirmBtn=${SetOpenDeleteConfirmBtn} />`
 				: ''}
 			<main
 				class="w-full mt-20 lg:mt-0 lg:ml-20 p-6 px-0 transition-all duration-500 pt-12 relative">
 				${selectedInvoice
 					? html`<${InvoiceDetail}
+							SetOpenDeleteConfirmBtn=${SetOpenDeleteConfirmBtn}
 							markAsPaid=${markAsPaid}
 							invoiceStatus=${invoiceStatus}
-							deleteInvoice=${deleteInvoice}
 							invoice=${selectedInvoice}
 							onBack=${closeInvoice}
 							setOpenInvoiceForm=${setOpenInvoiceForm} />`
@@ -98,6 +101,41 @@ function App() {
 							onFilterChange=${onFilterChange}
 							openInvoice=${openInvoice} />`}
 			</main>
+			<!-- Delete Confirmation Popup -->
+			${openDeleteConfirmBtn
+				? html`
+                  <div class="fixed top-0 left-0 right-0 bottom-0 mt-20 lg:mt-0 lg:ml-20 flex items-center p-4 z-50">
+                      <div class="grid grid-cols-1 sm:grid-cols-8 lg:grid-cols-12 sm:grid-rows-[1fr_auto_1fr] sm:h-full items-center w-full h-auto">
+                        <div
+                          class="sm:col-start-3 lg:col-start-5 sm:col-span-4 lg:col-span-4 sm:row-start-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
+                          <h3 class="text-light-primary text-2xl font-semibold">
+                            Confirm Deletion
+                          </h3>
+                          <p class="text-light-primary ">
+                            Are you sure you want to delete invoice #${
+															selectedInvoice.id
+														}? This action cannot
+                            be undone.
+                          </p>
+                          <div class='flex gap-4 ml-auto'>
+                              <${Button}
+                                variant="secondary"
+                                onClick=${() =>
+																	SetOpenDeleteConfirmBtn((prev) => !prev)}>
+                                Cancel
+                              </${Button}>
+                              <${Button}
+                                variant="danger"
+                                onClick=${() =>
+																	deleteInvoice(selectedInvoice.id)}>
+                                Delete
+                              </${Button}>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                `
+				: ''}
 		</div>
 	`;
 }
