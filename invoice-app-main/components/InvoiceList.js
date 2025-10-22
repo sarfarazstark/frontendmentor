@@ -93,7 +93,7 @@ function InvoiceList({
 									${invoices.map(
 										(invoice) => html`
 											<li
-												class="grid grid-cols-subgrid items-end sm:items-center justify-items-end sm:justify-items-center border border-transparent hover:border hover:border-primary cursor-pointer col-span-full bg-light-row justify-between shadow-md rounded-lg p-5 gap-2 sm:gap-6 select-none"
+												class="grid grid-cols-subgrid items-end sm:items-center justify-items-end sm:justify-items-center border border-transparent hover:border hover:border-primary transition-all duration-300 ease-in-out cursor-pointer col-span-full bg-light-row justify-between shadow-md rounded-lg p-5 gap-2 sm:gap-6 select-none"
 												onClick=${() => openInvoice(invoice.id)}>
 												<div class="font-semibold text-light-primary">
 													<span class="text-light-3">#</span>${invoice.id}
