@@ -119,7 +119,7 @@ function InvoiceList({
 								</ul>
 						  </section>`
 						: html`
-								<section class="w-full">
+								<section class="w-full lg:col-start-3 lg:col-span-4">
 									<div
 										class="w-60 flex flex-col items-center gap-4 mx-auto py-16">
 										<img
