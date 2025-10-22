@@ -86,6 +86,7 @@ ul > li {
 
 ul > li > img {
 	width: 100%;
+	filter: grayscale(100%);
 }
 
 .tech,
@@ -97,7 +98,6 @@ ul > li > h2 {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5rem;
-	padding-block: 0.5rem;
 	color: #bdbdbd;
 	font-weight: bold;
 	font-size: 1.2rem;
@@ -131,8 +131,15 @@ ul > li > h2 {
 ul > li > h2 {
 	padding-right: 1.6rem;
 	font-size: 1.5rem;
-	margin-bottom: 1rem;
 	color: #bdbdbd;
+}
+
+.description {
+	padding-inline: 1rem;
+	color: #8b92a8;
+	font-size: 0.9rem;
+	line-height: 1.4;
+	margin-bottom: 0.5rem;
 }
 
 .links {
@@ -301,7 +308,13 @@ ul li a {
 
 .image-container img.loaded {
 	opacity: 1;
-	filter: blur(0);
+	filter: grayscale(100%);
+}
+
+.image-container a:hover img.loaded {
+	opacity: 1;
+	filter: grayscale(0%);
+	transition: grayscale ease-in-out 200;
 }
 
 .image-container img.error {

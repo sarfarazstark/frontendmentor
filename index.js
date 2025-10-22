@@ -29,7 +29,7 @@ const frontendmentor = (name, url) => {
 };
 
 const createListItemHTML = (item) => {
-  const { name, tech } = item;
+  const { name, tech, description } = item;
   const newName = upperCaseEveryWord(name);
 
   return `
@@ -57,6 +57,7 @@ const createListItemHTML = (item) => {
       .join(' ')}
     </div>
     <h2>${newName}</h2>
+    <p class="description">${description}</p>
     <div class="links">
       <a
         class="link"

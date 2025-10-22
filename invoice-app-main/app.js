@@ -14,7 +14,7 @@ function App() {
 	const [selectedInvoice, setSelectedInvoice] = useState(null);
 	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 	const [invoiceStatus, setInvoiceStatus] = useState(null);
-	const [openInvoiceForm, setOpenInvoiceForm] = useState(true);
+	const [openInvoiceForm, setOpenInvoiceForm] = useState(false);
 	const [openDeleteConfirmBtn, SetOpenDeleteConfirmBtn] = useState(false);
 
 	useEffect(() => {

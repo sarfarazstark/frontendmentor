@@ -3,210 +3,245 @@
 		"name": "3-column-preview-card-component-main",
 		"tech": "html-css",
 		"fmpage": "pH92eAR2-",
-		"submitDate": "Nov 30, 2022"
+		"submitDate": "Nov 30, 2022",
+		"description": "A responsive 3-column preview card component featuring car options with distinct styling - Sedans, SUVs, and Luxury vehicles."
 	},
 	{
 		"name": "age-calculator-app-main",
 		"tech": "html-css-js",
 		"fmpage": "dF9DFFpj-Q",
-		"submitDate": "Apr 14, 2023"
+		"submitDate": "Apr 14, 2023",
+		"description": "An age calculator app that calculates your age in years, months, and days with form validation and responsive design."
 	},
 	{
 		"name": "article-preview-component-master",
 		"tech": "html-css",
 		"fmpage": "dYBN_pYFT",
-		"submitDate": "Dec 11, 2022"
+		"submitDate": "Dec 11, 2022",
+		"description": "An article preview component with social share functionality, featuring author information and article content with interactive elements."
 	},
 	{
 		"name": "base-apparel-coming-soon-master",
 		"tech": "html-css-js",
 		"fmpage": "5d46b47f8db8a7063f9331a0",
-		"submitDate": "Dec 2, 2022"
+		"submitDate": "Dec 2, 2022",
+		"description": "A responsive coming soon page for a fashion store with email validation form and modern design."
 	},
 	{
 		"name": "faq-accordion-card-main",
 		"tech": "html-css-js",
 		"fmpage": "XlyjD0Oam",
-		"submitDate": "Dec 1, 2022"
+		"submitDate": "Dec 1, 2022",
+		"description": "An FAQ accordion card with expandable questions and answers functionality for responsive FAQ sections."
 	},
 	{
 		"name": "four-card-feature-section-master",
 		"tech": "html-css",
 		"fmpage": "weK1eFYK",
-		"submitDate": "Dec 11, 2022"
+		"submitDate": "Dec 11, 2022",
+		"description": "A responsive feature section with four cards highlighting different AI-powered tools for project management and delivery."
 	},
 	{
 		"name": "huddle-landing-page-with-a-single-introductory-section-master",
 		"tech": "html-css",
 		"fmpage": "B_2Wvxgi0",
-		"submitDate": "Apr 10, 2023"
+		"submitDate": "Apr 10, 2023",
+		"description": "A responsive landing page with single introductory section for a community building platform featuring Huddle's services."
 	},
 	{
 		"name": "interactive-card-details-form-main",
 		"tech": "html-css-js",
 		"fmpage": "XpS8cKZDWw",
-		"submitDate": "Nov 3, 2023"
+		"submitDate": "Nov 3, 2023",
+		"description": "An interactive card details form that updates credit card details in real-time with form validation and error handling."
 	},
 	{
 		"name": "interactive-rating-component-main",
 		"tech": "html-css-js",
 		"fmpage": "koxpeBUmI",
-		"submitDate": "Sep 25, 2022"
+		"submitDate": "Sep 25, 2022",
+		"description": "An interactive rating component allowing users to select a rating from 1-5 stars and submit their feedback."
 	},
 	{
 		"name": "intro-component-with-signup-form-master",
 		"tech": "html-css-js",
 		"fmpage": "5cf91bd49edda32581d28fd1",
-		"submitDate": "Dec 25, 2022"
+		"submitDate": "Dec 25, 2022",
+		"description": "An intro component with signup form featuring an introduction to coding and a validation-enabled signup form."
 	},
 	{
 		"name": "news-homepage",
 		"tech": "html-css",
 		"fmpage": "H6SWTa1MFl",
-		"submitDate": "Nov 7, 2023"
+		"submitDate": "Nov 7, 2023",
+		"description": "A responsive news website homepage with navigation, featured articles, and trending stories section."
 	},
 	{
 		"name": "newsletter-signup-form-with-success-message",
 		"tech": "html-css-js",
 		"fmpage": "3FC1AZbNrv",
-		"submitDate": "Oct 5, 2023"
+		"submitDate": "Oct 5, 2023",
+		"description": "A newsletter signup form that collects email addresses with validation and displays a success message after submission."
 	},
 	{
 		"name": "nft-preview-card-component-main",
 		"tech": "html-css",
 		"fmpage": "SbdUL_w0U",
-		"submitDate": "Aug 5, 2022"
+		"submitDate": "Aug 5, 2022",
+		"description": "An NFT preview card component featuring Equilibrium #3429 with pricing, time left, and creator information."
 	},
 	{
 		"name": "notifications-page",
 		"tech": "html-css",
 		"fmpage": "DqK5QAmKbC",
-		"submitDate": "Nov 1, 2023"
+		"submitDate": "Nov 1, 2023",
+		"description": "A notifications page that allows users to distinguish between read and unread notifications and mark all as read."
 	},
 	{
 		"name": "order-summary-component-main",
 		"tech": "html-css",
 		"fmpage": "QlPmajDUj",
-		"submitDate": "Sep 26, 2022"
+		"submitDate": "Sep 26, 2022",
+		"description": "An order summary component showing an annual subscription summary with music plan details and payment options."
 	},
 	{
 		"name": "ping-coming-soon-page-master",
 		"tech": "html-css-js",
 		"fmpage": "5cadd051fec04111f7b848da",
-		"submitDate": "Jan 5, 2023"
+		"submitDate": "Jan 5, 2023",
+		"description": "A coming soon page with email subscription form for an upcoming product notification."
 	},
 	{
 		"name": "product-preview-card-component",
 		"tech": "html-css-js",
 		"fmpage": "GO7UmttRfa",
-		"submitDate": "Jul 29, 2022"
+		"submitDate": "Jul 29, 2022",
+		"description": "A product preview card for Gabrielle Essence Eau De Parfum featuring product image, description, pricing, and add to cart functionality."
 	},
 	{
 		"name": "profile-card-component-main",
 		"tech": "html-css",
 		"fmpage": "cfArpWshJ",
-		"submitDate": "Sep 26, 2022"
+		"submitDate": "Sep 26, 2022",
+		"description": "A profile card featuring Victor Crest with location, age, and social statistics."
 	},
 	{
 		"name": "qr-code-component",
 		"tech": "html-css",
 		"fmpage": "iux_sIO_H",
-		"submitDate": "Jul 25, 2022"
+		"submitDate": "Jul 25, 2022",
+		"description": "A QR code card that displays a QR code with a message to improve front-end skills."
 	},
 	{
 		"name": "results-summary-component-main",
 		"tech": "html-css-js",
 		"fmpage": "CE_K6s0maV",
-		"submitDate": "Mar 28, 2023"
+		"submitDate": "Mar 28, 2023",
+		"description": "A results summary component that displays test results with overall score and individual category breakdown."
 	},
 	{
 		"name": "single-price-grid-component-master",
 		"tech": "html-css",
 		"fmpage": "5ce41129d0ff452fec5abbbc",
-		"submitDate": "Dec 25, 2022"
+		"submitDate": "Dec 25, 2022",
+		"description": "A pricing grid with community subscription information, monthly pricing, and features list."
 	},
 	{
 		"name": "social-proof-section-master",
 		"tech": "html-css",
 		"fmpage": "6e0qTv_bA",
-		"submitDate": "Dec 9, 2022"
+		"submitDate": "Dec 9, 2022",
+		"description": "A social proof section featuring customer testimonials, ratings, and positive feedback to build trust and credibility."
 	},
 	{
 		"name": "stats-preview-card-component-main",
 		"tech": "html-css",
 		"fmpage": "8JqbgoU62",
-		"submitDate": "Nov 26, 2022"
+		"submitDate": "Nov 26, 2022",
+		"description": "A stats preview card with business statistics and data analytics information with a preview image."
 	},
 	{
 		"name": "sunnyside-agency-landing-page-main",
 		"tech": "html-css",
 		"fmpage": "7yVs3B6ef",
-		"submitDate": "Feb 10, 2024"
+		"submitDate": "Feb 10, 2024",
+		"description": "A creative agency landing page with transform section, services, testimonials, and gallery."
 	},
 	{
 		"name": "expenses-chart-component-main",
 		"tech": "html-css-js",
 		"fmpage": "e7yJBUdjwt",
-		"submitDate": "Mar 24, 2024"
+		"submitDate": "Mar 24, 2024",
+		"description": "A responsive bar chart displaying spending data for the last 7 days with interactive hover effects and dynamic data visualization."
 	},
 	{
 		"name": "product-list-with-cart-main",
 		"tech": "html-css-js",
 		"fmpage": "5MmqLVAp_d",
-		"submitDate": "Jul 20, 2024"
+		"submitDate": "Jul 20, 2024",
+		"description": "An e-commerce interface with product listing and functional cart system for ordering desserts."
 	},
 	{
 		"name": "fylo-dark-theme-landing-page-master",
 		"tech": "html-tailwindcss",
 		"fmpage": "5ca5f2d21e82137ec91a50fd",
-		"submitDate": "Jul 21, 2024"
+		"submitDate": "Jul 21, 2024",
+		"description": "A responsive landing page for a cloud storage service featuring dark theme, testimonials, and a feature grid with secure file storage and collaboration tools."
 	},
 	{
 		"name": "github-user-search-app",
 		"tech": "html-js-tailwindcss-api",
 		"fmpage": "Q09YOgaH6",
-		"submitDate": "Jul 29, 2024"
+		"submitDate": "Jul 29, 2024",
+		"description": "An application that allows users to search GitHub profiles and view user information including repos, followers, and personal details with light/dark theme toggle."
 	},
 	{
 		"name": "tip-calculator-app-main",
 		"tech": "html-js-tailwindcss",
 		"fmpage": "ugJNGbJUX",
-		"submitDate": "Jul 31, 2024"
+		"submitDate": "Jul 31, 2024",
+		"description": "A tip calculator that calculates tips and splits bills per person with customizable tip percentages."
 	},
 	{
 		"name": "rock-paper-scissors-master",
 		"tech": "html-js-tailwindcss",
 		"fmpage": "ugJNGbJUX",
-		"submitDate": "Jul 31, 2024"
+		"submitDate": "Jul 31, 2024",
+		"description": "An interactive Rock, Paper, Scissors game where players can play against the computer with score tracking and responsive design."
 	},
 	{
 		"name": "calculator-app-main",
 		"tech": "html-js-tailwindcss",
 		"fmpage": "9lteq5N29",
-		"submitDate": "Sep 9, 2024"
+		"submitDate": "Sep 9, 2024",
+		"description": "A fully functional calculator with multiple themes and mathematical operations including addition, subtraction, multiplication, and division."
 	},
 	{
 		"name": "bento-grid-main",
 		"tech": "html-tailwindcss",
 		"fmpage": "RMydElrlOj",
-		"submitDate": "Sep 17, 2024"
+		"submitDate": "Sep 17, 2024",
+		"description": "A responsive grid layout with complex component arrangement optimized for different screen sizes using CSS Grid."
 	},
 	{
 		"name": "multi-step-form-main",
 		"tech": "html-js-css",
 		"fmpage": "YVAnSdqQBJ",
-		"submitDate": "May 19, 2025"
+		"submitDate": "May 19, 2025",
+		"description": "A multi-step form with multiple steps for collecting user information, plan selection, add-ons, and order summary with validation."
 	},
 	{
 		"name": "testimonials-grid-section-main",
 		"tech": "html-css",
 		"fmpage": "Nnw6J7Un7",
-		"submitDate": "Oct 16, 2025"
+		"submitDate": "Oct 16, 2025",
+		"description": "A responsive grid layout featuring testimonials from verified graduates with profile information and feedback."
 	},
 	{
 		"name": "invoice-app-main",
 		"tech": "preact-tailwindcss",
 		"fmpage": "i7KaLTQjl",
-		"submitDate": "Oct 22, 2025"
+		"submitDate": "Oct 22, 2025",
+		"description": "A modern, responsive invoice management application with CRUD functionality, dark/light theme, and form validation."
 	}
 ]
