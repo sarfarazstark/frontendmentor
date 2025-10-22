@@ -73,7 +73,8 @@ function App() {
 						setOpenInvoiceForm=${setOpenInvoiceForm}
 						addNewInvoice=${addNewInvoice} />`
 				: ''}
-			<main class="w-full ml-24 p-6 transition-all duration-500 pt-18 relative">
+			<main
+				class="w-full ml-24 md:ml-0 md:mt-16 p-6 md:px-0 transition-all duration-500 pt-18 md:pt-12 relative">
 				${selectedInvoice
 					? html`<${InvoiceDetail}
 							markAsPaid=${markAsPaid}

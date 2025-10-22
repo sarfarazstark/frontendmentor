@@ -261,9 +261,9 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 
 	return html`
     <div
-      class="grid grid-cols-7 grid-rows-[auto_1fr] gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 ml-24 z-10 bg-black/50">
+      class="grid grid-cols-7 grid-rows-[auto_1fr] gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 ml-24 md:ml-0 md:mt-16 z-10 bg-black/50">
       <section
-        class="col-span-3 row-span-full bg-light-bg overflow-y-scroll h-full"
+        class="col-span-3 md:col-span-6 row-span-full bg-light-bg overflow-y-scroll h-full rounded-tr-4xl rounded-br-4xl transition-colors duration-100"
         ref=${containerRef}
         onScroll=${handleScroll}>
         <h2 class="text-2xl font-semibold text-light-primary mb-8 px-14 pt-14">
@@ -277,8 +277,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
               <div class="flex justify-between items-center">
                 <label htmlFor="street-address" class="text-xs text-light-2">Street Address</label>
                 <span class="text-accent-red text-xs ${
-					showError('senderStreet') ? 'visible' : 'invisible'
-				}">${errors.senderStreet || 'Error'}</span>
+									showError('senderStreet') ? 'visible' : 'invisible'
+								}">${errors.senderStreet || 'Error'}</span>
               </div>
               <input
                 type="text"
@@ -287,22 +287,22 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 autocomplete="street-address"
                 value=${sender.street}
                 onInput=${(e) => {
-					setSender((prev) => ({ ...prev, street: e.target.value }));
-				}}
+									setSender((prev) => ({ ...prev, street: e.target.value }));
+								}}
                 onBlur=${() => handleBlur('senderStreet')}
                 class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-					showError('senderStreet')
-						? 'border-accent-red'
-						: 'border-light-primary/10'
-				}" />
+									showError('senderStreet')
+										? 'border-accent-red'
+										: 'border-light-primary/10'
+								}" />
             </div>
             <div class="grid grid-cols-3 gap-6">
               <div class="flex flex-col space-y-1 my-3">
                 <div class="flex justify-between items-center">
                   <label htmlFor="city" class="text-xs text-light-2">City</label>
                   <span class="text-accent-red text-xs ${
-						showError('senderCity') ? 'visible' : 'invisible'
-					}">${errors.senderCity || 'Error'}</span>
+										showError('senderCity') ? 'visible' : 'invisible'
+									}">${errors.senderCity || 'Error'}</span>
                 </div>
                 <input
                   type="text"
@@ -311,21 +311,21 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="address-level2"
                   value=${sender.city}
                   onInput=${(e) => {
-						setSender((prev) => ({ ...prev, city: e.target.value }));
-					}}
+										setSender((prev) => ({ ...prev, city: e.target.value }));
+									}}
                   onBlur=${() => handleBlur('senderCity')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('senderCity')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}" />
+										showError('senderCity')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}" />
               </div>
               <div class="flex flex-col space-y-1 my-3">
                 <div class="flex justify-between items-center">
                   <label htmlFor="postcode" class="text-xs text-light-2">Post Code</label>
                   <span class="text-accent-red text-xs ${
-						showError('senderPostcode') ? 'visible' : 'invisible'
-					}">${errors.senderPostcode || 'Error'}</span>
+										showError('senderPostcode') ? 'visible' : 'invisible'
+									}">${errors.senderPostcode || 'Error'}</span>
                 </div>
                 <input
                   type="text"
@@ -334,24 +334,24 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="postal-code"
                   value=${sender.postcode}
                   onInput=${(e) => {
-						setSender((prev) => ({
-							...prev,
-							postcode: e.target.value,
-						}));
-					}}
+										setSender((prev) => ({
+											...prev,
+											postcode: e.target.value,
+										}));
+									}}
                   onBlur=${() => handleBlur('senderPostcode')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('senderPostcode')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}" />
+										showError('senderPostcode')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}" />
               </div>
               <div class="flex flex-col space-y-1 my-3">
                 <div class="flex justify-between items-center">
                   <label htmlFor="country" class="text-xs text-light-2">Country</label>
                   <span class="text-accent-red text-xs ${
-						showError('senderCountry') ? 'visible' : 'invisible'
-					}">${errors.senderCountry || 'Error'}</span>
+										showError('senderCountry') ? 'visible' : 'invisible'
+									}">${errors.senderCountry || 'Error'}</span>
                 </div>
                 <input
                   type="text"
@@ -360,14 +360,14 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="country"
                   value=${sender.country}
                   onInput=${(e) => {
-						setSender((prev) => ({ ...prev, country: e.target.value }));
-					}}
+										setSender((prev) => ({ ...prev, country: e.target.value }));
+									}}
                   onBlur=${() => handleBlur('senderCountry')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('senderCountry')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}" />
+										showError('senderCountry')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}" />
               </div>
             </div>
           </div>
@@ -378,8 +378,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
               <div class="flex justify-between items-center">
                 <label htmlFor="name" class="text-xs text-light-2">Client Name</label>
                 <span class="text-accent-red text-xs ${
-					showError('clientName') ? 'visible' : 'invisible'
-				}">${errors.clientName || 'Error'}</span>
+									showError('clientName') ? 'visible' : 'invisible'
+								}">${errors.clientName || 'Error'}</span>
               </div>
               <input
                 type="text"
@@ -388,21 +388,21 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 autocomplete="name"
                 value=${client.name}
                 onInput=${(e) => {
-					setClient((prev) => ({ ...prev, name: e.target.value }));
-				}}
+									setClient((prev) => ({ ...prev, name: e.target.value }));
+								}}
                 onBlur=${() => handleBlur('clientName')}
                 class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-					showError('clientName')
-						? 'border-accent-red'
-						: 'border-light-primary/10'
-				}" />
+									showError('clientName')
+										? 'border-accent-red'
+										: 'border-light-primary/10'
+								}" />
             </div>
             <div class="flex flex-col space-y-1 my-3">
               <div class="flex justify-between items-center">
                 <label htmlFor="email" class="text-xs text-light-2">Client Email</label>
                 <span class="text-accent-red text-xs ${
-					showError('clientEmail') ? 'visible' : 'invisible'
-				}">${errors.clientEmail || 'Error'}</span>
+									showError('clientEmail') ? 'visible' : 'invisible'
+								}">${errors.clientEmail || 'Error'}</span>
               </div>
               <input
                 type="email"
@@ -411,22 +411,22 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 autocomplete="email"
                 value=${client.email}
                 onInput=${(e) => {
-					setClient((prev) => ({ ...prev, email: e.target.value }));
-				}}
+									setClient((prev) => ({ ...prev, email: e.target.value }));
+								}}
                 onBlur=${() => handleBlur('clientEmail')}
                 class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-					showError('clientEmail')
-						? 'border-accent-red'
-						: 'border-light-primary/10'
-				}"
+									showError('clientEmail')
+										? 'border-accent-red'
+										: 'border-light-primary/10'
+								}"
                 placeholder="e.g. email@example.com" />
             </div>
             <div class="flex flex-col space-y-1 my-3">
               <div class="flex justify-between items-center">
                 <label htmlFor="client-street-address" class="text-xs text-light-2">Street Address</label>
                 <span class="text-accent-red text-xs ${
-					showError('clientStreet') ? 'visible' : 'invisible'
-				}">${errors.clientStreet || 'Error'}</span>
+									showError('clientStreet') ? 'visible' : 'invisible'
+								}">${errors.clientStreet || 'Error'}</span>
               </div>
               <input
                 type="text"
@@ -435,22 +435,22 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 autocomplete="street-address"
                 value=${client.street}
                 onInput=${(e) => {
-					setClient((prev) => ({ ...prev, street: e.target.value }));
-				}}
+									setClient((prev) => ({ ...prev, street: e.target.value }));
+								}}
                 onBlur=${() => handleBlur('clientStreet')}
                 class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-					showError('clientStreet')
-						? 'border-accent-red'
-						: 'border-light-primary/10'
-				}" />
+									showError('clientStreet')
+										? 'border-accent-red'
+										: 'border-light-primary/10'
+								}" />
             </div>
             <div class="grid grid-cols-3 gap-6">
               <div class="flex flex-col space-y-1 my-3">
                 <div class="flex justify-between items-center">
                   <label htmlFor="client-city" class="text-xs text-light-2">City</label>
                   <span class="text-accent-red text-xs ${
-						showError('clientCity') ? 'visible' : 'invisible'
-					}">${errors.clientCity || 'Error'}</span>
+										showError('clientCity') ? 'visible' : 'invisible'
+									}">${errors.clientCity || 'Error'}</span>
                 </div>
                 <input
                   type="text"
@@ -459,21 +459,21 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="address-level2"
                   value=${client.city}
                   onInput=${(e) => {
-						setClient((prev) => ({ ...prev, city: e.target.value }));
-					}}
+										setClient((prev) => ({ ...prev, city: e.target.value }));
+									}}
                   onBlur=${() => handleBlur('clientCity')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('clientCity')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}" />
+										showError('clientCity')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}" />
               </div>
               <div class="flex flex-col space-y-1 my-3">
                 <div class="flex justify-between items-center">
                   <label htmlFor="client-postcode" class="text-xs text-light-2">Post Code</label>
                   <span class="text-accent-red text-xs ${
-						showError('clientPostcode') ? 'visible' : 'invisible'
-					}">${errors.clientPostcode || 'Error'}</span>
+										showError('clientPostcode') ? 'visible' : 'invisible'
+									}">${errors.clientPostcode || 'Error'}</span>
                 </div>
                 <input
                   type="text"
@@ -482,24 +482,24 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="postal-code"
                   value=${client.postcode}
                   onInput=${(e) => {
-						setClient((prev) => ({
-							...prev,
-							postcode: e.target.value,
-						}));
-					}}
+										setClient((prev) => ({
+											...prev,
+											postcode: e.target.value,
+										}));
+									}}
                   onBlur=${() => handleBlur('clientPostcode')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('clientPostcode')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}" />
+										showError('clientPostcode')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}" />
               </div>
               <div class="flex flex-col space-y-1 my-3">
                 <div class="flex justify-between items-center">
                   <label htmlFor="client-country" class="text-xs text-light-2">Country</label>
                   <span class="text-accent-red text-xs ${
-						showError('clientCountry') ? 'visible' : 'invisible'
-					}">${errors.clientCountry || 'Error'}</span>
+										showError('clientCountry') ? 'visible' : 'invisible'
+									}">${errors.clientCountry || 'Error'}</span>
                 </div>
                 <input
                   type="text"
@@ -508,14 +508,14 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="country"
                   value=${client.country}
                   onInput=${(e) => {
-						setClient((prev) => ({ ...prev, country: e.target.value }));
-					}}
+										setClient((prev) => ({ ...prev, country: e.target.value }));
+									}}
                   onBlur=${() => handleBlur('clientCountry')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('clientCountry')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}" />
+										showError('clientCountry')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}" />
               </div>
             </div>
           </div>
@@ -526,8 +526,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 <div class="flex justify-between items-center">
                   <label htmlFor="date" class="text-xs text-light-2">Invoice Date</label>
                   <span class="text-accent-red text-xs ${
-						showError('invoiceDate') ? 'visible' : 'invisible'
-					}">${errors.invoiceDate || 'Error'}</span>
+										showError('invoiceDate') ? 'visible' : 'invisible'
+									}">${errors.invoiceDate || 'Error'}</span>
                 </div>
                 <input
                   type="date"
@@ -536,17 +536,17 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                   autocomplete="off"
                   value=${invoiceDetails.date}
                   onInput=${(e) => {
-						setInvoiceDetails((prev) => ({
-							...prev,
-							date: e.target.value,
-						}));
-					}}
+										setInvoiceDetails((prev) => ({
+											...prev,
+											date: e.target.value,
+										}));
+									}}
                   onBlur=${() => handleBlur('invoiceDate')}
                   class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-						showError('invoiceDate')
-							? 'border-accent-red'
-							: 'border-light-primary/10'
-					}"
+										showError('invoiceDate')
+											? 'border-accent-red'
+											: 'border-light-primary/10'
+									}"
                   placeholder=" " />
               </div>
               <div class="flex flex-col space-y-1 my-3">
@@ -557,10 +557,10 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 autocomplete="off"
                 value=${invoiceDetails.paymentTerms}
                 onInput=${(e) =>
-					setInvoiceDetails((prev) => ({
-						...prev,
-						paymentTerms: e.target.value,
-					}))}
+									setInvoiceDetails((prev) => ({
+										...prev,
+										paymentTerms: e.target.value,
+									}))}
                 class="bg-light-row text-light-primary font-medium
                       px-3 py-2 pr-8 rounded-md border border-light-primary/10
                       appearance-none bg-no-repeat
@@ -579,8 +579,8 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
               <div class="flex justify-between items-center">
                 <label htmlFor="description" class="text-xs text-light-2">Project Description</label>
                 <span class="text-accent-red text-xs ${
-					showError('description') ? 'visible' : 'invisible'
-				}">${errors.description || 'Error'}</span>
+									showError('description') ? 'visible' : 'invisible'
+								}">${errors.description || 'Error'}</span>
               </div>
               <input
                 type="text"
@@ -589,17 +589,17 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
                 autocomplete="off"
                 value=${invoiceDetails.description}
                 onInput=${(e) => {
-					setInvoiceDetails((prev) => ({
-						...prev,
-						description: e.target.value,
-					}));
-				}}
+									setInvoiceDetails((prev) => ({
+										...prev,
+										description: e.target.value,
+									}));
+								}}
                 onBlur=${() => handleBlur('description')}
                 class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
-					showError('description')
-						? 'border-accent-red'
-						: 'border-light-primary/10'
-				}"
+									showError('description')
+										? 'border-accent-red'
+										: 'border-light-primary/10'
+								}"
                 placeholder="e.g. Graphic Design Service" />
             </div>
           </div>
@@ -607,9 +607,11 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
           <div class='space-y-2'>
             <div class="flex justify-between items-center">
               <small class="text-light-2 text-xl font-semibold">Item List</small>
-              ${errors.items
-					? html`<p class="text-accent-red text-xs">${errors.items}</p>`
-					: ''}
+              ${
+								errors.items
+									? html`<p class="text-accent-red text-xs">${errors.items}</p>`
+									: ''
+							}
 			</div>
             <table class="table-auto w-full mt-3">
               <thead>
@@ -624,70 +626,70 @@ function InvoiceForm({ invoice, setOpenInvoiceForm, addNewInvoice }) {
 
               <tbody class='space-y-2'>
                 ${items.map(
-					(item) =>
-						html`<tr>
-							<td class="w-full pr-3 pb-3">
-								<input
-									type="text"
-									name="description-${item.id}"
-									autocomplete="off"
-									value=${item.name}
-									onInput=${(e) =>
-										updateItem(item.id, 'name', e.target.value)}
-									placeholder="e.g. OnePlus 12"
-									class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-full" />
-							</td>
+									(item) =>
+										html`<tr>
+											<td class="w-full pr-3 pb-3">
+												<input
+													type="text"
+													name="description-${item.id}"
+													autocomplete="off"
+													value=${item.name}
+													onInput=${(e) =>
+														updateItem(item.id, 'name', e.target.value)}
+													placeholder="e.g. OnePlus 12"
+													class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-full" />
+											</td>
 
-							<td class="text-center pr-3 pb-3">
-								<input
-									type="text"
-									value=${item.quantity}
-									autocomplete="off"
-									onInput=${(e) =>
-										updateItem(item.id, 'quantity', e.target.value)}
-									name="qty-${item.id}"
-									class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-16" />
-							</td>
+											<td class="text-center pr-3 pb-3">
+												<input
+													type="text"
+													value=${item.quantity}
+													autocomplete="off"
+													onInput=${(e) =>
+														updateItem(item.id, 'quantity', e.target.value)}
+													name="qty-${item.id}"
+													class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-16" />
+											</td>
 
-							<td class="text-center pr-3 pb-3">
-								<input
-									type="text"
-									value=${item.price}
-									autocomplete="off"
-									onInput=${(e) =>
-										updateItem(item.id, 'price', e.target.value)}
-									name="price-${item.id}"
-									class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-16 placeholder:text-light-2/70 placeholder:font-semibold"
-									placeholder="00" />
-							</td>
+											<td class="text-center pr-3 pb-3">
+												<input
+													type="text"
+													value=${item.price}
+													autocomplete="off"
+													onInput=${(e) =>
+														updateItem(item.id, 'price', e.target.value)}
+													name="price-${item.id}"
+													class="bg-light-row px-3 py-2 rounded-md text-center focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-16 placeholder:text-light-2/70 placeholder:font-semibold"
+													placeholder="00" />
+											</td>
 
-							<td
-								class="text-center text-sm text-light-2 p-2 w-24 pr-3 pb-3 font-semibold">
-								${Number.isFinite(item.total)
-									? item.total.toFixed(2)
-									: '0.00'}
-							</td>
-							<td class="w-7 h-auto pb-3">
-								<a onclick=${() => deleteItem(item.id)}>
-									<img
-										src="./assets/icon-delete.svg"
-										alt="Delete btn" />
-								</a>
-							</td>
-						</tr>`,
-				)}
+											<td
+												class="text-center text-sm text-light-2 p-2 w-24 pr-3 pb-3 font-semibold">
+												${Number.isFinite(item.total)
+													? item.total.toFixed(2)
+													: '0.00'}
+											</td>
+											<td class="w-7 h-auto pb-3">
+												<a onclick=${() => deleteItem(item.id)}>
+													<img
+														src="./assets/icon-delete.svg"
+														alt="Delete btn" />
+												</a>
+											</td>
+										</tr>`,
+								)}
               </tbody>
             </table>
 
             <button onclick=${(e) => {
-				e.preventDefault();
-				addItem();
-			}} class="bg-light-row w-full text-center py-2 rounded-full font-semibold text-light-2 cursor-pointer">+ Add New Item</button>
+							e.preventDefault();
+							addItem();
+						}} class="bg-light-row w-full text-center py-2 rounded-full font-semibold text-light-2 cursor-pointer">+ Add New Item</button>
           </div>
         </form>
         <div class="flex justify-end gap-3 bg-light-bg sticky bottom-0 w-full py-6 px-14 ${
-			shadow ? 'shadow-[2px_-10px_20px_rgba(0,0,0,0.2)]' : ''
-		}">
+					shadow ? 'shadow-[2px_-10px_20px_rgba(0,0,0,0.2)]' : ''
+				}">
           <${Button} className="mr-auto" variant="secondary" onclick=${closeForm}>Discard</${Button}>
           <${Button} variant="ghost" onclick=${() => saveInvoice('draft')}>
             Save as Draft

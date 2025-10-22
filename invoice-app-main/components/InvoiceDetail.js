@@ -28,8 +28,8 @@ function InvoiceDetail({
 	} = invoice;
 
 	return html`
-		<section class="grid grid-cols-6 grid-rows-[auto_1fr] gap-y-16 items-start">
-			<div class="w-full col-span-4 col-start-2">
+		<section class="grid grid-cols-6 md:grid-cols-10 grid-rows-[auto_1fr] gap-y-16 items-start">
+			<div class="w-full col-span-4 md:col-span-8 col-start-2 md:col-start-2">
 				<header
 					class="flex flex-col items-center justify-between w-full gap-4 mx-auto mb-6">
 					<${Button} variant="link" onClick=${onBack}>
@@ -62,10 +62,10 @@ function InvoiceDetail({
 								variant="primary"
 								onClick=${() => markAsPaid(id)}
                 className="hover:opacity-70 ${
-					invoiceStatus === 'paid'
-						? 'opacity-70 cursor-not-allowed'
-						: ''
-				}"
+									invoiceStatus === 'paid'
+										? 'opacity-70 cursor-not-allowed'
+										: ''
+								}"
                 disabled=${invoiceStatus === 'paid'}
                 >
 								Mark as Paid
@@ -174,12 +174,13 @@ function InvoiceDetail({
 		</section>
 
 		<!-- Delete Confirmation Popup -->
-		${openDeleteConfirmBtn
-			? html`
-				<div class="fixed top-0 left-0 right-0 bottom-0 ml-24">
-            <div class="grid grid-cols-6 grid-rows-6 items-center w-full h-full">
+		${
+			openDeleteConfirmBtn
+				? html`
+				<div class="fixed top-0 left-0 right-0 bottom-0 ml-24 md:ml-0 md:mt-16">
+            <div class="grid grid-cols-6 md:grid-cols-10 grid-rows-6 md:grid-rows-[1fr_auto_1fr] items-center w-full h-full">
               <div
-                class="col-start-3 col-span-2 row-start-3 row-span-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-10 flex flex-col gap-4">
+                class="col-start-3 md:col-span-6 md:col-start-3 col-span-2 row-start-3 md:row-start-2 row-span-2 md:row-span-1 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-10 flex flex-col gap-4">
                 <h3 class="text-light-primary text-2xl font-semibold">
                   Confirm Deletion
                 </h3>
@@ -203,7 +204,8 @@ function InvoiceDetail({
             </div>
           </div>
 			`
-			: ''}
+				: ''
+		}
 	`;
 }
 
