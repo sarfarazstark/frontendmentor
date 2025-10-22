@@ -28,26 +28,25 @@ function InvoiceDetail({
 	} = invoice;
 
 	return html`
-		<section class="grid grid-cols-1 grid-rows-[auto_1fr] gap-y-16 items-start px-6">
-			<div class="w-full">
+		<section class="grid grid-cols-1 lg:grid-cols-8 grid-rows-[auto_1fr] gap-y-16 sm:gap-y-1 items-start px-6">
 				<header
-					class="flex flex-col items-center justify-between w-full gap-4 mx-auto mb-6">
+					class="flex flex-col items-center justify-between lg:col-start-3 lg:col-span-4 w-full gap-4 mx-auto mb-6">
 					<${Button} variant="link" onClick=${onBack}>
 						<img src="./assets/icon-arrow-left.svg" alt="Back" />
 						<span class="pt-0.5 leading-tight">Go Back</span>
 					</${Button}>
 
-					<div class="bg-light-row w-full px-6 py-5 rounded-lg shadow-md">
-						<div class="flex items-center justify-between w-full gap-4">
+					<div class="bg-light-row w-full px-6 sm:px-8 py-5 rounded-lg shadow-md sm:flex sm:justify-between">
+						<div class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-4">
 							<p class="text-dark-1">Status</p>
 							${statusEl[invoiceStatus]()}
 						</div>
 
-						<div class="fixed bottom-0 left-0 right-0 bg-light-row flex justify-between p-4 gap-2">
+						<div class="fixed sm:flex-1 sm:static bottom-0 left-0 right-0 bg-light-row flex justify-between sm:justify-end p-4 sm:p-0 gap-2 sm:gap-4">
 							<${Button}
 								variant="secondary"
 								onClick=${() => setOpenInvoiceForm(true)}
-                className="hover:opacity-70 mr-auto text-sm"
+                className="hover:opacity-70 sm:mr-0 mr-auto text-sm"
                 >
 								Edit
 							</${Button}>
@@ -75,15 +74,15 @@ function InvoiceDetail({
 				</header>
 
 				<section
-					class="bg-light-row flex flex-col w-full gap-4 p-4 shadow-md rounded-lg">
-					<div class="grid w-full grid-cols-1 gap-y-4 mb-6">
+					class="bg-light-row flex flex-col lg:col-start-3 lg:col-span-4 w-full gap-4 p-4 sm:p-8 shadow-md rounded-lg">
+					<div class="grid w-full grid-cols-1 sm:grid-cols-2 gap-y-4 mb-6">
 						<div>
 							<h2 class="text-light-primary text-xl font-semibold leading-tight">
 								<span class="text-light-2 leading-tight">#</span>${id}
 							</h2>
 							<p class="text-light-3 text-sm">${description}</p>
 						</div>
-						<div class="text-light-3 text-left text-sm">
+						<div class="text-light-3 text-left sm:text-right text-sm">
 							<p>${senderAddress.street}</p>
 							<p>${senderAddress.city}</p>
 							<p>${senderAddress.postCode}</p>
@@ -91,7 +90,7 @@ function InvoiceDetail({
 						</div>
 					</div>
 
-					<div class="grid w-full grid-cols-2 gap-4 mb-6">
+					<div class="grid w-full grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
 						<div class="flex flex-col gap-4 text-left">
 							<div>
 								<small class="text-light-2">Invoice Date</small>
@@ -129,37 +128,34 @@ function InvoiceDetail({
 					</div>
 
 					<div class="bg-draft-secondary w-full overflow-hidden rounded-lg">
-						<div class="p-4 space-y-2">
-							<table class="w-full table-auto hidden">
-								<thead>
-									<tr>
-										<th class="text-light-2 px-4 py-2 text-sm text-left">
-											Item Name
-										</th>
-										<th class="text-light-2 px-4 py-2 text-sm text-center">
-											QTY.
-										</th>
-										<th class="text-light-2 px-4 py-2 text-sm text-center">
-											Price
-										</th>
-										<th class="text-light-2 px-4 py-2 text-sm text-right">
-											Total
-										</th>
-									</tr>
-								</thead>
-								<tbody class="text-light-primary">
-									${items.map(
+						<div class="p-4 space-y-2 w-full">
+              <table class="w-full table-auto hidden sm:table">
+                <thead class="w-full">
+                  <tr>
+                    <th class="text-light-2 px-4 py-2 text-sm text-left">Item Name</th>
+                    <th class="text-light-2 px-4 py-2 text-sm text-center">QTY.</th>
+                    <th class="text-light-2 px-4 py-2 text-sm text-center">Price</th>
+                    <th class="text-light-2 px-4 py-2 text-sm text-right">Total</th>
+                  </tr>
+                </thead>
+                <tbody class="text-light-primary w-full">
+                  ${items.map(
 										(it) => html`
 											<tr>
 												<td class="px-4 py-2">${it.name}</td>
 												<td class="px-4 py-2 text-center">${it.quantity}</td>
-												<td class="px-4 py-2 text-center">${it.price}</td>
-												<td class="px-4 py-2 text-right">${it.total}</td>
+												<td class="px-4 py-2 text-center font-semibold">
+													$ ${parseInt(it.price).toFixed(2)}
+												</td>
+												<td class="px-4 py-2 text-right font-semibold">
+													$ ${parseInt(it.total).toFixed(2)}
+												</td>
 											</tr>
 										`,
 									)}
-								</tbody>
-							</table>
+                </tbody>
+              </table>
+              <div class="block sm:hidden">
                 ${items.map(
 									(it) => html`
 										<div class="grid grid-cols-[1fr_auto] gap-x-1 items-center">
@@ -179,6 +175,7 @@ function InvoiceDetail({
 										</div>
 									`,
 								)}
+              </div>
 						</div>
 						<div
 							class="bg-dark-4 pb-6 grid items-center w-full grid-cols-2 p-6 text-white">
@@ -189,7 +186,6 @@ function InvoiceDetail({
 						</div>
 					</div>
 				</section>
-			</div>
 		</section>
 
 		<!-- Delete Confirmation Popup -->
@@ -197,9 +193,9 @@ function InvoiceDetail({
 			openDeleteConfirmBtn
 				? html`
 				<div class="fixed top-0 left-0 right-0 bottom-0 mt-20 flex items-center p-4">
-            <div class="grid grid-cols-1 items-center w-full h-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-8 sm:grid-rows-[1fr_auto_1fr] sm:h-full items-center w-full h-auto">
               <div
-                class=" h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
+                class="sm:col-start-3 sm:col-span-4 sm:row-start-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
                 <h3 class="text-light-primary text-2xl font-semibold">
                   Confirm Deletion
                 </h3>

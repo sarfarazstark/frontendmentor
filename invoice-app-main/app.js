@@ -13,7 +13,7 @@ function App() {
 	const [selectedInvoice, setSelectedInvoice] = useState(null);
 	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 	const [invoiceStatus, setInvoiceStatus] = useState(null);
-	const [openInvoiceForm, setOpenInvoiceForm] = useState(true);
+	const [openInvoiceForm, setOpenInvoiceForm] = useState(false);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme);
@@ -64,12 +64,12 @@ function App() {
 		localStorage.setItem('invoices', JSON.stringify([...invoices, invoice]));
 	};
 
-	// for development auto select a invoice
-	useEffect(() => {
-		if (invoices.length > 0) {
-			openInvoice(invoices[0].id);
-		}
-	}, [invoices]);
+	// // for development auto select a invoice
+	// useEffect(() => {
+	// 	if (invoices.length > 0) {
+	// 		openInvoice(invoices[0].id);
+	// 	}
+	// }, [invoices]);
 
 	return html`
 		<div class="flex h-full min-h-screen">
@@ -81,7 +81,7 @@ function App() {
 						addNewInvoice=${addNewInvoice} />`
 				: ''}
 			<main
-				class="w-full mt-20 p-6 px-0 transition-all duration-500 pt-12 relative">
+				class="w-full mt-20 lg:mt-0 lg:ml-20 p-6 px-0 transition-all duration-500 pt-12 relative">
 				${selectedInvoice
 					? html`<${InvoiceDetail}
 							markAsPaid=${markAsPaid}

@@ -9,10 +9,10 @@ function Button({
 	...props
 }) {
 	const baseClasses =
-		'font-semibold rounded-full cursor-pointer transition-colors transition-opacity duration-300 flex items-center justify-center';
+		'font-semibold rounded-full cursor-pointer transition-colors transition-opacity duration-300 flex items-center justify-center sm:text-md';
 
 	const variantClasses = {
-		primary: 'bg-primary text-white px-5 py-3 pb-2.5',
+		primary: 'bg-primary text-white px-5 sm:px-7 py-3 pb-2.5',
 		secondary: 'bg-draft-secondary text-draft-primary px-5 py-3 pb-2.5',
 		danger: 'bg-accent-red text-white px-5 py-3 pb-2.5',
 		ghost: 'bg-dark-4 text-light-1 hover:bg-dark-4 px-5 py-3 rounded-[10px]',
