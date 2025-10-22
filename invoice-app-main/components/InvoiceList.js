@@ -59,7 +59,7 @@ function InvoiceList({
 														checked=${filters.includes(name)}
 														onChange=${(e) =>
 															onFilterChange(name, e.target.checked)}
-														class="appearance-none w-4 h-4 border border-primary rounded-xs bg-light-1 checked:bg-[url('../assets/icon-check.svg')] checked:bg-center checked:bg-no-repeat checked:bg-primary checked:bg-[length:9px_9px]" />
+														class="appearance-none w-4 h-4 border border-primary rounded-xs bg-light-1 checked:bg-[url('../assets/icon-check.svg')] checked:bg-center checked:bg-no-repeat checked:bg-primary checked:bg-size-[9px_9px]" />
 													<label
 														for=${name}
 														class="capitalize font-semibold pt-0.5 text-md select-none">
