@@ -17,7 +17,7 @@ function InvoiceForm({
 		clientEmail: rawClientEmail = '',
 		clientAddress = {},
 		createdAt: invoiceDateStr = '',
-		paymentTerms: paymentTermsNum = 30,
+		paymentTerms: paymentTermsNum = null,
 		description: rawDescription = '',
 		items: invoiceItems = [],
 	} = invoice || {};
@@ -164,6 +164,8 @@ function InvoiceForm({
 		if (!client.country.trim()) newErrors.clientCountry = "can't be empty";
 
 		if (!invoiceDetails.date) newErrors.invoiceDate = "can't be empty";
+		if (!invoiceDetails.paymentTerms)
+			newErrors.paymentTerms = 'select one please';
 		if (!invoiceDetails.description.trim())
 			newErrors.description = "can't be empty";
 
@@ -258,10 +260,8 @@ function InvoiceForm({
 		};
 
 		if (invoice) {
-			// If editing an existing invoice, update it
 			updateInvoice(newInvoice);
 		} else {
-			// If creating a new invoice, add it
 			addNewInvoice(newInvoice);
 		}
 		closeForm();
@@ -276,6 +276,7 @@ function InvoiceForm({
 	const [isOpenPaymentDue, setIsOpenPaymentDue] = useState(false);
 
 	const paymentOptions = [
+		{ value: null, label: 'Select a Payment Term' },
 		{ value: 1, label: 'Next 1 Day' },
 		{ value: 7, label: 'Next 7 Days' },
 		{ value: 14, label: 'Next 14 Days' },
@@ -284,9 +285,11 @@ function InvoiceForm({
 
 	const currentOption =
 		paymentOptions.find((o) => o.value == invoiceDetails.paymentTerms) ||
-		paymentOptions[3];
-	const dropdownRef = useRef(null);
+		paymentOptions[0];
 
+	console.log(currentOption);
+
+	const dropdownRef = useRef(null);
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -339,7 +342,7 @@ function InvoiceForm({
 									setSender((prev) => ({ ...prev, street: e.target.value }));
 								}}
                 onBlur=${() => handleBlur('senderStreet')}
-                class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                class="bg-light-row px-3 py-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 									showError('senderStreet')
 										? 'border-accent-red'
 										: 'border-light-primary/10'
@@ -363,7 +366,7 @@ function InvoiceForm({
 										setSender((prev) => ({ ...prev, city: e.target.value }));
 									}}
                   onBlur=${() => handleBlur('senderCity')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                  class="bg-light-row px-3 py-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 										showError('senderCity')
 											? 'border-accent-red'
 											: 'border-light-primary/10'
@@ -389,7 +392,7 @@ function InvoiceForm({
 										}));
 									}}
                   onBlur=${() => handleBlur('senderPostcode')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                  class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 										showError('senderPostcode')
 											? 'border-accent-red'
 											: 'border-light-primary/10'
@@ -412,7 +415,7 @@ function InvoiceForm({
 										setSender((prev) => ({ ...prev, country: e.target.value }));
 									}}
                   onBlur=${() => handleBlur('senderCountry')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                  class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 										showError('senderCountry')
 											? 'border-accent-red'
 											: 'border-light-primary/10'
@@ -440,7 +443,7 @@ function InvoiceForm({
 									setClient((prev) => ({ ...prev, name: e.target.value }));
 								}}
                 onBlur=${() => handleBlur('clientName')}
-                class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 									showError('clientName')
 										? 'border-accent-red'
 										: 'border-light-primary/10'
@@ -463,7 +466,7 @@ function InvoiceForm({
 									setClient((prev) => ({ ...prev, email: e.target.value }));
 								}}
                 onBlur=${() => handleBlur('clientEmail')}
-                class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 									showError('clientEmail')
 										? 'border-accent-red'
 										: 'border-light-primary/10'
@@ -487,7 +490,7 @@ function InvoiceForm({
 									setClient((prev) => ({ ...prev, street: e.target.value }));
 								}}
                 onBlur=${() => handleBlur('clientStreet')}
-                class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 									showError('clientStreet')
 										? 'border-accent-red'
 										: 'border-light-primary/10'
@@ -511,7 +514,7 @@ function InvoiceForm({
 										setClient((prev) => ({ ...prev, city: e.target.value }));
 									}}
                   onBlur=${() => handleBlur('clientCity')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                  class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 										showError('clientCity')
 											? 'border-accent-red'
 											: 'border-light-primary/10'
@@ -537,7 +540,7 @@ function InvoiceForm({
 										}));
 									}}
                   onBlur=${() => handleBlur('clientPostcode')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                  class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 										showError('clientPostcode')
 											? 'border-accent-red'
 											: 'border-light-primary/10'
@@ -560,7 +563,7 @@ function InvoiceForm({
 										setClient((prev) => ({ ...prev, country: e.target.value }));
 									}}
                   onBlur=${() => handleBlur('clientCountry')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
+                  class="bg-light-row px-3 p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border ${
 										showError('clientCountry')
 											? 'border-accent-red'
 											: 'border-light-primary/10'
@@ -583,25 +586,40 @@ function InvoiceForm({
                   </span>
                 </div>
                 <${DatePicker}
+                  id="date"
                   value=${invoiceDetails.date}
+                  readonly=${invoice !== null}
                   onChange=${(date) =>
 										setInvoiceDetails((prev) => ({ ...prev, date }))}
                 />
               </div>
               <div class="flex flex-col relative" ref=${dropdownRef}>
-                <p class="text-xs text-light-2 mb-2"
-                onClick=${() => setIsOpenPaymentDue(!isOpenPaymentDue)}>
-                  Payment Due
-                </p>
-
+                <div class="flex justify-between items-center">
+                  <p class="text-xs text-light-2 mb-2"
+                    onClick=${() => setIsOpenPaymentDue(!isOpenPaymentDue)}>
+                      Payment Due
+                    </p>
+                  <span
+                    class="text-accent-red text-xs ${
+											showError('invoiceDate') ? 'visible' : 'invisible'
+										}"
+                  >
+                    ${errors.paymentTerms || 'Error'}
+                  </span>
+                </div>
                 <button
                   type="button"
                   class="relative bg-light-row text-light-primary font-medium
-                        px-3 py-2 pr-8 rounded-md border border-light-primary/10 w-full
+                        px-3 py-2 pt-3 leading-tight rounded-md border border-light-primary/10 w-full
                         flex justify-between items-center
                         hover:border-primary focus:ring focus:ring-primary/30
                         focus:outline-none transition ${
 													isOpenPaymentDue && 'border-primary'
+												}
+                        ${
+													showError('paymentTerms')
+														? 'border-accent-red'
+														: 'border-light-primary/10'
 												}"
                   onClick=${() => setIsOpenPaymentDue(!isOpenPaymentDue)}
                 >
@@ -618,7 +636,7 @@ function InvoiceForm({
 									isOpenPaymentDue &&
 									html`
 										<ul
-											class="absolute top-[108%] left-0 w-full
+											class="absolute top-[108%] left-0 w-full bg-light-bg
                           rounded-lg shadow-lg z-50 overflow-hidden transition-all duration-200">
 											${paymentOptions.map(
 												(opt, i) => html`
@@ -789,7 +807,7 @@ function InvoiceForm({
 														onInput=${(e) =>
 															updateItem(item.id, 'name', e.target.value)}
 														placeholder="e.g. OnePlus 12"
-														class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-full" />
+														class="bg-light-row px-3 py-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 w-full" />
 												</div>
 												<div
 													class="w-full grid grid-cols-[repeat(3,minmax(0,1fr))_auto] gap-x-2 items-end">
@@ -807,7 +825,7 @@ function InvoiceForm({
 																updateItem(item.id, 'quantity', e.target.value)}
 															name="qty-${item.id}"
 															id="qty-${item.id}"
-															class="bg-light-row px-3 py-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10" />
+															class="bg-light-row px-3 py-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10" />
 													</div>
 
 													<div class="flex flex-col gap-2">
@@ -824,7 +842,7 @@ function InvoiceForm({
 																updateItem(item.id, 'price', e.target.value)}
 															name="price-${item.id}"
 															id="price-${item.id}"
-															class="bg-light-row p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 placeholder:text-light-2/70 placeholder:font-semibold"
+															class="bg-light-row p-2 pt-3 rounded-md focus:ring focus:ring-primary focus:outline-0 border border-light-primary/10 placeholder:text-light-2/70 placeholder:font-semibold"
 															placeholder="00" />
 													</div>
 
@@ -838,7 +856,7 @@ function InvoiceForm({
 
 														<input
 															type="text"
-															class="pl-2.5 py-2.5 focus:ring-transparent outline-none text-sm"
+															class="pl-2.5 py-2.5 pt-3 focus:ring-transparent outline-none text-sm"
 															readonly
 															id="total-${item.id}"
 															value=${Number.isFinite(item.total)

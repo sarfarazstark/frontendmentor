@@ -47,6 +47,7 @@ function App() {
 			JSON.stringify(invoices.filter((i) => i.id !== id)),
 		);
 		setSelectedInvoice(null);
+		SetOpenDeleteConfirmBtn(false);
 	};
 
 	const markAsPaid = (id) => {
@@ -123,7 +124,7 @@ function App() {
                           </h3>
                           <p class="text-light-primary ">
                             Are you sure you want to delete invoice #${
-															selectedInvoice.id
+															selectedInvoice?.id
 														}? This action cannot
                             be undone.
                           </p>
@@ -137,7 +138,7 @@ function App() {
                               <${Button}
                                 variant="danger"
                                 onClick=${() =>
-																	deleteInvoice(selectedInvoice.id)}>
+																	deleteInvoice(selectedInvoice?.id)}>
                                 Delete
                               </${Button}>
                           </div>
