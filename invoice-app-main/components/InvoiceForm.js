@@ -1,6 +1,7 @@
 import { html } from 'https://esm.sh/htm/preact';
 import { useEffect, useState, useRef } from 'https://esm.sh/preact/hooks';
 import Button from './Button.js';
+import DatePicker from './DatePicker.js';
 
 function InvoiceForm({
 	invoice,
@@ -264,6 +265,34 @@ function InvoiceForm({
 	};
 
 	const showError = (field) => touched[field] && errors[field];
+
+	const [isOpenPaymentDue, setIsOpenPaymentDue] = useState(false);
+
+	const paymentOptions = [
+		{ value: 1, label: 'Next 1 Day' },
+		{ value: 7, label: 'Next 7 Days' },
+		{ value: 14, label: 'Next 14 Days' },
+		{ value: 30, label: 'Next 30 Days' },
+	];
+
+	const currentOption =
+		paymentOptions.find((o) => o.value == invoiceDetails.paymentTerms) ||
+		paymentOptions[3];
+	const dropdownRef = useRef(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+				setIsOpenPaymentDue(false);
+			}
+		};
+
+		document.addEventListener('click', handleClickOutside);
+
+		return () => {
+			document.removeEventListener('click', handleClickOutside);
+		};
+	}, []);
 
 	return html`
     <div
@@ -535,58 +564,81 @@ function InvoiceForm({
           <!-- Invoice Details -->
           <div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-6">
-              <div class="flex flex-col space-y-2">
+              <div class="flex flex-col space-y-2 w-full">
                 <div class="flex justify-between items-center">
-                  <label htmlFor="date" class="text-xs text-light-2">Invoice Date</label>
-                  <span class="text-accent-red text-xs ${
-										showError('invoiceDate') ? 'visible' : 'invisible'
-									}">${errors.invoiceDate || 'Error'}</span>
-                </div>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  autocomplete="off"
-                  value=${invoiceDetails.date}
-                  onInput=${(e) => {
-										setInvoiceDetails((prev) => ({
-											...prev,
-											date: e.target.value,
-										}));
-									}}
-                  onBlur=${() => handleBlur('invoiceDate')}
-                  class="bg-light-row px-3 p-2 rounded-md focus:ring focus:ring-primary focus:outline-0 border [color-scheme:light] dark:[color-scheme:dark]
-                      dark:[&::-webkit-calendar-picker-indicator]:filter-invert dark:[&::-webkit-calendar-picker-indicator]:opacity-30 ${
-												showError('invoiceDate')
-													? 'border-accent-red'
-													: 'border-light-primary/10'
-											}"
-                  placeholder=" " />
-              </div>
-              <div class="flex flex-col space-y-2">
-                <label htmlFor="payment-due" class="text-xs text-light-2">Payment Due</label>
-                <select
-                  name="payment-due"
-                  id="payment-due"
-                  autocomplete="off"
-                  value=${invoiceDetails.paymentTerms}
-                  onInput=${(e) =>
-										setInvoiceDetails((prev) => ({
-											...prev,
-											paymentTerms: e.target.value,
-										}))}
-                  class="bg-light-row text-light-primary font-medium
-                        px-3 py-2 pr-8 rounded-md border border-light-primary/10
-                        appearance-none bg-no-repeat
-                        bg-[url('./../assets/icon-arrow-down.svg')] bg-[right_0.75rem_center]
-                        hover:border-primary focus:ring focus:ring-primary/30
-                        focus:outline-none transition"
+                  <label for="date" class="text-xs text-light-2">Invoice Date</label>
+                  <span
+                    class="text-accent-red text-xs ${
+											showError('invoiceDate') ? 'visible' : 'invisible'
+										}"
                   >
-                    <option value="1">Next 1 Day</option>
-                    <option value="7">Next 7 Days</option>
-                    <option value="14">Next 14 Days</option>
-                    <option value="30">Next 30 Days</option>
-                </select>
+                    ${errors.invoiceDate || 'Error'}
+                  </span>
+                </div>
+                <${DatePicker}
+                  value=${invoiceDetails.date}
+                  onChange=${(date) =>
+										setInvoiceDetails((prev) => ({ ...prev, date }))}
+                />
+              </div>
+              <div class="flex flex-col relative" ref=${dropdownRef}>
+                <p class="text-xs text-light-2 mb-2"
+                onClick=${() => setIsOpenPaymentDue(!isOpenPaymentDue)}>
+                  Payment Due
+                </p>
+
+                <button
+                  type="button"
+                  class="relative bg-light-row text-light-primary font-medium
+                        px-3 py-2 pr-8 rounded-md border border-light-primary/10 w-full
+                        flex justify-between items-center
+                        hover:border-primary focus:ring focus:ring-primary/30
+                        focus:outline-none transition ${
+													isOpenPaymentDue && 'border-primary'
+												}"
+                  onClick=${() => setIsOpenPaymentDue(!isOpenPaymentDue)}
+                >
+                  <span>${currentOption.label}</span>
+                  <img
+                    src="./assets/icon-arrow-down.svg"
+                    alt="arrow down"
+                    class="w-3 h-auto ml-2 transition-transform duration-200
+                          ${isOpenPaymentDue ? 'rotate-180' : ''}"
+                  />
+                </button>
+
+                ${
+									isOpenPaymentDue &&
+									html`
+										<ul
+											class="absolute top-[108%] left-0 w-full
+                          rounded-lg shadow-lg z-50 overflow-hidden transition-all duration-200">
+											${paymentOptions.map(
+												(opt, i) => html`
+													<li
+														key=${opt.value}
+														class="p-4 text-sm text-light-primary font-semibold bg-light-row cursor-pointer
+                                ${invoiceDetails.paymentTerms == opt.value
+															? 'text-primary'
+															: ''}"
+														onClick=${() => {
+															setInvoiceDetails((prev) => ({
+																...prev,
+																paymentTerms: opt.value,
+															}));
+															setIsOpenPaymentDue(false);
+														}}>
+														${opt.label}
+													</li>
+													${i !== paymentOptions.length - 1 &&
+													html`
+														<hr class="bg-light-3/20 border-none h-0.5 m-0" />
+													`}
+												`,
+											)}
+										</ul>
+									`
+								}
               </div>
             </div>
             <div class="flex flex-col space-y-2 my-6">
@@ -835,7 +887,7 @@ function InvoiceForm({
           </${Button}>
         </div>
       </section>
-      <section class="col-span-2 h-full"
+      <section class="col-span-2 h-full hidden sm:block"
       onclick=${() => setOpenInvoiceForm(false)}></section>
     </div>
   `;

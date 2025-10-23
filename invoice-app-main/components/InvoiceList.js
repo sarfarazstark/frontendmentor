@@ -1,5 +1,5 @@
 import { html } from 'https://esm.sh/htm/preact';
-import { useState } from 'https://esm.sh/preact/hooks';
+import { useState, useRef, useEffect } from 'https://esm.sh/preact/hooks';
 import Button from './Button.js';
 import { dateTransformed, statusEl } from '../utils.js';
 
@@ -11,7 +11,22 @@ function InvoiceList({
 	openInvoice,
 	setOpenInvoiceForm,
 }) {
-	const [isFilterOpen, setIsFilterOpen] = useState(false); // Better as boolean
+	const [isFilterOpen, setIsFilterOpen] = useState(false);
+	const dropdownRef = useRef(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+				setIsFilterOpen(false);
+			}
+		};
+
+		document.addEventListener('click', handleClickOutside);
+
+		return () => {
+			document.removeEventListener('click', handleClickOutside);
+		};
+	}, []);
 
 	return html`
 		<section class="grid grid-cols-1 lg:grid-cols-8 grid-rows-[auto_1fr] gap-y-6 sm:gap-y-14 px-6 sm:px-8 items-start">
@@ -29,7 +44,7 @@ function InvoiceList({
 					</small>
 				</div>
 
-				<div class="relative ml-auto">
+				<div class="relative ml-auto" ref=${dropdownRef}>
 					<label
 						class="group text-light-primary flex items-center gap-2 cursor-pointer select-none"
 						onClick=${() => setIsFilterOpen((prev) => !prev)}>
