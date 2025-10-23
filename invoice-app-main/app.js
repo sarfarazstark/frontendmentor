@@ -66,6 +66,12 @@ function App() {
 		localStorage.setItem('invoices', JSON.stringify([...invoices, invoice]));
 	};
 
+	const updateInvoice = (invoice) => {
+		setInvoices((prev) => prev.map(i => i.id === invoice.id ? invoice : i));
+		const updatedInvoices = invoices.map(i => i.id === invoice.id ? invoice : i);
+		localStorage.setItem('invoices', JSON.stringify(updatedInvoices));
+	};
+
 	// // for development auto select a invoice
 	// useEffect(() => {
 	// 	if (invoices.length > 0) {
@@ -78,28 +84,29 @@ function App() {
 			<${Sidebar} theme=${theme} toggleTheme=${toggleTheme} />
 			${openInvoiceForm
 				? html`<${InvoiceForm}
-						invoice=${selectedInvoice}
-						setOpenInvoiceForm=${setOpenInvoiceForm}
-						addNewInvoice=${addNewInvoice}
-						SetOpenDeleteConfirmBtn=${SetOpenDeleteConfirmBtn} />`
+					invoice=${selectedInvoice}
+					setOpenInvoiceForm=${setOpenInvoiceForm}
+					addNewInvoice=${addNewInvoice}
+					updateInvoice=${updateInvoice}
+					SetOpenDeleteConfirmBtn=${SetOpenDeleteConfirmBtn} />`
 				: ''}
 			<main
 				class="w-full mt-20 lg:mt-0 lg:ml-20 p-6 px-0 transition-all duration-500 pt-12 relative">
 				${selectedInvoice
 					? html`<${InvoiceDetail}
-							SetOpenDeleteConfirmBtn=${SetOpenDeleteConfirmBtn}
-							markAsPaid=${markAsPaid}
-							invoiceStatus=${invoiceStatus}
-							invoice=${selectedInvoice}
-							onBack=${closeInvoice}
-							setOpenInvoiceForm=${setOpenInvoiceForm} />`
+						SetOpenDeleteConfirmBtn=${SetOpenDeleteConfirmBtn}
+						markAsPaid=${markAsPaid}
+						invoiceStatus=${invoiceStatus}
+						invoice=${selectedInvoice}
+						onBack=${closeInvoice}
+						setOpenInvoiceForm=${setOpenInvoiceForm} />`
 					: html`<${InvoiceList}
-							setOpenInvoiceForm=${setOpenInvoiceForm}
-							invoices=${filtered}
-							allCount=${invoices.length}
-							filters=${filters}
-							onFilterChange=${onFilterChange}
-							openInvoice=${openInvoice} />`}
+						setOpenInvoiceForm=${setOpenInvoiceForm}
+						invoices=${filtered}
+						allCount=${invoices.length}
+						filters=${filters}
+						onFilterChange=${onFilterChange}
+						openInvoice=${openInvoice} />`}
 			</main>
 			<!-- Delete Confirmation Popup -->
 			${openDeleteConfirmBtn
@@ -112,22 +119,20 @@ function App() {
                             Confirm Deletion
                           </h3>
                           <p class="text-light-primary ">
-                            Are you sure you want to delete invoice #${
-															selectedInvoice.id
-														}? This action cannot
+                            Are you sure you want to delete invoice #${selectedInvoice.id}? This action cannot
                             be undone.
                           </p>
                           <div class='flex gap-4 ml-auto'>
                               <${Button}
                                 variant="secondary"
                                 onClick=${() =>
-																	SetOpenDeleteConfirmBtn((prev) => !prev)}>
+									SetOpenDeleteConfirmBtn((prev) => !prev)}>
                                 Cancel
                               </${Button}>
                               <${Button}
                                 variant="danger"
                                 onClick=${() =>
-																	deleteInvoice(selectedInvoice.id)}>
+									deleteInvoice(selectedInvoice.id)}>
                                 Delete
                               </${Button}>
                           </div>

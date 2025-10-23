@@ -7,6 +7,7 @@ function InvoiceForm({
 	invoice,
 	setOpenInvoiceForm,
 	addNewInvoice,
+	updateInvoice,
 	SetOpenDeleteConfirmBtn,
 }) {
 	const {
@@ -256,7 +257,13 @@ function InvoiceForm({
 			total,
 		};
 
-		addNewInvoice(newInvoice);
+		if (invoice) {
+			// If editing an existing invoice, update it
+			updateInvoice(newInvoice);
+		} else {
+			// If creating a new invoice, add it
+			addNewInvoice(newInvoice);
+		}
 		closeForm();
 	};
 
