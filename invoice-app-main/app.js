@@ -47,6 +47,7 @@ function App() {
 			JSON.stringify(invoices.filter((i) => i.id !== id)),
 		);
 		setSelectedInvoice(null);
+		SetOpenDeleteConfirmBtn(false);
 	};
 
 	const markAsPaid = (id) => {
@@ -115,15 +116,15 @@ function App() {
 			${openDeleteConfirmBtn
 				? html`
                   <div class="fixed top-0 left-0 right-0 bottom-0 mt-20 lg:mt-0 lg:ml-20 flex items-center p-4 z-50">
-                      <div class="grid grid-cols-1 sm:grid-cols-8 lg:grid-cols-12 sm:grid-rows-[1fr_auto_1fr] sm:h-full items-center w-full h-auto">
+                      <div class="grid grid-cols-1 sm:grid-cols-8 lg:grid-cols-12 xl:grid-cols-[repeat(16,1fr)] sm:grid-rows-[1fr_auto_1fr] sm:h-full items-center w-full h-auto">
                         <div
-                          class="sm:col-start-3 lg:col-start-5 sm:col-span-4 lg:col-span-4 sm:row-start-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
+                          class="sm:col-start-3 lg:col-start-5 xl:col-start-7 sm:col-span-4 lg:col-span-4 sm:row-start-2 h-full w-full bg-light-row/40 z-10 backdrop-blur-lg shadow-lg rounded-lg border border-light-primary/10 p-6 flex flex-col gap-4">
                           <h3 class="text-light-primary text-2xl font-semibold">
                             Confirm Deletion
                           </h3>
                           <p class="text-light-primary ">
                             Are you sure you want to delete invoice #${
-															selectedInvoice.id
+															selectedInvoice?.id
 														}? This action cannot
                             be undone.
                           </p>
@@ -137,7 +138,7 @@ function App() {
                               <${Button}
                                 variant="danger"
                                 onClick=${() =>
-																	deleteInvoice(selectedInvoice.id)}>
+																	deleteInvoice(selectedInvoice?.id)}>
                                 Delete
                               </${Button}>
                           </div>
