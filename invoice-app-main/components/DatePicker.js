@@ -31,7 +31,7 @@ function DatePicker({ value, id, onChange, readonly = false }) {
 					: 'border focus:ring focus:ring-primary'} pr-10" />
 
 			<img
-				src="../assets/icon-calendar.svg"
+				src="./assets/icon-calendar.svg"
 				alt=""
 				class="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
 		</div>
