@@ -2808,6 +2808,26 @@
       letter-spacing: var(--tracking-tighter);
     }
   }
+  .xl\:col-start-7 {
+    @media (width >= 1280px) {
+      grid-column-start: 7;
+    }
+  }
+  .xl\:grid {
+    @media (width >= 1280px) {
+      display: grid;
+    }
+  }
+  .xl\:grid-cols-\[repeat\(15\,1fr\)\] {
+    @media (width >= 1280px) {
+      grid-template-columns: repeat(15,1fr);
+    }
+  }
+  .xl\:grid-cols-\[repeat\(16\,1fr\)\] {
+    @media (width >= 1280px) {
+      grid-template-columns: repeat(16,1fr);
+    }
+  }
   .\32 xl\:absolute {
     @media (width >= 1536px) {
       position: absolute;
