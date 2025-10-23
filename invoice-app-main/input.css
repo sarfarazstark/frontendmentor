@@ -130,7 +130,7 @@
 
 	.flatpickr-day.today {
 		border: 1px solid var(--color-primary) !important;
-		color: #fff !important;
+		color: var(--color-light-primary) !important;
 		font-weight: 600;
 	}
 

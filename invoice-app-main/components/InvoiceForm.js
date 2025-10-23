@@ -37,10 +37,11 @@ function InvoiceForm({
 	} = clientAddress;
 
 	const invoiceDate = invoiceDateStr
-		? new Date(invoiceDateStr).toISOString().split('T')[0]
+		? invoiceDateStr
 		: new Date().toISOString().split('T')[0];
 
-	const paymentTerms = String(paymentTermsNum);
+	// Don't convert null to string - keep it as null
+	const paymentTerms = paymentTermsNum;
 
 	// State
 	const [sender, setSender] = useState({
@@ -165,7 +166,7 @@ function InvoiceForm({
 
 		if (!invoiceDetails.date) newErrors.invoiceDate = "can't be empty";
 		if (!invoiceDetails.paymentTerms)
-			newErrors.paymentTerms = 'select one please';
+			newErrors.paymentTerms = 'select a payment term';
 		if (!invoiceDetails.description.trim())
 			newErrors.description = "can't be empty";
 
@@ -207,6 +208,7 @@ function InvoiceForm({
 			clientCountry: true,
 			invoiceDate: true,
 			description: true,
+			paymentTerms: true,
 		};
 		setTouched(allTouched);
 
@@ -214,10 +216,28 @@ function InvoiceForm({
 			return;
 		}
 
-		const createdAt = invoice ? invoice.createdAt : invoiceDetails.date;
-		const paymentTerms = Number(invoiceDetails.paymentTerms);
-		const dueDate = new Date(createdAt);
-		dueDate.setDate(dueDate.getDate() + paymentTerms);
+		const paymentTermsValue = Number(invoiceDetails.paymentTerms);
+		if (isNaN(paymentTermsValue)) {
+			console.error(
+				'Invalid payment terms value:',
+				invoiceDetails.paymentTerms,
+			);
+			return;
+		}
+
+		let dueDate;
+		try {
+			dueDate = new Date(invoiceDetails.date + 'T00:00:00');
+			if (isNaN(dueDate.getTime())) {
+				dueDate = new Date(); // Fallback to current date
+			}
+			dueDate.setDate(dueDate.getDate() + paymentTermsValue);
+		} catch (error) {
+			console.error('Error calculating due date:', error);
+			dueDate = new Date(); // Fallback to current date on error
+			dueDate.setDate(dueDate.getDate() + paymentTermsValue);
+		}
+
 		const paymentDue = dueDate.toISOString().split('T')[0];
 
 		const total = items.reduce((acc, item) => acc + item.total, 0);
@@ -235,9 +255,9 @@ function InvoiceForm({
 		const newInvoice = {
 			...(invoice ? { id: invoice.id } : { id: generateInvoiceId() }),
 
-			createdAt,
+			createdAt: invoiceDetails.date,
 			paymentDue,
-			paymentTerms,
+			paymentTerms: paymentTermsValue,
 			description: invoiceDetails.description,
 
 			clientName: client.name,
@@ -286,8 +306,6 @@ function InvoiceForm({
 	const currentOption =
 		paymentOptions.find((o) => o.value == invoiceDetails.paymentTerms) ||
 		paymentOptions[0];
-
-	console.log(currentOption);
 
 	const dropdownRef = useRef(null);
 	useEffect(() => {
@@ -601,7 +619,7 @@ function InvoiceForm({
                     </p>
                   <span
                     class="text-accent-red text-xs ${
-											showError('invoiceDate') ? 'visible' : 'invisible'
+											showError('paymentTerms') ? 'visible' : 'invisible'
 										}"
                   >
                     ${errors.paymentTerms || 'Error'}
@@ -912,7 +930,7 @@ function InvoiceForm({
           </${Button}>
         </div>
       </section>
-      <section class="col-span-2 h-full hidden sm:block"
+      <section class="col-span-2 lg:col-span-5  h-full hidden sm:block"
       onclick=${() => setOpenInvoiceForm(false)}></section>
     </div>
   `;
