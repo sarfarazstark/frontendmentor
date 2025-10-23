@@ -8,6 +8,8 @@ function DatePicker({ value, id, onChange, readonly = false }) {
 		if (!ref.current) return;
 		const fp = flatpickr(ref.current, {
 			dateFormat: 'Y-m-d',
+			altFormat: 'd M Y',
+			altInput: true,
 			defaultDate: value,
 			disableMobile: true,
 			clickOpens: !readonly,

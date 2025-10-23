@@ -48,6 +48,7 @@ function App() {
 		);
 		setSelectedInvoice(null);
 		SetOpenDeleteConfirmBtn(false);
+		setOpenInvoiceForm(false);
 	};
 
 	const markAsPaid = (id) => {

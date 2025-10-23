@@ -983,9 +983,6 @@
   .bg-light-1 {
     background-color: var(--color-light-1);
   }
-  .bg-light-2 {
-    background-color: var(--color-light-2);
-  }
   .bg-light-3 {
     background-color: var(--color-light-3);
   }
@@ -1170,6 +1167,9 @@
   .pt-1 {
     padding-top: calc(var(--spacing) * 1);
   }
+  .pt-2\.5 {
+    padding-top: calc(var(--spacing) * 2.5);
+  }
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
   }
@@ -1199,6 +1199,12 @@
   }
   .pb-0 {
     padding-bottom: calc(var(--spacing) * 0);
+  }
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
+  }
+  .pb-1\.5 {
+    padding-bottom: calc(var(--spacing) * 1.5);
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
@@ -2813,16 +2819,6 @@
       grid-column-start: 7;
     }
   }
-  .xl\:grid {
-    @media (width >= 1280px) {
-      display: grid;
-    }
-  }
-  .xl\:grid-cols-\[repeat\(15\,1fr\)\] {
-    @media (width >= 1280px) {
-      grid-template-columns: repeat(15,1fr);
-    }
-  }
   .xl\:grid-cols-\[repeat\(16\,1fr\)\] {
     @media (width >= 1280px) {
       grid-template-columns: repeat(16,1fr);
@@ -2913,7 +2909,7 @@
   }
   .flatpickr-day.today {
     border: 1px solid var(--color-primary) !important;
-    color: #fff !important;
+    color: var(--color-light-primary) !important;
     font-weight: 600;
   }
   .flatpickr-time input,	.flatpickr-time-separator {
