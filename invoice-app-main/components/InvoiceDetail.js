@@ -1,12 +1,11 @@
 import { html } from 'https://esm.sh/htm/preact';
 import { useState } from 'https://esm.sh/preact/hooks';
 import Button from './Button.js';
-import { dateTransformed, statusEl, truncateString } from '../utils.js';
+import { dateTransformed, statusEl } from '../utils.js';
 
 function InvoiceDetail({
 	invoice,
 	onBack,
-	deleteInvoice,
 	invoiceStatus,
 	markAsPaid,
 	setOpenInvoiceForm,
@@ -28,9 +27,9 @@ function InvoiceDetail({
 	} = invoice;
 
 	return html`
-		<section class="grid grid-cols-1 lg:grid-cols-8 grid-rows-[auto_1fr] sm:gap-y-1 items-start px-6 pb-14 sm:pb-0">
+		<section class="grid grid-cols-1 xl:grid-cols-8 grid-rows-[auto_1fr] sm:gap-y-1 items-start px-6 pb-14 sm:pb-0">
 				<header
-					class="flex flex-col items-center justify-between lg:col-start-3 lg:col-span-4 w-full gap-4 mx-auto mb-6">
+					class="flex flex-col items-center justify-between xl:col-start-3 xl:col-span-4 w-full gap-4 mx-auto mb-6">
 					<${Button} variant="link" onClick=${onBack}>
 						<img src="./assets/icon-arrow-left.svg" alt="Back" />
 						<span class="pt-0.5 leading-tight">Go Back</span>
@@ -74,7 +73,7 @@ function InvoiceDetail({
 				</header>
 
 				<section
-					class="bg-light-row flex flex-col lg:col-start-3 lg:col-span-4 w-full gap-4 p-4 sm:p-8 shadow-md rounded-lg">
+					class="bg-light-row flex flex-col xl:col-start-3 xl:col-span-4 w-full gap-4 p-4 sm:p-8 shadow-md rounded-lg">
 					<div class="grid w-full grid-cols-1 sm:grid-cols-2 gap-y-4 mb-6">
 						<div>
 							<h2 class="text-light-primary text-xl font-semibold leading-tight">
