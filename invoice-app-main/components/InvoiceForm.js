@@ -326,7 +326,7 @@ function InvoiceForm({
     <div
       class="grid grid-cols-1 sm:grid-cols-10 gap-y-16 items-start fixed top-0 bottom-0 left-0 right-0 mt-20 lg:mt-0 lg:ml-20 z-10 bg-black/50">
       <section
-        class="bg-light-bg overflow-y-scroll h-full transition-colors duration-100 sm:col-span-8 lg:col-span-5"
+        class="bg-light-bg overflow-y-scroll h-full transition-colors duration-100 sm:col-span-8 xl:col-span-5"
         ref=${containerRef}
         onScroll=${handleScroll}>
         <h2 class="text-2xl font-semibold text-light-primary mb-8 px-6 sm:px-10 pt-8">
@@ -930,7 +930,7 @@ function InvoiceForm({
           </${Button}>
         </div>
       </section>
-      <section class="col-span-2 lg:col-span-5  h-full hidden sm:block"
+      <section class="col-span-2 xl:col-span-5  h-full hidden sm:block"
       onclick=${() => setOpenInvoiceForm(false)}></section>
     </div>
   `;

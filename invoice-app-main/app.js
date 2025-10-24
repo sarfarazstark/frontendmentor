@@ -85,7 +85,7 @@ function App() {
 	// }, [invoices]);
 
 	return html`
-		<div class="flex h-full min-h-screen">
+		<div class="flex h-full">
 			<${Sidebar} theme=${theme} toggleTheme=${toggleTheme} />
 			${openInvoiceForm
 				? html`<${InvoiceForm}

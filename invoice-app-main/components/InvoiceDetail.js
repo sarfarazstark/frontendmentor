@@ -1,12 +1,11 @@
 import { html } from 'https://esm.sh/htm/preact';
 import { useState } from 'https://esm.sh/preact/hooks';
 import Button from './Button.js';
-import { dateTransformed, statusEl, truncateString } from '../utils.js';
+import { dateTransformed, statusEl } from '../utils.js';
 
 function InvoiceDetail({
 	invoice,
 	onBack,
-	deleteInvoice,
 	invoiceStatus,
 	markAsPaid,
 	setOpenInvoiceForm,
@@ -28,9 +27,9 @@ function InvoiceDetail({
 	} = invoice;
 
 	return html`
-		<section class="grid grid-cols-1 lg:grid-cols-8 grid-rows-[auto_1fr] gap-y-16 sm:gap-y-1 items-start px-6">
+		<section class="grid grid-cols-1 xl:grid-cols-8 grid-rows-[auto_1fr] sm:gap-y-1 items-start px-6 pb-14 sm:pb-0">
 				<header
-					class="flex flex-col items-center justify-between lg:col-start-3 lg:col-span-4 w-full gap-4 mx-auto mb-6">
+					class="flex flex-col items-center justify-between xl:col-start-3 xl:col-span-4 w-full gap-4 mx-auto mb-6">
 					<${Button} variant="link" onClick=${onBack}>
 						<img src="./assets/icon-arrow-left.svg" alt="Back" />
 						<span class="pt-0.5 leading-tight">Go Back</span>
@@ -74,7 +73,7 @@ function InvoiceDetail({
 				</header>
 
 				<section
-					class="bg-light-row flex flex-col lg:col-start-3 lg:col-span-4 w-full gap-4 p-4 sm:p-8 shadow-md rounded-lg">
+					class="bg-light-row flex flex-col xl:col-start-3 xl:col-span-4 w-full gap-4 p-4 sm:p-8 shadow-md rounded-lg">
 					<div class="grid w-full grid-cols-1 sm:grid-cols-2 gap-y-4 mb-6">
 						<div>
 							<h2 class="text-light-primary text-xl font-semibold leading-tight">
@@ -155,21 +154,21 @@ function InvoiceDetail({
 									)}
                 </tbody>
               </table>
-              <div class="block sm:hidden">
+              <div class="flex flex-col gap-6 sm:hidden">
                 ${items.map(
 									(it) => html`
-										<div class="grid grid-cols-[1fr_auto] gap-x-1 items-center">
+										<div class="grid grid-cols-[1fr_auto] gap-x-3 items-center">
 											<div class="">
 												<p
-													class="text-light-primary font-semibold leading-tight">
+													class="text-light-primary text-sm font-semibold leading-tight">
 													${it.name}
 												</p>
-												<span class="text-light-3 font-semibold text-sm">
+												<span class="text-light-3 font-semibold text-xs">
 													${it.quantity} x $ ${parseInt(it.price).toFixed(2)}
 												</span>
 											</div>
 											<div
-												class="text-right text-md text-light-primary font-semibold">
+												class="text-right text-sm text-light-primary font-medium">
 												$ ${parseInt(it.total).toFixed(2)}
 											</div>
 										</div>
@@ -180,7 +179,7 @@ function InvoiceDetail({
 						<div
 							class="bg-dark-4 pb-6 grid items-center w-full grid-cols-2 p-6 text-white">
 							<small class="text-xs leading-tight inline-block">Amount Due</small>
-							<p class="text-lg font-bold leading-tight text-right pt-1">
+							<p class="text-md font-bold leading-tight text-right pt-1">
 								 ${`$ ${parseInt(total).toFixed(1)}`}
 							</p>
 						</div>

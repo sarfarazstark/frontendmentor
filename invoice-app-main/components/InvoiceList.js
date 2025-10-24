@@ -29,9 +29,9 @@ function InvoiceList({
 	}, []);
 
 	return html`
-		<section class="grid grid-cols-1 lg:grid-cols-8 grid-rows-[auto_1fr] gap-y-6 sm:gap-y-14 px-6 sm:px-8 items-start">
+		<section class="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] xl:grid-cols-8 grid-rows-[auto_1fr] gap-y-6 sm:gap-y-14 px-6 sm:px-8 items-start">
 			<header
-				class="gap-4 sm:gap-8 lg:col-start-3 lg:col-span-4 flex items-center justify-between w-full mx-auto">
+				class="gap-4 sm:gap-8 lg:col-start-2 xl:col-start-3 xl:col-span-4 flex items-center justify-between w-full mx-auto">
 				<div class="flex flex-col justify-center">
 					<h1 class="text-light-primary text-xl sm:text-3xl font-bold leading-8">
 						Invoices
@@ -102,7 +102,8 @@ function InvoiceList({
 
 				${
 					allCount > 0
-						? html`<section class="w-full h-full lg:col-start-3 lg:col-span-4 ">
+						? html`<section
+								class="w-full h-full lg:col-start-2 xl:col-start-3 xl:col-span-4 ">
 								<ul
 									class="w-full gap-1 sm:gap-4 grid grid-cols-[auto_1fr] sm:grid-cols-[auto__auto_1fr_auto_auto_auto]">
 									${invoices.map(
@@ -110,14 +111,15 @@ function InvoiceList({
 											<li
 												class="grid grid-cols-subgrid items-end sm:items-center justify-items-end sm:justify-items-center border border-transparent hover:border hover:border-primary transition-all duration-300 ease-in-out cursor-pointer col-span-full bg-light-row justify-between shadow-md rounded-lg p-5 gap-2 sm:gap-6 select-none"
 												onClick=${() => openInvoice(invoice.id)}>
-												<div class="font-semibold text-light-primary">
+												<div class="font-semibold w-full text-light-primary">
 													<span class="text-light-3">#</span>${invoice.id}
 												</div>
-												<div class="text-light-3 col-start-1 sm:col-start-2">
+												<div
+													class="text-light-3 w-full col-start-1 sm:col-start-2">
 													<small>${dateTransformed(invoice.paymentDue)}</small>
 												</div>
 												<div
-													class="text-light-3 row-start-1 col-start-2 sm:col-start-3 text-right sm:w-full sm:text-left">
+													class="text-light-3 w-full row-start-1 col-start-2 sm:col-start-3 text-right sm:w-full sm:text-left">
 													<small>${invoice.clientName}</small>
 												</div>
 												<div

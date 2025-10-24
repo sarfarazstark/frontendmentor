@@ -9,18 +9,20 @@ function Button({
 	...props
 }) {
 	const baseClasses =
-		'font-semibold rounded-full cursor-pointer transition-colors transition-opacity duration-300 flex items-center justify-center sm:text-md lg:text-lg';
+		'font-semibold rounded-full cursor-pointer transition-colors transition-opacity duration-300 flex items-center justify-center';
 
+	// Text sizes with proper breakpoints
+	const textSizeClasses = 'text-sm sm:text-base lg:text-lg';
+
+	// Variant classes with responsive padding and minimal vertical spacing
 	const variantClasses = {
-		primary: 'bg-primary text-white px-5 sm:px-7 pb-2 pt-3',
-		secondary: 'bg-draft-secondary text-draft-primary px-5 pb-2 pt-3',
-		danger: 'bg-accent-red text-white px-5 pb-2 pt-3',
-		ghost:
-			'bg-dark-4 text-light-1 hover:bg-dark-4 px-5 pb-2 pt-3 rounded-[10px]',
-		ghostSecondary:
-			'text-light-1 hover:bg-dark-3 px-5 pb-2 pt-3 rounded-[10px]',
-		new: 'bg-primary text-white p-3 gap-2',
-		link: 'text-dark-1 font-semibold flex items-center gap-5 mr-auto p-0 bg-transparent hover:bg-transparent',
+		primary: `${textSizeClasses} bg-primary text-white px-4 sm:px-6 py-2`,
+		secondary: `${textSizeClasses} bg-draft-secondary text-draft-primary px-4 sm:px-6 py-2`,
+		danger: `${textSizeClasses} bg-accent-red text-white px-4 sm:px-6 py-2`,
+		ghost: `${textSizeClasses} bg-dark-4 text-light-1 hover:bg-dark-4 px-4 sm:px-6 py-2 rounded-[10px]`,
+		ghostSecondary: `${textSizeClasses} text-light-1 hover:bg-dark-3 px-4 sm:px-6 py-2 rounded-[10px]`,
+		new: 'text-sm sm:text-base bg-primary text-white p-2 sm:p-3 gap-2',
+		link: 'text-dark-1 font-semibold flex items-center gap-3 sm:gap-5 mr-auto p-0 bg-transparent hover:bg-transparent text-base sm:text-md',
 		none: '',
 	};
 
