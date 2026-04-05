@@ -49,10 +49,13 @@ const load = function () {
 
 	// Append items to the container
 	const appendingItem = function (data) {
-		return new Promise(() => {
+		return new Promise((resolve) => {
+			const fragment = document.createDocumentFragment();
 			data.forEach((item) => {
-				itemContainer.appendChild(renderItem(item));
+				fragment.appendChild(renderItem(item));
 			});
+			itemContainer.appendChild(fragment);
+			resolve();
 		});
 	};
 
