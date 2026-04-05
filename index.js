@@ -1,5 +1,5 @@
 function getPathWithoutFile() {
-  const path = window.location.pathname;
+  const path = typeof window !== 'undefined' ? window.location.pathname : '/';
   const segments = path.split('/');
   const lastSegment = segments[segments.length - 1];
 
@@ -77,26 +77,32 @@ const createListItemHTML = (item) => {
 `;
 };
 
-const main = document.querySelector('main');
-const li = main.appendChild(document.createElement('ul'));
+if (typeof document !== 'undefined') {
+  const main = document.querySelector('main');
+  const li = main.appendChild(document.createElement('ul'));
 
-fetch('./data.json')
-  .then((response) => response.json())
-  .then((data) => {
-    data.sort((a, b) => new Date(a.submitDate) - new Date(b.submitDate));
-    for (const item of data) {
-      if ('status' in item) continue;
-      // console.log(item);
-      li.insertAdjacentHTML('afterbegin', createListItemHTML(item));
-    }
-    document.querySelector('.total').textContent = data.length;
-  });
+  fetch('./data.json')
+    .then((response) => response.json())
+    .then((data) => {
+      data.sort((a, b) => new Date(a.submitDate) - new Date(b.submitDate));
+      for (const item of data) {
+        if ('status' in item) continue;
+        // console.log(item);
+        li.insertAdjacentHTML('afterbegin', createListItemHTML(item));
+      }
+      document.querySelector('.total').textContent = data.length;
+    });
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("./service-worker.js")
-      .then((reg) => console.log("Service Worker registered ✅", reg.scope))
-      .catch((err) => console.error("Service Worker registration failed ❌", err));
-  });
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./service-worker.js")
+        .then((reg) => console.log("Service Worker registered ✅", reg.scope))
+        .catch((err) => console.error("Service Worker registration failed ❌", err));
+    });
+  }
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { frontendmentor };
 }
