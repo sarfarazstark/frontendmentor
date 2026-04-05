@@ -11,7 +11,6 @@ const ASSETS_TO_CACHE = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("Service Worker: Caching assets...");
       return cache.addAll(ASSETS_TO_CACHE);
     })
   );
@@ -27,7 +26,6 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  console.log("Service Worker: Activated and old caches cleared");
 });
 
 self.addEventListener("fetch", (event) => {
